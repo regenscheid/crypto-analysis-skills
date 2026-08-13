@@ -339,6 +339,49 @@ Keep falsified and parked candidates visible in later versions. Publish
 specialist evidence from the specialist and publish the synthesis here; do not
 duplicate artifacts already produced by `CRYPTO_VERIFIER`.
 
+## Which of these headings is durable
+
+The artifact is scoped to this conversation. **Some of what it holds is a
+finding that outlives the run, and some is this run's own bookkeeping**, and the
+skill has never said which is which — so in practice none of it has been
+recorded. One HQC run graded 26 adjacent-field leads CLOSED, each with its
+obstruction and a measurement, and `knowledge.md`, `gaps.md` and `lessons.md`
+mention HQC zero times.
+
+| heading | where it goes |
+|---|---|
+| **Falsified candidates** | **one `add_gap` each** — the obstruction is the finding |
+| **Novelty-search scope** | the `looked_in` channel list on those gaps, coverage limits included |
+| Survivors | the artifact, until an `independent-check` exists |
+| **Unchecked areas** | **the plan. Never a gap.** |
+| Known baseline, Structural handles, Provenance | the artifact |
+
+A falsified candidate is the highest-return record this skill produces:
+something was looked for, and what closed it is known. Write the obstruction,
+not the outcome — *"small-doubling theory has nothing to act on: the supports
+realise 93-94% of maximal doubling"* is reusable, *"no attack found"* is not.
+
+Recording them is one cell, not one call per row:
+
+```python
+for c in falsified:
+    add_gap(question=c["candidate"],
+            looked_in=["ePrint", "NIST", "firecrawl", "web"],   # actual channels
+            finding=c["obstruction"], tags=c["field"])
+```
+
+**`Unchecked areas` must not become gaps, and this matters more than it looks.**
+A gap is read by the next session as *this door was checked and is shut*. An
+unchecked area is a door nobody opened — filing it as a gap tells a future agent
+something was searched when it was not, which can stop them looking. That turns
+the most valuable record type into a harmful one. Those belong in the plan,
+where they are this run's remaining work and nobody else's conclusion.
+
+The test, if a case is unclear: **a gap records what was learned by looking. If
+nothing was learned, it is a to-do.** "Behind a paywall, and the NIST-hosted copy
+also lacked it" was learned. "Nobody had time to normalize it" was not.
+
+
 ## Guard the words “novel” and “break”
 
 Do not claim novelty from absence. State the bounded search result, its date,

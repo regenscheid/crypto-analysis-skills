@@ -370,6 +370,29 @@ preconditions could not be evaluated, a Gröbner claim needing Magma, an
 implementation not run. An empty `NOT CHECKED` means the analysis was not
 examined, not that it was complete.
 
+**But `NOT CHECKED` is not a `add_gap`.** It records this run's budget and
+tooling, not something about the scheme: someone with a Magma licence and more
+hours has a different list, so it is false on their machine. It belongs in the
+answer and in the plan.
+
+A family you **did** evaluate and ruled out is the opposite, and it is worth a
+gap — say which precondition failed and at what parameters, because that is what
+saves the next session the same check:
+
+```python
+add_gap(question="Does <family> apply to <scheme> at <params>?",
+        looked_in=["estimator", "ePrint", "NIST"],
+        finding="Ruled out: <precondition> fails — <the number that settles it>.")
+```
+
+The rule behind the split: **a gap records what was learned by looking. If
+nothing was learned, it is a to-do.** The distinction is load-bearing because the
+next session reads a gap as *this door was checked and is shut*; filing an
+unexamined family as a gap would stop someone looking at a family nobody has
+examined. See `discover-cryptanalysis` for the same rule across its eight
+headings.
+
+
 ---
 
 ## What this skill does not do
