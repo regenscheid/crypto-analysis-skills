@@ -181,7 +181,7 @@ add_entry("<scheme> key recovery reduces to MinRank with "
 **It did not** — say so with the same effort:
 
 ```python
-add_gap(question="…", looked_in=["ePrint", "NIST", "breaks", "web"], finding="…")
+add_gap(question="…", looked_in=["ePrint", "NIST", "firecrawl", "web"], finding="…")
 ```
 
 A negative finding must be as cheap to record as a positive one. If it is not,

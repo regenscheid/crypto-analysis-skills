@@ -261,40 +261,48 @@ Attempt each step by exactly one route:
 parameterises one. This project derived a cost model from an abstract, got the
 reduction one equation wrong, and found out only when a human supplied the PDF.
 
-*If an ePrint paper is not cached, `e-print-mcp_eprint_fulltext` queues it and a container
-outside the sandbox fetches it.* You do not need to do anything, and **you must
-not ask the human to run a command**: retrieval that needs a person present is
-exactly what this loop is built to avoid.
+*If an ePrint paper is not cached, `e-print-mcp_eprint_fulltext` queues it and
+the server's own fetcher retrieves it.* You do not need to do anything, and
+**you must not ask the human to run a command**: retrieval that needs a person
+present is exactly what this loop is built to avoid.
 
-**How long to expect.** The watcher polls the queue every 60 seconds and the
-browser fetch itself takes 20-40 seconds (measured). So budget **up to about
-two minutes**, not ten seconds. Come back on a later pass; do not conclude it is
-broken because it is not there yet.
+**How long to expect — the tool tells you.** A queued call answers with an
+estimate ("expect it in about 2 minute(s)"). **Use that number rather than a
+rule of thumb**: it accounts for how many papers are ahead of yours and for the
+server's rate limit, so when the hourly budget is nearly spent the honest answer
+is an hour, not two minutes. Come back after the stated interval; do not
+conclude it is broken because it is not there yet.
+
+**Calling `e-print-mcp_eprint_fulltext` again IS the status check.** There is no
+separate tool, and asking twice cannot queue the same paper twice.
 
 Why it works that way, so you can reason when it does not: ePrint serves only
 browsers (plain `curl` and `curl_cffi` impersonating four browser profiles all
-return 403 with a challenge page), and a browser cannot start inside a
-connector's sandbox. So the connector writes a request and a container outside
-the sandbox does the fetch.
+return 403 with a challenge page), so a fetch means driving a real browser. That
+happens in a separate container, one paper at a time, spaced out — the server is
+one address to ePrint, and a shared address is easy to get blocked.
 
-**Do not block on it.** Queue the paper, note that the step waits on a fetch,
-and work other steps. Come back later and it will be there.
+**Do not block, and do not poll.** Queue the paper, note that the step waits on
+a fetch, work other steps, come back after the stated interval.
 
-**A failed fetch retries on its own, and eventually stops.** Five attempts, at
-1 minute, 5, 15 and 60 — about 1.4 hours in total. After that the request is
-marked `gave-up` and is no longer retried, though the record stays with the
-error so it remains visible. So:
+**A failed fetch retries on its own, and eventually stops.** Four attempts at 5
+minutes, 30 minutes and 2 hours — about 2.6 hours in total — after which it is
+marked `gave-up`. So:
 
 - **missing after a few minutes** — normal, keep working.
-- **missing after an hour** — likely a real failure. The record in
-  `connectors/eprint/fetch_queue/` carries the error and the attempt count.
-- **`gave-up`** — it will not retry. Record it with `add_gap`, `looked_in`
-  naming the channel, and say so in your state-of-play. Deleting the queue file
-  is what restarts it, and that is the human's call.
+- **`e-print-mcp_corpus_stats`** reports the queue (due, waiting on backoff,
+  gave up) and the remaining fetch budget. Read it before assuming a fault.
+- **`gave-up`** — the tool says so, and names what is still untried. Believe that
+  wording and do not widen it: four refusals from ePrint is a fact about **one
+  host**, not about the paper. This workbench has the counter-example on record —
+  a body ePrint refused was read from the NIST-hosted copy. Try
+  `nist-mcp_search_csrc`, a `firecrawl-mcp` fetch, or ask the human for the PDF
+  before recording anything, and scope the gap to *body not retrieved from
+  ePrint* with those listed as channels remaining.
 
-If nothing is being fetched at all, the container may be stopped — `docker ps`
-should show one running `fetch_queue.py --watch`; the container name is not
-fixed, so match on that command rather than on a name.
+**A throttle message is not a retrieval failure.** If a call says the fetch was
+declined — interval, hourly cap, cooldown — nothing was asked of ePrint at all,
+so it is not evidence about the paper and must not be recorded as one.
 
 **Compute.** `sweep.py` — `lwe`, `uov`, `mq`, `minrank`, `subfield`, `sda`.
 Always name the cost model; a bare exponent is not a result. If a figure looks

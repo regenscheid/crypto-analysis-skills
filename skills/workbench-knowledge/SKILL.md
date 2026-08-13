@@ -90,7 +90,7 @@ It is only ever: **does it stay true somewhere else?**
 ```python
 add_entry(statement, kind="mechanism", evidence=[...], tags="luov descent",
           source="<investigation or session>", claim="C7")
-add_gap(question, looked_in=["ePrint", "NIST", "breaks", "web"], finding="...")
+add_gap(question, looked_in=["ePrint", "NIST", "firecrawl", "web"], finding="...")
 add_lesson("Magma exits 0 on user errors; require a final done marker.")
 ```
 

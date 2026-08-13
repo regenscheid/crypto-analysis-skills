@@ -21,10 +21,10 @@ the evidence actually licenses.
 ## The one that recurs here
 
 **"No attack was found, therefore it is secure"** is the most frequent of these in
-this workbench, and it has already been written into two places independently:
-the `breaks` connector answers a miss with *"absence is not evidence of
-security"*, and `verify-claim`'s failure mode 5 records three negatives concluded
-from an incomplete look in a single session.
+this workbench, and it has been written into the tooling more than once
+independently: a corpus miss is reported as *"absence is not evidence of
+security"* rather than as a result, and `verify-claim`'s failure mode 5 records
+three negatives concluded from an incomplete look in a single session.
 
 The reason it recurs is structural rather than careless. A search that finds
 nothing produces no artifact — there is nothing to cite, nothing to attach, and

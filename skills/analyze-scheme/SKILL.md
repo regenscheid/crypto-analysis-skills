@@ -242,7 +242,7 @@ FileExistsError: [Errno 17] File exists: '/Users/<you>/.sage/'
 
 `exist_ok=True` raises only when the path exists and is not a directory. From a
 terminal `~/.sage` is an ordinary directory and this never happens; inside the
-app's bash it does. Same family as `connectors/pdftext.py`'s absolute
+app's bash it does. Same family as a PDF-extraction helper hard-coding absolute
 `POPPLER_PATHS` — **the app's execution environment is not your terminal's**, and
 a thing that works in one can fail in the other. The workbench keeps a writable
 Sage home under the granted path for exactly this. Measured 2026-08-04 in the

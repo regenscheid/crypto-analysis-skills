@@ -72,10 +72,16 @@ firecrawl-mcp_firecrawl_search  the forum post or comment that is not a paper
 e-print-mcp_search_eprint       the published attack, if there is one
 ```
 
-If the attack is already on disk, read it instead of rebuilding it. **25 of the
-51 schemes `breaks` covers have no ePrint paper naming them** — the cryptanalysis
-was a `pqc-forum` post or an official comment, so `e-print-mcp_search_eprint` will not find
-it and the only other route is memory.
+If the attack is already published, read it instead of rebuilding it. **For
+roughly half of the schemes in a standardization round, the cryptanalysis was
+never a paper** — it was a `pqc-forum` post or an official comment, so
+`e-print-mcp_search_eprint` will not find it however well you phrase the query.
+
+A miss there is therefore not evidence of no attack. Two channels reach that
+material: the NIST round reports, which say why a scheme did not advance
+(`nist-mcp_search_csrc`), and a web search for the forum thread itself
+(`firecrawl-mcp_firecrawl_search`). Do not fall back on memory for this — it is
+the case where recall is least reliable and hardest to check.
 
 ## Step 1 — State the attack precisely enough to be wrong
 
@@ -211,7 +217,7 @@ add_entry(statement="<attack> requires <precondition>, which <target> does not m
           kind="attack",
           evidence=[{"kind": "paper", "ref": "…", "note": "preconditions, §3"},
                     {"kind": "computation", "ref": "…", "note": "toy-scale run"}])
-add_gap(question="…", looked_in=["ePrint", "NIST", "breaks", "web"], finding="…")
+add_gap(question="…", looked_in=["ePrint", "NIST", "firecrawl", "web"], finding="…")
 ```
 
 These **append** — never rewrite those files, and never reach for `edit_file` to

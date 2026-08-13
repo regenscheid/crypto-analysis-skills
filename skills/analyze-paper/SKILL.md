@@ -189,7 +189,7 @@ for _p in (os.environ.get("CRYPTO_SKILLS", ""),
 from knowledge import add_entry, add_gap
 add_entry(statement="…", kind="notion",
           evidence=[{"kind": "paper", "ref": "…", "note": "theorem 3, ROM"}])
-add_gap(question="…", looked_in=["ePrint", "NIST", "breaks", "web"], finding="…")
+add_gap(question="…", looked_in=["ePrint", "NIST", "firecrawl", "web"], finding="…")
 ```
 
 These **append** — never rewrite those files, and never reach for `edit_file` to

@@ -183,8 +183,8 @@ attack to UOV and its variants.
 ## Linear Equivalence — `LEEstimator`
 
 `Leon`, `Beullens`, `BBPS`. Underlies **LESS**. Note this reference set and the ePrint
-connector both record that "LESS" collides with the English word in search — see
-`connectors/eprint/corpus.py` SYNONYMS.
+connector both record that "LESS" collides with the English word in search, which
+is why the corpus expands it as a domain acronym rather than a plain token.
 
 Both enumerated from the API; **costs not measured here.**
 
