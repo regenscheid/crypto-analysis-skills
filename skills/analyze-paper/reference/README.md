@@ -1,7 +1,7 @@
 # Security definitions, as checkable obligations
 
-Layer 3 of `docs/ROADMAP.md`. Ships with `analyze-paper`, which runs
-[`mismatches.md`](mismatches.md) as its checklist. Also consulted by
+Ships with `analyze-paper`, which runs [`mismatches.md`](mismatches.md) as its
+checklist. Also consulted by
 `verify-claim` when a claim turns on a notion being met, and by `analyze-scheme`
 for the NIST category ladder.
 
@@ -19,15 +19,10 @@ have to read the seven hash notions to find its own obligations.
 | [`mismatches.md`](mismatches.md) | The checklist `analyze-paper` runs — twelve recurring findings |
 
 
-**These are not here to teach a cryptographer what IND-CCA2 means.** They are
-here because of a measured failure mode: models "mimic the syntactic structure
-of proof languages … without truly underlying mathematical principles, such as
-the precise meaning of 'one-way function', 'pseudorandom', 'computationally
-indistinguishable'" ([AICrypto §5](https://arxiv.org/abs/2507.09580); see
-`docs/ROADMAP.md` §3, failure class 2). The observed failure is **not ignorance
-of a definition — it is asserting a definition is satisfied without evaluating
-it.** A glossary does not help with that. A list of obligations that must each
-be discharged does.
+**These are not here to teach a cryptographer what IND-CCA2 means.** They address
+a measured failure mode: asserting that a definition is satisfied without
+evaluating its obligations. A glossary does not help with that; a list of
+obligations that must each be discharged does.
 
 So every notion below is written as:
 

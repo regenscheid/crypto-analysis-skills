@@ -1,8 +1,8 @@
 # Attack families: multivariate and code-based
 
-UOV, MQ, MinRank, Permuted Kernel, Linear Equivalence. Layer 3 of
-`docs/ROADMAP.md`, consumed by `analyze-scheme` steps 3–4. Companion to
-`lattice.md`; the same rule applies:
+UOV, MQ, MinRank, Permuted Kernel, and Linear Equivalence. Load this checklist
+for the multivariate/code-family coverage phase of `analyze-scheme`. It is a
+companion to `lattice.md`; the same rule applies:
 
 > **Walk every family. Check each family's preconditions *before* running it.
 > Report the cheapest, not the familiar one.**
@@ -198,8 +198,8 @@ small instance end-to-end for `validate-attack` — bottoms out in a Gröbner
 engine, and **Magma's F4 is materially faster than Sage's route through
 Singular** on large systems over F_q.
 
-That is the entire justification for the remote Magma host (`docs/ROADMAP.md`
-M4), now connected and reached via `compute_submit` — see `skills/magma/`.
+That is the justification for using the optional remote Magma host through the
+`magma` skill.
 Without it:
 
 - **Estimation** works fully, locally, today — this file.

@@ -1,22 +1,21 @@
 # Sage idioms for cryptanalysis
 
-Layer 3 of `docs/ROADMAP.md`. Organised by **task**, not by API surface — the
-failure this addresses is not "doesn't know `GroebnerBasis`", it is not knowing
-how to set a problem up so the tool answers the question you meant.
+Organised by **task**, not by API surface. The failure this addresses is not
+"doesn't know `GroebnerBasis`"; it is not knowing how to set up a problem so the
+tool answers the intended question.
 
 ## The rule for this file
 
 > **Every snippet here was executed and its real output captured. Nothing is
 > written from memory.**
 
-`docs/ROADMAP.md` names this file as **the single largest hallucination risk in
-the plan**: plausible, subtly wrong Sage laundered into confident output. So
-each entry shows what it actually printed on this machine. If you add an entry,
-run it first.
+Plausible, subtly wrong Sage is a major hallucination risk. Each entry therefore
+shows what it actually printed on the measured environment. If you add an
+entry, run it first.
 
 **Stack** — `SageMath 10.7`, `Python 3.11.15`, the Claude Science `sage` env.
-There are two SageMaths on this machine and they are not the same one; see
-`docs/ENVIRONMENTS.md`. Print provenance with results:
+There may be multiple SageMath installations on a host. Print provenance with
+results:
 
 ```python
 version(); import sys; sys.version_info[:3]

@@ -1,9 +1,9 @@
 # What this environment does and does not permit
 
 > Part of `investigate`. **These are properties of Claude Science, not of this
-> workbench** — they stay true on someone else's machine, which is why they ship
-> here rather than living in `knowledge.md`. Every one was measured, and several
-> were measured only after a wrong assumption had already cost a day.
+> workbench.** Runtime behavior can change between releases, so re-run the
+> behavioral probes when the CScience pin changes. Several entries were measured
+> only after a wrong assumption had already cost a day.
 
 Read this when something fails in a way that looks like a bug in your code. Most
 of the entries below were first diagnosed as the wrong problem entirely.
@@ -15,14 +15,15 @@ have nothing to do with each other.
 
 | symptom | what it means | what fixes it |
 |---|---|---|
-| `HTTP 000`, or `Tunnel connection failed: 403` | the **proxy refused CONNECT** — the request never reached the host | a network-access grant, asked for by the **root** conversation |
+| `HTTP 000`, or `Tunnel connection failed: 403` | the **proxy refused CONNECT** — the request never reached the host | a network-access grant requested by the active root or child that needs it |
 | a plain `HTTPError 403` / `404` | the request **did reach the host**, which refused it | usually your request, not a grant — see the user-agent note below |
 | `Operation not permitted` | **filesystem**, not network | a path grant, or the wrong kernel (below) |
 
 `HTTP 000` is not an HTTP status. It is curl reporting that no request completed.
-**Do not ask for a network grant before establishing which of these you have.** A
-delegated track once burned 7.7 hours waiting on a grant that would have fixed
-only half its problem, because both errors arrived together and were read as one.
+**Do not ask for a network grant before establishing which of these you have.**
+An older deployment once left a delegated request parked for 7.7 hours, but
+current 0.1.27 probes show working child cards. Treat that incident as a reason
+to test each runtime pin, not as a current parent-only rule.
 
 **A plain 403 is often the user-agent.** Measured against a NIST host: a default
 `Python-urllib/3.x` user-agent gets 403, no user-agent at all gets 200, a
@@ -91,28 +92,49 @@ not impossible. The measurement was right; the conclusion drawn from it was not.
 The error was stopping at the first mechanism that failed instead of asking what
 else could carry the same payload.
 
-## A subagent has no channel to a human
+## Root and child control surfaces are deliberately different
 
-This is the one that costs hours rather than minutes, because it fails
-**silently**.
+`generate_plan` is root-only. A child linked by an exact delegation-name match
+receives only that track's Plan Steps and updates those exact titles itself. An
+unmatched child is ad hoc and receives no plan context. The root must not claim
+or duplicate a linked child's status updates.
 
-`generate_plan` is not in a subagent's toolset at any access level. Neither is any
-route to a person. `request_network_access` asks *your parent* — and a subagent's
-parent is another agent, so nothing answers. Measured: a delegated track requested
-a domain, blocked **7.7 hours**, produced zero artifacts, and was killed; the
-request never received a verdict of any kind. The root conversation asking for a
-different domain the same day was granted within one message.
+A delegated child is a leaf: `host.delegate` is refused, `host.collect` is not
+in its SDK, and `host.children()` is empty. It can message its direct parent with
+`host.send_message("parent", ...)`, but it cannot message or stop a sibling.
+Project-wide frame reads are broader than mutation topology, so seeing a frame
+does not imply permission to control it. A mutation API's “not found” can mean
+topologically unreachable rather than globally absent.
 
-**Anything ending in a person deciding — an approval, a grant, a scope call, a
-permission — belongs to the root.** A subagent that needs one records it, keeps
-working, and surfaces it where the parent will read it.
+`host.capabilities()` reports the `host.*` SDK, not top-level tools such as
+`ask_user` or `update_step_status`. Attribute introspection is also unreliable
+for policy-gated methods. A child's Current Context has also advertised the root
+frame id in measured runs; use `"parent"` or returned delegation descriptors for
+routing and use a bounded probe for capability checks.
 
-There is **no verified parent→child message channel.** `host.send_message` appears
-in delegation briefs and has never once been invoked across thousands of host
-calls — treat it as unproven. What is proven: `delegate`, `collect`, `stop_child`,
-`list_running_children`, and `ask_user` (the root's route to a human). So get a
-grant *before* delegating, let the child retry on a later pass, or `stop_child`
-and re-delegate.
+## Child human gates work, and parked messages fail closed
+
+In the tested 0.1.27 runtime, a child can call `ask_user`,
+`request_network_access`, or `request_host_access` directly. Two children can
+hold `ask_user` cards concurrently; answers remain associated with their own
+frames, both children resume, and collection preserves the association.
+
+All three human-gated parks enter `awaiting_user_response`. If the parent calls
+`host.send_message` while the child is parked, the receipt has `status: "failed"`
+and an error naming `(ask)`, `(network)`, or `(host)`. The call does not raise,
+deliver or queue the message, inject an answer, deny the request, or dismiss the
+card. The correct parent behavior is `wait_for_notification()` followed by
+collection after the user acts. Always inspect the receipt: `status: "injected"`
+means the child resumed before the send and the parked-state race was missed.
+
+The user verdict returns only through the child's original gated call. A direct
+tool verdict is authoritative and a later contradictory parent message cannot
+manufacture a grant. Host-path validation can fail synchronously before any card
+appears. An `<error>` transcript heading marks a failed tool result; it is not
+part of the returned JSON payload. A child may instead ask the parent for
+reasoning before it opens a card; that is ordinary direct-parent messaging, not
+a way to answer an existing gate. Exact call patterns are in
+`claude-science.md`.
 
 ## The research tools are a REMOTE server, and that is why they work
 
@@ -136,15 +158,22 @@ Two consequences worth holding:
 
 Measured, and most of it is not what the naming suggests:
 
-- A new conversation sees **all** the project's artifacts; `list_artifacts()`
-  needs no scoping argument. Conversation-scoping is a default, not a wall.
+- A new conversation can discover project artifacts through `host.artifacts()`;
+  use its project, frame, filename, or search filters when scope matters.
+  Conversation-scoping is a default, not a wall.
 - The ids it returns are **version ids**, not artifact ids. Saving by a version id
   resolves to the parent artifact and appends a new version — verified across
   conversations.
 - Saving by **filename** is what forks silently: the same name can end up as two
   separate artifacts.
-- `{{artifact:<version_id>}}` in a delegation brief expands to a filesystem path,
-  and a subagent can read it with plain `open()`.
+- For a computed id, `host.artifact_marker(version_id)` returns the marker to put
+  in a delegation brief; it expands in the child's workspace, and the child can
+  read it with plain `open()`. A literal marker authored inside a parent `repl`
+  cell can pre-resolve before the task string exists and is not the safe pattern.
+- Relative parent workspace paths fail in a child's separate workspace.
+- `host.lineage[version_id]` and `host.lineage.graph(version_id)` are the source
+  of truth for producing-frame and dependency provenance. An artifact listing
+  can show `frame_id: None` even when lineage records the child producer.
 - Every version is a **separate immutable file**, so there is **no append**. Each
   write is a whole new version, which means concurrent writers each write from
   their own snapshot and the later silently discards the earlier. **Single-writer

@@ -1,0 +1,431 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Public-Key Cryptanalysis Attack Record",
+  "type": "object",
+  "required": [
+    "attack_id",
+    "target",
+    "result_type",
+    "model",
+    "scope",
+    "complexity",
+    "evidence",
+    "status"
+  ],
+  "properties": {
+    "attack_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "source": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "citation": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "locator": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "artifact_hash": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "target": {
+      "type": "object",
+      "properties": {
+        "scheme": {
+          "type": "string"
+        },
+        "function": {
+          "enum": [
+            "pke",
+            "kem",
+            "signature",
+            "key-agreement",
+            "identification",
+            "proof-system",
+            "other"
+          ]
+        },
+        "artifact": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "parameter_set": {
+          "type": "string"
+        },
+        "key_format": {
+          "type": "string"
+        },
+        "implementation": {
+          "type": "string"
+        },
+        "components": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "family": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "attack_class": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "result_type": {
+      "enum": [
+        "mathematical-algorithm",
+        "structural-distinguisher",
+        "assumption-separation",
+        "factorization",
+        "discrete-log",
+        "private-key-recovery",
+        "partial-key-recovery",
+        "plaintext-recovery",
+        "shared-secret-recovery",
+        "decapsulation-key-recovery",
+        "signature-forgery",
+        "impersonation",
+        "key-compromise-impersonation",
+        "unknown-key-share",
+        "forward-secrecy-failure",
+        "decryption-failure",
+        "correctness-failure",
+        "proof-gap",
+        "parameter-shortfall",
+        "implementation-interface-failure",
+        "other"
+      ]
+    },
+    "claim_addressed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "model": {
+      "type": "object",
+      "properties": {
+        "security_notions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "oracles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "session_queries": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "corruptions_and_reveals": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "input_control": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "random_oracle_access": {
+          "enum": [
+            "none",
+            "classical",
+            "quantum-superposition",
+            "unspecified"
+          ]
+        },
+        "classical_quantum": {
+          "type": "string"
+        },
+        "online_offline": {
+          "type": "string"
+        },
+        "leakage_or_faults": {
+          "type": "string"
+        },
+        "multi_user_targets": {
+          "type": "string"
+        }
+      }
+    },
+    "mathematical_instance": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "scope": {
+      "type": "object",
+      "properties": {
+        "full_or_reduced": {
+          "type": "string"
+        },
+        "weak_key_fraction": {
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "malformed_inputs": {
+          "type": "boolean"
+        },
+        "key_reuse": {
+          "type": "string"
+        },
+        "restrictions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "attack_skeleton": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "requirement": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "satisfied",
+              "partially-satisfied",
+              "absent",
+              "unknown",
+              "not-applicable"
+            ]
+          }
+        }
+      }
+    },
+    "complexity": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "string"
+        },
+        "oracle_queries": {
+          "type": "string"
+        },
+        "time": {
+          "type": "string"
+        },
+        "arithmetic_operations": {
+          "type": "string"
+        },
+        "bit_complexity": {
+          "type": "string"
+        },
+        "memory": {
+          "type": "string"
+        },
+        "preprocessing": {
+          "type": "string"
+        },
+        "communication": {
+          "type": "string"
+        },
+        "verification": {
+          "type": "string"
+        },
+        "parallelism": {
+          "type": "string"
+        },
+        "quantum_gates": {
+          "type": "string"
+        },
+        "logical_qubits": {
+          "type": "string"
+        },
+        "depth": {
+          "type": "string"
+        },
+        "units_and_cost_model": {
+          "type": "string"
+        }
+      }
+    },
+    "success": {
+      "type": "object",
+      "properties": {
+        "probability": {
+          "type": "string"
+        },
+        "advantage": {
+          "type": "string"
+        },
+        "false_positive_rate": {
+          "type": "string"
+        },
+        "confidence_interval": {
+          "type": "string"
+        },
+        "failure_conditions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "generic_baseline": {
+      "type": "object",
+      "properties": {
+        "baseline": {
+          "type": "string"
+        },
+        "comparison": {
+          "type": "string"
+        }
+      }
+    },
+    "reduction_and_assumptions": {
+      "type": "object",
+      "properties": {
+        "advertised_assumption": {
+          "type": "string"
+        },
+        "attacked_problem": {
+          "type": "string"
+        },
+        "reduction_direction": {
+          "type": "string"
+        },
+        "losses": {
+          "type": "string"
+        },
+        "gap": {
+          "type": "string"
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "properties": {
+        "proof": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "simulation": {
+          "type": "string"
+        },
+        "solver_certificate": {
+          "type": "string"
+        },
+        "independent_reproduction": {
+          "type": "string"
+        },
+        "test_vectors": {
+          "type": "string"
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string"
+          },
+          "locator": {
+            "type": "string"
+          },
+          "artifact": {
+            "type": "string"
+          },
+          "hash": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "uncertainties": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "enum": [
+        "idea",
+        "derived",
+        "implemented",
+        "experimentally-validated",
+        "independently-reproduced",
+        "refuted",
+        "superseded",
+        "inconclusive"
+      ]
+    },
+    "lineage": {
+      "type": "object",
+      "properties": {
+        "source_attack_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "adaptation_notes": {
+          "type": "string"
+        },
+        "supersedes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

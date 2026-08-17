@@ -18,14 +18,6 @@ errors — most papers are correct and still support a weaker claim than the one
 that gets repeated about them. **The commonest real finding is not a wrong proof;
 it is a right proof of a different statement.**
 
-This project's own first end-to-end run is the worked example. The question was
-whether an ePrint attack was valid and what it threatened; the answer was **a
-valid conditional asymptotic theorem, not a break** — reached by quantifying the
-`o(1)` the paper left unquantified, pricing the constant the author declined to
-compute, and finding that the crossover parameter moved from `log₂p = 79` to
-**208–262**. Same theorem, entirely different consequence. See
-`docs/pilot-results.md`.
-
 ## Which skill this is
 
 - **`analyze-paper`** — does the argument support the claims? Paper-level.
@@ -40,10 +32,9 @@ A full paper audit is a pipeline, and that is exactly the shape `generate_plan` 
 parallel directions become `delegations` in a phase, and the human approves the
 approach once instead of discovering it at the end.
 
-**But every plan blocks on approval**, so skip it for a single theorem checked
-against a single notion. The threshold, the schema, `update_step_status`, and how
-to amend a plan without discarding it are all in `investigate` §1b — follow that
-rather than a second copy of the rule here.
+Skip planning for a single theorem checked against a single notion. Follow
+`investigate`'s **Plan without stalling** rule and, in Claude Science, its
+`reference/claude-science.md` adapter rather than duplicating host mechanics.
 
 ## Step 0 — Read what is already known
 

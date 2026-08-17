@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Public-Key Scheme Design and Assumption Graph",
+  "type": "object",
+  "required": [
+    "target",
+    "nodes",
+    "edges"
+  ],
+  "properties": {
+    "target": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "label"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "algorithm",
+              "algebraic-object",
+              "distribution",
+              "encoding",
+              "boundary",
+              "transform",
+              "assumption",
+              "claim",
+              "implementation",
+              "oracle",
+              "failure-event",
+              "other"
+            ]
+          },
+          "label": {
+            "type": "string"
+          },
+          "artifact_locator": {
+            "type": "string"
+          },
+          "parameters": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source",
+          "target",
+          "relation"
+        ],
+        "properties": {
+          "source": {
+            "type": "string"
+          },
+          "target": {
+            "type": "string"
+          },
+          "relation": {
+            "type": "string"
+          },
+          "condition": {
+            "type": "string"
+          },
+          "quantitative_effect": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

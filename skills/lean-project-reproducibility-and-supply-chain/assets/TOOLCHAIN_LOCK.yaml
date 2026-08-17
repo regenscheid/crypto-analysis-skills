@@ -1,0 +1,24 @@
+version: "1.0"
+reviewed_on: "2026-08-16"
+platform:
+  os: ""
+  architecture: ""
+components: []
+# Each component should contain:
+# - name
+# - version
+# - source_url
+# - commit_or_digest
+# - package_hash
+# - role
+# - trusted: true|false|conditional
+solvers: []
+certificate_checkers: []
+compilers_and_extractors: []
+proof_libraries: []
+containers_or_derivations: []
+build_environment:
+  environment_variables: {}
+  network_policy: ""
+  locale: ""
+  reproducibility_notes: ""

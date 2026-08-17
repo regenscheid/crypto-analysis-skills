@@ -1,0 +1,651 @@
+{
+  "id_contract": "skill_id is exactly the Agent Skill name from SKILL.md frontmatter",
+  "schema_version": 1,
+  "skill_count": 161,
+  "skills": [
+    {
+      "domain": "formal",
+      "skill_id": "aeneas-charon-rust-to-lean"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "algebraic-sat-smt-cp-and-cube-analysis"
+    },
+    {
+      "domain": "core",
+      "skill_id": "analyze-paper"
+    },
+    {
+      "domain": "core",
+      "skill_id": "analyze-scheme"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "arx-differential-rotational-rx-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "automated-algebra-and-search-model-builder"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "automated-search-model-builder"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "bitvector-equivalence-and-sat-lowering"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "boomerang-and-rectangle-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "code-and-matrix-equivalence-signature-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "code-based-failure-and-reaction-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "code-based-kem-and-pke-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "code-based-signature-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "code-based-structural-and-qc-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "composite-residuosity-and-homomorphic-pke-analysis"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "computer-algebra-witness-certification"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "constant-time-and-leakage-verification"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "counterexample-guided-formalization"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "creusot-why3-rust-verification"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "cross-prover-evidence-packaging"
+    },
+    {
+      "domain": "core",
+      "skill_id": "crypto-review"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "cryptographic-security-game-definition"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "cryptoline-arithmetic-implementation-verification"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "cryptopt-verified-arithmetic-optimization"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "cryptoverif-computational-protocol-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "decryption-failure-and-reaction-analysis"
+    },
+    {
+      "domain": "core",
+      "skill_id": "derive-cost"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "differential-family-analysis"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "differential-linear-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "digital-signature-forgery-and-malleability-analysis"
+    },
+    {
+      "domain": "core",
+      "skill_id": "discover-cryptanalysis"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "distinguisher-to-key-recovery-extension"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "easycrypt-proof-development"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "elliptic-curve-discrete-log-and-ecc-analysis"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "empirical-statistical-and-heuristic-claim-separation"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "evidence-trust-and-tcb-audit"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "exact-probability-counting-and-tail-bound-certification"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "exhaustive-search-completeness-proof"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "fiat-crypto-and-verified-arithmetic-synthesis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "fiat-shamir-identification-and-qrom-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "finite-field-discrete-log-and-dh-analysis"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "finite-search-model-and-encoding-validation"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "floating-point-and-rounding-error-verification"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "formal-claim-and-model-authoring"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "formal-methods-campaign-orchestration"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "formal-methods-router"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "formalization-value-and-scope-triage"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "fstar-hacl-evercrypt-and-vale"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "game-hopping-and-hybrid-proof"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "generic-baseline-and-security-level-calculator"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "generic-baseline-calculator"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "generic-group-and-collision-search-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "hard-problem-reduction-and-assumption-auditor"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "hardware-circuit-and-hdl-equivalence-verification"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "hash-and-permutation-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "hash-based-signature-analysis"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "hax-multibackend-rust-verification"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "hidden-order-class-group-and-vdf-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "homomorphic-encryption-and-noise-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "hybrid-combiner-and-composition-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "identity-and-attribute-based-encryption-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "implementation-interface-and-encoding-auditor"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "implementation-refinement-and-equivalence"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "impossible-differential-and-zero-correlation-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "information-set-decoding-and-generic-decoding-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "integer-factorization-and-rsa-analysis"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "integral-and-division-property-analysis"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "interactive-proof-state-operation"
+    },
+    {
+      "domain": "core",
+      "skill_id": "investigate"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "isabelle-crypthol-proof-development"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "isogeny-and-quaternion-signature-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "isogeny-hard-problem-and-group-action-analysis"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "jasmin-easycrypt-high-assurance-crypto"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "kem-transform-and-cca-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "key-agreement-and-ake-protocol-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "key-validation-subgroup-and-invalid-input-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "lattice-hard-problem-and-estimator-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "lattice-kem-and-pke-analysis"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "lattice-witness-and-bound-certification"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "lean-agent-integration-pantograph-leandojo"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "lean-bitvectors-and-word-arithmetic"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "lean-certificate-import-and-reflection"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "lean-cryptographic-formalization"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "lean-finite-algebra-and-number-theory"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "lean-metaprogramming-and-custom-tactics"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "lean-probability-combinatorics-and-bounds"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "lean-project-reproducibility-and-supply-chain"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "linear-family-analysis"
+    },
+    {
+      "domain": "core",
+      "skill_id": "magma"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "mitm-dissection-and-biclique-analysis"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "mode-mac-and-aead-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "module-lattice-signature-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "mpc-in-the-head-signature-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "multi-user-multi-target-and-batch-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "multivariate-public-key-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "nonce-randomness-and-hidden-number-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "noncommutative-and-group-based-cryptanalysis"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "normative-specification-to-executable-model"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "ntru-and-falcon-analysis"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "optimization-and-optimality-certification"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "pairing-based-and-extension-field-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "parameter-estimator-and-cost-model-auditor"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "pke-security-and-adaptive-oracle-analysis"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "premise-retrieval-and-lemma-search"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "primitive-structure-and-assumption-mapper"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "probabilistic-program-coupling-and-relational-reasoning"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "proof-artifact-replay-and-publication"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "proof-obligation-and-lemma-planning"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "proof-repair-and-maintenance"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "proverif-symbolic-protocol-analysis"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "pseudo-boolean-veripb-certification"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "public-key-attack-complexity-and-success-auditor"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "public-key-attack-hypothesis-generator-and-triage"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "public-key-attack-transfer-and-adaptation"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "public-key-cryptanalysis-orchestrator"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "public-key-evidence-synthesis-and-research-backlog"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "public-key-literature-attack-extractor"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "public-key-reproduction-and-falsification-planner"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "public-key-security-model-and-claim-formalizer"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "qrom-and-post-quantum-proof-modeling"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "quantum-algorithm-circuit-and-resource-verification"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "quantum-public-key-attack-analysis"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "quantum-symmetric-attack-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "rank-metric-code-analysis"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "rebound-analysis"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "reduction-tightness-and-concrete-security"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "reflective-decision-procedure-design"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "related-key-and-tweakey-analysis"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "rocq-foundational-cryptography-and-ssprove"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "sat-lrat-certification"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "saw-cryptol-program-refinement"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "scheme-structure-and-assumption-mapper"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "security-model-and-claim-formalizer"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "security-proof-and-bound-auditor"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "security-proof-rom-qrom-and-tightness-auditor"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "shannonprover-agentic-easycrypt"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "sidh-sike-active-and-structural-attack-analysis"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "slide-invariant-subspace-and-symmetry-analysis"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "smt-proof-production-and-reconstruction"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "specification-validation-and-vacuity-audit"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "squirrel-computational-and-pq-protocol-proof"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "stream-cipher-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "structured-ring-and-ideal-lattice-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "subset-sum-and-knapsack-analysis"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "symcrypt-verified-crypto-workflow"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "symmetric-attack-complexity-and-success-auditor"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "symmetric-attack-hypothesis-generator-and-triage"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "symmetric-attack-transfer-and-adaptation"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "symmetric-cryptanalysis-orchestrator"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "symmetric-evidence-synthesis-and-research-backlog"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "symmetric-literature-attack-extractor"
+    },
+    {
+      "domain": "symmetric",
+      "skill_id": "symmetric-reproduction-and-falsification-planner"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "tamarin-symbolic-protocol-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "threshold-multisignature-and-aggregate-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "trapdoor-sampling-distribution-and-rejection-analysis"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "uov-oil-and-vinegar-analysis"
+    },
+    {
+      "domain": "core",
+      "skill_id": "validate-attack"
+    },
+    {
+      "domain": "core",
+      "skill_id": "verify-claim"
+    },
+    {
+      "domain": "formal",
+      "skill_id": "verus-rust-verification"
+    },
+    {
+      "domain": "public-key",
+      "skill_id": "vole-in-the-head-and-proof-derived-signature-analysis"
+    },
+    {
+      "domain": "core",
+      "skill_id": "workbench-knowledge"
+    }
+  ]
+}

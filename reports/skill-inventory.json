@@ -1,0 +1,1304 @@
+{
+  "description_words": 4917,
+  "errors": 0,
+  "schema_version": 1,
+  "skill_body_lines": 13088,
+  "skill_count": 161,
+  "skills": [
+    {
+      "description": "Extracts supported Rust through Charon and Aeneas into Lean and proves panic freedom, functional correctness, and refinement against independent cryptographic specifications.",
+      "description_words": 21,
+      "domain": "formal",
+      "lines": 89,
+      "missing_relative_links": [],
+      "name": "aeneas-charon-rust-to-lean"
+    },
+    {
+      "description": "Models symmetric primitives as equations or exact constraints, evaluates solver/cube attacks, and separates concrete solver success from scalable cryptanalytic claims. Use when: The target has low-degree Boolean structure, sparse equations, exploitable initialization, controllable public variables, or a solver may recover key/state or certify structural properties.",
+      "description_words": 45,
+      "domain": "symmetric",
+      "lines": 62,
+      "missing_relative_links": [],
+      "name": "algebraic-sat-smt-cp-and-cube-analysis"
+    },
+    {
+      "description": "Work out whether a paper proves what it claims \u2014 separate the informal claim from the theorem, name the notion and the model, run the mismatch checklist, carry the reduction's loss into the concrete parameters, and say which claims are worth settling. Use when handed a paper, a preprint, or a security argument and asked whether it holds, what it threatens, or whether a scheme's claimed level follows from it.",
+      "description_words": 70,
+      "domain": "core",
+      "lines": 204,
+      "missing_relative_links": [],
+      "name": "analyze-paper"
+    },
+    {
+      "description": "Map the complete attack surface of a cryptographic scheme by fixing its claims and parameters, identifying underlying problems and added structure, checking every applicable attack family and its preconditions, recomputing costs in named models, and locating thin margins or promising deviations. Use for new or modified schemes, parameter-security claims, NIST-category checks, construction reviews, attack prioritization, or the baseline phase of an active search for weaknesses. Covers public-key, lattice, multivariate, symmetric, and hash targets.",
+      "description_words": 73,
+      "domain": "core",
+      "lines": 135,
+      "missing_relative_links": [],
+      "name": "analyze-scheme"
+    },
+    {
+      "description": "Analyzes addition\u2013rotation\u2013XOR designs with exact carry-aware differential models, rotational/RX properties, constants, key schedules, and hybrid attacks. Use when: The target is dominated by modular addition/subtraction, rotation, and XOR, or when XOR-only trail models fail to capture carries and rotational structure.",
+      "description_words": 40,
+      "domain": "symmetric",
+      "lines": 62,
+      "missing_relative_links": [],
+      "name": "arx-differential-rotational-rx-analysis"
+    },
+    {
+      "description": "Builds and validates SageMath, Gr\u00f6bner-basis, SAT/SMT, CP-SAT, MILP, lattice, decoding, MinRank, or graph-search models for public-key cryptanalysis, with semantic cross-checks and certificates.",
+      "description_words": 22,
+      "domain": "public-key",
+      "lines": 59,
+      "missing_relative_links": [],
+      "name": "automated-algebra-and-search-model-builder"
+    },
+    {
+      "description": "Selects, constructs, validates, and audits exact or relaxed automated models for symmetric-cryptanalysis searches. Use when: Searching differential/linear trails, integral/division properties, impossible transitions, ARX characteristics, boomerang components, algebraic solutions, meet-in-the-middle cuts, or other combinatorial structures with a solver or custom search.",
+      "description_words": 40,
+      "domain": "symmetric",
+      "lines": 63,
+      "missing_relative_links": [],
+      "name": "automated-search-model-builder"
+    },
+    {
+      "description": "Proves equivalence of fixed-width cryptographic functions or lowers precise bit-vector semantics to SAT while preserving word operations, undefined behavior, and the connection to original algorithms.",
+      "description_words": 25,
+      "domain": "formal",
+      "lines": 84,
+      "missing_relative_links": [],
+      "name": "bitvector-equivalence-and-sat-lowering"
+    },
+    {
+      "description": "Builds boomerang, amplified-boomerang, and rectangle attacks with dependence-aware middle transitions and quartet-level data accounting. Use when: No single long differential is strong enough, but the cipher can be split into upper and lower regions with useful differentials whose middle interaction may form quartets.",
+      "description_words": 43,
+      "domain": "symmetric",
+      "lines": 60,
+      "missing_relative_links": [],
+      "name": "boomerang-and-rectangle-analysis"
+    },
+    {
+      "description": "Analyzes signatures and identification schemes based on linear/code equivalence, matrix-code equivalence, and related isomorphism/group-action problems, including LESS- and MEDS-like designs, canonical forms, stabilizers, structural invariants, and Fiat\u2013Shamir soundness.",
+      "description_words": 28,
+      "domain": "public-key",
+      "lines": 61,
+      "missing_relative_links": [],
+      "name": "code-and-matrix-equivalence-signature-analysis"
+    },
+    {
+      "description": "Analyzes decoding failures, decoder iteration behavior, rejection sampling, error generation, and externally visible reaction oracles in code-based KEM/PKE systems, with emphasis on sparse/QC/MDPC decoders and implicit-rejection transforms.",
+      "description_words": 27,
+      "domain": "public-key",
+      "lines": 60,
+      "missing_relative_links": [],
+      "name": "code-based-failure-and-reaction-analysis"
+    },
+    {
+      "description": "Analyzes Hamming-metric code-based PKE/KEMs\u2014including McEliece/Niederreiter, Classic McEliece, QC-MDPC/BIKE-like systems, and HQC\u2014through decoding, hidden-code structure, key indistinguishability, quasi-cyclic algebra, decryption failures, reaction attacks, and CCA transforms.",
+      "description_words": 25,
+      "domain": "public-key",
+      "lines": 64,
+      "missing_relative_links": [],
+      "name": "code-based-kem-and-pke-analysis"
+    },
+    {
+      "description": "Analyzes hash-and-sign, syndrome-decoding, identification-derived, and structured code-based signatures through decodable-syndrome density, complete-decoding cost, rejection distributions, public-code structure, Fiat\u2013Shamir soundness, and forgery/key-recovery attacks.",
+      "description_words": 22,
+      "domain": "public-key",
+      "lines": 62,
+      "missing_relative_links": [],
+      "name": "code-based-signature-analysis"
+    },
+    {
+      "description": "Analyzes hidden-code and structured-code systems for distinguishers, support recovery, filtration/conductor attacks, permutation/scrambler recovery, quasi-cyclic and quasi-dyadic algebra, automorphisms, low-rank representations, and key-equivalent secret codes.",
+      "description_words": 24,
+      "domain": "public-key",
+      "lines": 60,
+      "missing_relative_links": [],
+      "name": "code-based-structural-and-qc-analysis"
+    },
+    {
+      "description": "Analyzes Paillier, Damg\u00e5rd\u2013Jurik, and related composite-residuosity encryption, as well as homomorphic constructions whose security or correctness depends on hidden-order arithmetic, noise management, or malleable ciphertext algebra.",
+      "description_words": 26,
+      "domain": "public-key",
+      "lines": 60,
+      "missing_relative_links": [],
+      "name": "composite-residuosity-and-homomorphic-pke-analysis"
+    },
+    {
+      "description": "Uses SageMath, Singular, FLINT, NTL, or other computer algebra systems for discovery while converting factors, roots, identities, ideal membership, rank, or solution claims into exact independently checkable evidence.",
+      "description_words": 28,
+      "domain": "formal",
+      "lines": 88,
+      "missing_relative_links": [],
+      "name": "computer-algebra-witness-certification"
+    },
+    {
+      "description": "Formalizes and verifies selected noninterference or leakage properties of cryptographic software while keeping source, compiler, machine, microarchitectural, and physical leakage claims distinct.",
+      "description_words": 22,
+      "domain": "formal",
+      "lines": 89,
+      "missing_relative_links": [],
+      "name": "constant-time-and-leakage-verification"
+    },
+    {
+      "description": "Uses executable models, property testing, small-model search, solvers, and failed proof states to refine false or underspecified conjectures before investing in a full proof.",
+      "description_words": 24,
+      "domain": "formal",
+      "lines": 88,
+      "missing_relative_links": [],
+      "name": "counterexample-guided-formalization"
+    },
+    {
+      "description": "Verifies Rust through Creusot and Why3 using source annotations, verification conditions, multiple automated provers, and interactive proof when needed.",
+      "description_words": 19,
+      "domain": "formal",
+      "lines": 86,
+      "missing_relative_links": [],
+      "name": "creusot-why3-rust-verification"
+    },
+    {
+      "description": "Combines results from multiple proof assistants, protocol tools, solvers, and computational checkers without falsely claiming that one system has checked another system\u2019s theorem.",
+      "description_words": 23,
+      "domain": "formal",
+      "lines": 87,
+      "missing_relative_links": [],
+      "name": "cross-prover-evidence-packaging"
+    },
+    {
+      "description": "Check cryptanalytic claims for domain correctness \u2014 cost models, attack preconditions, security-notion misuse, parameter provenance, and citations verified against the ePrint and NIST corpora. Use when reviewing any output that states a security level, an attack cost, a reduction, or cites a cryptography paper.",
+      "description_words": 44,
+      "domain": "core",
+      "lines": 202,
+      "missing_relative_links": [],
+      "name": "crypto-review"
+    },
+    {
+      "description": "Defines adversarial experiments, oracles, resources, success events, advantages, correctness events, and multi-user or quantum variants precisely enough for mechanized security proofs.",
+      "description_words": 21,
+      "domain": "formal",
+      "lines": 88,
+      "missing_relative_links": [],
+      "name": "cryptographic-security-game-definition"
+    },
+    {
+      "description": "Verifies low-level cryptographic arithmetic through algebraic and range specifications, especially multi-precision, finite-field, vectorized, and assembly-level kernels.",
+      "description_words": 16,
+      "domain": "formal",
+      "lines": 85,
+      "missing_relative_links": [],
+      "name": "cryptoline-arithmetic-implementation-verification"
+    },
+    {
+      "description": "Synthesizes or optimizes low-level arithmetic while preserving a formal specification, then validates the generated implementation and compiler/assembly proof chain.",
+      "description_words": 19,
+      "domain": "formal",
+      "lines": 85,
+      "missing_relative_links": [],
+      "name": "cryptopt-verified-arithmetic-optimization"
+    },
+    {
+      "description": "Constructs and checks computational protocol-security proofs through automatically or interactively generated game transformations and explicit probability bounds.",
+      "description_words": 17,
+      "domain": "formal",
+      "lines": 84,
+      "missing_relative_links": [],
+      "name": "cryptoverif-computational-protocol-analysis"
+    },
+    {
+      "description": "Models correctness failures in lattice, code, rank-metric, and other noisy PKE/KEMs; searches for failure-inducing inputs; and evaluates failure boosting, reaction attacks, and transform consequences.",
+      "description_words": 24,
+      "domain": "public-key",
+      "lines": 59,
+      "missing_relative_links": [],
+      "name": "decryption-failure-and-reaction-analysis"
+    },
+    {
+      "description": "Produce a concrete cost for a target nothing has costed yet \u2014 search what is already known, find and read a reduction to a problem that IS costed, instantiate it with real parameters, verify at toy scale, and write the result back as an entry or a gap. Use when an attack's structure is understood but its cost cannot be obtained.",
+      "description_words": 61,
+      "domain": "core",
+      "lines": 241,
+      "missing_relative_links": [],
+      "name": "derive-cost"
+    },
+    {
+      "description": "Finds, evaluates, clusters, validates, and extends XOR, modular, truncated, higher-order, and mixed-domain differential properties. Use when: The target has nonuniform propagation of differences through nonlinear operations, slow diffusion, controllable input structures, useful truncated patterns, or a published differential that may transfer.",
+      "description_words": 41,
+      "domain": "symmetric",
+      "lines": 63,
+      "missing_relative_links": [],
+      "name": "differential-family-analysis"
+    },
+    {
+      "description": "Constructs and validates differential-linear distinguishers and recovery attacks without assuming unjustified independence at the middle connection. Use when: A target admits a relatively likely differential over an early region and a useful linear approximation over a later region, or when the middle connection has exploitable nonlinear dependence.",
+      "description_words": 47,
+      "domain": "symmetric",
+      "lines": 61,
+      "missing_relative_links": [],
+      "name": "differential-linear-analysis"
+    },
+    {
+      "description": "Analyzes classical and post-quantum signatures for EUF/SUF forgery, signature and public-key malleability, key substitution, message/context confusion, batch/aggregate verification issues, and signing-oracle exploitation.",
+      "description_words": 22,
+      "domain": "public-key",
+      "lines": 61,
+      "missing_relative_links": [],
+      "name": "digital-signature-forgery-and-malleability-analysis"
+    },
+    {
+      "description": "Actively search for new or previously missed cryptanalytic weaknesses by combining a complete attack-surface map, independent structure-first reasoning, prior-art extraction, cross-field transfer, proof and interface seams, falsifiable candidate generation, cheap disproof, costing, and independent validation. Use whenever asked to find issues, look hard for weaknesses, search for new attacks, improve known attacks, investigate unexplored directions, or transfer techniques to a cryptographic target. Do not stop at literature review or vague ideas.",
+      "description_words": 71,
+      "domain": "core",
+      "lines": 133,
+      "missing_relative_links": [],
+      "name": "discover-cryptanalysis"
+    },
+    {
+      "description": "Attempts to extend a structural property or distinguisher into a key/state-recovery attack with explicit round boundaries, filtering, ranking, false positives, and verification. Use when: A differential, linear, integral, zero-correlation, impossible, boomerang, algebraic, or other property exists but the security claim concerns key/state recovery or full-round use.",
+      "description_words": 46,
+      "domain": "symmetric",
+      "lines": 63,
+      "missing_relative_links": [],
+      "name": "distinguisher-to-key-recovery-extension"
+    },
+    {
+      "description": "Develops and checks computational cryptographic proofs in EasyCrypt using modules, probabilistic programs, relational judgments, equivalence reasoning, and concrete bounds.",
+      "description_words": 19,
+      "domain": "formal",
+      "lines": 88,
+      "missing_relative_links": [],
+      "name": "easycrypt-proof-development"
+    },
+    {
+      "description": "Analyzes ECC and ECDLP systems through curve/group validation, generic rho/kangaroo attacks, endomorphisms, pairing/anomalous reductions, invalid-curve/twist attacks, scalar distributions, and construction-level ECDSA/EdDSA/ECDH behavior.",
+      "description_words": 22,
+      "domain": "public-key",
+      "lines": 67,
+      "missing_relative_links": [],
+      "name": "elliptic-curve-discrete-log-and-ecc-analysis"
+    },
+    {
+      "description": "Prevents experiments, statistical inference, asymptotic models, estimator output, and heuristic assumptions from being mislabeled as formal proof while showing when they can support or motivate a formal subproblem.",
+      "description_words": 28,
+      "domain": "formal",
+      "lines": 87,
+      "missing_relative_links": [],
+      "name": "empirical-statistical-and-heuristic-claim-separation"
+    },
+    {
+      "description": "Identifies exactly what must be trusted for a formal or certified result and prevents untrusted search, extraction, native evaluation, opaque models, or hidden axioms from being presented as kernel-checked proof.",
+      "description_words": 30,
+      "domain": "formal",
+      "lines": 88,
+      "missing_relative_links": [],
+      "name": "evidence-trust-and-tcb-audit"
+    },
+    {
+      "description": "Derives and checks exact probabilities, combinatorial counts, statistical distances, tail bounds, union bounds, and failure probabilities without silently replacing dependent structure by independence or floating approximations.",
+      "description_words": 26,
+      "domain": "formal",
+      "lines": 88,
+      "missing_relative_links": [],
+      "name": "exact-probability-counting-and-tail-bound-certification"
+    },
+    {
+      "description": "Establishes that an exhaustive or partitioned computation covers the intended finite domain exactly and that its result aggregation is correct, rather than treating a completed program run as self-certifying.",
+      "description_words": 29,
+      "domain": "formal",
+      "lines": 85,
+      "missing_relative_links": [],
+      "name": "exhaustive-search-completeness-proof"
+    },
+    {
+      "description": "Generates and verifies high-performance modular arithmetic from mathematical specifications using Fiat-Crypto and related verified synthesis pipelines.",
+      "description_words": 16,
+      "domain": "formal",
+      "lines": 88,
+      "missing_relative_links": [],
+      "name": "fiat-crypto-and-verified-arithmetic-synthesis"
+    },
+    {
+      "description": "Analyzes identification protocols and Fiat\u2013Shamir signatures for completeness, commitment binding, special soundness, zero knowledge, challenge entropy, grinding, aborts, transcript compression, and classical/QROM extraction.",
+      "description_words": 23,
+      "domain": "public-key",
+      "lines": 59,
+      "missing_relative_links": [],
+      "name": "fiat-shamir-identification-and-qrom-analysis"
+    },
+    {
+      "description": "Analyzes finite-field discrete-logarithm and Diffie\u2013Hellman systems using generic algorithms, subgroup decomposition, index calculus/NFS, parameter precomputation, small-subgroup attacks, and protocol validation.",
+      "description_words": 20,
+      "domain": "public-key",
+      "lines": 64,
+      "missing_relative_links": [],
+      "name": "finite-field-discrete-log-and-dh-analysis"
+    },
+    {
+      "description": "Builds a semantics-first finite cryptanalytic search model and proves or tests the correspondence between target objects and SAT, SMT, PB, MILP, CP, or custom-search encodings before interpreting results.",
+      "description_words": 28,
+      "domain": "formal",
+      "lines": 88,
+      "missing_relative_links": [],
+      "name": "finite-search-model-and-encoding-validation"
+    },
+    {
+      "description": "Builds rigorous models and proofs for floating-point cryptographic computations, rounding modes, approximation error, interval bounds, exceptional behavior, and accumulated numerical effects.",
+      "description_words": 21,
+      "domain": "formal",
+      "lines": 89,
+      "missing_relative_links": [],
+      "name": "floating-point-and-rounding-error-verification"
+    },
+    {
+      "description": "Turns an informal cryptographic or cryptanalytic statement into a typed, version-bound formal target with explicit domains, quantifiers, adversary powers, assumptions, and non-claims.",
+      "description_words": 22,
+      "domain": "formal",
+      "lines": 88,
+      "missing_relative_links": [],
+      "name": "formal-claim-and-model-authoring"
+    },
+    {
+      "description": "Coordinates multiple human or LLM proof workers across an explicit obligation DAG while preserving isolated workspaces, theorem ownership, reproducibility, and independent verification.",
+      "description_words": 22,
+      "domain": "formal",
+      "lines": 87,
+      "missing_relative_links": [],
+      "name": "formal-methods-campaign-orchestration"
+    },
+    {
+      "description": "Chooses whether formalization is worthwhile and, when it is, routes the task to an appropriate proof, certificate, implementation, protocol, or witness workflow without imposing formal methods on ordinary cryptanalysis.",
+      "description_words": 29,
+      "domain": "formal",
+      "lines": 90,
+      "missing_relative_links": [],
+      "name": "formal-methods-router"
+    },
+    {
+      "description": "Assesses whether a proposed formal effort is likely to reduce the important uncertainty, and selects a defensible scope that can be completed and reused.",
+      "description_words": 24,
+      "domain": "formal",
+      "lines": 87,
+      "missing_relative_links": [],
+      "name": "formalization-value-and-scope-triage"
+    },
+    {
+      "description": "Uses the Project Everest stack to specify and verify cryptographic software from Low* and HACL* through agile EverCrypt composition and Vale assembly, with explicit extraction, memory-safety, functional-correctness, and leakage assumptions.",
+      "description_words": 30,
+      "domain": "formal",
+      "lines": 90,
+      "missing_relative_links": [],
+      "name": "fstar-hacl-evercrypt-and-vale"
+    },
+    {
+      "description": "Constructs and verifies sequences of exact, computational, and statistical game transformations with explicit bad events, simulators, and accumulated loss.",
+      "description_words": 19,
+      "domain": "formal",
+      "lines": 89,
+      "missing_relative_links": [],
+      "name": "game-hopping-and-hybrid-proof"
+    },
+    {
+      "description": "Computes reproducible generic, exhaustive, multi-target, and quantum baselines for public-key schemes and their underlying problems. Use before claiming that a specialized attack is meaningful or assigning a bit-security number.",
+      "description_words": 29,
+      "domain": "public-key",
+      "lines": 63,
+      "missing_relative_links": [],
+      "name": "generic-baseline-and-security-level-calculator"
+    },
+    {
+      "description": "Computes exact generic and exhaustive-attack baselines for the formalized model so specialized attacks are compared against the correct target. Use when: Before calling an attack non-generic, faster than brute force, practical, or security-reducing. Re-run it when the model, number of users, data allowance, nonce behavior, tag length, or quantum access changes.",
+      "description_words": 51,
+      "domain": "symmetric",
+      "lines": 69,
+      "missing_relative_links": [],
+      "name": "generic-baseline-calculator"
+    },
+    {
+      "description": "Applies and audits generic-group lower bounds, Pollard rho/kangaroo, baby-step/giant-step, parallel collision search, distinguished points, automorphism speedups, and multi-target relation search.",
+      "description_words": 20,
+      "domain": "public-key",
+      "lines": 59,
+      "missing_relative_links": [],
+      "name": "generic-group-and-collision-search-analysis"
+    },
+    {
+      "description": "Audits the chain from a public-key scheme\u2019s advertised security to its underlying mathematical assumptions, including reduction direction, variants, structure, tightness, correctness conditions, and idealized models.",
+      "description_words": 25,
+      "domain": "public-key",
+      "lines": 61,
+      "missing_relative_links": [],
+      "name": "hard-problem-reduction-and-assumption-auditor"
+    },
+    {
+      "description": "Verifies cryptographic RTL, synthesized netlists, state machines, arithmetic datapaths, and control protocols using equivalence checking, model checking, invariants, and independently checked witnesses where possible.",
+      "description_words": 24,
+      "domain": "formal",
+      "lines": 85,
+      "missing_relative_links": [],
+      "name": "hardware-circuit-and-hdl-equivalence-verification"
+    },
+    {
+      "description": "Evaluates hash functions, compression functions, XOFs, and public permutations for collision, preimage, second-preimage, distinguishing, multicollision, herding, rebound, and sponge-specific weaknesses. Use when: The target is a hash function, XOF, compression function, sponge/duplex construction, public permutation, or hash-based composition. Always distinguish the primitive/permutation property from the full construction property.",
+      "description_words": 48,
+      "domain": "symmetric",
+      "lines": 65,
+      "missing_relative_links": [],
+      "name": "hash-and-permutation-analysis"
+    },
+    {
+      "description": "Analyzes stateful and stateless hash-based signatures\u2014Lamport/WOTS+, Merkle trees, LMS/HSS, XMSS/XMSSMT, SPHINCS+/SLH-DSA\u2014through exact hash assumptions, state management, hypertree/FORS structure, multi-target effects, domain separation, and verification parsing.",
+      "description_words": 25,
+      "domain": "public-key",
+      "lines": 65,
+      "missing_relative_links": [],
+      "name": "hash-based-signature-analysis"
+    },
+    {
+      "description": "Uses hax to translate high-assurance Rust into Lean via Aeneas, F*, Rocq, or experimental cryptographic/protocol backends, selecting the backend according to the property.",
+      "description_words": 23,
+      "domain": "formal",
+      "lines": 88,
+      "missing_relative_links": [],
+      "name": "hax-multibackend-rust-verification"
+    },
+    {
+      "description": "Analyzes class-group and RSA hidden-order constructions, strong-RSA assumptions, unknown-order groups, accumulators, time-lock/VDF protocols, discriminant generation, relation finding, proof soundness, and quantum hidden-shift/factoring threats.",
+      "description_words": 23,
+      "domain": "public-key",
+      "lines": 59,
+      "missing_relative_links": [],
+      "name": "hidden-order-class-group-and-vdf-analysis"
+    },
+    {
+      "description": "Analyzes lattice-based homomorphic encryption for RLWE assumptions, noise growth and decryption failure, modulus/key switching, relinearization, bootstrapping, evaluation-key exposure, circular/KDM assumptions, approximate arithmetic, and chosen-ciphertext boundaries.",
+      "description_words": 25,
+      "domain": "public-key",
+      "lines": 59,
+      "missing_relative_links": [],
+      "name": "homomorphic-encryption-and-noise-analysis"
+    },
+    {
+      "description": "Analyzes classical\u2013post-quantum and same-family KEM, key-exchange, encryption, and signature combiners; covers transcript binding, downgrade resistance, component robustness, non-separability, and guarantees when one component fails.",
+      "description_words": 24,
+      "domain": "public-key",
+      "lines": 60,
+      "missing_relative_links": [],
+      "name": "hybrid-combiner-and-composition-analysis"
+    },
+    {
+      "description": "Analyzes IBE, HIBE, KP-ABE, CP-ABE, and related fine-grained encryption for selective/adaptive security, authority and key-generation trust, collusion resistance, policy/identity encoding, delegation, revocation, and CCA composition.",
+      "description_words": 25,
+      "domain": "public-key",
+      "lines": 61,
+      "missing_relative_links": [],
+      "name": "identity-and-attribute-based-encryption-analysis"
+    },
+    {
+      "description": "Audits public-key key, ciphertext, signature, point, polynomial, codeword, and transcript encodings plus parsing, canonicality, validation, error handling, and domain separation. Use to find mathematical-interface flaws without conflating them with physical side channels.",
+      "description_words": 32,
+      "domain": "public-key",
+      "lines": 60,
+      "missing_relative_links": [],
+      "name": "implementation-interface-and-encoding-auditor"
+    },
+    {
+      "description": "Proves that source, intermediate, or low-level implementation behavior refines an independently defined cryptographic specification under explicit preconditions and machine semantics.",
+      "description_words": 20,
+      "domain": "formal",
+      "lines": 88,
+      "missing_relative_links": [],
+      "name": "implementation-refinement-and-equivalence"
+    },
+    {
+      "description": "Constructs exact miss-in-the-middle impossible differentials and zero-correlation linear properties, then evaluates elimination and statistical recovery attacks. Use when: Forward and backward propagation sets may contradict, deterministic diffusion creates unreachable transitions, or a linear hull may have provably zero correlation over a key class.",
+      "description_words": 43,
+      "domain": "symmetric",
+      "lines": 62,
+      "missing_relative_links": [],
+      "name": "impossible-differential-and-zero-correlation-analysis"
+    },
+    {
+      "description": "Builds reproducible information-set decoding and generic decoding estimates for Hamming-metric code-based encryption, KEMs, signatures, and identification systems, including finite-size optimization, memory, parallelism, multi-target, and quantum variants.",
+      "description_words": 26,
+      "domain": "public-key",
+      "lines": 64,
+      "missing_relative_links": [],
+      "name": "information-set-decoding-and-generic-decoding-analysis"
+    },
+    {
+      "description": "Analyzes RSA and other integer-factorization cryptography from prime generation through factoring, small-secret and small-root attacks, algebraic relations, padding/encoding, decryption oracles, and quantum resources.",
+      "description_words": 23,
+      "domain": "public-key",
+      "lines": 67,
+      "missing_relative_links": [],
+      "name": "integer-factorization-and-rsa-analysis"
+    },
+    {
+      "description": "Finds and verifies integral properties using structured sets, algebraic degree, generalized and bit-based division properties, and extends them to recovery attacks. Use when: The primitive has byte/word/bit structure, controllable input sets, bounded algebraic-degree growth, or diffusion patterns that may produce balanced, constant, or otherwise predictable aggregates.",
+      "description_words": 46,
+      "domain": "symmetric",
+      "lines": 63,
+      "missing_relative_links": [],
+      "name": "integral-and-division-property-analysis"
+    },
+    {
+      "description": "Operates an interactive prover through small, state-aware actions, using actual goals and diagnostics rather than hallucinated proof progress.",
+      "description_words": 18,
+      "domain": "formal",
+      "lines": 87,
+      "missing_relative_links": [],
+      "name": "interactive-proof-state-operation"
+    },
+    {
+      "description": "Conduct rigorous end-to-end cryptographic security investigations and visibly route them through the relevant cryptanalysis or formal-method skills. Use whenever asked to analyze a scheme or paper, find issues or weaknesses, search for attacks, reproduce or validate a result, audit a security claim or proof, compare parameters, or resume cryptographic research. Treat \u201cfind issues,\u201d \u201clook hard,\u201d \u201cattack,\u201d \u201cbreak,\u201d \u201cnew,\u201d and \u201cunexplored\u201d as explicit discovery triggers even when the user does not name this skill.",
+      "description_words": 73,
+      "domain": "core",
+      "lines": 142,
+      "missing_relative_links": [],
+      "name": "investigate"
+    },
+    {
+      "description": "Develops cryptographic definitions and game-based proofs in Isabelle/HOL using CryptHOL, probabilistic programs, oracle constructions, and Sledgehammer-assisted reasoning.",
+      "description_words": 17,
+      "domain": "formal",
+      "lines": 86,
+      "missing_relative_links": [],
+      "name": "isabelle-crypthol-proof-development"
+    },
+    {
+      "description": "Analyzes SQIsign-like and other isogeny/quaternion signatures through quaternion-ideal and endomorphism-ring representations, KLPT-style algorithms, commitment/challenge/response paths, norm equations, special soundness, response compression, key validation, and quantum hidden-shift/path attacks.",
+      "description_words": 27,
+      "domain": "public-key",
+      "lines": 62,
+      "missing_relative_links": [],
+      "name": "isogeny-and-quaternion-signature-analysis"
+    },
+    {
+      "description": "Analyzes the underlying isogeny, endomorphism-ring, quaternion-ideal, and commutative group-action problems using path finding, meet-in-the-middle, endomorphism recovery, vectorization/parallelization, hidden shift, and structural reductions.",
+      "description_words": 22,
+      "domain": "public-key",
+      "lines": 59,
+      "missing_relative_links": [],
+      "name": "isogeny-hard-problem-and-group-action-analysis"
+    },
+    {
+      "description": "Verifies high-performance cryptographic routines written in Jasmin by connecting assembly-like source, compiler guarantees, leakage models, and EasyCrypt functional or security proofs.",
+      "description_words": 21,
+      "domain": "formal",
+      "lines": 87,
+      "missing_relative_links": [],
+      "name": "jasmin-easycrypt-high-assurance-crypto"
+    },
+    {
+      "description": "Analyzes KEM security, Fujisaki\u2013Okamoto-style transforms, implicit rejection, re-encryption checks, KEM/DEM composition, and decapsulation interfaces for classical and post-quantum KEMs.",
+      "description_words": 19,
+      "domain": "public-key",
+      "lines": 60,
+      "missing_relative_links": [],
+      "name": "kem-transform-and-cca-analysis"
+    },
+    {
+      "description": "Analyzes unauthenticated and authenticated key agreement for session matching, forward secrecy, KCI, unknown-key share, reflection, replay, identity/transcript binding, key confirmation, and hybrid composition.",
+      "description_words": 23,
+      "domain": "public-key",
+      "lines": 60,
+      "missing_relative_links": [],
+      "name": "key-agreement-and-ake-protocol-analysis"
+    },
+    {
+      "description": "Analyzes public-key and peer-input validation, subgroup/cofactor confinement, invalid-curve/twist attacks, identity and low-order elements, malformed algebraic objects, and chosen-key attacks across DH, ECC, pairings, isogenies, codes, lattices, and proof systems.",
+      "description_words": 29,
+      "domain": "public-key",
+      "lines": 58,
+      "missing_relative_links": [],
+      "name": "key-validation-subgroup-and-invalid-input-analysis"
+    },
+    {
+      "description": "Builds reproducible classical and quantum security estimates for LWE, MLWE, RLWE, LWR, NTRU, SIS, MSIS, and related lattice instances, and audits reduction, estimator, and cost-model assumptions.",
+      "description_words": 26,
+      "domain": "public-key",
+      "lines": 69,
+      "missing_relative_links": [],
+      "name": "lattice-hard-problem-and-estimator-analysis"
+    },
+    {
+      "description": "Analyzes MLWE/MLWR and related lattice PKE/KEMs from base encryption through compression, decryption failure, CCA transforms, ciphertext validity, algebraic structure, and implementation-visible oracle behavior.",
+      "description_words": 23,
+      "domain": "public-key",
+      "lines": 64,
+      "missing_relative_links": [],
+      "name": "lattice-kem-and-pke-analysis"
+    },
+    {
+      "description": "Validates lattice bases, transformations, short/close vectors, decoded secrets, embeddings, norms, and claimed bounds while separating heuristic reduction performance from exact mathematical evidence.",
+      "description_words": 22,
+      "domain": "formal",
+      "lines": 87,
+      "missing_relative_links": [],
+      "name": "lattice-witness-and-bound-certification"
+    },
+    {
+      "description": "Builds controlled LLM or search-agent interfaces to Lean using structured proof states, premise retrieval, reversible actions, and independent evaluation.",
+      "description_words": 19,
+      "domain": "formal",
+      "lines": 88,
+      "missing_relative_links": [],
+      "name": "lean-agent-integration-pantograph-leandojo"
+    },
+    {
+      "description": "Formalizes fixed-width arithmetic, bit operations, carries, rotations, shifts, masks, endianness, and modular machine semantics in Lean, with decision procedures for bounded obligations.",
+      "description_words": 22,
+      "domain": "formal",
+      "lines": 89,
+      "missing_relative_links": [],
+      "name": "lean-bitvectors-and-word-arithmetic"
+    },
+    {
+      "description": "Imports externally generated SAT, pseudo-Boolean, algebraic, or other certificates into Lean and proves the connection from the encoded problem back to the original cryptographic proposition.",
+      "description_words": 25,
+      "domain": "formal",
+      "lines": 90,
+      "missing_relative_links": [],
+      "name": "lean-certificate-import-and-reflection"
+    },
+    {
+      "description": "Builds maintainable Lean 4 definitions and theorems for cryptographic algorithms, attack witnesses, algebraic structures, encodings, and exact correctness properties.",
+      "description_words": 19,
+      "domain": "formal",
+      "lines": 90,
+      "missing_relative_links": [],
+      "name": "lean-cryptographic-formalization"
+    },
+    {
+      "description": "Uses mathlib to formalize finite fields, modular rings, polynomials, quotient rings, matrices, groups, number theory, and exact algebraic identities arising in classical and post-quantum cryptography.",
+      "description_words": 25,
+      "domain": "formal",
+      "lines": 90,
+      "missing_relative_links": [],
+      "name": "lean-finite-algebra-and-number-theory"
+    },
+    {
+      "description": "Implements auditable Lean macros, elaborators, tactics, theorem generators, and domain-specific automation for recurring cryptographic proof patterns.",
+      "description_words": 16,
+      "domain": "formal",
+      "lines": 87,
+      "missing_relative_links": [],
+      "name": "lean-metaprogramming-and-custom-tactics"
+    },
+    {
+      "description": "Formalizes finite probability spaces, counting arguments, expectations, statistical distance, combinatorial identities, and exact or analytic bounds needed by cryptographic correctness and attack analysis.",
+      "description_words": 23,
+      "domain": "formal",
+      "lines": 89,
+      "missing_relative_links": [],
+      "name": "lean-probability-combinatorics-and-bounds"
+    },
+    {
+      "description": "Pins and audits Lean toolchains, Lake dependencies, generated artifacts, build scripts, native components, and repository provenance for secure clean replay.",
+      "description_words": 20,
+      "domain": "formal",
+      "lines": 87,
+      "missing_relative_links": [],
+      "name": "lean-project-reproducibility-and-supply-chain"
+    },
+    {
+      "description": "Analyzes linear approximations, trails, hulls, multiple/multidimensional distinguishers, and key-recovery extensions with sign and dependency accounting. Use when: The target\u2019s Boolean or word operations exhibit biased linear relations, the diffusion layer permits low-weight masks, or literature provides useful approximations or zero-correlation structure.",
+      "description_words": 41,
+      "domain": "symmetric",
+      "lines": 62,
+      "missing_relative_links": [],
+      "name": "linear-family-analysis"
+    },
+    {
+      "description": "Run Magma computations on the remote SSH compute host \u2014 Gr\u00f6bner bases and MQ systems, finite fields and polynomial rings, elliptic curves and isogenies, linear algebra over small fields. Use when a cryptanalytic claim needs an actual computation rather than an estimate, when a cost model needs checking at toy scale before being trusted at real scale, or when the algebra is beyond what the local Sage kernel can do.",
+      "description_words": 70,
+      "domain": "core",
+      "lines": 318,
+      "missing_relative_links": [],
+      "name": "magma"
+    },
+    {
+      "description": "Designs and audits state-matching attacks using cuts, partial computation, splice-and-cut, initial structures, dissection, and biclique techniques. Use when: The target can be decomposed into forward and backward computations with partially independent key/state variables, has a narrow internal cut, repeated/expandable subcomputations, or enough degrees of freedom for biclique/initial-structure methods.",
+      "description_words": 48,
+      "domain": "symmetric",
+      "lines": 60,
+      "missing_relative_links": [],
+      "name": "mitm-dissection-and-biclique-analysis"
+    },
+    {
+      "description": "Analyzes symmetric constructions and interfaces for privacy, authenticity, nonce behavior, tag bounds, domain separation, multi-user effects, and misuse resistance. Use when: The target composes a block cipher, tweakable cipher, stream cipher, hash, or permutation into encryption, authentication, key wrap, storage, record protection, or AEAD. This skill emphasizes game/interface analysis and generic/algebraic attacks rather than only reduced-round primitive attacks.",
+      "description_words": 58,
+      "domain": "symmetric",
+      "lines": 65,
+      "missing_relative_links": [],
+      "name": "mode-mac-and-aead-analysis"
+    },
+    {
+      "description": "Analyzes Fiat\u2013Shamir-with-aborts, trapdoor-sampling, and module-lattice signatures through MSIS/MLWE assumptions, rejection sampling, norm bounds, transcript distributions, nonce/randomness, algebraic attacks, and ROM/QROM proofs.",
+      "description_words": 21,
+      "domain": "public-key",
+      "lines": 64,
+      "missing_relative_links": [],
+      "name": "module-lattice-signature-analysis"
+    },
+    {
+      "description": "Analyzes MPC-in-the-head and related proof-derived signatures\u2014including Picnic, ZKBoo/ZKB++, MQOM, and SDitH-style systems\u2014through simulated views, commitments, challenge combinatorics, seed trees/PPRFs, transcript compression, soundness, and Fiat\u2013Shamir/QROM security.",
+      "description_words": 25,
+      "domain": "public-key",
+      "lines": 62,
+      "missing_relative_links": [],
+      "name": "mpc-in-the-head-signature-analysis"
+    },
+    {
+      "description": "Analyzes how many users, keys, ciphertexts, signatures, targets, sessions, or batched equations change attack cost and security bounds, including shared preprocessing and one-out-of-many effects.",
+      "description_words": 24,
+      "domain": "public-key",
+      "lines": 58,
+      "missing_relative_links": [],
+      "name": "multi-user-multi-target-and-batch-analysis"
+    },
+    {
+      "description": "Analyzes multivariate quadratic public-key systems using direct and hybrid Gr\u00f6bner-basis methods, XL/linearization, MinRank, differential and invariant-subspace structure, equivalent keys, field equations, and implementation-specific equation reductions.",
+      "description_words": 25,
+      "domain": "public-key",
+      "lines": 64,
+      "missing_relative_links": [],
+      "name": "multivariate-public-key-analysis"
+    },
+    {
+      "description": "Analyzes secret-dependent nonces, ephemeral scalars, salts, errors, masks, and randomness for reuse, bias, partial exposure, correlations, state rollback, and hidden-number/lattice attacks.",
+      "description_words": 21,
+      "domain": "public-key",
+      "lines": 58,
+      "missing_relative_links": [],
+      "name": "nonce-randomness-and-hidden-number-analysis"
+    },
+    {
+      "description": "Analyzes braid-group, conjugacy, decomposition, semidirect-product, matrix-group, and other noncommutative public-key proposals through faithful representations, linearization, centralizers, length-based heuristics, subgroup structure, normal forms, quotient attacks, and protocol equations.",
+      "description_words": 27,
+      "domain": "public-key",
+      "lines": 58,
+      "missing_relative_links": [],
+      "name": "noncommutative-and-group-based-cryptanalysis"
+    },
+    {
+      "description": "Produces an independently derived executable formal model from a standard, submission, RFC, paper algorithm, or other normative source and validates it before implementation comparison.",
+      "description_words": 24,
+      "domain": "formal",
+      "lines": 88,
+      "missing_relative_links": [],
+      "name": "normative-specification-to-executable-model"
+    },
+    {
+      "description": "Analyzes NTRU encryption and NTRU-lattice signatures, especially Falcon/FN-DSA-style GPV sampling, using lattice reduction, hybrid and subfield attacks, short-generator questions, key-equivalent bases, FFT/LDL sampling, norm verification, and numerical correctness.",
+      "description_words": 28,
+      "domain": "public-key",
+      "lines": 64,
+      "missing_relative_links": [],
+      "name": "ntru-and-falcon-analysis"
+    },
+    {
+      "description": "Converts a best-found cryptanalytic object into a defensible optimum or bound by certifying feasibility, objective interpretation, and exclusion of every better solution.",
+      "description_words": 22,
+      "domain": "formal",
+      "lines": 86,
+      "missing_relative_links": [],
+      "name": "optimization-and-optimality-certification"
+    },
+    {
+      "description": "Analyzes pairing-based signatures, encryption, identity-based systems, and protocols through subgroup validation, embedding degree, extension-field discrete logs, TNFS/NFS variants, pairing equations, and aggregate/batch verification.",
+      "description_words": 23,
+      "domain": "public-key",
+      "lines": 60,
+      "missing_relative_links": [],
+      "name": "pairing-based-and-extension-field-analysis"
+    },
+    {
+      "description": "Runs or audits public-key security estimators and cost models for lattices, codes, discrete logs, factorization, multivariate systems, isogenies, and quantum attacks with version pinning, sensitivity analysis, and cross-checks.",
+      "description_words": 28,
+      "domain": "public-key",
+      "lines": 59,
+      "missing_relative_links": [],
+      "name": "parameter-estimator-and-cost-model-auditor"
+    },
+    {
+      "description": "Analyzes public-key encryption against one-way, IND-CPA, IND-CCA, non-malleability, plaintext-validity, padding-oracle, rerandomization, and adaptive-decryption attacks across classical and post-quantum schemes.",
+      "description_words": 19,
+      "domain": "public-key",
+      "lines": 60,
+      "missing_relative_links": [],
+      "name": "pke-security-and-adaptive-oracle-analysis"
+    },
+    {
+      "description": "Finds relevant existing definitions and theorems, validates their exact types and assumptions, and constructs small bridging lemmas when library interfaces do not align.",
+      "description_words": 23,
+      "domain": "formal",
+      "lines": 88,
+      "missing_relative_links": [],
+      "name": "premise-retrieval-and-lemma-search"
+    },
+    {
+      "description": "Builds an exact structural and assumption map of a symmetric primitive or construction to expose attack-relevant dependencies and boundaries. Use when: Before selecting attack techniques, transferring a published attack, or encoding a search model. It prevents analysis of an idealized cipher that differs from the specified or implemented object.",
+      "description_words": 49,
+      "domain": "symmetric",
+      "lines": 65,
+      "missing_relative_links": [],
+      "name": "primitive-structure-and-assumption-mapper"
+    },
+    {
+      "description": "Uses couplings, relational invariants, probabilistic program logics, and distributional arguments to prove equivalence or distance bounds between cryptographic computations.",
+      "description_words": 19,
+      "domain": "formal",
+      "lines": 86,
+      "missing_relative_links": [],
+      "name": "probabilistic-program-coupling-and-relational-reasoning"
+    },
+    {
+      "description": "Performs clean, isolated replay of proof and certificate artifacts and publishes a claim-scoped bundle containing theorem statements, sources, assumptions, hashes, logs, and non-claims.",
+      "description_words": 23,
+      "domain": "formal",
+      "lines": 87,
+      "missing_relative_links": [],
+      "name": "proof-artifact-replay-and-publication"
+    },
+    {
+      "description": "Decomposes a formal target into a dependency DAG of definitions, correspondence lemmas, invariants, game hops, arithmetic bounds, certificates, and final theorems.",
+      "description_words": 21,
+      "domain": "formal",
+      "lines": 87,
+      "missing_relative_links": [],
+      "name": "proof-obligation-and-lemma-planning"
+    },
+    {
+      "description": "Repairs proofs after specification, implementation, extraction, dependency, or prover changes while detecting theorem weakening and preserving the intended semantic contract.",
+      "description_words": 20,
+      "domain": "formal",
+      "lines": 87,
+      "missing_relative_links": [],
+      "name": "proof-repair-and-maintenance"
+    },
+    {
+      "description": "Uses ProVerif\u2019s Horn-clause abstraction and applied pi calculus to analyze secrecy, correspondence/authentication, reachability, and equivalence properties with high automation.",
+      "description_words": 19,
+      "domain": "formal",
+      "lines": 83,
+      "missing_relative_links": [],
+      "name": "proverif-symbolic-protocol-analysis"
+    },
+    {
+      "description": "Certifies pseudo-Boolean feasibility, optimization, counting-related transformations, and lower/upper bounds using VeriPB proof logs and optional PBLean reconstruction.",
+      "description_words": 17,
+      "domain": "formal",
+      "lines": 86,
+      "missing_relative_links": [],
+      "name": "pseudo-boolean-veripb-certification"
+    },
+    {
+      "description": "Recomputes end-to-end resources and success probability for public-key attacks, exposing omitted preprocessing, oracle acquisition, filtering, false positives, verification, estimator assumptions, and model mismatches.",
+      "description_words": 23,
+      "domain": "public-key",
+      "lines": 59,
+      "missing_relative_links": [],
+      "name": "public-key-attack-complexity-and-success-auditor"
+    },
+    {
+      "description": "Generates falsifiable attack hypotheses from a public-key scheme\u2019s structure, proof seams, distributions, interfaces, and literature, then ranks them by potential impact and information gain.",
+      "description_words": 24,
+      "domain": "public-key",
+      "lines": 60,
+      "missing_relative_links": [],
+      "name": "public-key-attack-hypothesis-generator-and-triage"
+    },
+    {
+      "description": "Decomposes an attack from literature or prior agent work, maps every indispensable requirement to a new public-key target, and develops minimally modified falsifiable adaptations. Use for cross-version, cross-parameter, cross-family, reduced-to-full, component-to-construction, and toy-to-real transfer.",
+      "description_words": 34,
+      "domain": "public-key",
+      "lines": 60,
+      "missing_relative_links": [],
+      "name": "public-key-attack-transfer-and-adaptation"
+    },
+    {
+      "description": "Routes a public-key cryptanalysis project through security-model, construction-level, hard-problem, implementation-interface, proof, cost, transfer, and reproduction skills while maintaining one shared evidence state. Use when starting or resuming an evaluation of a signature, KEM, public-key encryption scheme, key-agreement mechanism, or hybrid construction.",
+      "description_words": 41,
+      "domain": "public-key",
+      "lines": 60,
+      "missing_relative_links": [],
+      "name": "public-key-cryptanalysis-orchestrator"
+    },
+    {
+      "description": "Synthesizes proofs, attacks, estimates, experiments, failed transfers, and implementation findings into calibrated claim-level conclusions and a prioritized public-key cryptanalysis backlog.",
+      "description_words": 20,
+      "domain": "public-key",
+      "lines": 58,
+      "missing_relative_links": [],
+      "name": "public-key-evidence-synthesis-and-research-backlog"
+    },
+    {
+      "description": "Converts papers, reports, code, specifications, issue discussions, or prior-agent findings into normalized public-key attack records with exact provenance, models, requirements, costs, and validation status.",
+      "description_words": 24,
+      "domain": "public-key",
+      "lines": 59,
+      "missing_relative_links": [],
+      "name": "public-key-literature-attack-extractor"
+    },
+    {
+      "description": "Turns public-key cryptanalytic claims into controlled, reproducible proofs, implementations, solver experiments, simulations, and independent checks with explicit falsification conditions.",
+      "description_words": 19,
+      "domain": "public-key",
+      "lines": 58,
+      "missing_relative_links": [],
+      "name": "public-key-reproduction-and-falsification-planner"
+    },
+    {
+      "description": "Converts informal public-key security statements into explicit PKE, KEM, signature, key-agreement, correctness, multi-user, random-oracle, and quantum games. Use whenever a document says \u201cCCA secure,\u201d \u201cunforgeable,\u201d \u201c128-bit secure,\u201d \u201cpost-quantum secure,\u201d \u201cforward secure,\u201d or similar without a complete adversary experiment.",
+      "description_words": 38,
+      "domain": "public-key",
+      "lines": 65,
+      "missing_relative_links": [],
+      "name": "public-key-security-model-and-claim-formalizer"
+    },
+    {
+      "description": "Models quantum adversary access, quantum random oracles, measurement/reprogramming losses, and post-quantum reductions without silently reusing classical ROM reasoning.",
+      "description_words": 18,
+      "domain": "formal",
+      "lines": 89,
+      "missing_relative_links": [],
+      "name": "qrom-and-post-quantum-proof-modeling"
+    },
+    {
+      "description": "Formalizes quantum cryptanalytic algorithms, reversible oracles, circuit transformations, correctness probabilities, and resource counts using SQIR/VOQC, QWIRE, Qbricks, or related proof frameworks.",
+      "description_words": 21,
+      "domain": "formal",
+      "lines": 89,
+      "missing_relative_links": [],
+      "name": "quantum-algorithm-circuit-and-resource-verification"
+    },
+    {
+      "description": "Analyzes quantum attacks on public-key schemes with exact oracle models and resource accounting, including Shor, Grover/amplitude amplification, hidden shift, quantum walks, quantum ISD, and QROM effects.",
+      "description_words": 26,
+      "domain": "public-key",
+      "lines": 60,
+      "missing_relative_links": [],
+      "name": "quantum-public-key-attack-analysis"
+    },
+    {
+      "description": "Formalizes Q1/Q2 access and evaluates Grover, collision, period-finding, and hybrid quantum attacks using concrete oracle, depth, qubit, and verification costs. Use when: A security claim invokes \u201cquantum security,\u201d a classical attack may be accelerated quantumly, or a construction exposes algebraic/periodic structure to quantum queries.",
+      "description_words": 44,
+      "domain": "symmetric",
+      "lines": 61,
+      "missing_relative_links": [],
+      "name": "quantum-symmetric-attack-analysis"
+    },
+    {
+      "description": "Analyzes rank-metric encryption, KEMs, signatures, and identification systems through rank syndrome decoding, MinRank, support trapping, algebraic solving, Frobenius/module structure, Gabidulin distinguishers, and structural key recovery.",
+      "description_words": 25,
+      "domain": "public-key",
+      "lines": 60,
+      "missing_relative_links": [],
+      "name": "rank-metric-code-analysis"
+    },
+    {
+      "description": "Constructs inbound\u2013outbound attacks on wide permutations and hash-like designs, with explicit degrees of freedom, nonlinear matching, and outbound probabilities. Use when: A wide-trail permutation or compression function has a dense nonlinear middle region that can be solved using internal degrees of freedom, surrounded by probabilistic differential propagation.",
+      "description_words": 47,
+      "domain": "symmetric",
+      "lines": 61,
+      "missing_relative_links": [],
+      "name": "rebound-analysis"
+    },
+    {
+      "description": "Recomputes and mechanizes the complete quantitative loss of a reduction, including query powers, multi-user factors, guessing, statistical terms, correctness, runtime, and success amplification.",
+      "description_words": 23,
+      "domain": "formal",
+      "lines": 89,
+      "missing_relative_links": [],
+      "name": "reduction-tightness-and-concrete-security"
+    },
+    {
+      "description": "Builds small verified or proof-producing decision procedures for recurring cryptographic algebra, finite computation, normalization, and witness-checking obligations.",
+      "description_words": 17,
+      "domain": "formal",
+      "lines": 87,
+      "missing_relative_links": [],
+      "name": "reflective-decision-procedure-design"
+    },
+    {
+      "description": "Formalizes realistic key/tweak relations, propagates them through schedules, and evaluates related-key/tweakey differentials, symmetries, and recovery attacks. Use when: The key/tweak schedule has low diffusion, linear recurrences, repeated subkeys, symmetries, or a literature attack assumes chosen related keys or tweaks. Also use it to determine whether such a model is meaningful for the intended interface.",
+      "description_words": 54,
+      "domain": "symmetric",
+      "lines": 62,
+      "missing_relative_links": [],
+      "name": "related-key-and-tweakey-analysis"
+    },
+    {
+      "description": "Uses Rocq libraries such as SSProve and the Foundational Cryptography Framework for foundational, modular, machine-checked computational cryptography.",
+      "description_words": 17,
+      "domain": "formal",
+      "lines": 88,
+      "missing_relative_links": [],
+      "name": "rocq-foundational-cryptography-and-ssprove"
+    },
+    {
+      "description": "Certifies Boolean satisfiability witnesses or unsatisfiability results using independent evaluation and LRAT/FRAT-derived proof checking, optionally importing the result into Lean.",
+      "description_words": 20,
+      "domain": "formal",
+      "lines": 86,
+      "missing_relative_links": [],
+      "name": "sat-lrat-certification"
+    },
+    {
+      "description": "Uses Cryptol specifications and SAW symbolic execution/refinement to verify C/LLVM, Rust/MIR, Java, or other supported implementations against executable bit-level cryptographic models.",
+      "description_words": 21,
+      "domain": "formal",
+      "lines": 86,
+      "missing_relative_links": [],
+      "name": "saw-cryptol-program-refinement"
+    },
+    {
+      "description": "Builds a machine-usable map of a public-key scheme\u2019s algorithms, algebraic objects, distributions, encodings, boundaries, transforms, validation rules, and assumption chain. Use before generating or transferring attacks.",
+      "description_words": 26,
+      "domain": "public-key",
+      "lines": 59,
+      "missing_relative_links": [],
+      "name": "scheme-structure-and-assumption-mapper"
+    },
+    {
+      "description": "Converts informal symmetric-cryptography security statements into explicit games, adversary powers, success events, resources, assumptions, and non-goals. Use when: A specification, paper, review, or discussion says a primitive or construction is \u201csecure,\u201d \u201c128-bit secure,\u201d \u201cindistinguishable,\u201d \u201cauthenticated,\u201d \u201cmisuse-resistant,\u201d or \u201cresistant to attack\u201d without an exact game and resource statement. Run it before evaluating attacks or comparing complexities.",
+      "description_words": 55,
+      "domain": "symmetric",
+      "lines": 77,
+      "missing_relative_links": [],
+      "name": "security-model-and-claim-formalizer"
+    },
+    {
+      "description": "Audits security games, reductions, simulations, bad-event bounds, concrete constants, model restrictions, and ideal-to-real instantiation for symmetric constructions. Use when: A security claim is justified by a theorem, game-hopping proof, reduction, idealized primitive model, or concrete advantage table. This skill checks what the result actually establishes and whether the bound survives concrete instantiation and operational use.",
+      "description_words": 55,
+      "domain": "symmetric",
+      "lines": 70,
+      "missing_relative_links": [],
+      "name": "security-proof-and-bound-auditor"
+    },
+    {
+      "description": "Audits public-key security proofs, game hops, reductions, random-oracle programming, Fiat\u2013Shamir extraction, correctness events, multi-user losses, and concrete tightness in classical and quantum random-oracle models.",
+      "description_words": 24,
+      "domain": "public-key",
+      "lines": 60,
+      "missing_relative_links": [],
+      "name": "security-proof-rom-qrom-and-tightness-auditor"
+    },
+    {
+      "description": "Applies a managed-agent architecture to EasyCrypt proof generation and repair, separating expert security modeling and lemma decomposition from constrained tactic execution and independent replay.",
+      "description_words": 24,
+      "domain": "formal",
+      "lines": 86,
+      "missing_relative_links": [],
+      "name": "shannonprover-agentic-easycrypt"
+    },
+    {
+      "description": "Analyzes SIDH/SIKE-specific active and structural attacks, including torsion-point auxiliary information, GPST-style adaptive validation oracles, endomorphism-ring recovery, and the Castryck\u2013Decru/Maino\u2013Martindale/Robert breaks, with explicit limits on transfer to other isogeny families.",
+      "description_words": 29,
+      "domain": "public-key",
+      "lines": 59,
+      "missing_relative_links": [],
+      "name": "sidh-sike-active-and-structural-attack-analysis"
+    },
+    {
+      "description": "Finds exploitable self-similarity, slid pairs, invariant subspaces/partitions, fixed structures, and weak-key symmetries while checking constants and schedules. Use when: Rounds repeat or nearly repeat, constants are weak or periodic, key schedules preserve relations, affine/nonlinear subspaces may map to themselves, or the primitive has complementations, rotations, branch permutations, or other automorphisms.",
+      "description_words": 50,
+      "domain": "symmetric",
+      "lines": 62,
+      "missing_relative_links": [],
+      "name": "slide-invariant-subspace-and-symmetry-analysis"
+    },
+    {
+      "description": "Uses SMT solvers for bit-vectors, arrays, arithmetic, datatypes, or combinations of theories while preserving proof output, independent checking, reconstruction limits, and exact theory semantics.",
+      "description_words": 24,
+      "domain": "formal",
+      "lines": 86,
+      "missing_relative_links": [],
+      "name": "smt-proof-production-and-reconstruction"
+    },
+    {
+      "description": "Adversarially checks that a formal specification matches the intended cryptographic object and that accepted theorems are not vacuous, circular, self-referential, or scoped away from the attack surface.",
+      "description_words": 27,
+      "domain": "formal",
+      "lines": 88,
+      "missing_relative_links": [],
+      "name": "specification-validation-and-vacuity-audit"
+    },
+    {
+      "description": "Uses Squirrel\u2019s interactive higher-order logic for trace and equivalence properties of stateful protocols, with explicit computational assumptions and post-quantum soundness where supported.",
+      "description_words": 22,
+      "domain": "formal",
+      "lines": 84,
+      "missing_relative_links": [],
+      "name": "squirrel-computational-and-pq-protocol-proof"
+    },
+    {
+      "description": "Analyzes initialization and keystream generation using correlation, algebraic/cube, guess-and-determine, state recovery, resynchronization, and time-memory-data attacks. Use when: The target generates keystream or a stateful output from a key and IV/nonce, including synchronous stream ciphers, LFSR/NLFSR constructions, filter/combiner generators, ARX state machines, or stream-like modes.",
+      "description_words": 44,
+      "domain": "symmetric",
+      "lines": 63,
+      "missing_relative_links": [],
+      "name": "stream-cipher-analysis"
+    },
+    {
+      "description": "Analyzes algebraic structure in Ring/Module-LWE, NTRU, ideal- and module-lattice systems through subfield/subring attacks, automorphisms, ideal generators, norm/resultant relations, structured lattice reduction, and assumption transfer. It complements scheme-specific KEM and signature skills.",
+      "description_words": 31,
+      "domain": "public-key",
+      "lines": 62,
+      "missing_relative_links": [],
+      "name": "structured-ring-and-ideal-lattice-analysis"
+    },
+    {
+      "description": "Analyzes knapsack/subset-sum public-key constructions and embedded subset-sum subproblems through density, lattice embeddings, modular relations, representation techniques, meet-in-the-middle/dissection, and trapdoor-disguise recovery.",
+      "description_words": 20,
+      "domain": "public-key",
+      "lines": 61,
+      "missing_relative_links": [],
+      "name": "subset-sum-and-knapsack-analysis"
+    },
+    {
+      "description": "Applies the standards-to-executable-Lean-to-Aeneas-Rust methodology demonstrated by Microsoft\u2019s verified SymCrypt work, including property tests, proof agents, and explicit trust reporting.",
+      "description_words": 19,
+      "domain": "formal",
+      "lines": 87,
+      "missing_relative_links": [],
+      "name": "symcrypt-verified-crypto-workflow"
+    },
+    {
+      "description": "Recomputes an attack end to end, normalizes resource units, checks success and false positives, and compares it with the correct generic baseline and security claim. Use when: Before accepting, reporting, transferring, or comparing any cryptanalytic complexity. It is especially important for papers or agent outputs that quote one exponent without a complete derivation.",
+      "description_words": 53,
+      "domain": "symmetric",
+      "lines": 64,
+      "missing_relative_links": [],
+      "name": "symmetric-attack-complexity-and-success-auditor"
+    },
+    {
+      "description": "Generates structurally justified, falsifiable attack hypotheses from claims, design features, literature skeletons, and reduced or toy findings, then prioritizes them by likely claim impact and information gain. Use when: A design map and claim model exist, but the project needs novel attack directions or a disciplined choice among many plausible techniques. Use it before expensive solver searches or large experiments, and again when a failed test changes the design understanding.",
+      "description_words": 70,
+      "domain": "symmetric",
+      "lines": 71,
+      "missing_relative_links": [],
+      "name": "symmetric-attack-hypothesis-generator-and-triage"
+    },
+    {
+      "description": "Decomposes an attack from literature or prior agent work, maps each indispensable requirement to a new target, and develops minimally modified falsifiable adaptations. Use when: A known attack on one primitive, version, parameter set, round count, component, or adversary model might apply to another. Also use it to transfer an agent-discovered reduced or toy attack toward the real target.",
+      "description_words": 59,
+      "domain": "symmetric",
+      "lines": 63,
+      "missing_relative_links": [],
+      "name": "symmetric-attack-transfer-and-adaptation"
+    },
+    {
+      "description": "Coordinates a research-grade symmetric-cryptanalysis evaluation, selects specialist skills, and maintains a shared claim/evidence state. Use when: The task asks for an evaluation of a symmetric primitive, mode, construction, proposal, paper, attack claim, or implementation and requires more than one analytical technique. Use it at the beginning of a project and again whenever the target, model, or evidence changes materially.",
+      "description_words": 59,
+      "domain": "symmetric",
+      "lines": 84,
+      "missing_relative_links": [],
+      "name": "symmetric-cryptanalysis-orchestrator"
+    },
+    {
+      "description": "Converts attack records, proofs, reproductions, failures, and disagreements into claim-level judgments and a prioritized falsifiable research agenda. Use when: Enough evidence exists to update a review, recommendation, standards comment, research plan, or team knowledge base. It should be the only skill that writes final claim-level conclusions.",
+      "description_words": 46,
+      "domain": "symmetric",
+      "lines": 72,
+      "missing_relative_links": [],
+      "name": "symmetric-evidence-synthesis-and-research-backlog"
+    },
+    {
+      "description": "Extracts a published or discovered symmetric-cryptanalysis result into a normalized, source-grounded attack record suitable for reproduction and transfer. Use when: Reading a paper, preprint, thesis, standards comment, issue, code artifact, talk, or internal agent report that claims a cryptanalytic property or attack. Run it before attempting to adapt the result.",
+      "description_words": 50,
+      "domain": "symmetric",
+      "lines": 65,
+      "missing_relative_links": [],
+      "name": "symmetric-literature-attack-extractor"
+    },
+    {
+      "description": "Designs decisive, controlled, reproducible tests of symmetric-cryptanalysis claims, from exhaustive toy checks through full experiments and solver certificates. Use when: A claim depends on computation, simulation, solver output, undocumented code, probabilistic evidence, or an attack transfer. Use it to turn \u201ctry this\u201d into a smallest decisive and independently repeatable test.",
+      "description_words": 50,
+      "domain": "symmetric",
+      "lines": 61,
+      "missing_relative_links": [],
+      "name": "symmetric-reproduction-and-falsification-planner"
+    },
+    {
+      "description": "Models stateful cryptographic protocols with multiset rewriting, equational theories, trace properties, observational equivalence, and symbolic adversaries, producing proof scripts or attack traces.",
+      "description_words": 22,
+      "domain": "formal",
+      "lines": 85,
+      "missing_relative_links": [],
+      "name": "tamarin-symbolic-protocol-analysis"
+    },
+    {
+      "description": "Analyzes threshold signatures, Schnorr/RSA/ECDSA multisignatures, BLS aggregation, distributed key generation, and related protocols for rogue keys, nonce attacks, adaptive corruption, aborts, transcript confusion, and proof-model gaps.",
+      "description_words": 26,
+      "domain": "public-key",
+      "lines": 61,
+      "missing_relative_links": [],
+      "name": "threshold-multisignature-and-aggregate-analysis"
+    },
+    {
+      "description": "Audits secret-dependent sampling, trapdoor preimage sampling, discrete Gaussians, bounded/rejection sampling, aborts, output distributions, precision, and statistical-distance claims in signatures and encryption.",
+      "description_words": 21,
+      "domain": "public-key",
+      "lines": 59,
+      "missing_relative_links": [],
+      "name": "trapdoor-sampling-distribution-and-rejection-analysis"
+    },
+    {
+      "description": "Performs specialized analysis of UOV, QR-UOV, MAYO-like and other Oil-and-Vinegar signatures, focusing on hidden oil subspaces, Kipnis\u2013Shamir/MinRank systems, reconciliation and intersection attacks, equivalent keys, direct forgery, and parameterized hybrid algebraic attacks.",
+      "description_words": 31,
+      "domain": "public-key",
+      "lines": 63,
+      "missing_relative_links": [],
+      "name": "uov-oil-and-vinegar-analysis"
+    },
+    {
+      "description": "Establish whether a claimed attack actually works \u2014 state its preconditions, decide whether analysis or an implementation settles the question, then do that one, and report what the result does and does not imply at full parameters. Use when a paper, a post, or an earlier session asserts an attack and the question is whether to believe it.",
+      "description_words": 58,
+      "domain": "core",
+      "lines": 239,
+      "missing_relative_links": [],
+      "name": "validate-attack"
+    },
+    {
+      "description": "Settle one security claim \u2014 restate it precisely enough to be checkable, establish how it was obtained, pick the route that actually settles it (open the source, reproduce the computation, run it at toy scale, or discharge the notion's obligations), and report it supported, refuted or unresolved. Use when a claim is load-bearing and a decision depends on whether it holds.",
+      "description_words": 61,
+      "domain": "core",
+      "lines": 302,
+      "missing_relative_links": [],
+      "name": "verify-claim"
+    },
+    {
+      "description": "Verifies annotated Rust using Verus specifications, ghost state, linear ghost types, SMT-backed proof, and explicit separation between mathematical integers and machine values.",
+      "description_words": 22,
+      "domain": "formal",
+      "lines": 86,
+      "missing_relative_links": [],
+      "name": "verus-rust-verification"
+    },
+    {
+      "description": "Analyzes VOLE-in-the-head, QuickSilver-style consistency checks, FAEST-like signatures, and related proof-derived signatures through VOLE correlations, commitments, field checks, challenge structure, transcript compression, and QROM security.",
+      "description_words": 24,
+      "domain": "public-key",
+      "lines": 58,
+      "missing_relative_links": [],
+      "name": "vole-in-the-head-and-proof-derived-signature-analysis"
+    },
+    {
+      "description": "Read and extend the crypto workbench's durable knowledge \u2014 what has been established and how, what was looked for and not found, and lessons worth carrying between sessions. Use at the start of any substantive work to check what is already known, and whenever an investigation settles something, fails to find something, or teaches a gotcha worth not rediscovering.",
+      "description_words": 59,
+      "domain": "core",
+      "lines": 200,
+      "missing_relative_links": [],
+      "name": "workbench-knowledge"
+    }
+  ],
+  "skills_by_domain": {
+    "core": 10,
+    "formal": 63,
+    "public-key": 59,
+    "symmetric": 29
+  },
+  "warnings": 0
+}

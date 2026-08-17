@@ -1,0 +1,34 @@
+version: 1
+target:
+  artifact: ""
+  version: ""
+  sha256: ""
+  parameter_set: ""
+claim_or_attack_id: ""
+environment:
+  os: ""
+  hardware: ""
+  container_or_vm: ""
+  dependencies: []
+  compiler_and_flags: ""
+commands: []
+inputs:
+  seeds: []
+  test_vectors: []
+  generated_instances: []
+controls:
+  positive: []
+  negative: []
+expected_results: []
+observed_results: []
+resource_accounting:
+  wall_time: ""
+  cpu_time: ""
+  peak_memory: ""
+  disk: ""
+  quantum_model: ""
+falsification_conditions: []
+artifacts:
+  logs: []
+  outputs: []
+  hashes: []

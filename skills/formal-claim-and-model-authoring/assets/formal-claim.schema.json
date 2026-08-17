@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cryptoskills.example/schemas/formal-claim.schema.json",
+  "title": "CryptoSkills Formal Claim",
+  "type": "object",
+  "required": [
+    "claim_id",
+    "claim",
+    "claim_kind",
+    "target",
+    "scope",
+    "formalization_decision"
+  ],
+  "properties": {
+    "claim_id": {
+      "type": "string",
+      "pattern": "^FCL-[A-Z0-9][A-Z0-9._-]*$"
+    },
+    "claim": {
+      "type": "string",
+      "minLength": 1
+    },
+    "claim_kind": {
+      "enum": [
+        "existence",
+        "counterexample",
+        "equivalence",
+        "functional-correctness",
+        "lower-bound",
+        "upper-bound",
+        "optimality",
+        "security-reduction",
+        "protocol-property",
+        "leakage-property",
+        "numerical-bound",
+        "probabilistic-bound",
+        "other"
+      ]
+    },
+    "target": {
+      "type": "object",
+      "required": [
+        "name",
+        "version"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "parameters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "artifact_hashes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "model",
+        "quantification"
+      ],
+      "properties": {
+        "model": {
+          "type": "string"
+        },
+        "quantification": {
+          "type": "string"
+        },
+        "preconditions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "non_claims": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "category",
+          "text"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "desired_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "formalization_decision": {
+      "enum": [
+        "formalize",
+        "formalize-narrow-subclaim",
+        "defer",
+        "decline"
+      ]
+    },
+    "decision_rationale": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

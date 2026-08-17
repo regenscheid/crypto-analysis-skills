@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cryptoskills.example/schemas/certificate-record.schema.json",
+  "title": "CryptoSkills Certificate Record",
+  "type": "object",
+  "required": [
+    "certificate_id",
+    "claim_id",
+    "problem_type",
+    "instance_sha256",
+    "result",
+    "generator",
+    "solver",
+    "certificate",
+    "checker",
+    "correspondence_status"
+  ],
+  "properties": {
+    "certificate_id": {
+      "type": "string",
+      "pattern": "^CERT-[A-Z0-9][A-Z0-9._-]*$"
+    },
+    "claim_id": {
+      "type": "string"
+    },
+    "problem_type": {
+      "enum": [
+        "sat",
+        "pseudo-boolean",
+        "smt",
+        "exhaustive-search",
+        "optimization",
+        "computer-algebra",
+        "lattice",
+        "numerical",
+        "other"
+      ]
+    },
+    "instance_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "result": {
+      "type": "string"
+    },
+    "generator": {
+      "type": "object"
+    },
+    "solver": {
+      "type": "object"
+    },
+    "certificate": {
+      "type": "object"
+    },
+    "checker": {
+      "type": "object"
+    },
+    "witness": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "correspondence_status": {
+      "enum": [
+        "formal-proof",
+        "exhaustively-validated-small-instances",
+        "independently-tested",
+        "assumed",
+        "not-applicable"
+      ]
+    },
+    "original_domain_claim": {
+      "type": "string"
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

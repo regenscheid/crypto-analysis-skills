@@ -1,0 +1,34 @@
+claim_id: ""
+target:
+  artifact: ""
+  version: ""
+  commit: ""
+  parameters: {}
+environment:
+  os: ""
+  architecture: ""
+  language_and_version: ""
+  dependencies_lock: ""
+  solver_and_version: ""
+inputs:
+  deterministic_seeds: []
+  test_vectors: []
+  generated_data_manifest: ""
+commands: []
+expected_outputs: []
+controls:
+  positive: []
+  negative: []
+  null_model: []
+validation:
+  independent_implementation: ""
+  direct_simulation: ""
+  solver_certificate: ""
+  statistical_test: ""
+  confidence_method: ""
+falsification_conditions: []
+known_limitations: []
+artifacts:
+  logs: []
+  code: []
+  result_files: []

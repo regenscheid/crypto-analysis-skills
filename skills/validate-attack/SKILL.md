@@ -43,10 +43,9 @@ An implementation route is a pipeline, and that is exactly the shape `generate_p
 parallel directions become `delegations` in a phase, and the human approves the
 approach once instead of discovering it at the end.
 
-**But every plan blocks on approval**, so skip it when analysis will settle the
-question in one pass. The threshold, the schema, `update_step_status`, and how to
-amend a plan without discarding it are all in `investigate` §1b — follow that
-rather than a second copy of the rule here.
+Skip planning when analysis will settle the question in one pass. Follow
+`investigate`'s **Plan without stalling** rule and its platform adapter rather
+than duplicating host-specific plan mechanics.
 
 ## Step 0 — Read what is already known
 

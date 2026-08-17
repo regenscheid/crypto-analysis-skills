@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cryptoskills.example/schemas/proof-artifact.schema.json",
+  "title": "CryptoSkills Proof Artifact",
+  "type": "object",
+  "required": [
+    "artifact_id",
+    "claim_id",
+    "backend",
+    "artifact_type",
+    "status",
+    "files",
+    "toolchain",
+    "assumptions"
+  ],
+  "properties": {
+    "artifact_id": {
+      "type": "string",
+      "pattern": "^FPA-[A-Z0-9][A-Z0-9._-]*$"
+    },
+    "claim_id": {
+      "type": "string"
+    },
+    "backend": {
+      "type": "string"
+    },
+    "artifact_type": {
+      "enum": [
+        "proof-script",
+        "proof-term",
+        "checked-theory",
+        "certificate",
+        "checked-witness",
+        "rigorous-numerical-bound",
+        "counterexample",
+        "replay-bundle"
+      ]
+    },
+    "theorem_or_result": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "generated",
+        "checked",
+        "replay-passed",
+        "replay-failed",
+        "qualified",
+        "rejected"
+      ]
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "role": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "toolchain": {
+      "type": "object"
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "non_claims": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "checker_result": {
+      "type": "object"
+    },
+    "source_references": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

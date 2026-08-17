@@ -1,6 +1,6 @@
 # Attack families: lattice (LWE, NTRU, SIS)
 
-Layer 3 of `docs/ROADMAP.md`. Consumed by `analyze-scheme` step 3–4.
+Load this checklist for the lattice-family coverage phase of `analyze-scheme`.
 
 ## The rule this file exists to enforce
 
@@ -9,8 +9,8 @@ Layer 3 of `docs/ROADMAP.md`. Consumed by `analyze-scheme` step 3–4.
 
 Both halves are load-bearing, and each targets a measured failure.
 
-**Walking every family** targets `docs/ROADMAP.md` §3 class 3 — pattern matching
-over analysis. Measured on ML-KEM-512 with `RC.MATZOV`:
+**Walking every family** prevents pattern matching from replacing analysis.
+Measured on ML-KEM-512 with `RC.MATZOV`:
 
 | Family | cost | |
 |---|---|---|
@@ -257,10 +257,9 @@ not apples-to-apples with the rest.
 - [ ] Spread reported where models disagree materially
 - [ ] `ADPS16` given when comparing against a NIST submission's own claim, since
       core-SVP is the convention those are stated in
-- [ ] Estimator commit recorded — `lattice-estimator` is pinned at
-      `3e48ef42`, see `docs/ENVIRONMENTS.md`
-- [ ] Sage version printed with the result (`docs/ENVIRONMENTS.md` — there are
-      two SageMaths on this machine and they are not the same)
+- [ ] Estimator commit recorded — these measurements used
+      `lattice-estimator` at `3e48ef42`
+- [ ] Sage and Python versions printed with the result
 
 ---
 

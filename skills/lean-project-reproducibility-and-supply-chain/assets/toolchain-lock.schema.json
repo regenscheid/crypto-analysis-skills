@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cryptoskills.example/schemas/toolchain-lock.schema.json",
+  "title": "CryptoSkills Formal Toolchain Lock",
+  "type": "object",
+  "required": [
+    "version",
+    "reviewed_on",
+    "components"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "reviewed_on": {
+      "type": "string",
+      "format": "date"
+    },
+    "platform": {
+      "type": "object"
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "version",
+          "role"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "source_url": {
+            "type": "string"
+          },
+          "commit_or_digest": {
+            "type": "string"
+          },
+          "package_hash": {
+            "type": "string"
+          },
+          "trusted": {
+            "type": [
+              "boolean",
+              "string"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "solvers": {
+      "type": "array"
+    },
+    "certificate_checkers": {
+      "type": "array"
+    },
+    "compilers_and_extractors": {
+      "type": "array"
+    },
+    "proof_libraries": {
+      "type": "array"
+    },
+    "containers_or_derivations": {
+      "type": "array"
+    },
+    "build_environment": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

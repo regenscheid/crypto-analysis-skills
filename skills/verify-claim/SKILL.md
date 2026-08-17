@@ -45,16 +45,6 @@ is asserting without them.
 - **`derive-cost`** — nothing has costed the target and a number is needed.
 - **`crypto-review`** — whether the *reasoning* is sound, not whether the claim is.
 
-## Why this replaces the blind test
-
-An earlier design (E4) hid an answer key and scored whether the analyst *derived*
-rather than *recalled*. Two things killed it. The knowledge base had by then
-accumulated the answer verbatim, so retrieving it — the correct behaviour — was
-scored as cheating. And per `docs/ROADMAP.md` §1, a thing that hides information
-to score an agent is a benchmark; this project is a workbench, which surfaces
-information to amplify a person. Hiding nothing measures more, burns no targets,
-and can run on real work rather than a staged artifact.
-
 ## Plan first, if this is multi-stage
 
 Settling one claim usually is not, and **most of the time no plan is needed here**
@@ -63,10 +53,9 @@ only when a batch arrives from `analyze-paper` and the claims can be settled in
 parallel: they become `delegations` in a phase, and the human approves the
 approach once instead of discovering it at the end.
 
-**Every plan blocks on approval**, so a single number reproduced from one command
-should never get one. The threshold, the schema, `update_step_status`, and how to
-amend a plan without discarding it are all in `investigate` §1b — follow that
-rather than a second copy of the rule here.
+A single number reproduced from one command should not get a formal plan. Follow
+`investigate`'s **Plan without stalling** rule and its platform adapter rather
+than duplicating host-specific plan mechanics.
 
 ## Step 1 — Restate the claim precisely enough to be settled
 

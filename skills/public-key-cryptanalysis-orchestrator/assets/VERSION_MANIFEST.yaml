@@ -1,0 +1,15 @@
+version: 1
+target_name: ""
+artifacts:
+  - artifact_id: ""
+    role: "specification|implementation|test-vectors|proof|estimator|attack-code|other"
+    title: ""
+    version: ""
+    date: ""
+    source: ""
+    local_path: ""
+    commit_or_revision: ""
+    sha256: ""
+    supersedes: ""
+    status: "current|historical|withdrawn|superseded|unknown"
+    notes: ""

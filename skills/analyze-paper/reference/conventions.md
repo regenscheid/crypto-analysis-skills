@@ -25,8 +25,7 @@ finding.
 
 **Query budgets.** Any oracle-access notion is parameterised by how many queries
 the adversary may make. A bound that omits q_H, q_D or q_S is incomplete, not
-merely terse. Dropping a q_H factor is a named failure mode
-(`docs/ROADMAP.md` §3, class 4).
+merely terse. Dropping a query factor can change the concrete claim.
 
 ---
 

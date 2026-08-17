@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "runtime": "Claude Science/CScience 0.1.27",
+  "adapter": "skills/investigate/reference/claude-science.md",
+  "verified_behaviors": [
+    "plan revisions are stored before validation and require reapproval only when adopted",
+    "adopted plan revisions reset all live step statuses",
+    "exact delegation-name matches link children to their assigned plan tracks",
+    "delegated children are leaves but can update their own plan steps",
+    "two direct child ask_user cards can operate concurrently without answer crossover",
+    "messages to ask, network, and host parks fail closed without dismissing their cards",
+    "artifact markers cross child workspaces and lineage retains child provenance"
+  ],
+  "required_literals": [
+    "generate_plan",
+    "{\"approve\": true}",
+    "update_step_status",
+    "save_artifacts",
+    "version_of",
+    "ask_user",
+    "multi_select",
+    "host.delegate",
+    "host.collect",
+    "host.children",
+    "host.send_message",
+    "host.stop_child",
+    "host.capabilities",
+    "host.artifact_marker",
+    "host.lineage.graph",
+    "Current Context",
+    "Plan Steps",
+    "wait_for_notification",
+    "awaiting_user_response",
+    "request_network_access",
+    "request_host_access",
+    "status: \"failed\"",
+    "status: \"injected\"",
+    "Unknown step title",
+    "duplicate step title"
+  ],
+  "forbidden_literals": [
+    "Use **parent-mediated elicitation** in CScience",
+    "A subagent must not call `ask_user`",
+    "current runtime documentation says this can deny the pending approval",
+    "Only the root should call access and elicitation tools"
+  ]
+}

@@ -1,0 +1,36 @@
+version: "1.0"
+claim_id: ""
+artifact_id: ""
+result: "pending"
+source_snapshot:
+  repository: ""
+  commit: ""
+  patches: []
+  specification_version: ""
+toolchain:
+  lock_file: "TOOLCHAIN_LOCK.yaml"
+  container_or_derivation: ""
+network_policy: "disabled-during-replay"
+commands:
+  regenerate: []
+  build: []
+  check: []
+  audit: []
+expected_artifacts: []
+forbidden_constructs:
+  - sorry
+  - admit
+  - unfinished-proof
+checks:
+  theorem_statement_matches_claim: false
+  certificate_instance_hash_matches: false
+  dependency_and_axiom_audit_passes: false
+  independent_witness_check_passes: false
+  clean_replay_passes: false
+hashes: {}
+resources:
+  platform: ""
+  cpu: ""
+  memory_limit: ""
+  time_limit: ""
+notes: ""

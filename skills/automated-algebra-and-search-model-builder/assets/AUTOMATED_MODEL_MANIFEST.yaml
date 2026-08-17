@@ -1,0 +1,29 @@
+version: 1
+model_id: ""
+target:
+  artifact: ""
+  version: ""
+  parameter_set: ""
+semantics:
+  modeled_property: ""
+  variables: []
+  constraints: []
+  objective: ""
+  omitted_behavior: []
+tool:
+  solver: ""
+  version_or_commit: ""
+  configuration: ""
+validation:
+  exhaustive_small_instances: []
+  positive_controls: []
+  negative_controls: []
+  independent_formulation: ""
+  certificate_or_witness_check: ""
+results:
+  status: ""
+  witness: ""
+  bound: ""
+  runtime: ""
+  memory: ""
+limitations: []

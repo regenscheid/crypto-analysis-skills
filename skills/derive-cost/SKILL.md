@@ -37,10 +37,9 @@ A full reduction hunt is a pipeline, and that is exactly the shape `generate_pla
 parallel directions become `delegations` in a phase, and the human approves the
 approach once instead of discovering it at the end.
 
-**But every plan blocks on approval**, so skip it for a single lookup in the knowledge base.
-The threshold, the schema, `update_step_status`, and how to amend a plan without
-discarding it are all in `investigate` §1b — follow that rather than a second
-copy of the rule here.
+Skip planning for a single lookup or bounded estimator call. Follow
+`investigate`'s **Plan without stalling** rule and its platform adapter rather
+than duplicating host-specific plan mechanics.
 
 ## 1. Search what is already known — including the dead ends
 

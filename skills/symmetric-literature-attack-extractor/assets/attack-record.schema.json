@@ -1,0 +1,318 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Symmetric Cryptanalysis Attack Record",
+  "type": "object",
+  "required": [
+    "attack_id",
+    "target",
+    "result_type",
+    "model",
+    "scope",
+    "complexity",
+    "evidence",
+    "status"
+  ],
+  "properties": {
+    "attack_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "source": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "citation": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "locator": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "target": {
+      "type": "object",
+      "properties": {
+        "primitive": {
+          "type": "string"
+        },
+        "artifact": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "parameters": {
+          "type": "object"
+        }
+      }
+    },
+    "attack_class": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "result_type": {
+      "enum": [
+        "trail",
+        "property",
+        "distinguisher",
+        "key-recovery",
+        "state-recovery",
+        "forgery",
+        "collision",
+        "preimage",
+        "second-preimage",
+        "proof-gap",
+        "implementation-failure",
+        "other"
+      ]
+    },
+    "claim_addressed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "model": {
+      "type": "object",
+      "properties": {
+        "oracles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "data_control": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "key_relations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "nonce_tweak_relations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "classical_quantum": {
+          "type": "string"
+        },
+        "online_offline": {
+          "type": "string"
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "properties": {
+        "rounds": {
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "phases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "weak_key_fraction": {
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "restrictions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "attack_skeleton": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "requirement": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "satisfied",
+              "partially-satisfied",
+              "absent",
+              "unknown",
+              "not-applicable"
+            ]
+          }
+        }
+      }
+    },
+    "complexity": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "string"
+        },
+        "queries": {
+          "type": "string"
+        },
+        "time": {
+          "type": "string"
+        },
+        "memory": {
+          "type": "string"
+        },
+        "preprocessing": {
+          "type": "string"
+        },
+        "communication": {
+          "type": "string"
+        },
+        "verification": {
+          "type": "string"
+        },
+        "parallelism": {
+          "type": "string"
+        },
+        "units": {
+          "type": "string"
+        }
+      }
+    },
+    "success": {
+      "type": "object",
+      "properties": {
+        "probability": {
+          "type": "string"
+        },
+        "advantage": {
+          "type": "string"
+        },
+        "false_positive_rate": {
+          "type": "string"
+        },
+        "confidence_interval": {
+          "type": "string"
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "generic_baseline": {
+      "type": "object",
+      "properties": {
+        "baseline": {
+          "type": "string"
+        },
+        "comparison": {
+          "type": "string"
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "properties": {
+        "proof": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "simulation": {
+          "type": "string"
+        },
+        "solver_certificate": {
+          "type": "string"
+        },
+        "independent_check": {
+          "type": "string"
+        },
+        "falsification_condition": {
+          "type": "string"
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "enum": [
+              "theorem",
+              "derivation",
+              "experiment",
+              "code",
+              "test-vector",
+              "solver-output",
+              "claim",
+              "rebuttal",
+              "correction",
+              "other"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "locator": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "uncertainties": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "enum": [
+        "hypothesis",
+        "partially-supported",
+        "reproduced",
+        "independently-verified",
+        "refuted",
+        "superseded",
+        "inconclusive"
+      ]
+    },
+    "conclusion": {
+      "type": "string"
+    }
+  }
+}

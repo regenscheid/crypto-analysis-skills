@@ -1,8 +1,8 @@
 # Attack families: symmetric and hash
 
-Block ciphers, permutations, hash functions. Layer 3 of `docs/ROADMAP.md`,
-consumed by `analyze-scheme` steps 3–4. Same rule as `lattice.md` and
-`multivariate.md`:
+Block ciphers, permutations, and hash functions. Load this checklist for the
+symmetric-family coverage phase of `analyze-scheme`. The same rule as
+`lattice.md` and `multivariate.md` applies:
 
 > **Walk every family. Check each family's preconditions *before* running it.
 > Report the cheapest, not the familiar one.**
