@@ -27,10 +27,10 @@ to test each runtime pin, not as a current parent-only rule.
 
 **A plain 403 is often the user-agent.** Measured against a NIST host: a default
 `Python-urllib/3.x` user-agent gets 403, no user-agent at all gets 200, a
-browser-like one gets 200. The connectors in this repo already set a proper
-user-agent. Hand-rolled `urllib` in a kernel cell does not — which is why the
-rule is **fetch through the connector**, and only reach for raw HTTP when nothing
-else can.
+browser-like one gets 200. Prefer a connector that handles request headers and
+redirects. If direct HTTP is the only route, set a descriptive non-empty
+`User-Agent`; do not infer that a document is unavailable from one rejected
+request.
 
 ## Network: no direct egress, and no listening sockets
 
@@ -136,19 +136,21 @@ reasoning before it opens a card; that is ordinary direct-parent messaging, not
 a way to answer an existing gate. Exact call patterns are in
 `claude-science.md`.
 
-## The research tools are a REMOTE server, and that is why they work
+## The reference research connector is remote
 
-These skills call one remote MCP server over HTTPS. That is not incidental —
-Claude Science **requires a public HTTPS URL** for a remote connector and rejects
-`http://localhost` on the scheme alone, before anything connects. A container
-bound to loopback therefore cannot serve tools to it, however correct the
-container is; a properly hosted one can.
+The reference deployment uses one remote MCP server over HTTPS. That is not
+incidental — Claude Science **requires a public HTTPS URL** for a remote
+connector and rejects `http://localhost` on the scheme alone, before anything
+connects. A container bound to loopback therefore cannot serve tools to it,
+however correct the container is; a properly hosted one can. Other deployments
+may use different connectors; map them by capability as described in `tools.md`.
 
 Two consequences worth holding:
 
-- **A tool that vanishes is a server-side event, not your bug.** If a name stops
-  resolving, call `portal_list_servers` and read the live list. The names in
-  `tools.md` were current when written and are expected to drift.
+- **A tool that vanishes may reflect connector drift.** If the reference
+  deployment exposes `portal_list_servers`, read its live list; otherwise use
+  the host's tool-discovery surface. The names in `tools.md` are examples, not a
+  portable API contract.
 - **Nothing here shares a filesystem with you.** A remote server cannot hand back
   a local path, so file-shaped results arrive as URLs or as text. `host.mcp()`
   flattens tool results to a string and drops binary content (above), so text and

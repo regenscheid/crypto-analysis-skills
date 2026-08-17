@@ -34,7 +34,8 @@ a prover merely because the skills are available.
 1. selects `ASSESS`, `DISCOVER`, `VALIDATE`, or `FORMALIZE` mode;
 2. loads the symmetric, public-key, or formal-method orchestrator;
 3. selects applicable technique skills explicitly;
-4. records a skill trace and complete attack-family coverage ledger;
+4. records source grounding, a skill trace, and a complete attack-family
+   coverage ledger;
 5. executes the investigation rather than stopping after planning or literature
    review;
 6. applies mode-specific completion gates before concluding.
@@ -76,15 +77,17 @@ may live under that organization's `~/.cscience/orgs/.../skills/` directory.
 Do not install `.agents/`. It is a local, ignored staging area for source packs,
 not part of the runtime distribution.
 
-The original workbench expects one remote research MCP connector:
+The reference deployment uses this remote research MCP connector:
 
 ```text
 https://research-mcp-api.npages.org/mcp
 ```
 
-`skills/investigate/reference/tools.md` maps research capabilities to the
-connector's current tool names. Skills degrade by recording a missing capability
-when a connector or local backend is unavailable.
+`skills/investigate/reference/tools.md` maps research capabilities to that
+connector's current tool names and to portable alternatives. The runtime should
+use equivalent available MCP, native, or approved local tools rather than assume
+one provider. When every route is unavailable, skills record and surface the
+blocked capability instead of silently dropping the grounding requirement.
 
 ### Verify GPT skill loading
 
@@ -309,9 +312,10 @@ can diagnose drift.
 ## Portability
 
 Cryptanalytic procedure stays in portable `SKILL.md` files. Claude
-Science-specific planning, delegation, connector, artifact, and compatibility
-behavior lives in `skills/investigate/reference/claude-science.md` and related
-references.
+Science-specific planning, delegation, artifact, and compatibility behavior
+lives in `skills/investigate/reference/claude-science.md` and related references.
+Research needs are expressed as capabilities; connector names are reference
+bindings rather than requirements.
 
 Open Science Desktop integration is a future adapter layer. It should reuse the
 portable skills and supply host-specific discovery, traces, tools, and artifact

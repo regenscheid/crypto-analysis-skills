@@ -42,7 +42,8 @@ excluded techniques in the coverage ledger with the failing precondition.
 
 Keep these tracks independent until each produces evidence or candidates:
 
-1. **Prior art** — exact scheme, former names, components, assumptions, failed
+1. **Prior art** — start immediately and load the domain literature extractor;
+   cover the exact scheme, former names, components, assumptions, failed
    approaches, corrections, code, standards records, and non-paper sources.
 2. **Structure first** — objects, maps, ranks, distributions, invariants,
    symmetries, sparsity, locality, repetition, failure events, and departures
@@ -56,6 +57,8 @@ Keep these tracks independent until each produces evidence or candidates:
 
 Search misses must name channels, queries, aliases, dates, and unavailable
 sources. They never license “novel,” “unbroken,” or “no prior work.”
+The structure-first track may proceed in parallel to avoid anchoring, but it
+cannot substitute for the prior-art track or close its completion gate.
 
 ## Maintain candidates
 
@@ -110,8 +113,9 @@ improves the original derivation is not independent evidence.
 
 Do not stop because the known literature was recovered, one promising direction
 was found, or one favorite technique failed. Complete the applicable family
-ledger, attempt the cheapest falsifier for every viable candidate, and hand off
-the strongest survivors for bounded costing or validation.
+ledger and source-grounding record, attempt the cheapest falsifier for every
+viable candidate, and hand off the strongest survivors for bounded costing or
+validation.
 
 Stop with a scoped partial result when remaining work is blocked or deliberately
 outside budget. State the exact unblock condition and next decisive experiment.

@@ -15,6 +15,25 @@ Do not list a skill merely because it was installed or mentioned by another
 skill. If the runtime exposes skill-call identifiers or transcripts, retain them
 with the research artifact.
 
+## Source-grounding record
+
+Record enough detail to distinguish a grounded investigation from an unsupported
+claim of having searched.
+
+| Channel or capability | Query, identifier, or artifact | Exact source opened | Version, date, or locator | Outcome | Status |
+|---|---|---|---|---|---|
+
+Use `DISCOVERED` for metadata, snippets, or abstracts; `READ` only after opening
+the body or exact artifact; `PROVIDED` for a user-supplied artifact actually
+inspected; and `BLOCKED` for an unavailable source or capability with the failed
+routes recorded. A load-bearing claim cannot rely only on `DISCOVERED` evidence.
+
+Cover the source classes material to the target: normative specifications and
+design documents; primary papers; follow-ups, errata, rebuttals, and failed
+approaches; implementations and issue discussions; and non-paper competition or
+community records. Mark a class `NOT_APPLICABLE` with a reason rather than
+silently omitting it.
+
 ## Coverage ledger
 
 Create one row for every technique family selected or considered by the domain
@@ -54,6 +73,14 @@ candidate—not a candidate result.
 
 ## Completion gates
 
+### All modes
+
+- Complete a source-grounding record proportionate to the claim.
+- Open every load-bearing source at the body, theorem, algorithm, table, code
+  revision, or normative-text level.
+- Expose blocked retrieval and unsearched source classes; do not substitute
+  model recall for missing evidence.
+
 ### ASSESS
 
 - Freeze target, claims, and models.
@@ -64,6 +91,8 @@ candidate—not a candidate result.
 ### DISCOVER
 
 - Satisfy ASSESS gates needed for a reliable baseline.
+- Run prior-art and structure-first tracks independently; complete both before
+  making novelty or coverage claims.
 - Generate candidates from every plausible structural source.
 - Attempt the cheapest falsifier for each viable candidate.
 - Hand surviving high-value candidates to costing or validation.
@@ -73,12 +102,14 @@ candidate—not a candidate result.
 
 - State the claim so one result can decide it.
 - Check preconditions before implementation.
+- Read the exact source claim and material corrections or errata.
 - Reproduce all load-bearing numbers with actual tools.
 - Seek an independent source, derivation, implementation, or checker.
 
 ### FORMALIZE
 
 - State the exact theorem and correspondence boundary.
+- Pin the normative source and the imported theorem or implementation revision.
 - Pin the toolchain and declare axioms or assumptions.
 - Replay from a clean state.
 - Report the trusted computing base and unformalized gaps.

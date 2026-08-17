@@ -1,13 +1,15 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "cases": [
     {
       "id": "find-fn-dsa-issues",
       "prompt": "Look hard for previously missed weaknesses in FN-DSA signing, especially its distributions and nonce handling.",
       "expected_mode": "DISCOVER",
+      "requires_grounding": true,
       "expected_skills": [
         "investigate",
         "public-key-cryptanalysis-orchestrator",
+        "public-key-literature-attack-extractor",
         "ntru-and-falcon-analysis",
         "nonce-randomness-and-hidden-number-analysis",
         "public-key-attack-hypothesis-generator-and-triage"
@@ -17,6 +19,7 @@
       "id": "reduced-round-aead-claim",
       "prompt": "Does this reduced-round distinguisher actually break the full AEAD construction?",
       "expected_mode": "VALIDATE",
+      "requires_grounding": true,
       "expected_skills": [
         "investigate",
         "symmetric-cryptanalysis-orchestrator",
@@ -29,6 +32,7 @@
       "id": "ml-kem-qrom-proof",
       "prompt": "Audit the concrete QROM argument for this ML-KEM transform and identify any unproved game hop.",
       "expected_mode": "VALIDATE",
+      "requires_grounding": true,
       "expected_skills": [
         "investigate",
         "public-key-cryptanalysis-orchestrator",
@@ -41,6 +45,7 @@
       "id": "lean-bitvector-equivalence",
       "prompt": "Use Lean to prove that this optimized bit-vector implementation refines the specification.",
       "expected_mode": "FORMALIZE",
+      "requires_grounding": true,
       "expected_skills": [
         "investigate",
         "formal-methods-router",
@@ -52,12 +57,25 @@
       "id": "reproduce-lattice-attack",
       "prompt": "Reproduce the claimed lattice attack at the published parameters and check its full cost accounting.",
       "expected_mode": "VALIDATE",
+      "requires_grounding": true,
       "expected_skills": [
         "investigate",
         "public-key-cryptanalysis-orchestrator",
         "lattice-hard-problem-and-estimator-analysis",
         "public-key-reproduction-and-falsification-planner",
         "public-key-attack-complexity-and-success-auditor"
+      ]
+    },
+    {
+      "id": "find-ml-dsa-research",
+      "prompt": "Find and synthesize the primary research on ML-DSA attacks, proof criticisms, parameter analyses, implementation findings, corrections, and follow-up work. Use the available research connectors heavily and open the relevant sources.",
+      "expected_mode": "ASSESS",
+      "requires_grounding": true,
+      "expected_skills": [
+        "investigate",
+        "public-key-cryptanalysis-orchestrator",
+        "public-key-literature-attack-extractor",
+        "module-lattice-signature-analysis"
       ]
     }
   ]

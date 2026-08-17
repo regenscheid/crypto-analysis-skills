@@ -49,6 +49,7 @@ def main() -> int:
     response = args.response.read_text(encoding="utf-8", errors="replace")
     folded = response.casefold()
     skill_trace = section(response, "skill trace")
+    grounding = section(response, "grounding")
     coverage = section(response, "coverage")
     failures: list[str] = []
     passes: list[str] = []
@@ -71,6 +72,13 @@ def main() -> int:
         failures.append("skill-trace: missing " + ", ".join(missing_skills))
     else:
         passes.append("skill-trace:expected skills named")
+
+    if case.get("requires_grounding"):
+        grounding_statuses = ("DISCOVERED", "READ", "PROVIDED", "BLOCKED")
+        if grounding and any(status in grounding.upper() for status in grounding_statuses):
+            passes.append("grounding:source record present")
+        else:
+            failures.append("grounding: missing source-grounding section or evidence status")
 
     if coverage and any(
         status in coverage.upper()

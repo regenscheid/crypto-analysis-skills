@@ -38,6 +38,27 @@ Record before analysis:
 If an essential item is missing, continue on the parts it does not block and
 mark every conditional conclusion. Never silently substitute a nearby version.
 
+## Establish source grounding
+
+Begin a source and prior-art track before expensive computation or original
+attack development. In `ASSESS` and `DISCOVER`, load the domain literature
+extractor (`symmetric-literature-attack-extractor` or
+`public-key-literature-attack-extractor`). The structure-first track may run in
+parallel so it remains intellectually independent; it does not replace source
+grounding.
+
+Search the exact target and aliases, components and assumptions, normative
+specifications, known attacks and failed approaches, errata and follow-ups,
+implementations and issue discussions, and relevant non-paper sources. Open the
+body or exact artifact for every load-bearing result; titles, snippets, and
+abstracts are discovery evidence only.
+
+Maintain the source-grounding record in
+[`reference/completion-contract.md`](reference/completion-contract.md). If a
+retrieval capability is absent or repeatedly fails, try a distinct available
+route, record the failure, and flag the blocked coverage to the user. Continue
+only with work that does not depend on the missing source, labeled as such.
+
 ## Route explicitly
 
 Load the matching domain orchestrator before technique work:
@@ -65,10 +86,11 @@ families to the coverage ledger with a concrete non-applicability reason.
 Work in dependency order and update the evidence state after each material
 result:
 
-1. Search existing project knowledge and authoritative primary sources.
+1. Establish the source-grounding record from project knowledge and
+   authoritative primary sources.
 2. Formalize the claim and normalize the target structure.
 3. Establish generic attacks, security baselines, and claimed margins.
-4. Extract relevant prior attacks with exact preconditions and costs.
+4. Normalize relevant prior attacks with exact preconditions and costs.
 5. Map the full applicable attack surface.
 6. In DISCOVER mode, generate hypotheses from structure, proof seams,
    distributions, interfaces, and transfer—not from analogy alone.
@@ -89,6 +111,8 @@ Maintain the ledger and status vocabulary in
 answer is incomplete unless it contains:
 
 - the mode and frozen target;
+- the source-grounding record, including searched channels, opened sources, and
+  retrieval gaps;
 - a skill trace naming the skills actually loaded and used;
 - a coverage row for every applicable or considered family;
 - evidence and scope for every material finding;
@@ -119,12 +143,16 @@ Science, read:
   call to `ask_user`, `generate_plan`, `update_step_status`, `host.delegate`,
   `request_network_access`, or `save_artifacts`; its exact call patterns and
   verified elicitation and approval rules are required, not optional background;
-- [`reference/tools.md`](reference/tools.md) before calling the research MCP;
+- [`reference/tools.md`](reference/tools.md) before any literature, web, or
+  document retrieval; translate capability needs to the tools actually present;
 - [`reference/environment.md`](reference/environment.md) when sandbox, network,
   kernel, connector, or artifact behavior affects the work.
 
-If a named tool is unavailable, discover the current equivalent or state the
-missing capability. Do not fabricate a successful call.
+If a named tool is unavailable, discover the current equivalent. After a
+repeated identical failure, stop retrying that route, record the retriable
+failure, try a distinct route, and tell the user if the capability remains
+blocked. Do not fabricate a successful call or silently downgrade the grounding
+requirement.
 
 ## Report from evidence
 
@@ -132,11 +160,12 @@ Use this compact order:
 
 1. **Mode and target**
 2. **Skill trace**
-3. **Claim and attack-surface map**
-4. **Coverage ledger**
-5. **Findings and surviving candidates**
-6. **Validation, costs, and confidence**
-7. **Limits and next decisive work**
+3. **Source and prior-art grounding**
+4. **Claim and attack-surface map**
+5. **Coverage ledger**
+6. **Findings and surviving candidates**
+7. **Validation, costs, and confidence**
+8. **Limits and next decisive work**
 
 Answer the user’s original question directly. Artifacts and plans support the
 answer; they are not substitutes for it.

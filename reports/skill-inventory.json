@@ -2,7 +2,7 @@
   "description_words": 4917,
   "errors": 0,
   "schema_version": 1,
-  "skill_body_lines": 13088,
+  "skill_body_lines": 13121,
   "skill_count": 161,
   "skills": [
     {
@@ -249,7 +249,7 @@
       "description": "Actively search for new or previously missed cryptanalytic weaknesses by combining a complete attack-surface map, independent structure-first reasoning, prior-art extraction, cross-field transfer, proof and interface seams, falsifiable candidate generation, cheap disproof, costing, and independent validation. Use whenever asked to find issues, look hard for weaknesses, search for new attacks, improve known attacks, investigate unexplored directions, or transfer techniques to a cryptographic target. Do not stop at literature review or vague ideas.",
       "description_words": 71,
       "domain": "core",
-      "lines": 133,
+      "lines": 137,
       "missing_relative_links": [],
       "name": "discover-cryptanalysis"
     },
@@ -553,7 +553,7 @@
       "description": "Conduct rigorous end-to-end cryptographic security investigations and visibly route them through the relevant cryptanalysis or formal-method skills. Use whenever asked to analyze a scheme or paper, find issues or weaknesses, search for attacks, reproduce or validate a result, audit a security claim or proof, compare parameters, or resume cryptographic research. Treat \u201cfind issues,\u201d \u201clook hard,\u201d \u201cattack,\u201d \u201cbreak,\u201d \u201cnew,\u201d and \u201cunexplored\u201d as explicit discovery triggers even when the user does not name this skill.",
       "description_words": 73,
       "domain": "core",
-      "lines": 142,
+      "lines": 171,
       "missing_relative_links": [],
       "name": "investigate"
     },
