@@ -2,7 +2,7 @@
   "description_words": 4917,
   "errors": 0,
   "schema_version": 1,
-  "skill_body_lines": 13121,
+  "skill_body_lines": 13138,
   "skill_count": 161,
   "skills": [
     {
@@ -553,7 +553,7 @@
       "description": "Conduct rigorous end-to-end cryptographic security investigations and visibly route them through the relevant cryptanalysis or formal-method skills. Use whenever asked to analyze a scheme or paper, find issues or weaknesses, search for attacks, reproduce or validate a result, audit a security claim or proof, compare parameters, or resume cryptographic research. Treat \u201cfind issues,\u201d \u201clook hard,\u201d \u201cattack,\u201d \u201cbreak,\u201d \u201cnew,\u201d and \u201cunexplored\u201d as explicit discovery triggers even when the user does not name this skill.",
       "description_words": 73,
       "domain": "core",
-      "lines": 171,
+      "lines": 188,
       "missing_relative_links": [],
       "name": "investigate"
     },

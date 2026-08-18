@@ -104,6 +104,21 @@ Use more than one structurally independent hypothesis source in DISCOVER mode
 unless the target rules the others out. A failed search or solver timeout updates
 the ledger; it never becomes evidence of security.
 
+## Select computational tools by capability
+
+Before a computation can become load-bearing, read
+[`reference/computation.md`](reference/computation.md). Identify the capability
+the method requires, inspect the execution routes actually available on the
+current platform, and choose the best suitable implementation. Do not assume
+Python, SageMath, R, Magma, or any other named program is always present or
+always preferred.
+
+Prefer a suitable executable already visible inside the analysis environment,
+then an existing managed environment, then an isolated environment provisioned
+through the platform, and finally an approved configured remote resource.
+Preserve the host's sandbox, permissions, credential handling, environment
+management, and execution manifests.
+
 ## Enforce completion
 
 Maintain the ledger and status vocabulary in
@@ -145,6 +160,8 @@ Science, read:
   verified elicitation and approval rules are required, not optional background;
 - [`reference/tools.md`](reference/tools.md) before any literature, web, or
   document retrieval; translate capability needs to the tools actually present;
+- [`reference/computation.md`](reference/computation.md) before selecting,
+  installing, provisioning, or remotely invoking computational software;
 - [`reference/environment.md`](reference/environment.md) when sandbox, network,
   kernel, connector, or artifact behavior affects the work.
 

@@ -98,6 +98,10 @@ channels, dates, exclusions, and blocked routes.
 
 Literature connectors need not provide estimators or compute hosts.
 
+Use [`computation.md`](computation.md) to select among local programs, managed
+environments, and configured remote compute. The names below describe the
+requirements of particular costing paths.
+
 - For costing, use `analyze-scheme`'s `scripts/sweep.py` only when SageMath and
   `cryptographic_estimators` are available. Otherwise mark the row `NOT CHECKED`
   and name the missing model.
