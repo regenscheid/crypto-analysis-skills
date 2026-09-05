@@ -33,9 +33,14 @@ Use supplied assumptions and prior results at their stated evidence strength.
 A catalog link or published ingredient does not itself assign a paper audit;
 see [paper use and verification](../investigate/reference/paper-use-and-verification.md).
 
-Before synthesizing delegated mathematics, the main agent applies
-[orchestrator review](../investigate/reference/delegated-mathematics-review.md)
-to correctness, depth, and contribution labels.
+## Apply research judgment after delegation
+
+Before adopting delegated cryptanalytic work, the main agent applies
+[orchestrator review](../investigate/reference/delegated-cryptanalysis-review.md)
+to omissions, premature stopping, connections across findings, and overlooked
+significance. This applies to all delegated cryptanalysis, not only proof work.
+Use the dedicated reviewer for correctness checks; its approval does not establish
+that the research went far enough or that important implications were recognized.
 
 ## Operating procedure
 

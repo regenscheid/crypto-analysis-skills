@@ -202,7 +202,7 @@
     {
       "domain": "symmetric",
       "installed_name": "symmetric-cryptanalysis-orchestrator",
-      "installed_sha256": "9f82a2a6d370af6880e5c3f33dde3c2e90c9e6884f121baad50612daa68e269f",
+      "installed_sha256": "97b420035e3010be19698fc326e282c7e2aed8c6c7e559c7fd0e26568a8ff219",
       "source_name": "symmetric-cryptanalysis-orchestrator",
       "source_sha256": "473d0053d93b1e0a1e01237ac6ceabba846ff7067d528671f733caa4a9d6e9a4"
     },
@@ -524,7 +524,7 @@
     {
       "domain": "public-key",
       "installed_name": "public-key-cryptanalysis-orchestrator",
-      "installed_sha256": "b61f6d8b5e19f0eaff16091a0f80fa3163e3d6c1015af57defd1ebf2fc26d7e8",
+      "installed_sha256": "4a7998a14e97bf18b87efa42f9f6dab6566fc45cb4039a2f137e2d5c52331a39",
       "source_name": "public-key-cryptanalysis-orchestrator",
       "source_sha256": "e2d47fc1e6e5bab4dea20cfc1362dcc22f6f7684c8ea561483c73f8dc7d4e791"
     },

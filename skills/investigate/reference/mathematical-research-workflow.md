@@ -73,13 +73,15 @@ remaining obligations, and the reason the next inference matters. When continuin
 use the formulation and partial argument supplied by the host. Do not restart
 the original survey or generate the same proposal without a changed reason.
 
-## Review delegated mathematics
+## Apply research judgment after delegation
 
-When mathematical work is delegated, the main agent must review both correctness
-and depth before adopting it. Follow [orchestrator review](delegated-mathematics-review.md):
-inspect the reasoning, revisit consequential dismissals, and assess the actual
-additional contribution. Delegation does not transfer responsibility for the
-final conclusion or completion of the requested mathematical work.
+When cryptanalytic research is delegated, the main agent must assess omissions,
+premature stopping, connections, and overlooked significance. Follow
+[orchestrator research judgment](delegated-cryptanalysis-review.md). This covers
+all delegated cryptanalysis; proof review is only one supporting component.
+A dedicated reviewer's correctness verdict does not establish sufficient depth
+or recognition of the findings' implications. Use its checks while supplying
+the main agent's own research judgment.
 
 ## Keep status dimensions separate
 

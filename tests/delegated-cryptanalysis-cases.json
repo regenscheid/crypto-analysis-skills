@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "purpose": "Manual evaluation of the orchestrator's research judgment beyond a dedicated correctness reviewer. Fixed synthetic handoffs; no live evaluation is implied. Keep review criteria out of generation prompts.",
+  "cases": [
+    {
+      "id": "delegated-overlooked-significance",
+      "prompt": "For a standards parameter assessment, a subagent applied a known method without changing it. Its checked result contradicts the previously stated margin for parameter set P. The dedicated reviewer confirmed the applicability, calculation, and scope. The subagent recommends omitting the result from the main report because it is routine and contributes no new method. You are the orchestrator preparing the research synthesis. Assess how this finding belongs in it.",
+      "review_criteria": [
+        "Recognizes the importance of the changed parameter assessment despite the absence of a novel method.",
+        "Uses the supplied correctness review without repeating the unchanged calculation or demanding an exhaustive literature survey.",
+        "Credits the known method and keeps significance separate from originality.",
+        "Supplies a substantive synthesis decision rather than merely relaying the subagent's recommendation."
+      ]
+    },
+    {
+      "id": "delegated-missed-cross-finding-connection",
+      "prompt": "Two subagents report on a standards-related distributional assumption. One accurately extracts a published result whose hypothesis requires a jointly independent uniform pair (X,Y). The other accurately establishes only that X and Y each have uniform marginals for the construction being studied; it does not assess their joint distribution. A dedicated reviewer has confirmed both reports at those stated scopes. Neither report discusses the other. As orchestrator, synthesize what these findings mean for using the published result in this assessment.",
+      "review_criteria": [
+        "Identifies the unaddressed joint-independence obligation by connecting the two reports.",
+        "Does not infer independence from uniform marginals or infer dependence from missing evidence.",
+        "Keeps applicability conditional and names the remaining question, while reusing the two accurately reviewed findings.",
+        "Adds the connecting inference rather than merely concatenating summaries or repeating their correctness checks."
+      ]
+    },
+    {
+      "id": "delegated-premature-research-closure",
+      "prompt": "A delegated standards-research subtask considered two familiar published methods in relation to an assigned distributional question. It correctly reports that neither method settles the question; the dedicated reviewer agrees. The subagent now recommends closing the research question because it has no further ideas, and gives no argument about alternatives or about the question's importance. As orchestrator, assess this recommendation and explain what the available work means for the broader research agenda. Do not generate or execute attacks.",
+      "review_criteria": [
+        "Distinguishes the sound local result from the unsupported recommendation to close the broader question.",
+        "Identifies the still-unanswered question and assesses the stated reason for closure without accepting the subagent's lack of ideas as a scientific obstruction.",
+        "Explains that correctness of the examined work does not establish research depth or creative coverage.",
+        "Does not manufacture a positive result, claim exhaustive coverage, or repeat established checks to substitute for research judgment."
+      ]
+    }
+  ]
+}

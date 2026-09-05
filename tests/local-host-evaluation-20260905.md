@@ -2,7 +2,8 @@
 
 No behavioral comparison was executed in this local follow-up. The fourteen
 original cases remain unevaluated through Claude Science in this task, as do the
-three supplemental delegated-mathematics cases. No improvement in correctness,
+three supplemental delegated-mathematics cases and the three subsequent broader
+cryptanalysis-review cases. No improvement in correctness,
 depth, continuation, checking effort, or contribution labeling is claimed.
 
 The local `cscience --help` invocation exited with a module-not-found error for

@@ -39,10 +39,15 @@ For empirical observations and uncertainty, use
 `empirical-statistical-and-heuristic-claim-separation` directly; it does not
 require entering FORMALIZE mode.
 
-When synthesizing delegated mathematics, apply
-[orchestrator review](reference/delegated-mathematics-review.md) to correctness,
-depth, and contribution labels. The main agent owns the final judgment even
-when specialist work is complete.
+## Apply research judgment after delegation
+
+When adopting delegated cryptanalytic work, apply
+[orchestrator research judgment](reference/delegated-cryptanalysis-review.md):
+look for material omissions, premature stopping, connections across findings,
+and overlooked significance. This applies across research proposals, assessments,
+source work, modeling, computations, and proofs. Use the dedicated reviewer for
+correctness; the main agent must supply its own judgment about whether the
+investigation went far enough and what its findings mean.
 
 ## Declare the mode
 

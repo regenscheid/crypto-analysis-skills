@@ -106,11 +106,21 @@ and condition before describing a repeated pattern. Report run-level outcomes,
 disagreements, and execution failures; two repetitions alone do not establish
 statistical significance or general improvement.
 
-`delegated-mathematics-cases.json` adds three supplemental cases with fixed
+`delegated-cryptanalysis-cases.json` adds three supplemental handoffs covering
+an important routine finding undervalued by its author, an unnoticed connection
+between accurately reviewed reports, and premature closure after a correct but
+narrow examination. A dedicated correctness reviewer has already checked the
+supplied findings. Assess what research judgment the orchestrator adds: omitted
+implications, meaningful connections, and justified treatment of open questions.
+Repeating the supplied correctness checks does not satisfy this objective.
+These bounded fixtures do not measure open-ended cryptanalytic creativity.
+
+`delegated-mathematics-cases.json` supplies three further cases with fixed
 synthetic subagent handoffs. Review whether the main agent catches a false proof,
 continues past an unjustified dismissal, and corrects inflated novelty. These
-isolate the main agent's response to supplied work; they do not measure real
-delegation or differences between model capabilities. A live delegation trial
+and the broader cryptanalysis cases isolate the main agent's response to supplied
+work; they do not measure real delegation or differences between model
+capabilities. A live delegation trial
 must also record the primary and child model/effort settings actually used,
 subtask prompts, returned artifacts, and what the primary agent checked or added.
 Do not infer those settings from UI labels or role names.

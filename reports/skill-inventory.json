@@ -2,7 +2,7 @@
   "description_words": 4901,
   "errors": 0,
   "schema_version": 1,
-  "skill_body_lines": 13516,
+  "skill_body_lines": 13534,
   "skill_count": 162,
   "skills": [
     {
@@ -249,7 +249,7 @@
       "description": "Develop mathematical cryptanalysis questions, research proposals, and scoped results about specified cryptographic constructions, assumptions, or parameters. Use for human-directed standards research, unexplored mathematical questions, proposed extensions of known results, or continued development of a selected question. Distinguish a requested proposal from a request to carry out the mathematical work.",
       "description_words": 49,
       "domain": "core",
-      "lines": 113,
+      "lines": 115,
       "missing_relative_links": [],
       "name": "discover-cryptanalysis"
     },
@@ -553,7 +553,7 @@
       "description": "Conduct rigorous end-to-end cryptographic security investigations and visibly route them through the relevant cryptanalysis or formal-method skills. Use whenever asked to analyze a scheme or paper, find issues or weaknesses, search for attacks, reproduce or validate a result, audit a security claim or proof, compare parameters, or resume cryptographic research. Infer the requested task from its intent; individual words such as \u201cnew\u201d do not by themselves select a mode.",
       "description_words": 69,
       "domain": "core",
-      "lines": 239,
+      "lines": 244,
       "missing_relative_links": [],
       "name": "investigate"
     },
@@ -721,7 +721,7 @@
       "description": "Develop an explicitly stated mathematical question into definitions, lemmas, derivations, counterexamples, or scoped partial results. Use for a stated mathematical problem, proof exploration, an incomplete argument, or extended derivation work. Formal proof assistants are optional.",
       "description_words": 35,
       "domain": "core",
-      "lines": 93,
+      "lines": 94,
       "missing_relative_links": [],
       "name": "mathematical-research-development"
     },
@@ -929,7 +929,7 @@
       "description": "Routes a public-key cryptanalysis project through security-model, construction-level, hard-problem, implementation-interface, proof, cost, transfer, and reproduction skills while maintaining one shared evidence state. Use when starting or resuming an evaluation of a signature, KEM, public-key encryption scheme, key-agreement mechanism, or hybrid construction.",
       "description_words": 41,
       "domain": "public-key",
-      "lines": 74,
+      "lines": 79,
       "missing_relative_links": [],
       "name": "public-key-cryptanalysis-orchestrator"
     },
@@ -1201,7 +1201,7 @@
       "description": "Coordinates a research-grade symmetric-cryptanalysis evaluation, selects specialist skills, and maintains a shared claim/evidence state. Use when: The task asks for an evaluation of a symmetric primitive, mode, construction, proposal, paper, attack claim, or implementation and requires more than one analytical technique. Use it at the beginning of a project and again whenever the target, model, or evidence changes materially.",
       "description_words": 59,
       "domain": "symmetric",
-      "lines": 98,
+      "lines": 103,
       "missing_relative_links": [],
       "name": "symmetric-cryptanalysis-orchestrator"
     },

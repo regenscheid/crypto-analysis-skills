@@ -65,9 +65,10 @@ development from independent checking when the conclusion warrants it. A formal
 proof assistant is one assurance option, not a requirement for doing mathematics.
 
 If work was delegated, the main agent applies
-[orchestrator review](../investigate/reference/delegated-mathematics-review.md)
-to its correctness and depth before synthesis. A completed subtask is not by
-itself a checked argument or sufficient mathematical development.
+[orchestrator review](../investigate/reference/delegated-cryptanalysis-review.md)
+to its depth, omissions, connections, and significance before synthesis. Use
+the dedicated reviewer for correctness; a checked argument can still leave
+important parts of the requested mathematical development undone.
 
 ## Assess what was contributed
 

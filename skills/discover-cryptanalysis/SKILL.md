@@ -91,9 +91,11 @@ it, not a universal prerequisite to research proposals or theoretical results.
 
 ## Report progress and contribution
 
-For delegated mathematical work, apply
-[orchestrator review](../investigate/reference/delegated-mathematics-review.md)
-before adopting its conclusions or contribution labels.
+For delegated cryptanalytic work, including research proposals and scoped
+assessments, apply
+[orchestrator review](../investigate/reference/delegated-cryptanalysis-review.md)
+to omissions, premature stopping, connections, and overlooked significance.
+A correctness review alone does not establish the depth of the research.
 
 Return the formulation, known ingredients reused, mathematics produced, scope,
 remaining obligations, and why the next inference matters. Distinguish the end
