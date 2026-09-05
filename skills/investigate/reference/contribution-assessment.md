@@ -16,14 +16,42 @@ the difference before assigning a contribution label.
 |---|---|
 | Same result independently derived or rerun | Reproduction or independent rediscovery |
 | Existing result directly covers the case after substitution or checking its stated hypotheses | Routine application or parameter instantiation of the known result |
+| A statement follows by elementary manipulation or a direct chain of standard facts, with no additional substantive step identified | Routine derivation or elementary corollary; show the known steps |
 | New measurement or numerical evaluation using an unchanged method | New evaluation of a known method; identify the measurement or parameter coverage added |
 | Known result used outside its established assumptions, with the missing justification still open | Proposed extension with an unresolved obligation |
 | A change requires and receives a new substantive argument, construction, or justified bound | Substantive extension; name the additional contribution and qualify its novelty |
-| A distinct mechanism, theorem, or proof technique is supplied | Potentially new method or result, subject to correctness and prior-art assessment |
+| A substantively distinct mechanism, theorem, or proof technique is supplied beyond routine deductions | Potentially new method or result, subject to correctness and prior-art assessment |
 
 These descriptions are not an automatic publication-worthiness score. A new
 evaluation can be a valuable contribution, and a short proof can supply a deep
 insight. Judge the actual difference, not its length or the amount of computation.
+
+## Recognize elementary deductions before claiming a contribution
+
+Ask whether the finding follows directly from a definition, algebraic
+rearrangement, substitution, a standard identity, or a short chain of familiar
+lemmas whose hypotheses already hold. Examples include rank-nullity deductions,
+routine counting identities, and equivalent formulations under a change of
+notation. Writing the conclusion as a separately named theorem does not make
+the mathematical contribution substantive.
+
+Expose the actual chain: known ingredient, hypotheses used, inference, conclusion.
+If no additional substantive step is identified, call the result a **routine
+derivation** or **elementary corollary**, even if the exact sentence was not found
+in a paper or catalog. Independently deriving it is useful work but does not by
+itself establish originality. Do not manufacture an obstacle to justify a novelty
+label or use “potentially new” as the default for every unfamiliar statement.
+
+This assessment concerns the reasoning, not an exhaustive priority search.
+Known ingredients and the displayed deduction can justify the routine label.
+Investigate publication history further only when a claim of priority or a
+substantive contribution warrants it.
+
+Short does not imply elementary: a brief argument may resolve a difficult open
+obstacle or introduce a useful new connection. Explain that substantive step
+when one exists, and assess originality separately. Likewise, an elementary
+corollary may reveal an important consequence for a proposed standard. Report
+that significance without overstating the mathematical novelty.
 
 ## Parameter changes are not themselves a new method
 

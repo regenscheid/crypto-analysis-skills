@@ -71,6 +71,10 @@ before claiming originality. Separate a known theorem's instantiation, a new
 evaluation, a substantive extension, and a potentially new result. Identify the
 additional mathematical step; new notation or a different parameter value does
 not by itself supply one. Useful progress need not be scientifically novel.
+Check whether the result is an elementary corollary, equivalent reformulation,
+or direct chain of standard facts. Show that chain and label it a routine
+derivation when no substantive additional step is identified. An unfamiliar
+statement or independently written proof is not automatically potentially new.
 
 ## Return useful partial work
 

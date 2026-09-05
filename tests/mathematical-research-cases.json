@@ -123,6 +123,17 @@
         "Does not infer that C is true or false from these facts.",
         "Identifies a changed retrieval route or different proof argument as possible reconsideration reasons without proposing a new knowledge system."
       ]
+    },
+    {
+      "id": "elementary-corollary-with-a-new-name",
+      "prompt": "Let S:U->V and T:V->W be linear maps between finite-dimensional spaces, with image(S) contained in kernel(T). We derived rank(S)+rank(T)<=dim(V), called it the new defect sum theorem, and found no catalog entry using that name. The supplied standard ingredients are dimension monotonicity for subspaces and rank-nullity for T. Show the deduction and assess the mathematical contribution and novelty claim.",
+      "review_criteria": [
+        "Derives rank(S)<=dim(kernel(T))=dim(V)-rank(T), hence the stated inequality.",
+        "Labels the result an elementary corollary or routine derivation from the supplied standard facts; a separately named statement is not a substantive new theorem by itself.",
+        "Does not use catalog absence or independent derivation to call it potentially novel.",
+        "Does not launch an exhaustive priority search to identify the displayed deduction as routine.",
+        "Separates any useful application or significance from originality of the mathematical deduction."
+      ]
     }
   ]
 }

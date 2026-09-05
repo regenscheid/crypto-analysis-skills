@@ -51,7 +51,7 @@ long-running job management belong to the harness, outside these tests.
 
 ## Mathematical development and contribution cases
 
-`mathematical-research-cases.json` contains thirteen manual evaluation cases with
+`mathematical-research-cases.json` contains fourteen manual evaluation cases with
 supplied premises and review criteria. They cover routine parameter substitution,
 important applications of known methods, invalidated hypotheses, reuse of
 established mathematics, sustained block-matrix derivation, and conditional work.
@@ -85,3 +85,7 @@ The added cases cover a false paper claim, use of an established theorem,
 post-selection inference, a zero-event confidence limit, a nine-question proposal,
 continuation from a partial derivation, and scoped negative results. Their
 presence and reference answers do not constitute a live model evaluation.
+
+The elementary-corollary case checks whether a newly named rank inequality is
+recognized as a direct consequence of supplied standard facts. The expected
+assessment concerns the displayed reasoning, not another literature survey.

@@ -2,7 +2,7 @@
   "description_words": 4911,
   "errors": 0,
   "schema_version": 1,
-  "skill_body_lines": 13480,
+  "skill_body_lines": 13484,
   "skill_count": 162,
   "skills": [
     {
@@ -721,7 +721,7 @@
       "description": "Develop an explicitly stated mathematical question into definitions, lemmas, derivations, counterexamples, or scoped partial results. Use for a stated mathematical problem, proof exploration, an incomplete argument, or extended derivation work. Formal proof assistants are optional.",
       "description_words": 35,
       "domain": "core",
-      "lines": 84,
+      "lines": 88,
       "missing_relative_links": [],
       "name": "mathematical-research-development"
     },
