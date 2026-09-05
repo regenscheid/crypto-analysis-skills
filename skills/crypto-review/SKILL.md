@@ -48,14 +48,14 @@ nist-mcp_search_csrc(query)        nist-mcp_csrc_fulltext(ref)    # 924 publicat
 
 - **Does the paper exist?** `e-print-mcp_get_eprint("2024/1374")` either returns it or does
   not. A cited id that resolves to nothing is a fabricated reference.
-- **Does it say what is claimed?** Read the abstract. A real paper cited for a
-  claim it does not make is the more common and more damaging error, because the
-  id checks out and the reader stops there.
+- **Does it say what is claimed?** Open the exact theorem, algorithm, table, or
+  section in the relevant revision. An abstract identifies a topic; it rarely
+  establishes the precise assumptions or conclusion of a load-bearing claim.
 - **Is the attribution right?** Authors and title come back with the record.
 
-State which you did. "Checked 2024/1374 against the corpus; the abstract states
-the reduction targets F_{q^l}" is a finding with evidence. "The citation looks
-plausible" is not.
+State what you inspected and its locator. A metadata check establishes that the
+reference resolves; reading the exact result establishes what that source says.
+Keep those findings separate from independent correctness of its argument.
 
 If the corpus is unavailable to you, say the citation is unverified rather than
 treating it as recall — the distinction is the whole point.
@@ -175,9 +175,10 @@ attack that does not admit one.
 
 ## If you can execute
 
-`cryptographic_estimators` and `lattice-estimator` are installed in the `sage`
-environment, and re-running a cost claim usually takes seconds. Prefer that over
-reasoning about what an estimator would say.
+Inspect the available computational environment and tool versions through
+`investigate/reference/computation.md`. Do not assume SageMath or either estimator
+is installed, and do not promise a runtime before measuring a representative
+unit of work.
 
 Two cautions from this project's own history. The estimator's runtime **roughly
 doubles every +12 in m** for UOV — measured in one parallel sweep, 6 s at m=32

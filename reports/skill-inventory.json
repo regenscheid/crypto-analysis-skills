@@ -1,9 +1,9 @@
 {
-  "description_words": 4917,
+  "description_words": 4958,
   "errors": 0,
   "schema_version": 1,
-  "skill_body_lines": 13138,
-  "skill_count": 161,
+  "skill_body_lines": 13247,
+  "skill_count": 162,
   "skills": [
     {
       "description": "Extracts supported Rust through Charon and Aeneas into Lean and proves panic freedom, functional correctness, and refinement against independent cryptographic specifications.",
@@ -169,7 +169,7 @@
       "description": "Check cryptanalytic claims for domain correctness \u2014 cost models, attack preconditions, security-notion misuse, parameter provenance, and citations verified against the ePrint and NIST corpora. Use when reviewing any output that states a security level, an attack cost, a reduction, or cites a cryptography paper.",
       "description_words": 44,
       "domain": "core",
-      "lines": 202,
+      "lines": 203,
       "missing_relative_links": [],
       "name": "crypto-review"
     },
@@ -217,7 +217,7 @@
       "description": "Produce a concrete cost for a target nothing has costed yet \u2014 search what is already known, find and read a reduction to a problem that IS costed, instantiate it with real parameters, verify at toy scale, and write the result back as an entry or a gap. Use when an attack's structure is understood but its cost cannot be obtained.",
       "description_words": 61,
       "domain": "core",
-      "lines": 241,
+      "lines": 240,
       "missing_relative_links": [],
       "name": "derive-cost"
     },
@@ -550,10 +550,10 @@
       "name": "interactive-proof-state-operation"
     },
     {
-      "description": "Conduct rigorous end-to-end cryptographic security investigations and visibly route them through the relevant cryptanalysis or formal-method skills. Use whenever asked to analyze a scheme or paper, find issues or weaknesses, search for attacks, reproduce or validate a result, audit a security claim or proof, compare parameters, or resume cryptographic research. Treat \u201cfind issues,\u201d \u201clook hard,\u201d \u201cattack,\u201d \u201cbreak,\u201d \u201cnew,\u201d and \u201cunexplored\u201d as explicit discovery triggers even when the user does not name this skill.",
-      "description_words": 73,
+      "description": "Conduct rigorous end-to-end cryptographic security investigations and visibly route them through the relevant cryptanalysis or formal-method skills. Use whenever asked to analyze a scheme or paper, find issues or weaknesses, search for attacks, reproduce or validate a result, audit a security claim or proof, compare parameters, or resume cryptographic research. Infer the requested task from its intent; individual words such as \u201cnew\u201d do not by themselves select a mode.",
+      "description_words": 69,
       "domain": "core",
-      "lines": 188,
+      "lines": 210,
       "missing_relative_links": [],
       "name": "investigate"
     },
@@ -716,6 +716,14 @@
       "lines": 318,
       "missing_relative_links": [],
       "name": "magma"
+    },
+    {
+      "description": "Develop an explicitly stated mathematical question into definitions, lemmas, derivations, counterexamples, or scoped partial results. Use when the requested work is ordinary mathematical reasoning, a proof gap, or a conditional argument that cannot be settled by retrieving a known answer. Formal proof assistants are optional.",
+      "description_words": 45,
+      "domain": "core",
+      "lines": 64,
+      "missing_relative_links": [],
+      "name": "mathematical-research-development"
     },
     {
       "description": "Designs and audits state-matching attacks using cuts, partial computation, splice-and-cut, initial structures, dissection, and biclique techniques. Use when: The target can be decomposed into forward and backward computations with partially independent key/state variables, has a narrow internal cut, repeated/expandable subcomputations, or enough degrees of freedom for biclique/initial-structure methods.",
@@ -937,7 +945,7 @@
       "description": "Converts papers, reports, code, specifications, issue discussions, or prior-agent findings into normalized public-key attack records with exact provenance, models, requirements, costs, and validation status.",
       "description_words": 24,
       "domain": "public-key",
-      "lines": 59,
+      "lines": 65,
       "missing_relative_links": [],
       "name": "public-key-literature-attack-extractor"
     },
@@ -1209,7 +1217,7 @@
       "description": "Extracts a published or discovered symmetric-cryptanalysis result into a normalized, source-grounded attack record suitable for reproduction and transfer. Use when: Reading a paper, preprint, thesis, standards comment, issue, code artifact, talk, or internal agent report that claims a cryptanalytic property or attack. Run it before attempting to adapt the result.",
       "description_words": 50,
       "domain": "symmetric",
-      "lines": 65,
+      "lines": 71,
       "missing_relative_links": [],
       "name": "symmetric-literature-attack-extractor"
     },
@@ -1257,7 +1265,7 @@
       "description": "Establish whether a claimed attack actually works \u2014 state its preconditions, decide whether analysis or an implementation settles the question, then do that one, and report what the result does and does not imply at full parameters. Use when a paper, a post, or an earlier session asserts an attack and the question is whether to believe it.",
       "description_words": 58,
       "domain": "core",
-      "lines": 239,
+      "lines": 245,
       "missing_relative_links": [],
       "name": "validate-attack"
     },
@@ -1265,7 +1273,7 @@
       "description": "Settle one security claim \u2014 restate it precisely enough to be checkable, establish how it was obtained, pick the route that actually settles it (open the source, reproduce the computation, run it at toy scale, or discharge the notion's obligations), and report it supported, refuted or unresolved. Use when a claim is load-bearing and a decision depends on whether it holds.",
       "description_words": 61,
       "domain": "core",
-      "lines": 302,
+      "lines": 307,
       "missing_relative_links": [],
       "name": "verify-claim"
     },
@@ -1295,7 +1303,7 @@
     }
   ],
   "skills_by_domain": {
-    "core": 10,
+    "core": 11,
     "formal": 63,
     "public-key": 59,
     "symmetric": 29

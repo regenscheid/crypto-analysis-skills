@@ -82,4 +82,4 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **SAW-REPO** — [SAWScript repository](https://github.com/GaloisInc/saw-script) (2026) — Galois. `official-repository`.
 - **FIAT-CRYPTO19** — [Simple High-Level Code for Cryptographic Arithmetic—with Proofs, Without Compromises](https://adam.chlipala.net/papers/FiatCryptoSP19/) (2019) — Andres Erbsen et al.. `research-paper`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

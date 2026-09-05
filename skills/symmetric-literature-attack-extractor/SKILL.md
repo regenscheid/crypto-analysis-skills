@@ -15,6 +15,12 @@ metadata:
 
 Reading a paper, preprint, thesis, standards comment, issue, code artifact, talk, or internal agent report that claims a cryptanalytic property or attack. Run it before attempting to adapt the result.
 
+## Catalog references
+
+Read [catalog use](../investigate/reference/catalog-use.md) when consulting the
+configured catalog MCP server. It supplies changing examples and citations;
+linked skills are relevant reading, not mandatory invocations.
+
 ## Operating procedure
 
 1. **Collect the source family.** Obtain the earliest public version, latest ePrint/final version, errata, supplementary material, code, test vectors, slides only when they add information, designer responses, and independent follow-up work.

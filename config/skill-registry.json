@@ -1,7 +1,7 @@
 {
   "id_contract": "skill_id is exactly the Agent Skill name from SKILL.md frontmatter",
   "schema_version": 1,
-  "skill_count": 161,
+  "skill_count": 162,
   "skills": [
     {
       "domain": "formal",
@@ -358,6 +358,10 @@
     {
       "domain": "core",
       "skill_id": "magma"
+    },
+    {
+      "domain": "core",
+      "skill_id": "mathematical-research-development"
     },
     {
       "domain": "symmetric",

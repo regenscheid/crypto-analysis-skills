@@ -86,4 +86,4 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **UNRUH17-QROM** — [Post-Quantum Security of Fiat-Shamir](https://eprint.iacr.org/2017/398) (2017) — Dominique Unruh. `research-paper`.
 - **ARB** — [Arb: Arbitrary-Precision Ball Arithmetic](https://arblib.org/) (2026) — Arb project. `official-project`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

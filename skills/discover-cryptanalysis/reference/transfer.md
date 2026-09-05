@@ -81,7 +81,9 @@ For `M_l(F_q)` with `l > 1`:
 Accept the transfer only after constructing an actual embedded commutative
 field or subalgebra, proving that every operation used by the source result
 stays inside it, and mapping the target distribution into that image. Otherwise
-mark the candidate `falsified` with “multiplicative structure not preserved.”
+mark the multiplicative-structure obligation `unchecked` unless a concrete
+counterexample proves that it fails. Failure to establish closure is not proof
+that closure is absent.
 
 ### Other recurring mismatches
 

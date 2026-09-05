@@ -78,10 +78,10 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 
 ## Associated primary references
 
-- **PANTOGRAPH24** — [Pantograph: A Machine-to-Machine Interaction Interface for Lean 4](https://arxiv.org/abs/2410.16429) (2024) — Lenian Li et al.. `research-paper`.
+- **PANTOGRAPH24** — [Pantograph: A Machine-to-Machine Interaction Interface for Lean 4](https://arxiv.org/abs/2410.16429) (2024) — Leni Aniva et al.. `research-paper`.
 - **LEANDOJO-V2** — [LeanDojo-v2](https://leandojo.org/leandojo.html) (2025) — Ryan Hsiang et al.. `official-project`.
-- **SHANNON26** — [Towards Automating Formal Cryptographic Proofs: The ShannonProver Architecture](https://arxiv.org/abs/2607.02847) (2026) — ShannonProver team. `research-paper`.
-- **RUST-LEAN-AI26** — [AI-Assisted Rust-to-Lean Verification: An Experience Report](https://arxiv.org/abs/2605.30106) (2026) — Microsoft Research and collaborators. `research-paper`.
+- **SHANNON26** — [ShannonProver: Towards Automating Formal Cryptographic Proofs](https://arxiv.org/abs/2607.02847) (2026) — Yiping Ma et al.. `research-paper`.
+- **RUST-LEAN-AI26** — [A Rust-to-Lean Verification Pipeline with AI Provers: An Experience Report](https://arxiv.org/abs/2605.30106) (2026) — Natalia Klaus, Juan Conejero, and Palina Tolmach. `research-paper`.
 - **AENEAS-REPO** — [Aeneas repository](https://github.com/AeneasVerif/aeneas) (2026) — Aeneas project. `official-repository`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

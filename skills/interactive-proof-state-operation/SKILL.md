@@ -84,4 +84,4 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **EASYCRYPT-TUTORIALS** — [EasyCrypt tutorials](https://easycrypt.gitlab.io/easycrypt-web/docs/tutorials/) (2026) — EasyCrypt project. `official-manual`.
 - **ROCQ-REF** — [Rocq documentation](https://rocq-prover.org/docs) (2026) — Rocq project. `official-manual`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

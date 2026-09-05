@@ -81,4 +81,4 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **CRYPTOVERIF-MANUAL** — [CryptoVerif Manual](https://bblanche.gitlabpages.inria.fr/cryptoverif/manual.pdf) (2025) — Bruno Blanchet. `official-manual`.
 - **EASYCRYPT11** — [EasyCrypt: Automated Reasoning for Security Proofs](https://eprint.iacr.org/2011/101) (2011) — Gilles Barthe et al.. `research-paper`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

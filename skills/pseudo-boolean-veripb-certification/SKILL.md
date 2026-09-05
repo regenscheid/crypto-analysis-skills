@@ -83,4 +83,4 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **PBLEAN26** — [PBLean: Importing Pseudo-Boolean Proofs into Lean](https://arxiv.org/abs/2602.08692) (2026) — PBLean authors. `research-paper`.
 - **PBLEAN-REPO** — [PBLean repository](https://github.com/leansolving/pblean) (2026) — PBLean project. `official-repository`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

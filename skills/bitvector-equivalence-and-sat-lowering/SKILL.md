@@ -77,8 +77,8 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 ## Associated primary references
 
 - **LEAN-BVDECIDE** — [Lean tactic reference: bv_decide and decision procedures](https://lean-lang.org/doc/reference/latest/Tactic-Proofs/Tactic-Reference/) (2026) — Lean project. `official-manual`.
-- **LRAT17** — [LRAT: Efficiently Verifying Clausal Proofs](https://arxiv.org/abs/1612.02353) (2017) — Nathan Wetzler et al.. `research-paper`.
+- **LRAT17** — [Efficient Certified RAT Verification](https://arxiv.org/abs/1612.02353) (2017) — Luís Cruz-Filipe et al.. `research-paper`.
 - **SAW-DOCS** — [Software Analysis Workbench documentation](https://galoisinc.github.io/saw-script/) (2026) — Galois. `official-manual`.
 - **CRYPTOL-DOCS** — [Cryptol documentation](https://galoisinc.github.io/cryptol/) (2026) — Galois. `official-manual`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

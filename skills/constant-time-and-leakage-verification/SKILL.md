@@ -86,4 +86,4 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **HACL-MANUAL** — [HACL* and EverCrypt manual](https://hacl-star.github.io/) (2026) — HACL* project. `official-manual`.
 - **LEAN-FAQ** — [Lean FAQ](https://lean-lang.org/faq/) (2026) — Lean project. `official-documentation`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

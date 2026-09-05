@@ -82,6 +82,6 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **ARB** — [Arb: Arbitrary-Precision Ball Arithmetic](https://arblib.org/) (2026) — Arb project. `official-project`.
 - **MPFR** — [GNU MPFR](https://www.mpfr.org/) (2026) — GNU MPFR project. `official-project`.
 - **FPLLL-REPO** — [fplll](https://github.com/fplll/fplll) (2026) — fplll project. `official-repository`.
-- **SHANNON26** — [Towards Automating Formal Cryptographic Proofs: The ShannonProver Architecture](https://arxiv.org/abs/2607.02847) (2026) — ShannonProver team. `research-paper`.
+- **SHANNON26** — [ShannonProver: Towards Automating Formal Cryptographic Proofs](https://arxiv.org/abs/2607.02847) (2026) — Yiping Ma et al.. `research-paper`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

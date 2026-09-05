@@ -83,4 +83,4 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **CREUSOT22** — [Creusot: A Foundry for the Deductive Verification of Rust Programs](https://doi.org/10.1007/978-3-031-17244-1_6) (2022) — Xavier Denis et al.. `research-paper`.
 - **WHY3-HOME** — [Why3](https://why3.org/) (2026) — Why3 project. `official-project`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

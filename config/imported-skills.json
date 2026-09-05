@@ -118,7 +118,7 @@
     {
       "domain": "symmetric",
       "installed_name": "symmetric-literature-attack-extractor",
-      "installed_sha256": "21033c055cabde940f44f275511485851488bc62d914ff11aab1abed2f867540",
+      "installed_sha256": "e8267de1a1217e7e3af4dbcdaaffb0ebabfba9289b2e73823b84f6f433ed5c90",
       "source_name": "literature-attack-extractor",
       "source_sha256": "b276bd23e1fd174d6c8a253e668eac2c4f301ae1e326b53b01eca8ffbd0434cf"
     },
@@ -447,7 +447,7 @@
     {
       "domain": "public-key",
       "installed_name": "public-key-literature-attack-extractor",
-      "installed_sha256": "d295dce5268d3f0660bfbf2983a28c38651ab698849b66d2cfa22af610423ca3",
+      "installed_sha256": "8eb0c7a718f8eaed870b5e8afd32d6ecced25bfa2bf10d6f0cb01b85c65339cf",
       "source_name": "literature-attack-extractor",
       "source_sha256": "3f83ce066698f3de9da592b8a0ad682ec8dee922e0cc732ca66daf7998e7cd30"
     },
@@ -622,441 +622,441 @@
     {
       "domain": "formal",
       "installed_name": "aeneas-charon-rust-to-lean",
-      "installed_sha256": "9dbfa152a0fe0bfe38dcd245a5f4eda40215c7f2ac8cb3d3dba1de8e7e0aaa8b",
+      "installed_sha256": "d7bc1695664b00fa6abcd43ef26e34d9f6b1116f8877b0c4ace796f1afa9d5fa",
       "source_name": "aeneas-charon-rust-to-lean",
       "source_sha256": "1f99da02023310a1c2a5f17a0ecdce48db55260ec3d6cee5bb5cd268b2292f47"
     },
     {
       "domain": "formal",
       "installed_name": "bitvector-equivalence-and-sat-lowering",
-      "installed_sha256": "97339909f8b16d9e877dc93d53abbca28da9e20459f057fa3ba7ac18dcbd74be",
+      "installed_sha256": "e3c2633296a2bdf1f5fb962ab888bc64e3676adccbd2ec58d3c28dbc31751c9b",
       "source_name": "bitvector-equivalence-and-sat-lowering",
       "source_sha256": "05dfc52582c799844e270deaddc054c0878f1e7d26a6257741b298f3546c8729"
     },
     {
       "domain": "formal",
       "installed_name": "computer-algebra-witness-certification",
-      "installed_sha256": "bc15918deeb3adeb3e851a24db739184aecf146e9287c0e417b89753eb96d7fc",
+      "installed_sha256": "c428c0114e6305d4fa3419bec8f423d4c216afcfc7c35ba07704b5c24bcb37ab",
       "source_name": "computer-algebra-witness-certification",
       "source_sha256": "2de15910f3a8bc32f3faea9b70d6860857e25c4faad9773c48805357cc9e04a3"
     },
     {
       "domain": "formal",
       "installed_name": "constant-time-and-leakage-verification",
-      "installed_sha256": "fc794739b97d62671ebc42b0c5cebb774bebd41a15298f7811a7f9932ae405c3",
+      "installed_sha256": "e28e5b7b4c7048398e35babdb93945b7e25a16ea6cd98e7c970a52309a56a94d",
       "source_name": "constant-time-and-leakage-verification",
       "source_sha256": "9394e6bb4a5c4af5878e800fdda2151f29bc02db27281efe3967212628a08541"
     },
     {
       "domain": "formal",
       "installed_name": "counterexample-guided-formalization",
-      "installed_sha256": "311b002b68a9e81b3dd75a77f963263d8265442c7b84809d1bd4a72c28259ff0",
+      "installed_sha256": "bc29b368641456a460b39a740175d35aa97b4a4e5602dac7c31b23200c487fe9",
       "source_name": "counterexample-guided-formalization",
       "source_sha256": "76f1aaf740512daa984e2936092906fefd8011e00b1e624fad790d7b12c170a5"
     },
     {
       "domain": "formal",
       "installed_name": "creusot-why3-rust-verification",
-      "installed_sha256": "752a3bc1526bc7b2b2c3683bf840267d6ef9fecf9404fb124cbcf064f60aaca8",
+      "installed_sha256": "c29726808d3f5cd15131c26f52f86cba64af68dccb2d729ce79fe85ef375d6ed",
       "source_name": "creusot-why3-rust-verification",
       "source_sha256": "0c173518741011722701c6c2360ef8727311b60acbd3398a85c791ec04056981"
     },
     {
       "domain": "formal",
       "installed_name": "cross-prover-evidence-packaging",
-      "installed_sha256": "a4fe4f94aaba357d11be1f349a6caebfd9ce49167a8e3ad299c008d3ab858885",
+      "installed_sha256": "cdf6e7684e1e0b6d751b57b429cac895c0babab3b06aa0b40712f4423a6fd80b",
       "source_name": "cross-prover-evidence-packaging",
       "source_sha256": "4f997a6a6e3829831e0f7f0751a58a805a9ffbb4bdc81e08192e42bfeb632343"
     },
     {
       "domain": "formal",
       "installed_name": "cryptographic-security-game-definition",
-      "installed_sha256": "d7956ff8425bd6d50d6ed980184ccfda753e97fa7a19593936aac77b1c6de95b",
+      "installed_sha256": "e8d64f20b8773e42cd4bb0bacce5af20abec1733d7fbeace0e68ae8d87303e12",
       "source_name": "cryptographic-security-game-definition",
       "source_sha256": "9fb0340c38a1ce2e6cbd5cd9f9f124ef411161e366317cff68932b719ff3d952"
     },
     {
       "domain": "formal",
       "installed_name": "cryptoline-arithmetic-implementation-verification",
-      "installed_sha256": "b8de7e554d3f3bb1a16d3e740a1ac0b46aec9cc8c155545b50c08481161ba9f5",
+      "installed_sha256": "23af443709c8097c6336c4ca9fdecc6c734937db256f285135c4d9c2803fca17",
       "source_name": "cryptoline-arithmetic-implementation-verification",
       "source_sha256": "2f379dc8d658b44a1c06a7dc6f9d0dabfd9c224294fcbacd4bc258cbc26f2b81"
     },
     {
       "domain": "formal",
       "installed_name": "cryptopt-verified-arithmetic-optimization",
-      "installed_sha256": "b385461f176de8b328ed41ca8cc039478ee376d893d41edc7d3a3adba4158e0e",
+      "installed_sha256": "fd3ff6207e42b7800056b43a3d1d176ae7500678f4b1a29f32867105939a4501",
       "source_name": "cryptopt-verified-arithmetic-optimization",
       "source_sha256": "61781798e9215f70938229c79319b5046d6641476a23242da9c88be1af45e857"
     },
     {
       "domain": "formal",
       "installed_name": "cryptoverif-computational-protocol-analysis",
-      "installed_sha256": "79235a20cb9a1737e3e88086e0e9a096f9ca2b00b10a565ea0932eb96f61a61a",
+      "installed_sha256": "ca8f2020ac33184d25feec48032a78b64a61355ab548d363008effa4d1d160b8",
       "source_name": "cryptoverif-computational-protocol-analysis",
       "source_sha256": "ce77416dfffa33683134c61c5999d5a2bf5f85a41f4e33d9b5a47369cbb7cf4d"
     },
     {
       "domain": "formal",
       "installed_name": "easycrypt-proof-development",
-      "installed_sha256": "56479f2f4f8c2a9fe65069a41bf14fbc0b9de1bc7eabab238a67ba3af0a99e07",
+      "installed_sha256": "37726be0e81d9f1e930122be35c9c37d1b8a6016a95e269d01ad1b026973debc",
       "source_name": "easycrypt-proof-development",
       "source_sha256": "ff23da3bc3f0d0198aeeb1655b2a3ab30c096b27fb80b61c476795bed01400ab"
     },
     {
       "domain": "formal",
       "installed_name": "empirical-statistical-and-heuristic-claim-separation",
-      "installed_sha256": "77eaacc93fdfeb40be314202189f626a3d0ffd71d260291d87e9cc159ecdb2b4",
+      "installed_sha256": "8ba0830f9a34428a136e13450a07f6373f75a63c49a917479785e18d71724bab",
       "source_name": "empirical-statistical-and-heuristic-claim-separation",
       "source_sha256": "4bedf1b9125698944423c0125b92b271967895403c7c861131472407c83b9eac"
     },
     {
       "domain": "formal",
       "installed_name": "evidence-trust-and-tcb-audit",
-      "installed_sha256": "1aefae182885adff25cd5c78c02f61ecdeda34bc8c40617454706f19bc93dca1",
+      "installed_sha256": "b6c0cf604bdfa3fdb1e551d7b38d9285257de2f2e32ee6aa863eb85f2d502b6a",
       "source_name": "evidence-trust-and-tcb-audit",
       "source_sha256": "e7b4bfa87ef3096b519985d706d18c7f25be71c8f638dcd7b6c0ba91f89ee1d9"
     },
     {
       "domain": "formal",
       "installed_name": "exact-probability-counting-and-tail-bound-certification",
-      "installed_sha256": "ea4a1d50d26074e2f7cfd18f0b25bff355eaaed589228bb8fedb47ac696d66e5",
+      "installed_sha256": "853c1199399e4b80486a6ca73d21309d2c84e2f97004ffc8ab1a74188ff71105",
       "source_name": "exact-probability-counting-and-tail-bound-certification",
       "source_sha256": "3b02f13edb47405a28da6b14faab86d236ffd33e749301c6f964245565205476"
     },
     {
       "domain": "formal",
       "installed_name": "exhaustive-search-completeness-proof",
-      "installed_sha256": "18985004f0e49e459862f19203ad0883cd9882498946872863e1630510399e05",
+      "installed_sha256": "8632f59f80809182bfe5e940400961f3ec21cfd8a0bd0ae56f90d287a3c23ffc",
       "source_name": "exhaustive-search-completeness-proof",
       "source_sha256": "80b301343771e6e971057df519345074837cbde30e4d6cebbc1a38fa137669e7"
     },
     {
       "domain": "formal",
       "installed_name": "fiat-crypto-and-verified-arithmetic-synthesis",
-      "installed_sha256": "1d585f23b4798d976ef3973cb38c2cf08b1fa00ecb398c11f81c9af0ffd7e491",
+      "installed_sha256": "4e96bb2ed077f456a7426efd8bf90d5c193ab58afa74b1bfe7761fc650aa775e",
       "source_name": "fiat-crypto-and-verified-arithmetic-synthesis",
       "source_sha256": "f4558a038192b7c5bcabd421891e2e41f80f6cfdc5dbb248a850ce8eed3b45aa"
     },
     {
       "domain": "formal",
       "installed_name": "finite-search-model-and-encoding-validation",
-      "installed_sha256": "b36bcbd543c0e04dad87b525da4511ff617659167e40a5f3ed29e214582edab6",
+      "installed_sha256": "46624aa216f889abf1c39278b568faf614f01fe1e31d9ab8772ccc9842207acc",
       "source_name": "finite-search-model-and-encoding-validation",
       "source_sha256": "1185597299ec7ddbef5f38b2688a3121abc498d7a3aaf8985b66e2b7ec101603"
     },
     {
       "domain": "formal",
       "installed_name": "floating-point-and-rounding-error-verification",
-      "installed_sha256": "0b0d02eaff0275e074c919a9d39aee8b86b62bae66b7532c06bb7ce72c40ff37",
+      "installed_sha256": "e8eeabb1b817d129caed6069cc4322ea9e72d2156dff0d7ebf5bfd26ddc3581d",
       "source_name": "floating-point-and-rounding-error-verification",
       "source_sha256": "9c3f1958098ed64b0d24389c2d2f8815e59b98f2ba088d9db3963ec630237235"
     },
     {
       "domain": "formal",
       "installed_name": "formal-claim-and-model-authoring",
-      "installed_sha256": "6f2cc9348ce3704cb48041a44e2bf97c47aceeba68fb2e567f4810c93d242f0f",
+      "installed_sha256": "9f484a61248e275c5dbf5bb95ad7976915707ec21542fcc9bc54cab4ecb11420",
       "source_name": "formal-claim-and-model-authoring",
       "source_sha256": "b16fd991ca93210ab97c6d93676305139e122248dd7027875f26ce83517fb4cb"
     },
     {
       "domain": "formal",
       "installed_name": "formal-methods-campaign-orchestration",
-      "installed_sha256": "eceae4987325267d083338a67bab337cd01df66293707ff9018562b9f70e6fd6",
+      "installed_sha256": "a83b2763618577504032c408d7deba860a1de1805d7d959a0d2e9ffa4fdfb20e",
       "source_name": "formal-methods-campaign-orchestration",
       "source_sha256": "c75517928ebf2c816b711548da24aff2db0367441d3bbc9c4b27fe603ca1a85d"
     },
     {
       "domain": "formal",
       "installed_name": "formal-methods-router",
-      "installed_sha256": "83fbc8de48e0c6c7a21d4f8164a8a099ec8c18a68115b1e4497a1a3590a5b80a",
+      "installed_sha256": "614f0b362bf7f2b6af0302e0e016be651b2ca78b347594f27a6bc40c65b40931",
       "source_name": "formal-methods-router",
       "source_sha256": "3eadb091aea9014aa28d0253a96d8637c121d6fd968cc137c66791938aa76ead"
     },
     {
       "domain": "formal",
       "installed_name": "formalization-value-and-scope-triage",
-      "installed_sha256": "d211dff1015ee8b9afd579ccaa53236e0206add1db39b7ca9a8b576f5e8e37e1",
+      "installed_sha256": "869c4b0dccb2562e993df54189572a26bc8091a954eaa3704f34b5385f134e6d",
       "source_name": "formalization-value-and-scope-triage",
       "source_sha256": "a552603f8798c5c6548ba269991be61bd108446135098478b625625fa3f002c4"
     },
     {
       "domain": "formal",
       "installed_name": "fstar-hacl-evercrypt-and-vale",
-      "installed_sha256": "5efdddb86cceb772f6f381d59a103dfbb5d0545a3d17e56ba0634cc827af20ab",
+      "installed_sha256": "32a3466bec50d800b6f89b6fe5fb944853dba5a0f5b36de547f9465a46148893",
       "source_name": "fstar-hacl-evercrypt-and-vale",
       "source_sha256": "8d840338b04fbb2c1d95335b29e48291ca4342ce2cb10c7c79bf8772638f89ab"
     },
     {
       "domain": "formal",
       "installed_name": "game-hopping-and-hybrid-proof",
-      "installed_sha256": "ad2e5194f6111600fafe1a230e13616f3a1b513f706d831052be46538001b3c5",
+      "installed_sha256": "d2c5842863d30191956fdffbd95233cfcc108090cfc940138de1f2b014144173",
       "source_name": "game-hopping-and-hybrid-proof",
       "source_sha256": "54f9bb3c1ad0ad24631414bb8b08d44738f9e95935eb0b38ae421bc3cf812a3a"
     },
     {
       "domain": "formal",
       "installed_name": "hardware-circuit-and-hdl-equivalence-verification",
-      "installed_sha256": "f0f727547b4893742c15b1881550884dc56fe942a76228ac61714379b377642d",
+      "installed_sha256": "ba1360dd088b035b80ba556b658f447ec1f17595990d01c1e82cee232effe406",
       "source_name": "hardware-circuit-and-hdl-equivalence-verification",
       "source_sha256": "d2b80e21a62ca17d6bf2fca97e4cbdaa5dbdc0707ac49e189ae9d9e5341ee987"
     },
     {
       "domain": "formal",
       "installed_name": "hax-multibackend-rust-verification",
-      "installed_sha256": "4665fbf49fa5993066afbb8f2bca64ffe8057438da420b73a8d47c5ba4c12871",
+      "installed_sha256": "a9dee5f25631f297d949b1ff0fe356a6780d2ad122be102e5d145981bcb3e826",
       "source_name": "hax-multibackend-rust-verification",
       "source_sha256": "58853e5eb41ff304b07c24ae890baa7bcb10681cc780e769eb654acc57eafd37"
     },
     {
       "domain": "formal",
       "installed_name": "implementation-refinement-and-equivalence",
-      "installed_sha256": "51bd62648ba2812f7cc3c8b5d39d773488a4355f2c4c5f71eb8d0c5c63052d63",
+      "installed_sha256": "9c5eaf73d7c9941cf9764980e7989012647e7f01182ce0f1acee2712935b2d87",
       "source_name": "implementation-refinement-and-equivalence",
       "source_sha256": "e68f51d1c047654cae65d0c34a162dbe7783059d81fa14ac87fe573e2dac716b"
     },
     {
       "domain": "formal",
       "installed_name": "interactive-proof-state-operation",
-      "installed_sha256": "76e198d3562c8ef99beb6aa70c8c0804c3d9fbb3ac616b2ab72ea86832664034",
+      "installed_sha256": "75f16dd51dabc865f2c315369a70ca6c08b17640dcf646a5e9af730a495e8a79",
       "source_name": "interactive-proof-state-operation",
       "source_sha256": "91aca849fda22f9d7db21cb64281a8b9446fb38b54c3a563c2601822339c5349"
     },
     {
       "domain": "formal",
       "installed_name": "isabelle-crypthol-proof-development",
-      "installed_sha256": "b3883639b1f719726439218bfff3759c0faba54b2068801a32625988847afaf1",
+      "installed_sha256": "3effe9e6f606b2ee871210813b08fbe590d1c2c76218bb7936f3df504d2162f9",
       "source_name": "isabelle-crypthol-proof-development",
       "source_sha256": "73f5d90b0e3a7533e3fa69a46913fe67d22fe64b795ef2c56e3bdc3b632be279"
     },
     {
       "domain": "formal",
       "installed_name": "jasmin-easycrypt-high-assurance-crypto",
-      "installed_sha256": "1711254cf28f38ae33c6a55d40cf7feec5247a21f20648e1765dbe877a98b6e2",
+      "installed_sha256": "6969b0dfb9fbf18b2f5aca0cc5ccb561a844b84443d050eb43b1d95236ecce43",
       "source_name": "jasmin-easycrypt-high-assurance-crypto",
       "source_sha256": "02a6b55e7af16f470b55727e7b588991092624acaf7362381aecefa09282d984"
     },
     {
       "domain": "formal",
       "installed_name": "lattice-witness-and-bound-certification",
-      "installed_sha256": "e83caf1b83d528dfd6a6dc3db74020dbeb3410141d3bc9827022991916fce445",
+      "installed_sha256": "0c7a8de8eead98d8dc7bbecae172663e2a77d8b1665a5d3e42abbfaf6b63e3d3",
       "source_name": "lattice-witness-and-bound-certification",
       "source_sha256": "a1b5802b3b708707e60229a89b345a5d60bf7f2c4705bba3d2c95e7fae1a3b38"
     },
     {
       "domain": "formal",
       "installed_name": "lean-agent-integration-pantograph-leandojo",
-      "installed_sha256": "b2d5e9e71949dc3fd571e03bac6befbc3d6d6cb90418b19fd8b9b9dab4001bab",
+      "installed_sha256": "fe5efc27e48810f86b60d05fe47a4ee236d0c76ce908118ac76bf26defd15c66",
       "source_name": "lean-agent-integration-pantograph-leandojo",
       "source_sha256": "d5a679a80f23bbfd6dc27936b374408b02e79b255e07db7e1bd35723d3716ee7"
     },
     {
       "domain": "formal",
       "installed_name": "lean-bitvectors-and-word-arithmetic",
-      "installed_sha256": "a987aaa5026f1e86b8e4143f6de14998ec03edab32aec0411236a65a826f6c38",
+      "installed_sha256": "0203dce249f3b6f679ce77e41f073487ba420ffc170505bdf8c1a5f8f765c316",
       "source_name": "lean-bitvectors-and-word-arithmetic",
       "source_sha256": "512ac62524b0a06c704d49a43c7e1f8cc08773a22872c2cf7e43de40ba70ff62"
     },
     {
       "domain": "formal",
       "installed_name": "lean-certificate-import-and-reflection",
-      "installed_sha256": "d4cdbdac471995e87da5ca5853ccb97f9e6fd79d416057ff65b35ec38263a86a",
+      "installed_sha256": "786b2bb6b21c33e991ba898bf3f21dc999f9c5abfa2731e6c5d4f22d1a630d6b",
       "source_name": "lean-certificate-import-and-reflection",
       "source_sha256": "e6702651c18ac197b9c2d92a66b7e77dfe19681872a8f0ea75ce7789df3fbc85"
     },
     {
       "domain": "formal",
       "installed_name": "lean-cryptographic-formalization",
-      "installed_sha256": "41cd5352beacd7e8a8cb01ca7e5beca3157af4aa0a1b2d5a68f564b9f437f7a0",
+      "installed_sha256": "4104fbe252613f6e941f5997f44d5e151fad40734ebeb5321feefd3ce2aa427d",
       "source_name": "lean-cryptographic-formalization",
       "source_sha256": "58c6e9f8b39d2371bae9785dd5df3fce6bfb048429f1019525b0e07e9564853e"
     },
     {
       "domain": "formal",
       "installed_name": "lean-finite-algebra-and-number-theory",
-      "installed_sha256": "0dcf9eabeed9ede6a495d379ef85899335c685b5f0bf42a9ce09999957e543bf",
+      "installed_sha256": "4def8549941217d1e3e8b9ed46615fdc02fc34280fe46360047525c7c9d85407",
       "source_name": "lean-finite-algebra-and-number-theory",
       "source_sha256": "7c1e3889e2cee87e759e48d4df88cfb4bff5c3a88f278990afb47434f5f41aa0"
     },
     {
       "domain": "formal",
       "installed_name": "lean-metaprogramming-and-custom-tactics",
-      "installed_sha256": "c38f6cefcfe31f55cf2becc561c779bf403f5c532942a5618eb577b6bbdefd16",
+      "installed_sha256": "ba66b6f6ea70a60f674ca4f98457bdb727ee2cd15835ce861762bf3e2a46d23e",
       "source_name": "lean-metaprogramming-and-custom-tactics",
       "source_sha256": "feffe48fff9bd77bb6152423745457ce2c37afa503df944a601cc4b3b4ebfd3d"
     },
     {
       "domain": "formal",
       "installed_name": "lean-probability-combinatorics-and-bounds",
-      "installed_sha256": "1cf93a1c19275cda7014ed90e473d825f4440c278083228de87f2742cfa3b033",
+      "installed_sha256": "bcdb0d46431938980826fa1b23b6aaf484294fccefe441f22b909a5b220f414a",
       "source_name": "lean-probability-combinatorics-and-bounds",
       "source_sha256": "984ad6fe401b21bd332b508588b65f0e877542368d89d55236ee1271511dda1a"
     },
     {
       "domain": "formal",
       "installed_name": "lean-project-reproducibility-and-supply-chain",
-      "installed_sha256": "5e811ff70415cf769f90f1d22ea9a4fc8feecd4a8258d2f2e514162d9b20f9a9",
+      "installed_sha256": "c328bbbe530cc74d5364274d3b46f5a66f39d622c3be78bf68f2784d27ff2e91",
       "source_name": "lean-project-reproducibility-and-supply-chain",
       "source_sha256": "d01fce9b5ec5f7685a8228f7d945a200e10e6341ec0fafde8d1900c598386530"
     },
     {
       "domain": "formal",
       "installed_name": "normative-specification-to-executable-model",
-      "installed_sha256": "1b9496b10cda368def855d707f357ea077cd44857d50716e98d55e4204e495ac",
+      "installed_sha256": "fc470ee86b1e9ef706d7d838576c20daa68c0b19bf107fec93c8402470754173",
       "source_name": "normative-specification-to-executable-model",
       "source_sha256": "eabf993fc6b87832ef45c59bc055fc28af0869b1edd26439752aeb1bc8c861c6"
     },
     {
       "domain": "formal",
       "installed_name": "optimization-and-optimality-certification",
-      "installed_sha256": "470fd69ac11388735d9fc987c9261e1913ea0a2b22d3db35151ee1263920b31f",
+      "installed_sha256": "65c975b1147abee591d4a13fac0edeec99c2fcb3b0899357073ac7d39159fcb7",
       "source_name": "optimization-and-optimality-certification",
       "source_sha256": "b366e74637cd268b11b7702533e007335ddf777fbdada85db673199da45575e5"
     },
     {
       "domain": "formal",
       "installed_name": "premise-retrieval-and-lemma-search",
-      "installed_sha256": "dded73a51b4427f246a77493761d2d366d00daf824068bc5d070a18c990ff454",
+      "installed_sha256": "f06226d5a5601b16c7a23713bf4d6bb855e544cc543304f53e2de31dd9c49d3c",
       "source_name": "premise-retrieval-and-lemma-search",
       "source_sha256": "f7ffbd96b12ebf5e2f49757b79c8c2d60748cdf49555b850dd549481d587ce24"
     },
     {
       "domain": "formal",
       "installed_name": "probabilistic-program-coupling-and-relational-reasoning",
-      "installed_sha256": "8a06b2d983f8813e8b674eba88dbf04be6789ad5144c21d8af7eb81d99f69eb7",
+      "installed_sha256": "1a6e292c19659e082d701424d52d9032a475c2b123c00c4eacbf970593c915fc",
       "source_name": "probabilistic-program-coupling-and-relational-reasoning",
       "source_sha256": "bccfe210ae6b41080dc1e471d1673582bab7685304e06d9250ad06bffc298a36"
     },
     {
       "domain": "formal",
       "installed_name": "proof-artifact-replay-and-publication",
-      "installed_sha256": "0999cf581acb89a9072fe9c8f0c66ff89cfdce248903a43cc0a5d1a5866b9e36",
+      "installed_sha256": "c66218c6821ba9218c94c06329adc8bcb207ad98863b052d5f47d854e86cdfee",
       "source_name": "proof-artifact-replay-and-publication",
       "source_sha256": "27dac498f654318453f2a1de45866ab5978c303f5287978acb24d74625811fdf"
     },
     {
       "domain": "formal",
       "installed_name": "proof-obligation-and-lemma-planning",
-      "installed_sha256": "809b7526cf7b127047de32bc1134cb6a3dd22de99660dee06983c7bfe0ae2494",
+      "installed_sha256": "0622863fc7691177c36aaa8ba2527b2afe5526c6fce4039a9045078aee5078c9",
       "source_name": "proof-obligation-and-lemma-planning",
       "source_sha256": "86f6595513eb846279128c9ea456c2a6c4b9bd702164929f3ee2096ea24b6ce5"
     },
     {
       "domain": "formal",
       "installed_name": "proof-repair-and-maintenance",
-      "installed_sha256": "2faee22f0de2ca919567a894b6ce0336216982c7882d5fb5e443d4e6633ca0cf",
+      "installed_sha256": "b462b1906bf20c29474090179fdf176df2a1d7b382975809fc576ad405b7e983",
       "source_name": "proof-repair-and-maintenance",
       "source_sha256": "10dbefd2ae4899829b1077393404237e6bbcaf87905ddcf865c3fc464c4a6003"
     },
     {
       "domain": "formal",
       "installed_name": "proverif-symbolic-protocol-analysis",
-      "installed_sha256": "051cda78817cd3c3c541247f28ba297fa87f74aac6e3731d91b9c0b939b28696",
+      "installed_sha256": "6a1ed07420a264922a0842f3eb434b54f5d28dcf543bb83f18f934e2fd082827",
       "source_name": "proverif-symbolic-protocol-analysis",
       "source_sha256": "d4a7e3a0d8d5d1342234451c0f884e8171baa429a992aea2f0d3d09895893cbd"
     },
     {
       "domain": "formal",
       "installed_name": "pseudo-boolean-veripb-certification",
-      "installed_sha256": "3815774a888f6b22493d205a1e30334be08dbd62124a03ce8b867dcaee642d82",
+      "installed_sha256": "1ac14b86ae1f4f7f553854f404c3fa20df93af682787058f9a07425790f2387e",
       "source_name": "pseudo-boolean-veripb-certification",
       "source_sha256": "3866603e3b06319580282507cb761ee06f8815de165d4b07498f872163d5c230"
     },
     {
       "domain": "formal",
       "installed_name": "qrom-and-post-quantum-proof-modeling",
-      "installed_sha256": "4bc1afed02c35519573bd1e74033590e21453d2aac7e4d0ab571e9c2f94a7d43",
+      "installed_sha256": "e9b0ed899e1e14ddcc3d724d1aa8366a9523b54b9ea97727e6357fcf7ab42932",
       "source_name": "qrom-and-post-quantum-proof-modeling",
       "source_sha256": "7aef6440c8f50a10025f4bc421b4181149443badcade3d4d4a00a33b71e400c0"
     },
     {
       "domain": "formal",
       "installed_name": "quantum-algorithm-circuit-and-resource-verification",
-      "installed_sha256": "9ded7844e1186831b38c411d18dea50c01934f496246b19cdd687932bf1f749e",
+      "installed_sha256": "15092dd8155ee41eabb320e18240c680c3347625ebaec8f214b8d9d17f9db0fa",
       "source_name": "quantum-algorithm-circuit-and-resource-verification",
       "source_sha256": "d14338e7d2d326469f6314bbaca897976107e922dbdc8f08671e160ab9291447"
     },
     {
       "domain": "formal",
       "installed_name": "reduction-tightness-and-concrete-security",
-      "installed_sha256": "4449e8eb93ce4a7afef0df251b92c9ed85b675875ad38d65d11bbc0da51bdf41",
+      "installed_sha256": "72889ccb943bc248e2e2b5b27455acac7071a0b64cd9e01b4ddfee0dc7a83c7f",
       "source_name": "reduction-tightness-and-concrete-security",
       "source_sha256": "d7769165be1f965bbd74e8802742a8017630f4472a3d1c1908070f4b250c1f94"
     },
     {
       "domain": "formal",
       "installed_name": "reflective-decision-procedure-design",
-      "installed_sha256": "49332dbf10e4b6177cea4b32963d551dd73c9d623169fcd15223aa298bb3b502",
+      "installed_sha256": "545388a8bcc3d589c62500fe3cec9d5898dbe96136512ec312029f1f98985517",
       "source_name": "reflective-decision-procedure-design",
       "source_sha256": "68b417ff8d0e299bfb82bf9b656f8d5c43264c5d180ed197a1f55d7356c0d1a0"
     },
     {
       "domain": "formal",
       "installed_name": "rocq-foundational-cryptography-and-ssprove",
-      "installed_sha256": "09439cf2f6f2f866cabf56424c82b3774df6539987c78631fe5024e14fb354fb",
+      "installed_sha256": "e71807be1c4e520db03bb618c85ddd91708f35b32c407192e9eb02540b1aea19",
       "source_name": "rocq-foundational-cryptography-and-ssprove",
       "source_sha256": "ae42f73f410b22acb218b71ba706f6b9f93ba0d6e8565178c5a3b9746357e5b8"
     },
     {
       "domain": "formal",
       "installed_name": "sat-lrat-certification",
-      "installed_sha256": "54a0ef54276434daefac8d10a7d4929f4251ec1beaacede76f0532e38706e3e6",
+      "installed_sha256": "0d37290979e7e993b5a11208d05e2dd5a0e7775ace46dbb6c4984fc61ca6cdad",
       "source_name": "sat-lrat-certification",
       "source_sha256": "c9b43f8060bd4b0c63c13589a8c583cd3de5b4126406629442dbc90f8a470085"
     },
     {
       "domain": "formal",
       "installed_name": "saw-cryptol-program-refinement",
-      "installed_sha256": "645a2590a180ff901adb80c0ee04bdaab8379cf826394291e460b0a5490f4fcf",
+      "installed_sha256": "a92a3c16b78b5220e22776e06aa171d467c8f42b8c000f2b24950b49251e2bc6",
       "source_name": "saw-cryptol-program-refinement",
       "source_sha256": "5a80d09657a4997b0be1f3c2ca00d77c3af641a77168e3cc2a3df67b6a87eb55"
     },
     {
       "domain": "formal",
       "installed_name": "shannonprover-agentic-easycrypt",
-      "installed_sha256": "b2ea9cb47c716a383f2ced00d43506abb742b2fd71ef15b43504c25f7318f893",
+      "installed_sha256": "70750f4088fe0fe2f47389abfe236037c16c153d93c7ffb37054187229f01a10",
       "source_name": "shannonprover-agentic-easycrypt",
       "source_sha256": "8cc7f49f87804ce37ea83efc3c7ce12627fb9eb3eb18b34e3d41ee81c5de6489"
     },
     {
       "domain": "formal",
       "installed_name": "smt-proof-production-and-reconstruction",
-      "installed_sha256": "601ef1efcc2378cf29b3546b4f9761b8b67825cb3b4ca298428c11802b3cc2d5",
+      "installed_sha256": "977695e01f20f06dd72a0687287eb61cc14add6aa1020ae0a74be0bdca74fd4d",
       "source_name": "smt-proof-production-and-reconstruction",
       "source_sha256": "4faee2c4ad37056edfb2ba3c4423387c36fa86864f294f0c231924a23d91369d"
     },
     {
       "domain": "formal",
       "installed_name": "specification-validation-and-vacuity-audit",
-      "installed_sha256": "2e3dad1fddf54f86138884e7d5e8f993c4e6dde843c0801b4a9c6f9a9e15757b",
+      "installed_sha256": "b926947b5b6271efcf52973f46cd36f2c45fa08b1239397761b954da8355f3a7",
       "source_name": "specification-validation-and-vacuity-audit",
       "source_sha256": "64af7fbdb8999dad79b856ef637add03e15db6b4fae0039ab09ad94a86dea703"
     },
     {
       "domain": "formal",
       "installed_name": "squirrel-computational-and-pq-protocol-proof",
-      "installed_sha256": "bc5e86c0c32cc6f60301aec7659737537648366315b3d69e872effe833ad882f",
+      "installed_sha256": "bdde8c4b751fb1a49d11449a4d0e470bdc00b188dd1e5d2377be1ee1cd2d391e",
       "source_name": "squirrel-computational-and-pq-protocol-proof",
       "source_sha256": "0556b32044c4fd072505e216252402abfa30124dca45c1480af5ce25534c23a6"
     },
     {
       "domain": "formal",
       "installed_name": "symcrypt-verified-crypto-workflow",
-      "installed_sha256": "a392e0c6face0e1e33d40198f7dfd5c473a76ac3ebb8c3cdd5923386885d4957",
+      "installed_sha256": "3b27f9501238649670c3b0c324a0a15881c641c879085bc2b17ec2aa9b9b9ba2",
       "source_name": "symcrypt-verified-crypto-workflow",
       "source_sha256": "f7cf18bc8a344a0afa8c363a22be1d92c1e45aff1cc8fe3ddd88a0ad7c692618"
     },
     {
       "domain": "formal",
       "installed_name": "tamarin-symbolic-protocol-analysis",
-      "installed_sha256": "45117154cec84be3add5b8bcb86188a387bc0fd32d0f92a69c844aa92856966d",
+      "installed_sha256": "b591c4395e69e78839261d1bbbe42a35f28ce57528197d0fe6cbeab399708217",
       "source_name": "tamarin-symbolic-protocol-analysis",
       "source_sha256": "275bac2aa9392a9a3228c8e94731e22ae76bee88c3534c46762ab061004ff426"
     },
     {
       "domain": "formal",
       "installed_name": "verus-rust-verification",
-      "installed_sha256": "2b887e8361e068cbe753d1947f3bfe695a0af41cf5e37fc44a8c53c58c2e34b5",
+      "installed_sha256": "333e2b2831e4d9ddb524cd61066d3d5f4582278978c8dda67441bacd33303670",
       "source_name": "verus-rust-verification",
       "source_sha256": "deda980dbe0f6b516b8a94267bc9a0a4db8113c046590c64df58082dac20ae3b"
     }

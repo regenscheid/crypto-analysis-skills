@@ -83,4 +83,4 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **CRYPTHOL-GAMES** — [Game-Based Cryptography in HOL](https://isa-afp.org/entries/Game_Based_Crypto.html) (2026) — CryptHOL contributors. `formal-development`.
 - **SSPROVE21** — [SSProve: A Foundational Framework for Modular Cryptographic Proofs in Coq](https://eprint.iacr.org/2021/397) (2021) — Philipp G. Haselwarter et al.. `research-paper`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

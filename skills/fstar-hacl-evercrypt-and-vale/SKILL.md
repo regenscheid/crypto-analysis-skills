@@ -87,4 +87,4 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **VALE-PAPER** — [Vale: Verifying High-Performance Cryptographic Assembly Code](https://www.microsoft.com/en-us/research/publication/vale-verifying-high-performance-cryptographic-assembly-code/) (2017) — Barry Bond et al.. `research-paper`.
 - **VALE-REPO** — [Vale repository](https://github.com/project-everest/vale) (2026) — Project Everest. `official-repository`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

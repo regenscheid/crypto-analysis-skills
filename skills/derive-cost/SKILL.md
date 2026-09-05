@@ -147,9 +147,10 @@ MREstimator(q=16, m=15, n=15, k=78, r=6)
 
 Run the mapping on parameters small enough to check another way — a scheme
 whose cost is already published, or an instance you can brute-force. If the
-toy instance does not reproduce a known answer, **the mapping is wrong**, and
-the full-size number it would have produced would have been wrong too and
-looked fine.
+toy instance does not reproduce a known answer, the comparison is unresolved.
+Check inputs, units, implementation, reference assumptions, and mathematical
+mapping before assigning the cause. Do not use the full-size estimate until the
+discrepancy is explained.
 
 This is the whole reason the hop is bounded: one reduction, instantiated,
 checked against something independent. Not a search for the best attack.
@@ -207,12 +208,10 @@ connectors keep state current on disk; they cannot call `save_artifacts` and it
 would be wrong if they could. **Publishing is part of the work, not bookkeeping
 after it.**
 
-Re-saving the same filename does **not** create a second artifact — it adds a
-*version*, and the interface presents those as history. Every publish is a frame
-in the investigation's timeline, so **publish after every write**: forty-eight
-versions across a run is the good outcome, not churn, because it lets a reader
-scrub back to what the state looked like before a claim moved. Publishing
-sparingly throws that away.
+Follow the current host artifact interface and
+`investigate/reference/claude-science.md` for version identity. Do not infer
+versioning from a repeated filename or impose a publish-after-every-write rule
+on the host. Workspace knowledge and persistence are managed by the harness.
 
 Publish when it changes, not once:
 

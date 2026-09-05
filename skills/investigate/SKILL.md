@@ -1,6 +1,6 @@
 ---
 name: investigate
-description: Conduct rigorous end-to-end cryptographic security investigations and visibly route them through the relevant cryptanalysis or formal-method skills. Use whenever asked to analyze a scheme or paper, find issues or weaknesses, search for attacks, reproduce or validate a result, audit a security claim or proof, compare parameters, or resume cryptographic research. Treat “find issues,” “look hard,” “attack,” “break,” “new,” and “unexplored” as explicit discovery triggers even when the user does not name this skill.
+description: Conduct rigorous end-to-end cryptographic security investigations and visibly route them through the relevant cryptanalysis or formal-method skills. Use whenever asked to analyze a scheme or paper, find issues or weaknesses, search for attacks, reproduce or validate a result, audit a security claim or proof, compare parameters, or resume cryptographic research. Infer the requested task from its intent; individual words such as “new” do not by themselves select a mode.
 ---
 
 # Investigate cryptographic security
@@ -8,6 +8,22 @@ description: Conduct rigorous end-to-end cryptographic security investigations a
 Act as the control plane. Select and load the relevant specialist skills, keep a
 coverage record, execute the work, and show which skills actually contributed.
 Do not merely recommend skills or stop after writing a plan.
+
+## Scope and mathematical work
+
+The host owns project knowledge, persistence, and resumption. Use supplied
+context; do not create another knowledge or checkpoint system. Physical-security
+investigations are outside this effort's scope.
+
+For an explicitly stated mathematical question, use
+`mathematical-research-development` to produce definitions, lemmas, derivations,
+or scoped partial results. Read
+[the evidence distinctions](reference/evidence-interpretation.md) when choosing
+what a result can support. Formal proof assistants remain optional.
+
+Known inputs do not need to be reproduced on every continuation. Recheck when
+their assumptions, version, or reliability affect the current inference. A
+partial derivation with explicit open premises is a result worth reporting.
 
 ## Declare the mode
 
@@ -37,6 +53,12 @@ Record before analysis:
 
 If an essential item is missing, continue on the parts it does not block and
 mark every conditional conclusion. Never silently substitute a nearby version.
+
+## Catalog references
+
+Read [catalog use](reference/catalog-use.md) when consulting the
+configured catalog MCP server. It supplies changing examples and citations;
+linked skills are relevant reading, not mandatory invocations.
 
 ## Establish source grounding
 

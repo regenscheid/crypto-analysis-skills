@@ -83,4 +83,4 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **VERUS23** — [Verus: Verifying Rust Programs using Linear Ghost Types](https://arxiv.org/abs/2303.05491) (2023) — Andrea Lattuada et al.. `research-paper`.
 - **VERUSAGE25** — [VeruSAGE: A Study of Agent-Based Verification for Rust Systems](https://arxiv.org/abs/2512.18436) (2025) — Chenyuan Yang, Natalie Neamtu, Chris Hawblitzel, Jacob R. Lorch, and Shan Lu. `research-paper`. Additional primary links: [1](https://github.com/microsoft/verus-proof-synthesis).
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

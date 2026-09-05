@@ -78,9 +78,9 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 
 ## Associated primary references
 
-- **SHANNON26** — [Towards Automating Formal Cryptographic Proofs: The ShannonProver Architecture](https://arxiv.org/abs/2607.02847) (2026) — ShannonProver team. `research-paper`.
+- **SHANNON26** — [ShannonProver: Towards Automating Formal Cryptographic Proofs](https://arxiv.org/abs/2607.02847) (2026) — Yiping Ma et al.. `research-paper`.
 - **EASYCRYPT-REPO** — [EasyCrypt repository](https://github.com/EasyCrypt/easycrypt) (2026) — EasyCrypt project. `official-repository`.
 - **EASYCRYPT-TUTORIALS** — [EasyCrypt tutorials](https://easycrypt.gitlab.io/easycrypt-web/docs/tutorials/) (2026) — EasyCrypt project. `official-manual`.
-- **RUST-LEAN-AI26** — [AI-Assisted Rust-to-Lean Verification: An Experience Report](https://arxiv.org/abs/2605.30106) (2026) — Microsoft Research and collaborators. `research-paper`.
+- **RUST-LEAN-AI26** — [A Rust-to-Lean Verification Pipeline with AI Provers: An Experience Report](https://arxiv.org/abs/2605.30106) (2026) — Natalia Klaus, Juan Conejero, and Palina Tolmach. `research-paper`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

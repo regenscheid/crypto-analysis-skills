@@ -81,4 +81,4 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **SQUIRREL-REPO** — [Squirrel repository](https://github.com/squirrel-prover/squirrel-prover) (2026) — Squirrel project. `official-repository`.
 - **SQUIRREL-PQ** — [A Logic and an Interactive Prover for the Computational Post-Quantum Security of Protocols](https://eprint.iacr.org/2022/401) (2022) — Cas Cremers, Alex B. Grilo, Sam Scott, and others. `research-paper`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

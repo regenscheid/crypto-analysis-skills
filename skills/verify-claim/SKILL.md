@@ -28,7 +28,9 @@ arrived through a new derivation is a **candidate**: writing down the reasoning
 gives it provenance, but does not independently check it. That distinction does
 most of the work here: an unsupported claim that is right this time is
 indistinguishable, from the inside, from one that is wrong, and a derivation
-reviewed only by its author still has the author's blind spots.
+reviewed only by its author still has the author's blind spots. Conditional
+lemmas and incomplete derivations remain useful mathematical outputs; keep the
+open premises visible rather than discarding the work or calling it refuted.
 
 **Retrieval is a pass, not a shortcut.** If `knowledge.md` already answers it, that
 is the workbench working — the four tiers exist so that settled things are looked
@@ -208,7 +210,9 @@ verification.
 **8. Silent aggregate failure.** *Observed twice:* one estimator family raising
 discarded eight valid results, and the failure formatted as a tuple rather than
 an error. **Check:** any "cheapest of N" states what was skipped. A minimum over
-a silently reduced set is a lower bound wearing an answer's clothes.
+a reduced set is an upper bound on the minimum over the full set, provided the
+retained costs are valid and comparable. State omitted cases; invalid estimates
+may support no bound at all.
 
 ## Step 5 — Report
 
@@ -294,9 +298,10 @@ extra gate applies when the claimed result is newly derived.
   needs a genuinely separate checking route before it becomes durable knowledge.
 - **It does not require deriving what can be looked up.** Retrieval is the
   designed path.
-- **It does not report "verified".** Computation falsifies; it does not verify.
-  For a claim settled by running something, the vocabulary is "no counterexample
-  at n ≤ N", with N stated.
+- **It reports the exact evidence scope.** A checked witness or exhaustive finite
+  computation can verify a scoped predicate. Random sampling and unsuccessful
+  searches do not establish a universal claim. Use
+  [evidence interpretation](../investigate/reference/evidence-interpretation.md).
 - **It does not hide anything.** There is no answer key, nothing is scored
   against a secret, and the same work can be audited repeatedly without being
   spent.

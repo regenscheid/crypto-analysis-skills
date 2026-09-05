@@ -85,4 +85,4 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **MPFR** — [GNU MPFR](https://www.mpfr.org/) (2026) — GNU MPFR project. `official-project`.
 - **FLOCQ** — [Flocq](https://flocq.gitlabpages.inria.fr/) (2026) — Inria. `official-project`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

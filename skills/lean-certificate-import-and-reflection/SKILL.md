@@ -82,9 +82,9 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 
 - **LRAT-CATCHER26** — [LRAT-Catcher: Importing SAT Refutations into Lean](https://arxiv.org/abs/2607.00815) (2026) — LRAT-Catcher authors. `research-paper`.
 - **PBLEAN26** — [PBLean: Importing Pseudo-Boolean Proofs into Lean](https://arxiv.org/abs/2602.08692) (2026) — PBLean authors. `research-paper`.
-- **LRAT17** — [LRAT: Efficiently Verifying Clausal Proofs](https://arxiv.org/abs/1612.02353) (2017) — Nathan Wetzler et al.. `research-paper`.
+- **LRAT17** — [Efficient Certified RAT Verification](https://arxiv.org/abs/1612.02353) (2017) — Luís Cruz-Filipe et al.. `research-paper`.
 - **VERIPB-HOME** — [VeriPB](https://veripb.org/) (2026) — VeriPB project. `official-project`.
 - **ALETHE** — [The Alethe Proof Format](https://arxiv.org/abs/2104.00649) (2021) — Hans-Jörg Schurr et al.. `research-paper`.
 - **SMTCOQ-REPO** — [SMTCoq repository](https://github.com/smtcoq/smtcoq) (2026) — SMTCoq project. `official-repository`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

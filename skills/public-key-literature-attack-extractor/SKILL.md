@@ -15,6 +15,12 @@ metadata:
 
 A source contains a claimed attack, estimator result, proof criticism, parameter analysis, or implementation finding that may be relevant to the target.
 
+## Catalog references
+
+Read [catalog use](../investigate/reference/catalog-use.md) when consulting the
+configured catalog MCP server. It supplies changing examples and citations;
+linked skills are relevant reading, not mandatory invocations.
+
 ## Operating procedure
 
 1. Identify the exact source version, publication date, authors, artifact URL or hash, errata, follow-up papers, code commit, and any later retraction or rebuttal.

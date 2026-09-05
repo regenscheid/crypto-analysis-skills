@@ -84,4 +84,4 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **LAST-MILE20** — [The Last Mile: High-Assurance and High-Speed Cryptographic Implementations](https://arxiv.org/abs/1904.04606) (2020) — José Bacelar Almeida et al.. `research-paper`.
 - **EASYCRYPT-HOME** — [EasyCrypt](https://www.easycrypt.info/) (2026) — EasyCrypt project. `official-project`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

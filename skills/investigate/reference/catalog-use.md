@@ -1,0 +1,37 @@
+# Use the changing catalog as reference material
+
+Skills supply methods and evidence standards. The configured catalog MCP server
+supplies changing examples and source metadata. Discover the read tools actually
+available; do not assume that a planned tool or resource URI is implemented.
+
+1. Check the server's catalog information or filter contract when available. Cite
+   its catalog version and content digest, plus the skill-registry pin if returned.
+   A seed version alone may not identify later curation changes.
+2. Use catalog search for literature leads relevant to the stated question. Read
+   the complete selected record, source metadata, locators, scope, and limitations.
+   Open the primary source for load-bearing claims. A record without an exact
+   locator is not a verified source quotation.
+3. Preserve the canonical attack ID and any requested alias, source ID, source
+   revision, and exact locator in the ordinary investigation output. If the server
+   lacks revision metadata, state that limitation instead of inventing it.
+4. Treat skill links as subject relevance, not evidence that the skill was loaded
+   or an instruction to invoke every linked skill. Use exact runtime names from
+   the skill registry. Resolve legacy domain-qualified references only through an
+   explicit catalog mapping; never strip a namespace by guesswork.
+
+Text overlap and retrieval scores are not applicability judgments. They do not
+reason about negation, quantifiers, conjunctions, model changes, or available
+capabilities. Read `applies_when`, `requires_capability`, and `defeated_by` as
+authored commentary with scope; a countermeasure note is not a universal immunity
+theorem. “Unclassified,” “unknown,” and “not applicable” are different states.
+
+A generic-method record describes a reusable mathematical method. A baseline is
+the role of a method or result in a specified comparison. Neither means the
+catalog is automatically updated. Missing records and missing skill links are
+coverage gaps, not evidence that a result or method does not exist.
+
+Investigations use read-only catalog operations. Deliberate maintainer edits to
+the repository are a separate process; these skills do not submit observations,
+proposals, or discoveries to the catalog. The harness owns project knowledge and
+resumption. Physical-security investigations are outside this effort's scope;
+historical catalog records can remain available without expanding that scope.

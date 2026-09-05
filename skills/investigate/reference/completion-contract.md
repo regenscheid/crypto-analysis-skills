@@ -103,7 +103,8 @@ candidate—not a candidate result.
 - State the claim so one result can decide it.
 - Check preconditions before implementation.
 - Read the exact source claim and material corrections or errata.
-- Reproduce all load-bearing numbers with actual tools.
+- Check load-bearing numbers by the appropriate exact calculation, derivation,
+  or reproducible computation; state the route and its scope.
 - Seek an independent source, derivation, implementation, or checker.
 
 ### FORMALIZE
@@ -116,3 +117,11 @@ candidate—not a candidate result.
 
 If a gate cannot be satisfied, return a scoped partial result with the blocking
 condition. Do not silently lower the gate.
+
+## Partial mathematical results
+
+An unchecked premise is not a refutation. Report a conditional lemma, incomplete
+derivation, or scoped observation with its remaining obligation. Completion of
+the overall question and usefulness of the current result are separate judgments.
+Use the host-provided context; this contract does not define a project store or
+checkpoint format. Evidence labels follow [evidence interpretation](evidence-interpretation.md).
