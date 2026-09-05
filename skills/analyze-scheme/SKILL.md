@@ -9,6 +9,16 @@ Produce an attack-surface map, not an unqualified verdict. Use `investigate` as
 the outer workflow when the task also includes discovery, validation, or formal
 proof.
 
+## Mathematical research assignment
+
+For a research proposal or a stated mathematical question, use
+[the research workflow](../investigate/reference/mathematical-research-workflow.md).
+The full evaluation procedure below applies when that evaluation is requested;
+a proposal or lemma does not require completing every assessment artifact.
+Use supplied assumptions and prior results at their stated evidence strength.
+A catalog link or published ingredient does not itself assign a paper audit;
+see [paper use and verification](../investigate/reference/paper-use-and-verification.md).
+
 ## Fix scope and mode
 
 Identify every evaluated layer:
@@ -22,9 +32,10 @@ Identify every evaluated layer:
 - **deployment** — protocol composition, nonce lifecycle, multi-user behavior,
   or operational assumptions, only when requested.
 
-Infer `ASSESS` for a general scheme analysis. Infer `DISCOVER` when asked to find
-issues, weaknesses, new attacks, or promising attack directions. Do not ask the
-user to select a mode when those words already decide it.
+Infer `ASSESS` for a general scheme assessment and `DISCOVER` for mathematical
+research and proposals. Select from the intended product, not isolated words
+such as “new.” A bounded mathematical question may use only the relevant part
+of this map; state its scope without claiming complete scheme coverage.
 
 ## Route by domain
 
@@ -101,9 +112,10 @@ Report:
 - the precise step where an attack would have to improve;
 - missing evidence whose resolution could change the ranking.
 
-In DISCOVER mode, send the ranked structural handles and complete coverage
-ledger to `discover-cryptanalysis`. Continue into candidate generation rather
-than ending with “interesting future work.”
+For a mathematical research assignment, pass the relevant definitions, source
+ingredients, and open questions to `discover-cryptanalysis`. Do not require a
+complete assessment ledger before developing a selected mathematical question.
+A requested proposal and a requested derivation have different completion rules.
 
 ## Computation discipline
 

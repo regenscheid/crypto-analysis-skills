@@ -15,6 +15,15 @@ metadata:
 
 A known attack on one primitive, version, parameter set, round count, component, or adversary model might apply to another. Also use it to transfer an agent-discovered reduced or toy attack toward the real target.
 
+## Research maturity
+
+Use [the mathematical research workflow](../investigate/reference/mathematical-research-workflow.md)
+for proposals and incomplete arguments. Requirements for a ready experiment or
+an established result do not determine which open mathematical questions may be
+included in a proposal. Preserve unchecked premises, conditional implications,
+and supporting lemmas without calling them validated results. Keep work status,
+evidence maturity, review outcome, coverage, and contribution distinct.
+
 ## Operating procedure
 
 1. **Start from a normalized source attack.** Refuse to transfer from a headline or analogy. Require the source attack skeleton, requirements, model, complexity, and validation status.
@@ -45,7 +54,7 @@ A persuasive analogy is not evidence. The central deliverable is the requirement
 - Bind every statement to the exact target artifact, version, parameters, round/phase scope, and adversary model.
 - Label a result accurately as a property, trail, differential/linear hull, distinguisher, recovery attack, forgery, collision, proof gap, or implementation failure.
 - Never describe a reduced-round, weak-key, related-key, nonce-misuse, chosen-ciphertext, Q2, or component-only result as a full-scheme break without the corresponding full-scheme model.
-- Recompute data, time, memory, preprocessing, communication, verification, and success probability; do not copy headline exponents without their units and assumptions.
+- For a new or independently verified quantitative conclusion, account for relevant data, time, memory, preprocessing, communication, verification, and success probability. Preserve source units and assumptions; distinguish attributed quantities from independent checks and reuse compatible checked inputs.
 - Preserve contradictory evidence, failed reproductions, corrections, and source-version chronology.
 - Treat solver timeout, bounded search failure, and absence of a known attack as inconclusive—not as evidence of security.
 - Mark every inference that is not directly established by a proof, derivation, experiment, or cited source.

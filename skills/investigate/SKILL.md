@@ -26,6 +26,19 @@ Known inputs do not need to be reproduced on every continuation. Recheck when
 their assumptions, version, or reliability affect the current inference. A
 partial derivation with explicit open premises is a result worth reporting.
 
+For mathematical cryptanalysis and research proposals, read
+[the research workflow](reference/mathematical-research-workflow.md). Its product
+boundaries govern the scope of the routing, execution, and completion lists below.
+Use a full family assessment for an assessment assignment; a stated mathematical
+question needs the relevant definitions and assumptions, not an unrelated audit.
+Read [paper use and verification](reference/paper-use-and-verification.md) when
+using literature. Invoke `verify-claim` for a correctness check of an assigned
+claim, not merely because a published result is an ingredient.
+
+For empirical observations and uncertainty, use
+`empirical-statistical-and-heuristic-claim-separation` directly; it does not
+require entering FORMALIZE mode.
+
 ## Declare the mode
 
 State one mode before substantive work. Infer it from the request; do not ask
@@ -34,7 +47,7 @@ when the language already decides it.
 | Mode | Use when | Stopping rule |
 |---|---|---|
 | **ASSESS** | Map a scheme, paper, proof, or parameter set against known results | Cover the applicable known families and qualify every conclusion |
-| **DISCOVER** | Find issues, weaknesses, attacks, improvements, transfers, or unexplored directions | Generate and cheaply falsify structurally distinct candidates; literature review alone is not completion |
+| **DISCOVER** | Develop mathematical cryptanalysis, research questions, or proposals | Deliver the requested proposal or substantive mathematical progress with open obligations; do not claim more than the evidence supports |
 | **VALIDATE** | Check or reproduce a specific attack, claim, computation, or citation | Settle the claim or identify the exact unresolved obligation |
 | **FORMALIZE** | Produce machine-checked proof, certified computation, or implementation refinement | Replay the artifact and state its model and trusted computing base |
 
@@ -64,7 +77,7 @@ linked skills are relevant reading, not mandatory invocations.
 ## Establish source grounding
 
 Begin a source and prior-art track before expensive computation or original
-attack development. In `ASSESS` and `DISCOVER`, load the domain literature
+attack development. When source normalization is part of the assignment, load the domain literature
 extractor (`symmetric-literature-attack-extractor` or
 `public-key-literature-attack-extractor`). The structure-first track may run in
 parallel so it remains intellectually independent; it does not replace source
@@ -99,33 +112,33 @@ Also load the object-level workflow when relevant: `analyze-scheme`,
 `analyze-paper`, `validate-attack`, `verify-claim`, `derive-cost`, or
 `discover-cryptanalysis`.
 
-From each orchestrator, select every applicable technique family—not merely the
-most familiar one. Load a technique skill before relying on its procedure. Add
-each selected skill to the skill trace with a one-line reason. Add excluded
-families to the coverage ledger with a concrete non-applicability reason.
+For a full scheme assessment, cover every applicable family. For a proposal,
+selected mathematical question, or paper verification, choose the capabilities
+needed for that assignment. Load a technique skill before relying on its procedure
+and explain why it was used. A question outside current scope is unexamined, not
+mathematically inapplicable.
 
 ## Execute the investigation
 
-Work in dependency order and update the evidence state after each material
-result:
+For mathematical research, follow `discover-cryptanalysis` and develop the
+selected question with `mathematical-research-development`. Retain open premises
+and meaningful intermediate results; apply the completion rule for the requested
+proposal or development task.
 
-1. Establish the source-grounding record from project knowledge and
-   authoritative primary sources.
-2. Formalize the claim and normalize the target structure.
-3. Establish generic attacks, security baselines, and claimed margins.
-4. Normalize relevant prior attacks with exact preconditions and costs.
-5. Map the full applicable attack surface.
-6. In DISCOVER mode, generate hypotheses from structure, proof seams,
-   distributions, interfaces, and transfer—not from analogy alone.
-7. Apply the cheapest decisive falsifier to each viable hypothesis before
-   developing it further.
-8. Recompute end-to-end complexity, success probability, memory, data, oracle
-   access, preprocessing, verification, and amortization in named models.
-9. Independently review every load-bearing claim before presenting it.
+For a full scheme assessment, work through the relevant scope:
 
-Use more than one structurally independent hypothesis source in DISCOVER mode
-unless the target rules the others out. A failed search or solver timeout updates
-the ledger; it never becomes evidence of security.
+1. Establish source grounding and normalize the target's definitions and claims.
+2. Identify applicable known families and their model assumptions.
+3. Source or compute relevant generic and published comparisons in named models.
+4. Map the coverage required for the assessment, including unexamined areas.
+5. Support new quantitative conclusions with the relevant resource and success
+   accounting; distinguish attributed results from independently checked values.
+6. Report claim-level conclusions with their evidence and limitations.
+
+For paper verification, give `verify-claim` the assigned statement and scope;
+use `analyze-paper` when reviewing the whole document. A new session, citation,
+or catalog subject link does not require repeating compatible prior checks.
+A failed search or solver timeout supports a scoped statement about the attempt.
 
 ## Select computational tools by capability
 
@@ -145,20 +158,22 @@ management, and execution manifests.
 ## Enforce completion
 
 Maintain the ledger and status vocabulary in
-[`reference/completion-contract.md`](reference/completion-contract.md). A final
-answer is incomplete unless it contains:
+[`reference/completion-contract.md`](reference/completion-contract.md). Include the elements
+needed to assess the requested product:
 
 - the mode and frozen target;
 - the source-grounding record, including searched channels, opened sources, and
   retrieval gaps;
 - a skill trace naming the skills actually loaded and used;
-- a coverage row for every applicable or considered family;
+- assessment coverage where assigned, distinguishing unexamined from inapplicable;
 - evidence and scope for every material finding;
-- candidate outcomes and falsification status in DISCOVER mode;
-- unresolved obligations, blocked work, and the next decisive test.
+- the research proposal or mathematics produced in DISCOVER mode, with unresolved premises;
+- unresolved obligations, blocked work, and the next meaningful mathematical step or test.
 
-Do not conclude DISCOVER mode after finding prior work, generating vague ideas,
-or testing one favorite family. Do not conclude FORMALIZE mode from source text
+In DISCOVER mode, a requested research proposal can be complete with unresolved
+questions. If mathematical development was requested, a survey or another list
+is insufficient: return the derivation, partial result, or precise obstruction.
+Do not conclude FORMALIZE mode from source text
 that was not replayed. Do not call a scheme secure or an analysis verified;
 state the bounded evidence and what was not checked.
 

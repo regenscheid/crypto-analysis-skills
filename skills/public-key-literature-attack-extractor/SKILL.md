@@ -21,6 +21,16 @@ Read [catalog use](../investigate/reference/catalog-use.md) when consulting the
 configured catalog MCP server. It supplies changing examples and citations;
 linked skills are relevant reading, not mandatory invocations.
 
+## Extract, use, or verify
+
+Read [paper use and verification](../investigate/reference/paper-use-and-verification.md).
+Extraction records the exact published claim, its assumptions, evidence, and
+unresolved details. It does not automatically reproduce the paper. Preserve
+published quantities as attributed source claims; independently recompute when
+verification is assigned, a discrepancy matters, or a changed input requires it.
+Reuse previously inspected compatible source material. A missing code artifact
+or missing locator remains explicit; it is not a reason to invent evidence.
+
 ## Operating procedure
 
 1. Identify the exact source version, publication date, authors, artifact URL or hash, errata, follow-up papers, code commit, and any later retraction or rebuttal.
@@ -46,7 +56,7 @@ linked skills are relevant reading, not mandatory invocations.
 - Bind every conclusion to the exact artifact, version, parameter set, key format, and security game.
 - Distinguish a faster algorithm for an underlying mathematical problem from a complete attack on the cryptosystem, and distinguish a proof gap from an exploit.
 - Never present a weak-key, malformed-input, related-key, multi-target, decryption-oracle, leakage, fault, or quantum result as a standard-model full-scheme break without that qualification.
-- Recompute data, oracle queries, arithmetic operations, bit complexity, memory, preprocessing, communication, verification, parallel depth, and success probability in explicit units.
+- For a new or independently verified quantitative conclusion, account for the relevant data, oracle queries, arithmetic/bit operations, memory, preprocessing, communication, verification, parallel depth, and success probability in explicit units. Preserve attributed published quantities as source claims; reuse unchanged checked inputs and recompute affected dependencies.
 - State the cost model, implementation assumptions, and estimator version; a single headline exponent is not a reproducible security estimate.
 - Preserve failed attacks, rebuttals, corrections, withdrawn claims, and source-version chronology in the evidence ledger.
 - Treat solver timeout, bounded search failure, and absence of a known attack as inconclusive—not as evidence of security.

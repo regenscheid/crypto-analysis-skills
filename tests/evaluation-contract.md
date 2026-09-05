@@ -51,7 +51,7 @@ long-running job management belong to the harness, outside these tests.
 
 ## Mathematical development and contribution cases
 
-`mathematical-research-cases.json` contains six manual evaluation cases with
+`mathematical-research-cases.json` contains thirteen manual evaluation cases with
 supplied premises and review criteria. They cover routine parameter substitution,
 important applications of known methods, invalidated hypotheses, reuse of
 established mathematics, sustained block-matrix derivation, and conditional work.
@@ -63,3 +63,25 @@ source use, and output. Compare the same prompt and supplied context before and
 after the skill change; record the model configuration and available resources.
 Do not count a case as passed because expected words appeared. These cases have
 not been run through Claude Science merely by being checked into the repository.
+
+
+## Comparison protocol
+
+Compare the original skills, the original skills plus the user's ranked-question
+prompt, and the revised skills on the same supplied mathematical questions. Keep
+model version, sampling settings, available tools, input context, and resource
+limits matched. Use more than one run before attributing a difference to wording.
+These are evaluations of the existing host, not changes to its execution API.
+
+Review the actual products and, where available, traces. Distinguish source
+interpretation from paper verification, and count repeated checking as justified
+only when it addresses a changed dependency or the assigned verification task.
+Assess mathematical progress by the inference produced, its correctness and
+scope, and the unresolved obligations it exposes. Report time or resource use
+by activity only when the trace supports that measurement. Do not optimize for
+claimed novelty, number of proposed questions, or the absence of negative results.
+
+The added cases cover a false paper claim, use of an established theorem,
+post-selection inference, a zero-event confidence limit, a nine-question proposal,
+continuation from a partial derivation, and scoped negative results. Their
+presence and reference answers do not constitute a live model evaluation.

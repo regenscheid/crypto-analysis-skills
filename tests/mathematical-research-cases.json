@@ -59,6 +59,70 @@
         "Returns the conditional characterization as useful work.",
         "Does not declare the particular U invariant or refute invariance because it remains unchecked."
       ]
+    },
+    {
+      "id": "paper-correctness-versus-attribution",
+      "prompt": "Audit this supplied paper claim: Every continuous real function is differentiable. The paper gives no additional assumptions and argues that continuity makes the difference quotients converge. The exact statement and argument above are the supplied source. Determine whether the claim is correct.",
+      "review_criteria": [
+        "Treats correctness as the task; finding the statement in the source is not a correctness verdict.",
+        "Gives a valid counterexample such as absolute value at zero and derives the differing one-sided difference quotients.",
+        "Does not require another publication before reaching the refutation."
+      ]
+    },
+    {
+      "id": "use-a-paper-without-a-paper-audit",
+      "prompt": "The supplied, previously inspected paper states rank(T)+nullity(T)=dim(V) for linear T on finite-dimensional V. Take this standard theorem as established. For dim(V)=12 and rank(T)=7, determine nullity(T), and explain whether this independently verifies the paper.",
+      "review_criteria": [
+        "Obtains nullity 5 and identifies the theorem hypotheses.",
+        "Uses the given result without independently auditing or reproving the paper.",
+        "Does not call the source independently verified merely because it was applied."
+      ]
+    },
+    {
+      "id": "exploratory-selection-is-not-confirmation",
+      "prompt": "In a synthetic study we inspected 1000 correlations, then reported the smallest unadjusted p-value, 0.02, as confirmation of a previously unspecified relationship. No held-out data exist. Interpret what this supports and what remains open.",
+      "review_criteria": [
+        "Identifies the post-selection and multiplicity problem without declaring the observed relationship impossible.",
+        "Labels the result exploratory and distinguishes an observation from a confirmed population effect.",
+        "Explains that fresh confirmation or a justified selection-aware analysis would be needed for the stronger claim; does not invent an adjusted p-value from insufficient data."
+      ]
+    },
+    {
+      "id": "zero-events-and-insufficient-resolution",
+      "prompt": "A fixed sample contains 100 independent Bernoulli trials with common unknown event probability p and zero observed events. Derive the one-sided exact 95 percent upper confidence limit. Does this exclude p=0.001?",
+      "review_criteria": [
+        "Derives (1-p)^100=0.05 and p_U=1-0.05^(1/100), approximately 0.02951.",
+        "States that p=0.001 is not excluded by this upper confidence limit.",
+        "States the independence, fixed-sample, and common-probability assumptions, without treating the limit as a posterior probability or zero observed events as p=0."
+      ]
+    },
+    {
+      "id": "proposal-breadth-and-research-horizons",
+      "prompt": "Prepare a research-proposal structure for these nine distinct assigned mathematical questions: continuity of a parameterized integral, an extremal graph bound, a polynomial irreducibility criterion, a lattice-point counting identity, a matrix canonical form, convergence of a recurrence, a combinatorial bijection, a conditional probability inequality, and a generating-function identity. Keep all nine represented. The integral question is selected for immediate work and may need a supporting domination lemma before a decisive calculation. Do not solve the questions yet.",
+      "review_criteria": [
+        "Preserves all nine questions in the proposal instead of applying a five-question cap or replacing them with two active items.",
+        "Distinguishes the selected immediate question from the agenda and respects the proposal-only request.",
+        "Treats the supporting lemma as a legitimate milestone without requiring an immediate cheap falsifier.",
+        "Does not invent theorem hypotheses, numerical success probabilities, or findings."
+      ]
+    },
+    {
+      "id": "continue-a-partial-derivation",
+      "prompt": "Use this established partial result: in R^r direct-sum R^s, B=[[I,Y],[Z,0]], with YZ=0 and ZY=0. We have already proved this form; do not redo its derivation. Now characterize image(B), kernel(B), and rank(B).",
+      "review_criteria": [
+        "Derives image(B)={(v,Zv):v in R^r}, using ZY=0 to verify the representation.",
+        "Derives kernel(B)={(-Yw,w):w in R^s} and rank(B)=r.",
+        "Advances the supplied partial mathematics without restarting the classification or a literature survey."
+      ]
+    },
+    {
+      "id": "scoped-negative-and-question-status",
+      "prompt": "An earlier source lookup timed out. A separate bounded search found no counterexample to conjecture C. A proof attempt failed because an intermediate lemma L was false, but C does not imply L. Explain what is resolved and what remains open.",
+      "review_criteria": [
+        "Separates retrieval failure, bounded absence of a counterexample, and refutation of the auxiliary lemma.",
+        "Does not infer that C is true or false from these facts.",
+        "Identifies a changed retrieval route or different proof argument as possible reconsideration reasons without proposing a new knowledge system."
+      ]
     }
   ]
 }

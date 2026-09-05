@@ -15,6 +15,15 @@ metadata:
 
 The project has accumulated heterogeneous evidence and needs a defensible conclusion without collapsing scope or uncertainty.
 
+## Research maturity
+
+Use [the mathematical research workflow](../investigate/reference/mathematical-research-workflow.md)
+for proposals and incomplete arguments. Requirements for a ready experiment or
+an established result do not determine which open mathematical questions may be
+included in a proposal. Preserve unchecked premises, conditional implications,
+and supporting lemmas without calling them validated results. Keep work status,
+evidence maturity, review outcome, coverage, and contribution distinct.
+
 ## Operating procedure
 
 1. Group evidence by claim ID, exact target version, parameter set, adversary model, and result type. Do not synthesize across incompatible rows.
@@ -37,6 +46,11 @@ actually supplied. Distinguish routine applications and new evaluations from
 substantive extensions or potentially new methods. Keep correctness, originality,
 and significance separate; a useful parameter-specific finding need not be novel.
 
+For sampling, selected observations, or inconclusive experiments, read
+[research stages](../empirical-statistical-and-heuristic-claim-separation/references/research-stages.md).
+Exploratory observations can motivate questions; confirmation requires an
+appropriate sampling and uncertainty analysis. Formalization is optional.
+
 ## Output contract
 
 - Claim-level findings with scope, confidence, evidence, and consequence.
@@ -49,7 +63,7 @@ and significance separate; a useful parameter-specific finding need not be novel
 - Bind every conclusion to the exact artifact, version, parameter set, key format, and security game.
 - Distinguish a faster algorithm for an underlying mathematical problem from a complete attack on the cryptosystem, and distinguish a proof gap from an exploit.
 - Never present a weak-key, malformed-input, related-key, multi-target, decryption-oracle, leakage, fault, or quantum result as a standard-model full-scheme break without that qualification.
-- Recompute data, oracle queries, arithmetic operations, bit complexity, memory, preprocessing, communication, verification, parallel depth, and success probability in explicit units.
+- For a new or independently verified quantitative conclusion, account for the relevant data, oracle queries, arithmetic/bit operations, memory, preprocessing, communication, verification, parallel depth, and success probability in explicit units. Preserve attributed published quantities as source claims; reuse unchanged checked inputs and recompute affected dependencies.
 - State the cost model, implementation assumptions, and estimator version; a single headline exponent is not a reproducible security estimate.
 - Preserve failed attacks, rebuttals, corrections, withdrawn claims, and source-version chronology in the evidence ledger.
 - Treat solver timeout, bounded search failure, and absence of a known attack as inconclusive—not as evidence of security.

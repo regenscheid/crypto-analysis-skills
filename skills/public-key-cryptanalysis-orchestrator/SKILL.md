@@ -15,6 +15,16 @@ metadata:
 
 Start or resume a cryptanalysis project involving a public-key primitive or protocol. Run this before family-specific analysis so the claim, artifact, interfaces, and evidence standards are fixed.
 
+## Mathematical research assignment
+
+For a research proposal or a stated mathematical question, use
+[the research workflow](../investigate/reference/mathematical-research-workflow.md).
+The full evaluation procedure below applies when that evaluation is requested;
+a proposal or lemma does not require completing every assessment artifact.
+Use supplied assumptions and prior results at their stated evidence strength.
+A catalog link or published ingredient does not itself assign a paper audit;
+see [paper use and verification](../investigate/reference/paper-use-and-verification.md).
+
 ## Operating procedure
 
 1. Freeze the target: collect the exact specification, revision, parameter sets, reference and optimized implementations, test vectors, errata, proof version, and wire-format documents. Hash or otherwise identify every artifact.
@@ -40,7 +50,7 @@ Start or resume a cryptanalysis project involving a public-key primitive or prot
 - Bind every conclusion to the exact artifact, version, parameter set, key format, and security game.
 - Distinguish a faster algorithm for an underlying mathematical problem from a complete attack on the cryptosystem, and distinguish a proof gap from an exploit.
 - Never present a weak-key, malformed-input, related-key, multi-target, decryption-oracle, leakage, fault, or quantum result as a standard-model full-scheme break without that qualification.
-- Recompute data, oracle queries, arithmetic operations, bit complexity, memory, preprocessing, communication, verification, parallel depth, and success probability in explicit units.
+- For a new or independently verified quantitative conclusion, account for the relevant data, oracle queries, arithmetic/bit operations, memory, preprocessing, communication, verification, parallel depth, and success probability in explicit units. Preserve attributed published quantities as source claims; reuse unchanged checked inputs and recompute affected dependencies.
 - State the cost model, implementation assumptions, and estimator version; a single headline exponent is not a reproducible security estimate.
 - Preserve failed attacks, rebuttals, corrections, withdrawn claims, and source-version chronology in the evidence ledger.
 - Treat solver timeout, bounded search failure, and absence of a known attack as inconclusive—not as evidence of security.

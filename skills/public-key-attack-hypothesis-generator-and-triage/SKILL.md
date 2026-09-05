@@ -15,6 +15,15 @@ metadata:
 
 The target has been modeled and the project needs a disciplined research agenda rather than a generic list of attack names.
 
+## Research maturity
+
+Use [the mathematical research workflow](../investigate/reference/mathematical-research-workflow.md)
+for proposals and incomplete arguments. Requirements for a ready experiment or
+an established result do not determine which open mathematical questions may be
+included in a proposal. Preserve unchecked premises, conditional implications,
+and supporting lemmas without calling them validated results. Keep work status,
+evidence maturity, review outcome, coverage, and contribution distinct.
+
 ## Operating procedure
 
 1. Read the claim matrix, structure map, reduction audit, baselines, and existing ledger. Do not generate hypotheses from the family label alone.
@@ -26,7 +35,7 @@ The target has been modeled and the project needs a disciplined research agenda 
 7. Create negative controls and failure criteria. State which observation would falsify the idea rather than merely fail to confirm it.
 8. Rank by expected impact, plausibility, novelty, feasibility, cost, decisiveness, and information gain. Avoid over-prioritizing attacks merely because tooling already exists.
 9. Deduplicate hypotheses that share the same mathematical core and record dependency relationships among branches.
-10. Promote only hypotheses with a concrete next action into the research backlog; preserve rejected ideas and reasons as negative knowledge.
+10. Distinguish research questions from experiment-ready hypotheses. A proposal may identify a missing formulation or supporting lemma as its next mathematical obligation. Reserve experimental admission requirements for the experiment queue; scope rejected arguments to what their evidence actually rules out.
 
 ## Output contract
 
@@ -40,7 +49,7 @@ The target has been modeled and the project needs a disciplined research agenda 
 - Bind every conclusion to the exact artifact, version, parameter set, key format, and security game.
 - Distinguish a faster algorithm for an underlying mathematical problem from a complete attack on the cryptosystem, and distinguish a proof gap from an exploit.
 - Never present a weak-key, malformed-input, related-key, multi-target, decryption-oracle, leakage, fault, or quantum result as a standard-model full-scheme break without that qualification.
-- Recompute data, oracle queries, arithmetic operations, bit complexity, memory, preprocessing, communication, verification, parallel depth, and success probability in explicit units.
+- For a new or independently verified quantitative conclusion, account for the relevant data, oracle queries, arithmetic/bit operations, memory, preprocessing, communication, verification, parallel depth, and success probability in explicit units. Preserve attributed published quantities as source claims; reuse unchanged checked inputs and recompute affected dependencies.
 - State the cost model, implementation assumptions, and estimator version; a single headline exponent is not a reproducible security estimate.
 - Preserve failed attacks, rebuttals, corrections, withdrawn claims, and source-version chronology in the evidence ledger.
 - Treat solver timeout, bounded search failure, and absence of a known attack as inconclusive—not as evidence of security.

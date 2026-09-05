@@ -4,6 +4,11 @@ Skills supply methods and evidence standards. The configured catalog MCP server
 supplies changing examples and source metadata. Discover the read tools actually
 available; do not assume that a planned tool or resource URI is implemented.
 
+For explanatory case comparisons, use [catalog reading](catalog-reading.md).
+Reading guides returned by the server are editorial teaching material with an
+explicit evidence scope. Their citation locators do not upgrade the evidence
+status of the underlying record or require a paper-verification task.
+
 1. Check the server's catalog information or filter contract when available. Cite
    its catalog version and content digest, plus the skill-registry pin if returned.
    A seed version alone may not identify later curation changes.

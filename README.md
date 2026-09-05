@@ -54,16 +54,24 @@ another parameter set can matter without supplying a novel mechanism. See
 1. selects `ASSESS`, `DISCOVER`, `VALIDATE`, or `FORMALIZE` mode;
 2. loads the symmetric, public-key, or formal-method orchestrator;
 3. selects applicable technique skills explicitly;
-4. records source grounding, a skill trace, and a complete attack-family
-   coverage ledger;
+4. records source grounding and a skill trace, with family coverage when a
+   scheme assessment is part of the assignment;
 5. executes the investigation rather than stopping after planning or literature
    review;
 6. applies mode-specific completion gates before concluding.
 
 Infer modes from the requested work; keywords alone do not select `DISCOVER`.
-That mode requires structurally distinct
-candidates, cheap falsification, explicit unchecked areas, and bounded handoff
-of survivors for costing or independent validation.
+DISCOVER distinguishes a requested research proposal from development of a
+selected mathematical question. There is no fixed five/two agenda limit or
+requirement for a cheap falsifier before mathematical work. Meaningful conditional
+results and supporting lemmas count as progress; complete scheme coverage is a
+separate assessment responsibility.
+
+`verify-claim` checks whether an assigned paper claim is correct. Source
+interpretation and use of a published ingredient do not automatically invoke a
+paper audit. Statistical evidence guidance is directly available for ordinary
+research without formalization. The catalog supplies four editorial reading
+guides through its existing read tools; source-inspection limits remain explicit.
 
 The main control skills are intentionally short. Detailed domain checklists,
 platform behavior, schemas, and references remain on demand.

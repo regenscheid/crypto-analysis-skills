@@ -10,6 +10,13 @@ return the mathematics produced, including useful partial results. For open-ende
 or extended derivation work, read [development guidance](references/development.md)
 for alternative representations, sustained reasoning, and proportionate checking.
 
+For proposals, longer research horizons, and continuation milestones, read
+[the research workflow](../investigate/reference/mathematical-research-workflow.md).
+For literature ingredients, use [paper use and verification](../investigate/reference/paper-use-and-verification.md).
+For empirical evidence, the statistical skill is directly available without
+formalization. Consult [catalog reading](../investigate/reference/catalog-reading.md)
+when historical examples would clarify a mathematical concept or scope distinction.
+
 ## Make the question precise
 
 State the objects, domains, quantifiers, assumptions, desired conclusion, and
