@@ -173,6 +173,15 @@ unverified are fine as they stand.
 Check which is being made, and whether a quantum speedup has been applied to an
 attack that does not admit one.
 
+## Contribution and originality
+
+Before claiming a new result, use
+[contribution assessment](../investigate/reference/contribution-assessment.md).
+State the closest known result, the changed scope, and the additional reasoning
+actually supplied. Distinguish routine applications and new evaluations from
+substantive extensions or potentially new methods. Keep correctness, originality,
+and significance separate; a useful parameter-specific finding need not be novel.
+
 ## If you can execute
 
 Inspect the available computational environment and tool versions through

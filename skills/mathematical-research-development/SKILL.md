@@ -1,12 +1,14 @@
 ---
 name: mathematical-research-development
-description: Develop an explicitly stated mathematical question into definitions, lemmas, derivations, counterexamples, or scoped partial results. Use when the requested work is ordinary mathematical reasoning, a proof gap, or a conditional argument that cannot be settled by retrieving a known answer. Formal proof assistants are optional.
+description: Develop an explicitly stated mathematical question into definitions, lemmas, derivations, counterexamples, or scoped partial results. Use for a stated mathematical problem, proof exploration, an incomplete argument, or extended derivation work. Formal proof assistants are optional.
 ---
 
 # Develop a mathematical argument
 
 Take one stated mathematical question. Work on its unresolved reasoning and
-return the mathematics produced, including useful partial results.
+return the mathematics produced, including useful partial results. For open-ended
+or extended derivation work, read [development guidance](references/development.md)
+for alternative representations, sustained reasoning, and proportionate checking.
 
 ## Make the question precise
 
@@ -18,6 +20,9 @@ Use supplied context and cite known ingredients. Recheck an established fact
 when its statement, assumptions, version, or reliability matters to the current
 inference. Do not restart a broad literature survey merely because work resumes.
 Read a load-bearing source before treating its exact statement as established.
+Separate using an established theorem, checking its hypotheses here, and
+re-proving it. The current inference usually needs the first two. Repeat a check
+only for a concrete uncertainty or an explicit validation objective.
 
 ## Develop the unresolved part
 
@@ -51,6 +56,14 @@ when deciding what a derivation or computation establishes. Review quantifiers,
 boundary cases, hidden assumptions, and dependence between lemmas. Separate
 development from independent checking when the conclusion warrants it. A formal
 proof assistant is one assurance option, not a requirement for doing mathematics.
+
+## Assess what was contributed
+
+Read [contribution assessment](../investigate/reference/contribution-assessment.md)
+before claiming originality. Separate a known theorem's instantiation, a new
+evaluation, a substantive extension, and a potentially new result. Identify the
+additional mathematical step; new notation or a different parameter value does
+not by itself supply one. Useful progress need not be scientifically novel.
 
 ## Return useful partial work
 

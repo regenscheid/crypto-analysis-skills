@@ -28,6 +28,15 @@ The project has accumulated heterogeneous evidence and needs a defensible conclu
 9. Preserve negative knowledge: failed attack transfers, corrected models, false leads, and regions already exhaustively searched.
 10. Produce a concise executive finding and a technical annex that exposes the complete reasoning chain through artifacts and source locators.
 
+## Contribution and originality
+
+Before claiming a new result, use
+[contribution assessment](../investigate/reference/contribution-assessment.md).
+State the closest known result, the changed scope, and the additional reasoning
+actually supplied. Distinguish routine applications and new evaluations from
+substantive extensions or potentially new methods. Keep correctness, originality,
+and significance separate; a useful parameter-specific finding need not be novel.
+
 ## Output contract
 
 - Claim-level findings with scope, confidence, evidence, and consequence.

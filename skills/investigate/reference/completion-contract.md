@@ -125,3 +125,11 @@ derivation, or scoped observation with its remaining obligation. Completion of
 the overall question and usefulness of the current result are separate judgments.
 Use the host-provided context; this contract does not define a project store or
 checkpoint format. Evidence labels follow [evidence interpretation](evidence-interpretation.md).
+
+## Contribution language
+
+For a result described as new, state its relationship to the closest known result
+and identify the additional reasoning. An unchanged method at a new parameter
+set is an application or evaluation, not automatically a novel attack. Use
+[contribution assessment](contribution-assessment.md); apply its qualification
+in the summary as well as in the detailed finding.

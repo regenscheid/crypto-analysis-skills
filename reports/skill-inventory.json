@@ -1,8 +1,8 @@
 {
-  "description_words": 4958,
+  "description_words": 4948,
   "errors": 0,
   "schema_version": 1,
-  "skill_body_lines": 13247,
+  "skill_body_lines": 13310,
   "skill_count": 162,
   "skills": [
     {
@@ -169,7 +169,7 @@
       "description": "Check cryptanalytic claims for domain correctness \u2014 cost models, attack preconditions, security-notion misuse, parameter provenance, and citations verified against the ePrint and NIST corpora. Use when reviewing any output that states a security level, an attack cost, a reduction, or cites a cryptography paper.",
       "description_words": 44,
       "domain": "core",
-      "lines": 203,
+      "lines": 212,
       "missing_relative_links": [],
       "name": "crypto-review"
     },
@@ -217,7 +217,7 @@
       "description": "Produce a concrete cost for a target nothing has costed yet \u2014 search what is already known, find and read a reduction to a problem that IS costed, instantiate it with real parameters, verify at toy scale, and write the result back as an entry or a gap. Use when an attack's structure is understood but its cost cannot be obtained.",
       "description_words": 61,
       "domain": "core",
-      "lines": 240,
+      "lines": 244,
       "missing_relative_links": [],
       "name": "derive-cost"
     },
@@ -249,7 +249,7 @@
       "description": "Actively search for new or previously missed cryptanalytic weaknesses by combining a complete attack-surface map, independent structure-first reasoning, prior-art extraction, cross-field transfer, proof and interface seams, falsifiable candidate generation, cheap disproof, costing, and independent validation. Use whenever asked to find issues, look hard for weaknesses, search for new attacks, improve known attacks, investigate unexplored directions, or transfer techniques to a cryptographic target. Do not stop at literature review or vague ideas.",
       "description_words": 71,
       "domain": "core",
-      "lines": 137,
+      "lines": 147,
       "missing_relative_links": [],
       "name": "discover-cryptanalysis"
     },
@@ -553,7 +553,7 @@
       "description": "Conduct rigorous end-to-end cryptographic security investigations and visibly route them through the relevant cryptanalysis or formal-method skills. Use whenever asked to analyze a scheme or paper, find issues or weaknesses, search for attacks, reproduce or validate a result, audit a security claim or proof, compare parameters, or resume cryptographic research. Infer the requested task from its intent; individual words such as \u201cnew\u201d do not by themselves select a mode.",
       "description_words": 69,
       "domain": "core",
-      "lines": 210,
+      "lines": 219,
       "missing_relative_links": [],
       "name": "investigate"
     },
@@ -718,10 +718,10 @@
       "name": "magma"
     },
     {
-      "description": "Develop an explicitly stated mathematical question into definitions, lemmas, derivations, counterexamples, or scoped partial results. Use when the requested work is ordinary mathematical reasoning, a proof gap, or a conditional argument that cannot be settled by retrieving a known answer. Formal proof assistants are optional.",
-      "description_words": 45,
+      "description": "Develop an explicitly stated mathematical question into definitions, lemmas, derivations, counterexamples, or scoped partial results. Use for a stated mathematical problem, proof exploration, an incomplete argument, or extended derivation work. Formal proof assistants are optional.",
+      "description_words": 35,
       "domain": "core",
-      "lines": 64,
+      "lines": 77,
       "missing_relative_links": [],
       "name": "mathematical-research-development"
     },
@@ -937,7 +937,7 @@
       "description": "Synthesizes proofs, attacks, estimates, experiments, failed transfers, and implementation findings into calibrated claim-level conclusions and a prioritized public-key cryptanalysis backlog.",
       "description_words": 20,
       "domain": "public-key",
-      "lines": 58,
+      "lines": 67,
       "missing_relative_links": [],
       "name": "public-key-evidence-synthesis-and-research-backlog"
     },
@@ -1209,7 +1209,7 @@
       "description": "Converts attack records, proofs, reproductions, failures, and disagreements into claim-level judgments and a prioritized falsifiable research agenda. Use when: Enough evidence exists to update a review, recommendation, standards comment, research plan, or team knowledge base. It should be the only skill that writes final claim-level conclusions.",
       "description_words": 46,
       "domain": "symmetric",
-      "lines": 72,
+      "lines": 81,
       "missing_relative_links": [],
       "name": "symmetric-evidence-synthesis-and-research-backlog"
     },

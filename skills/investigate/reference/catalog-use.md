@@ -28,7 +28,10 @@ theorem. “Unclassified,” “unknown,” and “not applicable” are differe
 A generic-method record describes a reusable mathematical method. A baseline is
 the role of a method or result in a specified comparison. Neither means the
 catalog is automatically updated. Missing records and missing skill links are
-coverage gaps, not evidence that a result or method does not exist.
+coverage gaps, not evidence that a result or method does not exist. A newly
+listed parameter-specific case may be a routine application of a known method.
+Catalog membership and record dates do not establish scientific priority; use
+[contribution assessment](contribution-assessment.md) when describing originality.
 
 Investigations use read-only catalog operations. Deliberate maintainer edits to
 the repository are a separate process; these skills do not submit observations,

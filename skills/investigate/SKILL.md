@@ -17,7 +17,8 @@ investigations are outside this effort's scope.
 
 For an explicitly stated mathematical question, use
 `mathematical-research-development` to produce definitions, lemmas, derivations,
-or scoped partial results. Read
+or scoped partial results. A standalone mathematical question does not require
+a cryptographic family audit. Read
 [the evidence distinctions](reference/evidence-interpretation.md) when choosing
 what a result can support. Formal proof assistants remain optional.
 
@@ -192,6 +193,14 @@ repeated identical failure, stop retrying that route, record the retriable
 failure, try a distinct route, and tell the user if the capability remains
 blocked. Do not fabricate a successful call or silently downgrade the grounding
 requirement.
+
+## Assess contribution before reporting novelty
+
+Read [contribution assessment](reference/contribution-assessment.md) before
+describing any result as new or original. Separate the known method, the present
+application, the additional reasoning, and the significance. A straightforward
+application to another parameter set is not a new attack mechanism. Keep that
+distinction consistent in the headline and the detailed finding.
 
 ## Report from evidence
 

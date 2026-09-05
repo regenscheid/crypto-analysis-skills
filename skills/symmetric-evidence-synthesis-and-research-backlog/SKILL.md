@@ -28,6 +28,15 @@ Enough evidence exists to update a review, recommendation, standards comment, re
 9. **Build the backlog.** Convert uncertainties into falsifiable tasks. Rank by expected effect on conclusions, feasibility, cost, prerequisite dependencies, and information gain.
 10. **Keep machine-readable links.** Every conclusion and backlog item must link to claim IDs, attack records, evidence locators, and reproduction artifacts.
 
+## Contribution and originality
+
+Before claiming a new result, use
+[contribution assessment](../investigate/reference/contribution-assessment.md).
+State the closest known result, the changed scope, and the additional reasoning
+actually supplied. Distinguish routine applications and new evaluations from
+substantive extensions or potentially new methods. Keep correctness, originality,
+and significance separate; a useful parameter-specific finding need not be novel.
+
 ## Output contract
 
 Produce a claim-status table with:

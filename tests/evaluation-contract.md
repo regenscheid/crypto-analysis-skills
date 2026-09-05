@@ -48,3 +48,18 @@ Useful manual evaluation questions for ordinary mathematical work:
 
 Use supplied context for continuation evaluations; project-memory mechanisms and
 long-running job management belong to the harness, outside these tests.
+
+## Mathematical development and contribution cases
+
+`mathematical-research-cases.json` contains six manual evaluation cases with
+supplied premises and review criteria. They cover routine parameter substitution,
+important applications of known methods, invalidated hypotheses, reuse of
+established mathematics, sustained block-matrix derivation, and conditional work.
+They do not execute cryptanalytic attacks or change the harness.
+
+For a behavioral trial, give the model the prompt and relevant skills, keeping
+the review criteria separate until assessment. Inspect the actual reasoning,
+source use, and output. Compare the same prompt and supplied context before and
+after the skill change; record the model configuration and available resources.
+Do not count a case as passed because expected words appeared. These cases have
+not been run through Claude Science merely by being checked into the repository.

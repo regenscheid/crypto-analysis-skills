@@ -120,6 +120,16 @@ validation.
 Stop with a scoped partial result when remaining work is blocked or deliberately
 outside budget. State the exact unblock condition and next decisive experiment.
 
+## Contribution labels
+
+Before reporting a candidate as new, read
+[contribution assessment](../investigate/reference/contribution-assessment.md).
+Identify the closest known result and the additional reasoning. Applying an
+unchanged known argument to a different parameter set is a routine application,
+even if that case was absent from the sources searched. Report its significance
+without claiming a new mechanism. An extension outside the source's assumptions
+remains unresolved until the additional obligation is met.
+
 ## Output contract
 
 Return:
@@ -130,7 +140,7 @@ Return:
 4. structural handles;
 5. full candidate records, including falsified and parked candidates;
 6. surviving candidates and independent-check status;
-7. novelty-search scope and limitations;
+7. relationship to prior work, additional contribution, and novelty-search limits;
 8. unchecked areas and prioritized next work.
 
 Do not force a positive result. A rigorous map of attractive directions and the

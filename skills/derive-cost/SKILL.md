@@ -143,6 +143,10 @@ MREstimator(q=16, m=15, n=15, k=78, r=6)
   BigK            2^154.7
 ```
 
+A newly computed parameter cost is an evaluation of the method used, not by
+itself a new algorithm or attack. For contribution language, use
+[contribution assessment](../investigate/reference/contribution-assessment.md).
+
 ## 4. Verify at toy scale before trusting the real one
 
 Run the mapping on parameters small enough to check another way — a scheme

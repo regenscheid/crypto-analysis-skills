@@ -37,8 +37,15 @@ research scope. Catalog updates are deliberate maintainer edits; investigations
 do not automatically submit or publish records.
 
 `mathematical-research-development` supports ordinary mathematical questions and
-useful conditional or partial results. Shared evidence guidance distinguishes
-proofs, finite verification, empirical observations, and unresolved questions.
+useful conditional or partial results. Its development reference addresses
+alternative representations, carrying a proof beyond an outline, and reasons to
+repeat an established check. Shared evidence guidance distinguishes proofs, finite
+verification, empirical observations, and unresolved questions.
+
+Contribution guidance separates routine applications and new evaluations from
+substantive extensions and potentially new methods. Applying a known result to
+another parameter set can matter without supplying a novel mechanism. See
+`tests/mathematical-research-cases.json` for manual behavior-evaluation cases.
 
 ## Control plane
 
