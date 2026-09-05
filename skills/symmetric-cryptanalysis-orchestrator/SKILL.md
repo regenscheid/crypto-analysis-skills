@@ -33,13 +33,17 @@ Use supplied assumptions and prior results at their stated evidence strength.
 A catalog link or published ingredient does not itself assign a paper audit;
 see [paper use and verification](../investigate/reference/paper-use-and-verification.md).
 
+Before synthesizing delegated mathematics, the main agent applies
+[orchestrator review](../investigate/reference/delegated-mathematics-review.md)
+to correctness, depth, and contribution labels.
+
 ## Operating procedure
 
 1. **Create or refresh the evaluation charter.** Record target names, exact artifacts and hashes/commits, parameter sets, claims, exclusions, allowed attacker powers, and the threshold for calling a result reproduced or independently verified.
 2. **Freeze the version manifest.** List every specification, paper revision, code repository/commit, compiler/interpreter, solver, and test-vector source. Detect version skew before comparing results.
 3. **Invoke `security-model-and-claim-formalizer`.** Require one claim–adversary row for every materially distinct notion or access model.
 4. **Invoke `primitive-structure-and-assumption-mapper`.** Build the design graph before selecting attacks. Include state geometry, round functions, nonlinear components, linear layers, constants, key/tweak/nonce injection, initialization/finalization, and security assumptions.
-5. **Invoke `generic-baseline-calculator`.** Establish the baseline table before accepting “faster than generic,” “practical,” or “break” language.
+5. **Establish generic baselines.** Use a compatible checked baseline table, or invoke `generic-baseline-calculator` for affected dependencies or an explicitly assigned fresh validation, before accepting “faster than generic,” “practical,” or “break” language.
 6. **Audit proofs and bounds when present.** Invoke `security-proof-and-bound-auditor` for theorem-backed claims, reduction-based bounds, or concrete security tables. Keep proof gaps separate from attacks unless a gap is actually exploitable.
 7. **Build an attack surface map.** Map each design feature and claim to plausible technique skills. Select techniques by structural prerequisites, not by popularity.
 8. **Generate and triage hypotheses.** Invoke `symmetric-attack-hypothesis-generator-and-triage`; require a structural mechanism, prerequisites, expected signal, minimal decisive test, falsifier, and rough resource band for every candidate.

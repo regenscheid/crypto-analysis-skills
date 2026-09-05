@@ -64,6 +64,11 @@ boundary cases, hidden assumptions, and dependence between lemmas. Separate
 development from independent checking when the conclusion warrants it. A formal
 proof assistant is one assurance option, not a requirement for doing mathematics.
 
+If work was delegated, the main agent applies
+[orchestrator review](../investigate/reference/delegated-mathematics-review.md)
+to its correctness and depth before synthesis. A completed subtask is not by
+itself a checked argument or sufficient mathematical development.
+
 ## Assess what was contributed
 
 Read [contribution assessment](../investigate/reference/contribution-assessment.md)

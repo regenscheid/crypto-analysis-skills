@@ -39,6 +39,11 @@ For empirical observations and uncertainty, use
 `empirical-statistical-and-heuristic-claim-separation` directly; it does not
 require entering FORMALIZE mode.
 
+When synthesizing delegated mathematics, apply
+[orchestrator review](reference/delegated-mathematics-review.md) to correctness,
+depth, and contribution labels. The main agent owns the final judgment even
+when specialist work is complete.
+
 ## Declare the mode
 
 State one mode before substantive work. Infer it from the request; do not ask

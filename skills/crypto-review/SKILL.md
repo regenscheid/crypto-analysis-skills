@@ -1,6 +1,6 @@
 ---
 name: crypto-review
-description: Check cryptanalytic claims for domain correctness — cost models, attack preconditions, security-notion misuse, parameter provenance, and citations verified against the ePrint and NIST corpora. Use when reviewing any output that states a security level, an attack cost, a reduction, or cites a cryptography paper.
+description: Review a supplied cryptographic analysis for cost-model, precondition, security-notion, parameter-provenance, and citation defects. Use for an assigned analysis review; merely citing or applying a paper does not require a fresh citation or paper audit.
 license: Apache-2.0
 ---
 
@@ -38,16 +38,22 @@ verification rather than a fabricated fact.
 
 *(Specialist only — REVIEWER has no connectors.)*
 
-If the `eprint` or `nist` connectors are available, **use them**. A cited paper
-is not a recalled fact — it is a checkable claim:
+Use compatible prior inspection with identifiable provenance when the statement,
+revision, and scope match. Reopen the affected source for a changed dependency,
+conflicting evidence, suspected attribution error, or an explicit fresh audit.
+Follow [paper use and verification](../investigate/reference/paper-use-and-verification.md).
+When fresh retrieval is needed, use available source connectors; a cited paper
+is a checkable attribution:
 
 ```
 e-print-mcp_search_eprint(query)      e-print-mcp_get_eprint(paper_id)  # 26,419 papers, 1996-present
 nist-mcp_search_csrc(query)        nist-mcp_csrc_fulltext(ref)    # 924 publications, full text
 ```
 
-- **Does the paper exist?** `e-print-mcp_get_eprint("2024/1374")` either returns it or does
-  not. A cited id that resolves to nothing is a fabricated reference.
+- **Does the reference resolve?** Inspect the returned record. A failed lookup
+  leaves the reference unresolved through that route; it does not establish
+  fabrication. Check for an identifier error or a coverage/access limit before
+  reaching a stronger conclusion.
 - **Does it say what is claimed?** Open the exact theorem, algorithm, table, or
   section in the relevant revision. An abstract identifies a topic; it rarely
   establishes the precise assumptions or conclusion of a load-bearing claim.
@@ -57,8 +63,9 @@ State what you inspected and its locator. A metadata check establishes that the
 reference resolves; reading the exact result establishes what that source says.
 Keep those findings separate from independent correctness of its argument.
 
-If the corpus is unavailable to you, say the citation is unverified rather than
-treating it as recall — the distinction is the whole point.
+If neither a source nor compatible prior inspection is available, say the
+attribution is unverified here. Corpus unavailability does not invalidate an
+already inspected source or turn it into recall.
 
 ## Every cost figure carries its model, or it means nothing
 

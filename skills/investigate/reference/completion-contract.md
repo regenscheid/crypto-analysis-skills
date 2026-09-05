@@ -28,11 +28,15 @@ the body or exact artifact; `PROVIDED` for a user-supplied artifact actually
 inspected; and `BLOCKED` for an unavailable source or capability with the failed
 routes recorded. A load-bearing claim cannot rely only on `DISCOVERED` evidence.
 
-Cover the source classes material to the target: normative specifications and
+For a scheme assessment, cover the source classes material to its scope: normative specifications and
 design documents; primary papers; follow-ups, errata, rebuttals, and failed
 approaches; implementations and issue discussions; and non-paper competition or
 community records. Mark a class `NOT_APPLICABLE` with a reason rather than
 silently omitting it.
+
+For a standalone mathematical question, record only the sources and supplied
+premises material to that question. The assessment's source-class inventory is
+not a prerequisite to developing a lemma or recognizing a routine deduction.
 
 Source inspection and paper correctness are different judgments. Previously
 inspected, unchanged source statements supplied in host context can be reused;

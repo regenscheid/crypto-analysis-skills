@@ -1,8 +1,8 @@
 {
-  "description_words": 4911,
+  "description_words": 4901,
   "errors": 0,
   "schema_version": 1,
-  "skill_body_lines": 13484,
+  "skill_body_lines": 13516,
   "skill_count": 162,
   "skills": [
     {
@@ -33,7 +33,7 @@
       "description": "Map the complete attack surface of a cryptographic scheme by fixing its claims and parameters, identifying underlying problems and added structure, checking every applicable attack family and its preconditions, recomputing costs in named models, and locating thin margins or promising deviations. Use for new or modified schemes, parameter-security claims, NIST-category checks, construction reviews, attack prioritization, or the baseline phase of an active search for weaknesses. Covers public-key, lattice, multivariate, symmetric, and hash targets.",
       "description_words": 73,
       "domain": "core",
-      "lines": 147,
+      "lines": 149,
       "missing_relative_links": [],
       "name": "analyze-scheme"
     },
@@ -166,10 +166,10 @@
       "name": "cross-prover-evidence-packaging"
     },
     {
-      "description": "Check cryptanalytic claims for domain correctness \u2014 cost models, attack preconditions, security-notion misuse, parameter provenance, and citations verified against the ePrint and NIST corpora. Use when reviewing any output that states a security level, an attack cost, a reduction, or cites a cryptography paper.",
-      "description_words": 44,
+      "description": "Review a supplied cryptographic analysis for cost-model, precondition, security-notion, parameter-provenance, and citation defects. Use for an assigned analysis review; merely citing or applying a paper does not require a fresh citation or paper audit.",
+      "description_words": 34,
       "domain": "core",
-      "lines": 212,
+      "lines": 219,
       "missing_relative_links": [],
       "name": "crypto-review"
     },
@@ -249,7 +249,7 @@
       "description": "Develop mathematical cryptanalysis questions, research proposals, and scoped results about specified cryptographic constructions, assumptions, or parameters. Use for human-directed standards research, unexplored mathematical questions, proposed extensions of known results, or continued development of a selected question. Distinguish a requested proposal from a request to carry out the mathematical work.",
       "description_words": 49,
       "domain": "core",
-      "lines": 109,
+      "lines": 113,
       "missing_relative_links": [],
       "name": "discover-cryptanalysis"
     },
@@ -553,7 +553,7 @@
       "description": "Conduct rigorous end-to-end cryptographic security investigations and visibly route them through the relevant cryptanalysis or formal-method skills. Use whenever asked to analyze a scheme or paper, find issues or weaknesses, search for attacks, reproduce or validate a result, audit a security claim or proof, compare parameters, or resume cryptographic research. Infer the requested task from its intent; individual words such as \u201cnew\u201d do not by themselves select a mode.",
       "description_words": 69,
       "domain": "core",
-      "lines": 234,
+      "lines": 239,
       "missing_relative_links": [],
       "name": "investigate"
     },
@@ -721,7 +721,7 @@
       "description": "Develop an explicitly stated mathematical question into definitions, lemmas, derivations, counterexamples, or scoped partial results. Use for a stated mathematical problem, proof exploration, an incomplete argument, or extended derivation work. Formal proof assistants are optional.",
       "description_words": 35,
       "domain": "core",
-      "lines": 88,
+      "lines": 93,
       "missing_relative_links": [],
       "name": "mathematical-research-development"
     },
@@ -929,7 +929,7 @@
       "description": "Routes a public-key cryptanalysis project through security-model, construction-level, hard-problem, implementation-interface, proof, cost, transfer, and reproduction skills while maintaining one shared evidence state. Use when starting or resuming an evaluation of a signature, KEM, public-key encryption scheme, key-agreement mechanism, or hybrid construction.",
       "description_words": 41,
       "domain": "public-key",
-      "lines": 70,
+      "lines": 74,
       "missing_relative_links": [],
       "name": "public-key-cryptanalysis-orchestrator"
     },
@@ -1201,7 +1201,7 @@
       "description": "Coordinates a research-grade symmetric-cryptanalysis evaluation, selects specialist skills, and maintains a shared claim/evidence state. Use when: The task asks for an evaluation of a symmetric primitive, mode, construction, proposal, paper, attack claim, or implementation and requires more than one analytical technique. Use it at the beginning of a project and again whenever the target, model, or evidence changes materially.",
       "description_words": 59,
       "domain": "symmetric",
-      "lines": 94,
+      "lines": 98,
       "missing_relative_links": [],
       "name": "symmetric-cryptanalysis-orchestrator"
     },
@@ -1273,7 +1273,7 @@
       "description": "Check whether one specified claim in a paper, report, or security argument is correct. Audit its reasoning or reproduce the relevant evidence and report supported, refuted, or unresolved. Use for an assigned claim-verification task; merely citing or applying a published result does not require auditing that result.",
       "description_words": 47,
       "domain": "core",
-      "lines": 315,
+      "lines": 316,
       "missing_relative_links": [],
       "name": "verify-claim"
     },

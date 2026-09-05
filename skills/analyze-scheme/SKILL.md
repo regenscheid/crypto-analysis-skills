@@ -82,8 +82,10 @@ Search standards, primary specifications, papers, code, issue discussions, and
 competition records for the exact version and its aliases. Extract attack
 preconditions and full costs from source bodies, not abstracts or headlines.
 
-Compute generic and family-specific baselines before judging specialized
-attacks. Name estimator versions, cost models, units, memory assumptions,
+Establish generic and family-specific baselines before judging specialized
+attacks. Reuse checked baselines when the inputs, versions, and models match;
+recompute affected quantities for changed dependencies or an explicit fresh
+validation assignment. Name estimator versions, cost models, units, memory assumptions,
 quantum access model, and uncertainty. Run arithmetic and estimators with actual
 tools; do not rely on mental calculation for load-bearing numbers.
 

@@ -73,6 +73,14 @@ remaining obligations, and the reason the next inference matters. When continuin
 use the formulation and partial argument supplied by the host. Do not restart
 the original survey or generate the same proposal without a changed reason.
 
+## Review delegated mathematics
+
+When mathematical work is delegated, the main agent must review both correctness
+and depth before adopting it. Follow [orchestrator review](delegated-mathematics-review.md):
+inspect the reasoning, revisit consequential dismissals, and assess the actual
+additional contribution. Delegation does not transfer responsibility for the
+final conclusion or completion of the requested mathematical work.
+
 ## Keep status dimensions separate
 
 In the ordinary report, distinguish:

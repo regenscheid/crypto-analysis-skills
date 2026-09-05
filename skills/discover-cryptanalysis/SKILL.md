@@ -91,6 +91,10 @@ it, not a universal prerequisite to research proposals or theoretical results.
 
 ## Report progress and contribution
 
+For delegated mathematical work, apply
+[orchestrator review](../investigate/reference/delegated-mathematics-review.md)
+before adopting its conclusions or contribution labels.
+
 Return the formulation, known ingredients reused, mathematics produced, scope,
 remaining obligations, and why the next inference matters. Distinguish the end
 of this work episode from resolution of the overall research question. Use the

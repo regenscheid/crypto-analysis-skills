@@ -89,3 +89,28 @@ presence and reference answers do not constitute a live model evaluation.
 The elementary-corollary case checks whether a newly named rank inequality is
 recognized as a direct consequence of supplied standard facts. The expected
 assessment concerns the displayed reasoning, not another literature survey.
+
+Use `reconstructed-ranked-research-prompt.json` for the middle condition. Its
+wording is a reconstructed representative prompt authorized by the user, not an
+exact historical prompt. The original-skills baseline is commit `098013c`, the
+parent of this PR's first commit. Record the full resolved commit IDs and skill
+body hashes for every executed condition; do not use an evolving branch name as
+the only version identifier.
+
+Use fresh, isolated conversations with identical supplied context, tool access,
+model versions, effort, and resource limits. Keep review criteria and prior
+condition outputs out of generation context. Verify which skill bodies actually
+loaded; merely attaching revised files does not establish that the host used
+them. Counterbalance condition order and run at least two repetitions per case
+and condition before describing a repeated pattern. Report run-level outcomes,
+disagreements, and execution failures; two repetitions alone do not establish
+statistical significance or general improvement.
+
+`delegated-mathematics-cases.json` adds three supplemental cases with fixed
+synthetic subagent handoffs. Review whether the main agent catches a false proof,
+continues past an unjustified dismissal, and corrects inflated novelty. These
+isolate the main agent's response to supplied work; they do not measure real
+delegation or differences between model capabilities. A live delegation trial
+must also record the primary and child model/effort settings actually used,
+subtask prompts, returned artifacts, and what the primary agent checked or added.
+Do not infer those settings from UI labels or role names.

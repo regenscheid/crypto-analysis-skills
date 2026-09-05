@@ -304,8 +304,9 @@ extra gate applies when the claimed result is newly derived.
   can still be false. A broader review of the analysis belongs to `crypto-review`.
 - **It does not promote a derivation by repeating it.** New theoretical work
   needs a genuinely separate checking route before it becomes durable knowledge.
-- **It does not require deriving what can be looked up.** Retrieval is the
-  designed path.
+- **It distinguishes retrieval from verification.** Retrieval can settle an
+  attribution or supply compatible prior verification. A paper's assertion
+  alone does not settle an assigned correctness check of its reasoning.
 - **It reports the exact evidence scope.** A checked witness or exhaustive finite
   computation can verify a scoped predicate. Random sampling and unsuccessful
   searches do not establish a universal claim. Use
