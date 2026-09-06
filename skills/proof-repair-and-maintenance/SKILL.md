@@ -81,7 +81,7 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **LEAN-REF** — [Lean Language Reference](https://lean-lang.org/doc/reference/latest/) (2026) — Lean project. `official-manual`.
 - **AENEAS-REPO** — [Aeneas repository](https://github.com/AeneasVerif/aeneas) (2026) — Aeneas project. `official-repository`.
 - **HAX-MANUAL** — [hax manual](https://hax.cryspen.com/) (2026) — Cryspen. `official-manual`.
-- **RUST-LEAN-AI26** — [AI-Assisted Rust-to-Lean Verification: An Experience Report](https://arxiv.org/abs/2605.30106) (2026) — Microsoft Research and collaborators. `research-paper`.
+- **RUST-LEAN-AI26** — [A Rust-to-Lean Verification Pipeline with AI Provers: An Experience Report](https://arxiv.org/abs/2605.30106) (2026) — Natalia Klaus, Juan Conejero, and Palina Tolmach. `research-paper`.
 - **VERUS-GUIDE** — [Verus Tutorial and Reference](https://verus-lang.github.io/verus/guide/) (2026) — Verus project. `official-manual`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

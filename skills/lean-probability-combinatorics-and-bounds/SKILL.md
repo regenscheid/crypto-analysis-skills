@@ -86,4 +86,4 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **MPFR** — [GNU MPFR](https://www.mpfr.org/) (2026) — GNU MPFR project. `official-project`.
 - **MLKEM-EC24** — [Formally verifying Kyber Episode V: Machine-checked IND-CCA security and correctness of ML-KEM in EasyCrypt](https://eprint.iacr.org/2024/843) (2024) — José Bacelar Almeida et al.. `research-paper`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

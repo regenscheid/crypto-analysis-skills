@@ -1,9 +1,9 @@
 {
-  "description_words": 4917,
+  "description_words": 4901,
   "errors": 0,
   "schema_version": 1,
-  "skill_body_lines": 13138,
-  "skill_count": 161,
+  "skill_body_lines": 13534,
+  "skill_count": 162,
   "skills": [
     {
       "description": "Extracts supported Rust through Charon and Aeneas into Lean and proves panic freedom, functional correctness, and refinement against independent cryptographic specifications.",
@@ -22,10 +22,10 @@
       "name": "algebraic-sat-smt-cp-and-cube-analysis"
     },
     {
-      "description": "Work out whether a paper proves what it claims \u2014 separate the informal claim from the theorem, name the notion and the model, run the mismatch checklist, carry the reduction's loss into the concrete parameters, and say which claims are worth settling. Use when handed a paper, a preprint, or a security argument and asked whether it holds, what it threatens, or whether a scheme's claimed level follows from it.",
-      "description_words": 70,
+      "description": "Work out whether a paper proves what it claims \u2014 separate the informal claim from the theorem, name the notion and the model, run the mismatch checklist, carry the reduction's loss into the concrete parameters, and say which claims are worth settling. Use when asked to audit whether a paper or security argument supports its claims. Reading or applying a published result alone does not assign this audit.",
+      "description_words": 68,
       "domain": "core",
-      "lines": 204,
+      "lines": 212,
       "missing_relative_links": [],
       "name": "analyze-paper"
     },
@@ -33,7 +33,7 @@
       "description": "Map the complete attack surface of a cryptographic scheme by fixing its claims and parameters, identifying underlying problems and added structure, checking every applicable attack family and its preconditions, recomputing costs in named models, and locating thin margins or promising deviations. Use for new or modified schemes, parameter-security claims, NIST-category checks, construction reviews, attack prioritization, or the baseline phase of an active search for weaknesses. Covers public-key, lattice, multivariate, symmetric, and hash targets.",
       "description_words": 73,
       "domain": "core",
-      "lines": 135,
+      "lines": 149,
       "missing_relative_links": [],
       "name": "analyze-scheme"
     },
@@ -166,10 +166,10 @@
       "name": "cross-prover-evidence-packaging"
     },
     {
-      "description": "Check cryptanalytic claims for domain correctness \u2014 cost models, attack preconditions, security-notion misuse, parameter provenance, and citations verified against the ePrint and NIST corpora. Use when reviewing any output that states a security level, an attack cost, a reduction, or cites a cryptography paper.",
-      "description_words": 44,
+      "description": "Review a supplied cryptographic analysis for cost-model, precondition, security-notion, parameter-provenance, and citation defects. Use for an assigned analysis review; merely citing or applying a paper does not require a fresh citation or paper audit.",
+      "description_words": 34,
       "domain": "core",
-      "lines": 202,
+      "lines": 219,
       "missing_relative_links": [],
       "name": "crypto-review"
     },
@@ -217,7 +217,7 @@
       "description": "Produce a concrete cost for a target nothing has costed yet \u2014 search what is already known, find and read a reduction to a problem that IS costed, instantiate it with real parameters, verify at toy scale, and write the result back as an entry or a gap. Use when an attack's structure is understood but its cost cannot be obtained.",
       "description_words": 61,
       "domain": "core",
-      "lines": 241,
+      "lines": 244,
       "missing_relative_links": [],
       "name": "derive-cost"
     },
@@ -246,10 +246,10 @@
       "name": "digital-signature-forgery-and-malleability-analysis"
     },
     {
-      "description": "Actively search for new or previously missed cryptanalytic weaknesses by combining a complete attack-surface map, independent structure-first reasoning, prior-art extraction, cross-field transfer, proof and interface seams, falsifiable candidate generation, cheap disproof, costing, and independent validation. Use whenever asked to find issues, look hard for weaknesses, search for new attacks, improve known attacks, investigate unexplored directions, or transfer techniques to a cryptographic target. Do not stop at literature review or vague ideas.",
-      "description_words": 71,
+      "description": "Develop mathematical cryptanalysis questions, research proposals, and scoped results about specified cryptographic constructions, assumptions, or parameters. Use for human-directed standards research, unexplored mathematical questions, proposed extensions of known results, or continued development of a selected question. Distinguish a requested proposal from a request to carry out the mathematical work.",
+      "description_words": 49,
       "domain": "core",
-      "lines": 137,
+      "lines": 115,
       "missing_relative_links": [],
       "name": "discover-cryptanalysis"
     },
@@ -278,10 +278,10 @@
       "name": "elliptic-curve-discrete-log-and-ecc-analysis"
     },
     {
-      "description": "Prevents experiments, statistical inference, asymptotic models, estimator output, and heuristic assumptions from being mislabeled as formal proof while showing when they can support or motivate a formal subproblem.",
-      "description_words": 28,
+      "description": "Interpret empirical, statistical, heuristic, and exact evidence in ordinary mathematical research. Distinguish exploratory observations from confirmation, quantify uncertainty, and preserve model and sampling assumptions. Formal proof work is optional.",
+      "description_words": 29,
       "domain": "formal",
-      "lines": 87,
+      "lines": 91,
       "missing_relative_links": [],
       "name": "empirical-statistical-and-heuristic-claim-separation"
     },
@@ -550,10 +550,10 @@
       "name": "interactive-proof-state-operation"
     },
     {
-      "description": "Conduct rigorous end-to-end cryptographic security investigations and visibly route them through the relevant cryptanalysis or formal-method skills. Use whenever asked to analyze a scheme or paper, find issues or weaknesses, search for attacks, reproduce or validate a result, audit a security claim or proof, compare parameters, or resume cryptographic research. Treat \u201cfind issues,\u201d \u201clook hard,\u201d \u201cattack,\u201d \u201cbreak,\u201d \u201cnew,\u201d and \u201cunexplored\u201d as explicit discovery triggers even when the user does not name this skill.",
-      "description_words": 73,
+      "description": "Conduct rigorous end-to-end cryptographic security investigations and visibly route them through the relevant cryptanalysis or formal-method skills. Use whenever asked to analyze a scheme or paper, find issues or weaknesses, search for attacks, reproduce or validate a result, audit a security claim or proof, compare parameters, or resume cryptographic research. Infer the requested task from its intent; individual words such as \u201cnew\u201d do not by themselves select a mode.",
+      "description_words": 69,
       "domain": "core",
-      "lines": 188,
+      "lines": 244,
       "missing_relative_links": [],
       "name": "investigate"
     },
@@ -716,6 +716,14 @@
       "lines": 318,
       "missing_relative_links": [],
       "name": "magma"
+    },
+    {
+      "description": "Develop an explicitly stated mathematical question into definitions, lemmas, derivations, counterexamples, or scoped partial results. Use for a stated mathematical problem, proof exploration, an incomplete argument, or extended derivation work. Formal proof assistants are optional.",
+      "description_words": 35,
+      "domain": "core",
+      "lines": 94,
+      "missing_relative_links": [],
+      "name": "mathematical-research-development"
     },
     {
       "description": "Designs and audits state-matching attacks using cuts, partial computation, splice-and-cut, initial structures, dissection, and biclique techniques. Use when: The target can be decomposed into forward and backward computations with partially independent key/state variables, has a narrow internal cut, repeated/expandable subcomputations, or enough degrees of freedom for biclique/initial-structure methods.",
@@ -897,7 +905,7 @@
       "description": "Recomputes end-to-end resources and success probability for public-key attacks, exposing omitted preprocessing, oracle acquisition, filtering, false positives, verification, estimator assumptions, and model mismatches.",
       "description_words": 23,
       "domain": "public-key",
-      "lines": 59,
+      "lines": 69,
       "missing_relative_links": [],
       "name": "public-key-attack-complexity-and-success-auditor"
     },
@@ -905,7 +913,7 @@
       "description": "Generates falsifiable attack hypotheses from a public-key scheme\u2019s structure, proof seams, distributions, interfaces, and literature, then ranks them by potential impact and information gain.",
       "description_words": 24,
       "domain": "public-key",
-      "lines": 60,
+      "lines": 69,
       "missing_relative_links": [],
       "name": "public-key-attack-hypothesis-generator-and-triage"
     },
@@ -913,7 +921,7 @@
       "description": "Decomposes an attack from literature or prior agent work, maps every indispensable requirement to a new public-key target, and develops minimally modified falsifiable adaptations. Use for cross-version, cross-parameter, cross-family, reduced-to-full, component-to-construction, and toy-to-real transfer.",
       "description_words": 34,
       "domain": "public-key",
-      "lines": 60,
+      "lines": 69,
       "missing_relative_links": [],
       "name": "public-key-attack-transfer-and-adaptation"
     },
@@ -921,7 +929,7 @@
       "description": "Routes a public-key cryptanalysis project through security-model, construction-level, hard-problem, implementation-interface, proof, cost, transfer, and reproduction skills while maintaining one shared evidence state. Use when starting or resuming an evaluation of a signature, KEM, public-key encryption scheme, key-agreement mechanism, or hybrid construction.",
       "description_words": 41,
       "domain": "public-key",
-      "lines": 60,
+      "lines": 79,
       "missing_relative_links": [],
       "name": "public-key-cryptanalysis-orchestrator"
     },
@@ -929,7 +937,7 @@
       "description": "Synthesizes proofs, attacks, estimates, experiments, failed transfers, and implementation findings into calibrated claim-level conclusions and a prioritized public-key cryptanalysis backlog.",
       "description_words": 20,
       "domain": "public-key",
-      "lines": 58,
+      "lines": 81,
       "missing_relative_links": [],
       "name": "public-key-evidence-synthesis-and-research-backlog"
     },
@@ -937,7 +945,7 @@
       "description": "Converts papers, reports, code, specifications, issue discussions, or prior-agent findings into normalized public-key attack records with exact provenance, models, requirements, costs, and validation status.",
       "description_words": 24,
       "domain": "public-key",
-      "lines": 59,
+      "lines": 75,
       "missing_relative_links": [],
       "name": "public-key-literature-attack-extractor"
     },
@@ -945,7 +953,7 @@
       "description": "Turns public-key cryptanalytic claims into controlled, reproducible proofs, implementations, solver experiments, simulations, and independent checks with explicit falsification conditions.",
       "description_words": 19,
       "domain": "public-key",
-      "lines": 58,
+      "lines": 73,
       "missing_relative_links": [],
       "name": "public-key-reproduction-and-falsification-planner"
     },
@@ -1169,7 +1177,7 @@
       "description": "Recomputes an attack end to end, normalizes resource units, checks success and false positives, and compares it with the correct generic baseline and security claim. Use when: Before accepting, reporting, transferring, or comparing any cryptanalytic complexity. It is especially important for papers or agent outputs that quote one exponent without a complete derivation.",
       "description_words": 53,
       "domain": "symmetric",
-      "lines": 64,
+      "lines": 74,
       "missing_relative_links": [],
       "name": "symmetric-attack-complexity-and-success-auditor"
     },
@@ -1177,7 +1185,7 @@
       "description": "Generates structurally justified, falsifiable attack hypotheses from claims, design features, literature skeletons, and reduced or toy findings, then prioritizes them by likely claim impact and information gain. Use when: A design map and claim model exist, but the project needs novel attack directions or a disciplined choice among many plausible techniques. Use it before expensive solver searches or large experiments, and again when a failed test changes the design understanding.",
       "description_words": 70,
       "domain": "symmetric",
-      "lines": 71,
+      "lines": 80,
       "missing_relative_links": [],
       "name": "symmetric-attack-hypothesis-generator-and-triage"
     },
@@ -1185,7 +1193,7 @@
       "description": "Decomposes an attack from literature or prior agent work, maps each indispensable requirement to a new target, and develops minimally modified falsifiable adaptations. Use when: A known attack on one primitive, version, parameter set, round count, component, or adversary model might apply to another. Also use it to transfer an agent-discovered reduced or toy attack toward the real target.",
       "description_words": 59,
       "domain": "symmetric",
-      "lines": 63,
+      "lines": 72,
       "missing_relative_links": [],
       "name": "symmetric-attack-transfer-and-adaptation"
     },
@@ -1193,7 +1201,7 @@
       "description": "Coordinates a research-grade symmetric-cryptanalysis evaluation, selects specialist skills, and maintains a shared claim/evidence state. Use when: The task asks for an evaluation of a symmetric primitive, mode, construction, proposal, paper, attack claim, or implementation and requires more than one analytical technique. Use it at the beginning of a project and again whenever the target, model, or evidence changes materially.",
       "description_words": 59,
       "domain": "symmetric",
-      "lines": 84,
+      "lines": 103,
       "missing_relative_links": [],
       "name": "symmetric-cryptanalysis-orchestrator"
     },
@@ -1201,7 +1209,7 @@
       "description": "Converts attack records, proofs, reproductions, failures, and disagreements into claim-level judgments and a prioritized falsifiable research agenda. Use when: Enough evidence exists to update a review, recommendation, standards comment, research plan, or team knowledge base. It should be the only skill that writes final claim-level conclusions.",
       "description_words": 46,
       "domain": "symmetric",
-      "lines": 72,
+      "lines": 95,
       "missing_relative_links": [],
       "name": "symmetric-evidence-synthesis-and-research-backlog"
     },
@@ -1209,7 +1217,7 @@
       "description": "Extracts a published or discovered symmetric-cryptanalysis result into a normalized, source-grounded attack record suitable for reproduction and transfer. Use when: Reading a paper, preprint, thesis, standards comment, issue, code artifact, talk, or internal agent report that claims a cryptanalytic property or attack. Run it before attempting to adapt the result.",
       "description_words": 50,
       "domain": "symmetric",
-      "lines": 65,
+      "lines": 81,
       "missing_relative_links": [],
       "name": "symmetric-literature-attack-extractor"
     },
@@ -1217,7 +1225,7 @@
       "description": "Designs decisive, controlled, reproducible tests of symmetric-cryptanalysis claims, from exhaustive toy checks through full experiments and solver certificates. Use when: A claim depends on computation, simulation, solver output, undocumented code, probabilistic evidence, or an attack transfer. Use it to turn \u201ctry this\u201d into a smallest decisive and independently repeatable test.",
       "description_words": 50,
       "domain": "symmetric",
-      "lines": 61,
+      "lines": 76,
       "missing_relative_links": [],
       "name": "symmetric-reproduction-and-falsification-planner"
     },
@@ -1257,15 +1265,15 @@
       "description": "Establish whether a claimed attack actually works \u2014 state its preconditions, decide whether analysis or an implementation settles the question, then do that one, and report what the result does and does not imply at full parameters. Use when a paper, a post, or an earlier session asserts an attack and the question is whether to believe it.",
       "description_words": 58,
       "domain": "core",
-      "lines": 239,
+      "lines": 245,
       "missing_relative_links": [],
       "name": "validate-attack"
     },
     {
-      "description": "Settle one security claim \u2014 restate it precisely enough to be checkable, establish how it was obtained, pick the route that actually settles it (open the source, reproduce the computation, run it at toy scale, or discharge the notion's obligations), and report it supported, refuted or unresolved. Use when a claim is load-bearing and a decision depends on whether it holds.",
-      "description_words": 61,
+      "description": "Check whether one specified claim in a paper, report, or security argument is correct. Audit its reasoning or reproduce the relevant evidence and report supported, refuted, or unresolved. Use for an assigned claim-verification task; merely citing or applying a published result does not require auditing that result.",
+      "description_words": 47,
       "domain": "core",
-      "lines": 302,
+      "lines": 316,
       "missing_relative_links": [],
       "name": "verify-claim"
     },
@@ -1295,7 +1303,7 @@
     }
   ],
   "skills_by_domain": {
-    "core": 10,
+    "core": 11,
     "formal": 63,
     "public-key": 59,
     "symmetric": 29

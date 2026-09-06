@@ -81,7 +81,7 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **LEAN-TPIL** — [Theorem Proving in Lean 4](https://leanprover.github.io/theorem_proving_in_lean4/) (2024) — Jeremy Avigad et al.. `official-text`.
 - **EASYCRYPT11** — [EasyCrypt: Automated Reasoning for Security Proofs](https://eprint.iacr.org/2011/101) (2011) — Gilles Barthe et al.. `research-paper`.
 - **AENEAS22** — [Aeneas: Rust Verification by Functional Translation](https://arxiv.org/abs/2206.07185) (2022) — Son Ho et al.. `research-paper`.
-- **RUST-LEAN-AI26** — [AI-Assisted Rust-to-Lean Verification: An Experience Report](https://arxiv.org/abs/2605.30106) (2026) — Microsoft Research and collaborators. `research-paper`.
-- **SHANNON26** — [Towards Automating Formal Cryptographic Proofs: The ShannonProver Architecture](https://arxiv.org/abs/2607.02847) (2026) — ShannonProver team. `research-paper`.
+- **RUST-LEAN-AI26** — [A Rust-to-Lean Verification Pipeline with AI Provers: An Experience Report](https://arxiv.org/abs/2605.30106) (2026) — Natalia Klaus, Juan Conejero, and Palina Tolmach. `research-paper`.
+- **SHANNON26** — [ShannonProver: Towards Automating Formal Cryptographic Proofs](https://arxiv.org/abs/2607.02847) (2026) — Yiping Ma et al.. `research-paper`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

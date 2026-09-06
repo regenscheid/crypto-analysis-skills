@@ -15,6 +15,16 @@ metadata:
 
 A claim depends on computation, simulation, solver output, undocumented code, probabilistic evidence, or an attack transfer. Use it to turn “try this” into a smallest decisive and independently repeatable test.
 
+## Assigned scope
+
+Apply this procedure to the assigned quantitative or empirical claim. Being
+listed as a related skill or citing a published result does not assign a fresh
+cost audit or reproduction. Retain rigorous checks when that is the task. Reuse
+compatible evidence and identify the changed dependency behind a repeated check;
+see [paper use and verification](../investigate/reference/paper-use-and-verification.md).
+A mathematical proposal may state unresolved cost or empirical obligations
+without completing this workflow.
+
 ## Operating procedure
 
 1. **State the claim and falsifier.** Write one sentence for the claimed effect and one observable outcome that would falsify or materially weaken it.
@@ -27,6 +37,11 @@ A claim depends on computation, simulation, solver output, undocumented code, pr
 8. **Validate solver claims.** Check witnesses directly in the primitive. For infeasibility, require a proof/certificate where available or independent encodings and exhaustive small-case comparison. A timeout proves nothing.
 9. **Package reproducibly.** Include commands, locked dependencies, deterministic seeds, generated-data manifest, expected outputs, logs, checksums, plots from raw data, and machine-readable results.
 10. **Assign status.** Use hypothesis, partially supported, reproduced, independently verified, refuted, superseded, or inconclusive. Explain exactly what remains untested.
+
+For sampling, selected observations, or inconclusive experiments, read
+[research stages](../empirical-statistical-and-heuristic-claim-separation/references/research-stages.md).
+Exploratory observations can motivate questions; confirmation requires an
+appropriate sampling and uncertainty analysis. Formalization is optional.
 
 ## Output contract
 
@@ -46,7 +61,7 @@ Fill `assets/REPRODUCTION_MANIFEST.yaml` and produce:
 - Bind every statement to the exact target artifact, version, parameters, round/phase scope, and adversary model.
 - Label a result accurately as a property, trail, differential/linear hull, distinguisher, recovery attack, forgery, collision, proof gap, or implementation failure.
 - Never describe a reduced-round, weak-key, related-key, nonce-misuse, chosen-ciphertext, Q2, or component-only result as a full-scheme break without the corresponding full-scheme model.
-- Recompute data, time, memory, preprocessing, communication, verification, and success probability; do not copy headline exponents without their units and assumptions.
+- For a new or independently verified quantitative conclusion, account for relevant data, time, memory, preprocessing, communication, verification, and success probability. Preserve source units and assumptions; distinguish attributed quantities from independent checks and reuse compatible checked inputs.
 - Preserve contradictory evidence, failed reproductions, corrections, and source-version chronology.
 - Treat solver timeout, bounded search failure, and absence of a known attack as inconclusive—not as evidence of security.
 - Mark every inference that is not directly established by a proof, derivation, experiment, or cited source.

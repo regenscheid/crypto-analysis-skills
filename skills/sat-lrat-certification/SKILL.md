@@ -77,10 +77,10 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 
 ## Associated primary references
 
-- **LRAT17** — [LRAT: Efficiently Verifying Clausal Proofs](https://arxiv.org/abs/1612.02353) (2017) — Nathan Wetzler et al.. `research-paper`.
+- **LRAT17** — [Efficient Certified RAT Verification](https://arxiv.org/abs/1612.02353) (2017) — Luís Cruz-Filipe et al.. `research-paper`.
 - **FRAT22** — [FRAT: A Flexible Proof Format for SAT Solver Elaboration](https://arxiv.org/abs/2109.09665) (2022) — Marijn Heule et al.. `research-paper`.
 - **LRAT-CATCHER26** — [LRAT-Catcher: Importing SAT Refutations into Lean](https://arxiv.org/abs/2607.00815) (2026) — LRAT-Catcher authors. `research-paper`.
 - **CADICAL-REPO** — [CaDiCaL SAT solver](https://github.com/arminbiere/cadical) (2026) — Armin Biere et al.. `official-repository`.
 - **LEAN-BVDECIDE** — [Lean tactic reference: bv_decide and decision procedures](https://lean-lang.org/doc/reference/latest/Tactic-Proofs/Tactic-Reference/) (2026) — Lean project. `official-manual`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

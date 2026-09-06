@@ -81,8 +81,8 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **MATHLIB-DOCS** — [Mathlib 4 Documentation](https://leanprover-community.github.io/mathlib4_docs/) (2026) — Lean community. `official-documentation`.
 - **LEANDOJO23** — [LeanDojo: Theorem Proving with Retrieval-Augmented Language Models](https://arxiv.org/abs/2306.15626) (2023) — Kaiyu Yang et al.. `research-paper`.
 - **LEANDOJO-V2** — [LeanDojo-v2](https://leandojo.org/leandojo.html) (2025) — Ryan Hsiang et al.. `official-project`.
-- **PANTOGRAPH24** — [Pantograph: A Machine-to-Machine Interaction Interface for Lean 4](https://arxiv.org/abs/2410.16429) (2024) — Lenian Li et al.. `research-paper`.
+- **PANTOGRAPH24** — [Pantograph: A Machine-to-Machine Interaction Interface for Lean 4](https://arxiv.org/abs/2410.16429) (2024) — Leni Aniva et al.. `research-paper`.
 - **ROCQ-REF** — [Rocq documentation](https://rocq-prover.org/docs) (2026) — Rocq project. `official-manual`.
 - **ISABELLE-DOCS** — [Isabelle Documentation](https://isabelle.in.tum.de/documentation.html) (2026) — Isabelle project. `official-manual`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

@@ -83,4 +83,4 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **CRYPTOL-DOCS** — [Cryptol documentation](https://galoisinc.github.io/cryptol/) (2026) — Galois. `official-manual`.
 - **LAST-MILE20** — [The Last Mile: High-Assurance and High-Speed Cryptographic Implementations](https://arxiv.org/abs/1904.04606) (2020) — José Bacelar Almeida et al.. `research-paper`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

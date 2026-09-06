@@ -1,6 +1,6 @@
 ---
 name: empirical-statistical-and-heuristic-claim-separation
-description: "Prevents experiments, statistical inference, asymptotic models, estimator output, and heuristic assumptions from being mislabeled as formal proof while showing when they can support or motivate a formal subproblem."
+description: "Interpret empirical, statistical, heuristic, and exact evidence in ordinary mathematical research. Distinguish exploratory observations from confirmation, quantify uncertainty, and preserve model and sampling assumptions. Formal proof work is optional."
 metadata:
   version: "0.1.0"
   display-name: "Empirical, Statistical, and Heuristic Claim Separation"
@@ -16,13 +16,15 @@ metadata:
 
 ## Purpose
 
-Prevents experiments, statistical inference, asymptotic models, estimator output, and heuristic assumptions from being mislabeled as formal proof while showing when they can support or motivate a formal subproblem.
+Interpret observations and uncertainty at the strength they support. Read
+[research stages](references/research-stages.md) for exploration, selection,
+confirmation, zero-event limits, and inconclusive results.
 
 ## Use this skill when
 
 Use this skill when a cryptanalysis project mixes simulations, Monte Carlo counts, performance measurements, lattice estimators, random-permutation heuristics, numerical correlations, and formal or exact claims.
 
-## Do not invoke automatically
+## Ordinary research route
 
 Do not use it to obstruct ordinary experimental cryptanalysis. Its purpose is to label evidence accurately and identify small high-value proof obligations, not to demand that every measurement become a theorem.
 
@@ -39,7 +41,9 @@ Do not use it to obstruct ordinary experimental cryptanalysis. Its purpose is to
 - formalizable subclaims
 - appropriate conclusion language
 
-This skill is an optional specialist route. Completion of an ordinary cryptanalysis task does not require invoking it unless the claim or evidence goal warrants formal methods.
+Use this route whenever the statistical question warrants it, without entering
+FORMALIZE mode. The historical formal-pack namespace is a packaging label, not
+a prerequisite. A request about evidence does not require a proof-assistant plan.
 
 ## Operating procedure
 
@@ -48,7 +52,7 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 3. Compute suitable confidence intervals or posterior/likelihood summaries and report zero-event upper bounds correctly; do not equate no observed failures with probability zero.
 4. For performance and attack estimates, separate algorithmic operation counts, implementation measurements, hardware/model assumptions, extrapolation, and asymptotic terms.
 5. For lattice, random-permutation, Markov, independence, or Gaussian heuristics, state where each assumption enters and test sensitivity to plausible alternatives.
-6. Identify formalizable kernels—such as a combinatorial identity, exact witness checker, finite bound, or rounding lemma—without claiming the remaining empirical conclusion becomes formal automatically.
+6. When useful for the requested assurance, identify an optional exact or formal subclaim. Otherwise complete the statistical interpretation without creating a formalization task.
 7. Use replication, holdout instances, independent implementations, and adversarial controls to reduce ordinary scientific error.
 8. Choose calibrated conclusion language and evidence status. Preserve contradictions and negative results rather than averaging them away.
 9. Publish raw/aggregated data provenance, analysis code, uncertainty, assumptions, and optional formal follow-up tasks.
@@ -58,7 +62,7 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - A claim-to-evidence table with explicit evidence classes.
 - Statistical uncertainty and estimator-assumption report.
 - Reproducible experiment/benchmark manifest.
-- A prioritized list of optional formal subclaims and what they would add.
+- Optional exact or formal subclaims only when they add relevant assurance.
 
 ## Non-negotiable guardrails
 
@@ -82,6 +86,6 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **ARB** — [Arb: Arbitrary-Precision Ball Arithmetic](https://arblib.org/) (2026) — Arb project. `official-project`.
 - **MPFR** — [GNU MPFR](https://www.mpfr.org/) (2026) — GNU MPFR project. `official-project`.
 - **FPLLL-REPO** — [fplll](https://github.com/fplll/fplll) (2026) — fplll project. `official-repository`.
-- **SHANNON26** — [Towards Automating Formal Cryptographic Proofs: The ShannonProver Architecture](https://arxiv.org/abs/2607.02847) (2026) — ShannonProver team. `research-paper`.
+- **SHANNON26** — [ShannonProver: Towards Automating Formal Cryptographic Proofs](https://arxiv.org/abs/2607.02847) (2026) — Yiping Ma et al.. `research-paper`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

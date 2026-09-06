@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Score a captured model response against a cryptanalysis routing case."""
+"""Smoke-check response format; optionally check normalized skill-load evidence."""
 
 from __future__ import annotations
 
@@ -8,6 +8,8 @@ import json
 import re
 import sys
 from pathlib import Path
+
+from trace_evidence import successful_skill_loads
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
@@ -30,7 +32,7 @@ def main() -> int:
     parser.add_argument(
         "--trace",
         type=Path,
-        help="optional raw runtime trace used to confirm skill calls",
+        help="offline normalized JSON load events (tests/evaluation-contract.md)",
     )
     parser.add_argument(
         "--cases",
@@ -76,7 +78,7 @@ def main() -> int:
     if case.get("requires_grounding"):
         grounding_statuses = ("DISCOVERED", "READ", "PROVIDED", "BLOCKED")
         if grounding and any(status in grounding.upper() for status in grounding_statuses):
-            passes.append("grounding:source record present")
+            passes.append("grounding:recognized status token present")
         else:
             failures.append("grounding: missing source-grounding section or evidence status")
 
@@ -84,29 +86,35 @@ def main() -> int:
         status in coverage.upper()
         for status in ("EXAMINED", "CANDIDATE", "FALSIFIED", "NOT_APPLICABLE", "BLOCKED", "DEFERRED", "INCONCLUSIVE")
     ):
-        passes.append("coverage:status ledger present")
+        passes.append("coverage:recognized status token present")
     else:
         failures.append("coverage: missing ledger or recognized status")
 
     if expected_mode == "DISCOVER":
         if "candidate" in folded and ("falsif" in folded or "decisive test" in folded):
-            passes.append("discover:candidates and falsification addressed")
+            passes.append("discover:candidate and falsification vocabulary present")
         else:
             failures.append("discover: candidates or falsification not addressed")
         if "unchecked" in folded or "blocked" in folded or "deferred" in folded:
-            passes.append("discover:limits visible")
+            passes.append("discover:limit vocabulary present")
         else:
             failures.append("discover: unchecked or blocked work not visible")
 
+    format_passed = not failures
+    trace_status = "not_supplied"
     if args.trace:
-        trace = args.trace.read_text(encoding="utf-8", errors="replace").casefold()
-        missing_calls = [
-            name for name in case["expected_skills"] if name.casefold() not in trace
-        ]
-        if missing_calls:
-            failures.append("runtime-trace: missing " + ", ".join(missing_calls))
-        else:
-            passes.append("runtime-trace:expected skills named")
+        try:
+            loaded = successful_skill_loads(args.trace)
+            missing_calls = sorted(set(case["expected_skills"]) - loaded)
+            if missing_calls:
+                failures.append("runtime-trace: no successful load event for " + ", ".join(missing_calls))
+                trace_status = "missing_load_events"
+            else:
+                passes.append("runtime-trace:successful load events recorded")
+                trace_status = "recorded_load_events_present"
+        except ValueError as exc:
+            failures.append(f"runtime-trace: {exc}")
+            trace_status = "invalid"
 
     result = {
         "case_id": case["id"],
@@ -114,6 +122,11 @@ def main() -> int:
         "checks_passed": passes,
         "failures": failures,
         "trace_checked": bool(args.trace),
+        "format_passed": format_passed,
+        "trace_evidence": trace_status,
+        "evaluation_scope": "report_format_and_optional_recorded_load_events",
+        "research_progress": "not_assessed",
+        "scientific_correctness": "not_assessed",
     }
     print(json.dumps(result, indent=2))
     return 1 if failures else 0

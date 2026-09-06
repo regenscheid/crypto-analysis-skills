@@ -85,4 +85,4 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **CRYPTOPT-REPO** — [CryptOpt repository](https://github.com/0xADE1A1DE/CryptOpt) (2026) — CryptOpt project. `official-repository`.
 - **ROCQ-HOME** — [The Rocq Prover](https://rocq-prover.org/) (2026) — Rocq project. `official-project`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

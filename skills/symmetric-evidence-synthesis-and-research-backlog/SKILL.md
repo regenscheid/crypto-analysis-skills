@@ -15,6 +15,15 @@ metadata:
 
 Enough evidence exists to update a review, recommendation, standards comment, research plan, or team knowledge base. It should be the only skill that writes final claim-level conclusions.
 
+## Research maturity
+
+Use [the mathematical research workflow](../investigate/reference/mathematical-research-workflow.md)
+for proposals and incomplete arguments. Requirements for a ready experiment or
+an established result do not determine which open mathematical questions may be
+included in a proposal. Preserve unchecked premises, conditional implications,
+and supporting lemmas without calling them validated results. Keep work status,
+evidence maturity, review outcome, coverage, and contribution distinct.
+
 ## Operating procedure
 
 1. **Synthesize by claim row.** Group evidence by exact target/version/model/property rather than by attack name or source prestige.
@@ -27,6 +36,20 @@ Enough evidence exists to update a review, recommendation, standards comment, re
 8. **Expose disagreements.** Present strongest evidence for each serious interpretation and identify the experiment, proof, or artifact that would discriminate between them.
 9. **Build the backlog.** Convert uncertainties into falsifiable tasks. Rank by expected effect on conclusions, feasibility, cost, prerequisite dependencies, and information gain.
 10. **Keep machine-readable links.** Every conclusion and backlog item must link to claim IDs, attack records, evidence locators, and reproduction artifacts.
+
+## Contribution and originality
+
+Before claiming a new result, use
+[contribution assessment](../investigate/reference/contribution-assessment.md).
+State the closest known result, the changed scope, and the additional reasoning
+actually supplied. Distinguish routine applications and new evaluations from
+substantive extensions or potentially new methods. Keep correctness, originality,
+and significance separate; a useful parameter-specific finding need not be novel.
+
+For sampling, selected observations, or inconclusive experiments, read
+[research stages](../empirical-statistical-and-heuristic-claim-separation/references/research-stages.md).
+Exploratory observations can motivate questions; confirmation requires an
+appropriate sampling and uncertainty analysis. Formalization is optional.
 
 ## Output contract
 
@@ -56,7 +79,7 @@ Produce a research backlog with:
 - Bind every statement to the exact target artifact, version, parameters, round/phase scope, and adversary model.
 - Label a result accurately as a property, trail, differential/linear hull, distinguisher, recovery attack, forgery, collision, proof gap, or implementation failure.
 - Never describe a reduced-round, weak-key, related-key, nonce-misuse, chosen-ciphertext, Q2, or component-only result as a full-scheme break without the corresponding full-scheme model.
-- Recompute data, time, memory, preprocessing, communication, verification, and success probability; do not copy headline exponents without their units and assumptions.
+- For a new or independently verified quantitative conclusion, account for relevant data, time, memory, preprocessing, communication, verification, and success probability. Preserve source units and assumptions; distinguish attributed quantities from independent checks and reuse compatible checked inputs.
 - Preserve contradictory evidence, failed reproductions, corrections, and source-version chronology.
 - Treat solver timeout, bounded search failure, and absence of a known attack as inconclusive—not as evidence of security.
 - Mark every inference that is not directly established by a proof, derivation, experiment, or cited source.

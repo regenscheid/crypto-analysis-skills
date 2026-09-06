@@ -84,4 +84,4 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **SMTCOQ-REPO** — [SMTCoq repository](https://github.com/smtcoq/smtcoq) (2026) — SMTCoq project. `official-repository`.
 - **FIAT-CRYPTO19** — [Simple High-Level Code for Cryptographic Arithmetic—with Proofs, Without Compromises](https://adam.chlipala.net/papers/FiatCryptoSP19/) (2019) — Andres Erbsen et al.. `research-paper`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

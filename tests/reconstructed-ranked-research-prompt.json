@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "provenance": "Reconstructed comparison prompt authorized by the user on 2026-09-05; not the user's exact historical wording.",
+  "original_skills_commit": "098013c",
+  "prompt": "Consider a broad, ranked set of distinct research directions relevant to the assignment. Explain the rationale, significance, unresolved prerequisites, and promising next steps for each direction. Distinguish the broader research agenda from the direction selected for immediate work. Respect the underlying assignment and its requested deliverable."
+}

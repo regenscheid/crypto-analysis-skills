@@ -40,7 +40,7 @@ The target derives a signature from VOLE correlations, vector commitments, Quick
 - Bind every conclusion to the exact artifact, version, parameter set, key format, and security game.
 - Distinguish a faster algorithm for an underlying mathematical problem from a complete attack on the cryptosystem, and distinguish a proof gap from an exploit.
 - Never present a weak-key, malformed-input, related-key, multi-target, decryption-oracle, leakage, fault, or quantum result as a standard-model full-scheme break without that qualification.
-- Recompute data, oracle queries, arithmetic operations, bit complexity, memory, preprocessing, communication, verification, parallel depth, and success probability in explicit units.
+- For a new or independently verified quantitative conclusion, account for the relevant data, oracle queries, arithmetic/bit operations, memory, preprocessing, communication, verification, parallel depth, and success probability in explicit units. Preserve attributed published quantities as source claims; reuse unchanged checked inputs and recompute affected dependencies.
 - State the cost model, implementation assumptions, and estimator version; a single headline exponent is not a reproducible security estimate.
 - Preserve failed attacks, rebuttals, corrections, withdrawn claims, and source-version chronology in the evidence ledger.
 - Treat solver timeout, bounded search failure, and absence of a known attack as inconclusive—not as evidence of security.

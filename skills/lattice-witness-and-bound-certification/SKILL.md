@@ -84,4 +84,4 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **SAGEMATH-HOME** — [SageMath](https://www.sagemath.org/) (2026) — SageMath project. `official-project`.
 - **NTL-HOME** — [NTL: A Library for doing Number Theory](https://libntl.org/) (2026) — Victor Shoup. `official-project`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

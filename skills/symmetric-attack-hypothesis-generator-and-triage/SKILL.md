@@ -15,6 +15,15 @@ metadata:
 
 A design map and claim model exist, but the project needs novel attack directions or a disciplined choice among many plausible techniques. Use it before expensive solver searches or large experiments, and again when a failed test changes the design understanding.
 
+## Research maturity
+
+Use [the mathematical research workflow](../investigate/reference/mathematical-research-workflow.md)
+for proposals and incomplete arguments. Requirements for a ready experiment or
+an established result do not determine which open mathematical questions may be
+included in a proposal. Preserve unchecked premises, conditional implications,
+and supporting lemmas without calling them validated results. Keep work status,
+evidence maturity, review outcome, coverage, and contribution distinct.
+
 ## Operating procedure
 
 1. **Select one exact claim row.** Bind the exercise to a target/version/parameter set and adversary game. Generate hypotheses against a stated success event, not against the word “security.”
@@ -28,7 +37,7 @@ A design map and claim model exist, but the project needs novel attack direction
 9. **Estimate a resource band and baseline.** Give rough data/time/memory/preprocessing/success bounds sufficient to reject candidates that cannot plausibly beat the applicable generic attack even under optimistic assumptions.
 10. **Check novelty and lineage.** Link each candidate to source attacks, previous internal hypotheses, and failed attempts. Mark exact reuse, adaptation, hybridization, or genuinely new mechanism; do not claim novelty from unfamiliar terminology.
 11. **Prioritize deliberately.** Rank by potential impact on the claim, probability the prerequisites hold, experiment/proof cost, decisiveness, expected information gain, and how much reusable negative knowledge a failure would produce.
-12. **Promote only falsifiable candidates.** A candidate enters the experiment queue only when it has a scoped claim, mechanism, expected signal, minimal test, falsifier, and stopping rule.
+12. **Separate questions from experiment-ready candidates.** Keep mathematically meaningful questions and unresolved prerequisites in the research proposal. A candidate enters an experiment queue only when its claim, observable, method, and stopping rule are sufficiently specified. An unready experiment is not a refuted mathematical question.
 
 ## Output contract
 
@@ -52,7 +61,7 @@ Also produce a ranked experiment queue and a negative-knowledge plan describing 
 - Bind every statement to the exact target artifact, version, parameters, round/phase scope, and adversary model.
 - Label a result accurately as a property, trail, differential/linear hull, distinguisher, recovery attack, forgery, collision, proof gap, or implementation failure.
 - Never describe a reduced-round, weak-key, related-key, nonce-misuse, chosen-ciphertext, Q2, or component-only result as a full-scheme break without the corresponding full-scheme model.
-- Recompute data, time, memory, preprocessing, communication, verification, and success probability; do not copy headline exponents without their units and assumptions.
+- For a new or independently verified quantitative conclusion, account for relevant data, time, memory, preprocessing, communication, verification, and success probability. Preserve source units and assumptions; distinguish attributed quantities from independent checks and reuse compatible checked inputs.
 - Preserve contradictory evidence, failed reproductions, corrections, and source-version chronology.
 - Treat solver timeout, bounded search failure, and absence of a known attack as inconclusive—not as evidence of security.
 - Mark every inference that is not directly established by a proof, derivation, experiment, or cited source.

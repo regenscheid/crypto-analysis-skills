@@ -114,8 +114,12 @@ Write it out before deciding anything. If you cannot, that is the finding.
 - a step whose behaviour is an empirical question — does the ideal drop in
   degree, does the lattice actually reduce, does the rank fall where predicted
 - a heuristic presented as reliable, with no data behind it
-- a success probability that is asserted rather than measured
-- your own new attack or improvement, which has never been run by anyone
+- a success probability justified only heuristically, with no supporting data
+
+A new mathematical claim does not require code merely because it is new. A
+complete argument may settle it; an empirical premise needs empirical evidence.
+Use [evidence interpretation](../investigate/reference/evidence-interpretation.md)
+to choose a route proportionate to the exact claim.
 
 Write the choice down with its reason. A route chosen silently is a route nobody
 can challenge, and this step is where the reviewer's leverage is.
@@ -136,9 +140,9 @@ actual parameters** rather than the ones the paper assumed. Then:
 - If it needs a number nobody has computed, that is `derive-cost`. Hand it over
   rather than guessing.
 
-An analysis that concludes **"it applies"** is not finished — it has established
-that the attack is worth implementing, which is a different and weaker result
-than "it works".
+An applicability check alone does not establish the claimed behavior. State the
+remaining proof or empirical obligation; implementation is required only when
+that obligation depends on execution.
 
 ## Step 4 — The implementation route
 
@@ -165,10 +169,10 @@ object, not by reasoning about it.
 1. **The positive case.** It succeeds where the claim says it must — on an
    instance with the structure planted, at a scale where you can confirm the
    recovered secret is the real one.
-2. **The negative control.** It *fails* where it must — on an instance without
-   that structure, or with the precondition broken. **An attack that "works" but
-   was never run against a case it should fail is not evidence.** It is a
-   procedure that returns something.
+2. **A justified control.** State its expected outcome and why it follows.
+   Removing a sufficient precondition does not necessarily force failure. Use
+   a known-answer case, an independently checked output, or another comparison
+   that addresses a specific failure mode.
 
 This is the discipline `scripts/present_milp.py` is built around: it reproduces a
 *published* bound — ≥10 active S-boxes over 5 rounds of PRESENT — before its
@@ -194,8 +198,10 @@ A toy-scale success is evidence about the toy scale. State the gap explicitly:
 - for a scaling claim, the parameters you *did* run, so the extrapolation is
   visible and arguable rather than implied
 
-Never report "verified". Computation falsifies; it does not verify. The
-vocabulary is **"no counterexample at n ≤ N"**, with N stated.
+Report exactly what the evidence establishes. A checked witness or exhaustive
+finite computation can verify its scoped predicate; state the domain, coverage,
+and trusted implementation. A non-exhaustive search supports only “no
+counterexample found” under the stated parameters and sampling process.
 
 ## Write back
 

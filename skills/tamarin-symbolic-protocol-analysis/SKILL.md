@@ -82,4 +82,4 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **TAMARIN-MANUAL** — [Tamarin Prover Manual](https://tamarin-prover.com/manual/master/book/001_introduction.html) (2026) — Tamarin project. `official-manual`.
 - **TAMARIN-REPO** — [Tamarin repository](https://github.com/tamarin-prover/tamarin-prover) (2026) — Tamarin project. `official-repository`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

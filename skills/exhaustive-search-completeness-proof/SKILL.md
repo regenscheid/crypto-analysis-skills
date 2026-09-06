@@ -79,7 +79,7 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 ## Associated primary references
 
 - **LEAN-TPIL** — [Theorem Proving in Lean 4](https://leanprover.github.io/theorem_proving_in_lean4/) (2024) — Jeremy Avigad et al.. `official-text`.
-- **LRAT17** — [LRAT: Efficiently Verifying Clausal Proofs](https://arxiv.org/abs/1612.02353) (2017) — Nathan Wetzler et al.. `research-paper`.
+- **LRAT17** — [Efficient Certified RAT Verification](https://arxiv.org/abs/1612.02353) (2017) — Luís Cruz-Filipe et al.. `research-paper`.
 - **VERIPB-HOME** — [VeriPB](https://veripb.org/) (2026) — VeriPB project. `official-project`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

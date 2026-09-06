@@ -78,11 +78,11 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 
 ## Associated primary references
 
-- **PANTOGRAPH24** — [Pantograph: A Machine-to-Machine Interaction Interface for Lean 4](https://arxiv.org/abs/2410.16429) (2024) — Lenian Li et al.. `research-paper`.
+- **PANTOGRAPH24** — [Pantograph: A Machine-to-Machine Interaction Interface for Lean 4](https://arxiv.org/abs/2410.16429) (2024) — Leni Aniva et al.. `research-paper`.
 - **PANTOGRAPH-REPO** — [Pantograph repository](https://github.com/leanprover/Pantograph) (2026) — Pantograph project. `official-repository`.
 - **LEANDOJO23** — [LeanDojo: Theorem Proving with Retrieval-Augmented Language Models](https://arxiv.org/abs/2306.15626) (2023) — Kaiyu Yang et al.. `research-paper`.
 - **LEANDOJO-V2** — [LeanDojo-v2](https://leandojo.org/leandojo.html) (2025) — Ryan Hsiang et al.. `official-project`.
 - **LEAN-FAQ** — [Lean FAQ](https://lean-lang.org/faq/) (2026) — Lean project. `official-documentation`.
-- **RUST-LEAN-AI26** — [AI-Assisted Rust-to-Lean Verification: An Experience Report](https://arxiv.org/abs/2605.30106) (2026) — Microsoft Research and collaborators. `research-paper`.
+- **RUST-LEAN-AI26** — [A Rust-to-Lean Verification Pipeline with AI Provers: An Experience Report](https://arxiv.org/abs/2605.30106) (2026) — Natalia Klaus, Juan Conejero, and Palina Tolmach. `research-paper`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

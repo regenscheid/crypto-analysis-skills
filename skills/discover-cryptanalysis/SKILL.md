@@ -1,137 +1,115 @@
 ---
 name: discover-cryptanalysis
-description: Actively search for new or previously missed cryptanalytic weaknesses by combining a complete attack-surface map, independent structure-first reasoning, prior-art extraction, cross-field transfer, proof and interface seams, falsifiable candidate generation, cheap disproof, costing, and independent validation. Use whenever asked to find issues, look hard for weaknesses, search for new attacks, improve known attacks, investigate unexplored directions, or transfer techniques to a cryptographic target. Do not stop at literature review or vague ideas.
+description: Develop mathematical cryptanalysis questions, research proposals, and scoped results about specified cryptographic constructions, assumptions, or parameters. Use for human-directed standards research, unexplored mathematical questions, proposed extensions of known results, or continued development of a selected question. Distinguish a requested proposal from a request to carry out the mathematical work.
 ---
 
-# Discover cryptanalysis
+# Develop mathematical cryptanalysis
 
-Start with `MODE: DISCOVER`. Produce falsifiable attack candidates and scoped
-negative results—not novelty, break, or security verdicts.
+Start with `MODE: DISCOVER` and identify the requested product: a research
+proposal, development of a selected mathematical question, or a scoped assessment
+supported by that mathematics. Read
+[the research workflow](../investigate/reference/mathematical-research-workflow.md).
+It governs agenda breadth, research maturity, checking effort, and completion.
 
-Use `investigate` as the control plane and `analyze-scheme` when the target lacks
-a frozen claim set, structure map, generic baselines, and attack-family coverage
-ledger.
+## Fix the mathematical question and scope
 
-## Fix the objective
+State the construction or mathematical object, version, parameters, distributions,
+security definition, and assumptions relevant to the question. Identify the
+conclusion sought and the contribution it would make to understanding the proposed
+standard. Preserve distinctions among an underlying problem, a component result,
+a construction-level claim, and a parameter evaluation.
 
-Record:
+Use the relevant domain orchestrator for definitions and references. A proposal
+or supporting lemma does not require a completed full-family assessment. If the
+assignment includes such an assessment, state and satisfy that separate scope.
+Use the user's specified objects and existing host context.
 
-- exact target layer, version, parameters, distributions, and round scope;
-- security notion, attacker powers, oracle model, and quantum model;
-- desired consequence: recovery, forgery, distinguishing, collision, inversion,
-  failure exploitation, proof separation, or concrete cost reduction;
-- best generic and known baselines under named models;
-- excluded implementation or deployment surfaces.
+## Relate the question to known mathematics
 
-Do not silently turn a primitive property, reduced-round result, weak-key case,
-or model-specific distinguisher into a full-construction break.
+Identify the closest known ingredients and the unresolved inference. Use the
+catalog and primary literature for examples, definitions, and the limits of prior
+results. Follow [catalog use](../investigate/reference/catalog-use.md) and
+[paper use and verification](../investigate/reference/paper-use-and-verification.md).
+An adequately sourced result can be used without independently auditing its paper.
+Check its hypotheses here and keep any uncertainty in dependent conclusions.
 
-## Route before ideating
+Do not let familiar technique names determine the only questions considered.
+For a stated mathematical object, useful alternatives may concern its definition,
+representation, distribution, invariants, supporting lemmas, or the scope of an
+implication. An analogy motivates a question; an explicit mathematical argument
+is needed for a result. Formal proof assistants remain an optional route.
 
-Load the appropriate domain orchestrator and its structure mapper, claim
-formalizer, hypothesis generator, transfer skill, cost auditor, and reproduction
-planner. Use the domain-qualified workflow names for shared capabilities:
+## Build the requested research proposal
 
-- symmetric workflows begin with `symmetric-`;
-- public-key workflows begin with `public-key-`.
+When a proposal is requested, retain the distinct questions warranted by the
+scope. There is no fixed cap of five viable questions or two pursued questions.
+Deduplicate equivalent formulations and routine parameter variants; do not pad
+the agenda. Separate the broader agenda from work currently allocated to a
+user-selected question.
 
-Then load every applicable technique skill identified by the orchestrator. Keep
-excluded techniques in the coverage ledger with the failing precondition.
+For each question, give its mathematical formulation, significance, known
+ingredients, unresolved assumptions, meaningful intermediate milestone, and
+reasoned priority. Distinguish significance from readiness and research horizon
+from modeled adversary cost. A long-horizon question need not have an immediate
+cheap experiment to be worth proposing. Do not invent numerical probabilities of
+novelty or success.
 
-## Run independent search tracks
+A proposal is complete when the requested questions and their rationale are
+reviewable. It need not present an unproved idea as a viable attack or pretend
+that all prerequisites are already established.
 
-Keep these tracks independent until each produces evidence or candidates:
+## Develop the selected question
 
-1. **Prior art** — start immediately and load the domain literature extractor;
-   cover the exact scheme, former names, components, assumptions, failed
-   approaches, corrections, code, standards records, and non-paper sources.
-2. **Structure first** — objects, maps, ranks, distributions, invariants,
-   symmetries, sparsity, locality, repetition, failure events, and departures
-   from canonical constructions without starting from attack names.
-3. **Transfer** — mechanisms from adjacent mathematical, optimization,
-   coding-theory, solver, program-analysis, and protocol literature. Read
-   [`reference/transfer.md`](reference/transfer.md) before this track.
-4. **Proof and interface seams** — reduction losses, model gaps, encodings,
-   validation, rejection behavior, malleability, multi-user effects, and
-   composition boundaries.
+When mathematical work is requested, use `mathematical-research-development` and
+perform the inference beyond the outline. Develop a definition, lemma, derivation,
+conditional implication, or counterexample that advances the selected question.
+A new shortlist is not a substitute for that work.
 
-Search misses must name channels, queries, aliases, dates, and unavailable
-sources. They never license “novel,” “unbroken,” or “no prior work.”
-The structure-first track may proceed in parallel to avoid anchoring, but it
-cannot substitute for the prior-art track or close its completion gate.
+An unknown prerequisite can itself be the question. Preserve it as unknown and
+carry it through conditional results. Use a direct check when it resolves a
+specific uncertainty; do not require a cheap falsifier before any deeper reasoning
+can begin. Sometimes the useful next product is the formulation that makes a
+later test meaningful.
 
-## Maintain candidates
+When an approach stalls, identify the exact obstruction before changing the
+representation or intermediate claim. Failure of that approach does not refute
+the question. Continue from supplied partial mathematics without repeating the
+original survey unless assumptions, evidence, or scope changed.
 
-Use no more than five mechanism-distinct viable candidates in a standard run
-and pursue at most the strongest two. Keep fewer when fewer survive; never add
-filler or count parameter variants as different mechanisms.
+## Check the conclusion that is actually claimed
 
-For each candidate, record:
+Use [evidence interpretation](../investigate/reference/evidence-interpretation.md).
+State whether a conclusion is conditional, empirical, exactly checked, or proved.
+A quantitative cost claim needs its appropriate model, units, success event, and
+relevant resource accounting; an unpriced mathematical lemma can remain useful.
 
-1. stable ID, target, and mechanism;
-2. structural handle and source result, if any;
-3. complete notation or object mapping;
-4. required preconditions, each satisfied, failed, or unchecked;
-5. predicted consequence and exact scope;
-6. cheapest decisive falsifier and its result;
-7. preliminary time, data, memory, success, and verification costs;
-8. provenance, confidence, next action, and unblock condition.
+Use `verify-claim` when the correctness of a specified paper claim is the assigned
+question. Independently check a new mathematical argument when presenting it as
+an established result; review the fixed argument and report a gap without silently
+repairing it. Reproduction is appropriate for an empirical claim that depends on
+it, not a universal prerequisite to research proposals or theoretical results.
 
-Use the statuses in `investigate/reference/completion-contract.md`. A candidate
-cannot survive while a critical precondition is unchecked or while its cheapest
-falsifier exists only as a plan. Park it honestly when budget or access prevents
-the test.
+## Report progress and contribution
 
-## Falsify before developing
+For delegated cryptanalytic work, including research proposals and scoped
+assessments, apply
+[orchestrator review](../investigate/reference/delegated-cryptanalysis-review.md)
+to omissions, premature stopping, connections, and overlooked significance.
+A correctness review alone does not establish the depth of the research.
 
-Try, in order:
+Return the formulation, known ingredients reused, mathematics produced, scope,
+remaining obligations, and why the next inference matters. Distinguish the end
+of this work episode from resolution of the overall research question. Use the
+host's existing context and artifact facilities; this skill defines no project
+knowledge store or job manager.
 
-1. type, dimension, direction-of-reduction, security-model, or scope checks;
-2. source preconditions instantiated at the real parameters;
-3. tiny positive cases and negative controls;
-4. bounded estimator, algebra, SAT/SMT, MILP, exhaustive, or simulation tests;
-5. deeper derivation, implementation, or formal proof only for survivors.
+Before originality language, read
+[contribution assessment](../investigate/reference/contribution-assessment.md).
+Identify the additional reasoning beyond the closest known result. A routine
+application at another parameter set can matter to standards evaluation without
+being a new method. Catalog absence, independent rediscovery, or changed notation
+does not establish novelty.
 
-Reject transfers that preserve vocabulary but not the operation used by the
-source result. Preserve clean falsifications: the obstruction is reusable
-cryptanalytic knowledge.
-
-## Hand off survivors
-
-- Use `derive-cost` when the mechanism is concrete but unpriced.
-- Use `validate-attack` when applicability or execution is the disputed claim.
-- Use `analyze-paper` when the transferred source may prove less than attributed.
-- Use `formal-methods-router` when a narrow universal, equivalence, finite-search,
-  implementation, probability, or reduction obligation justifies it.
-- Use `verify-claim` or an independent implementation to challenge every
-  load-bearing survivor without repairing it during review.
-
-Freeze the candidate before independent checking. A checker that paraphrases or
-improves the original derivation is not independent evidence.
-
-## Completion gates
-
-Do not stop because the known literature was recovered, one promising direction
-was found, or one favorite technique failed. Complete the applicable family
-ledger and source-grounding record, attempt the cheapest falsifier for every
-viable candidate, and hand off the strongest survivors for bounded costing or
-validation.
-
-Stop with a scoped partial result when remaining work is blocked or deliberately
-outside budget. State the exact unblock condition and next decisive experiment.
-
-## Output contract
-
-Return:
-
-1. target, objective, models, and baselines;
-2. skill trace and complete coverage ledger;
-3. independent search-track results;
-4. structural handles;
-5. full candidate records, including falsified and parked candidates;
-6. surviving candidates and independent-check status;
-7. novelty-search scope and limitations;
-8. unchecked areas and prioritized next work.
-
-Do not force a positive result. A rigorous map of attractive directions and the
-specific reasons they fail is successful discovery work.
+Do not force a positive result. A justified obstruction, corrected assumption,
+conditional characterization, or more precise research question can be substantive
+progress. State the original question and what this episode actually resolved.

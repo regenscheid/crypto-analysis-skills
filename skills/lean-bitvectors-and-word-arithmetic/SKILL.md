@@ -86,4 +86,4 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **CVC5-PROOFS** — [cvc5 Proof Production](https://cvc5.github.io/docs-ci/docs-main/proofs/proofs.html) (2026) — cvc5 project. `official-manual`.
 - **CRYPTOL-DOCS** — [Cryptol documentation](https://galoisinc.github.io/cryptol/) (2026) — Galois. `official-manual`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

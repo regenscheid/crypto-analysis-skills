@@ -86,4 +86,4 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **QBRICKS21** — [A Deductive Verification Framework for Circuit-building Quantum Programs](https://arxiv.org/abs/2003.05841) (2021) — Christophe Chareton et al.. `research-paper`.
 - **VQO21** — [Verified Compilation of Quantum Oracles](https://arxiv.org/abs/2112.06700) (2021) — Liyi Li et al.. `research-paper`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

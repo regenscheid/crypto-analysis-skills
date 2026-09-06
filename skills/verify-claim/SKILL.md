@@ -1,49 +1,50 @@
 ---
 name: verify-claim
-description: Settle one security claim — restate it precisely enough to be checkable, establish how it was obtained, pick the route that actually settles it (open the source, reproduce the computation, run it at toy scale, or discharge the notion's obligations), and report it supported, refuted or unresolved. Use when a claim is load-bearing and a decision depends on whether it holds.
+description: Check whether one specified claim in a paper, report, or security argument is correct. Audit its reasoning or reproduce the relevant evidence and report supported, refuted, or unresolved. Use for an assigned claim-verification task; merely citing or applying a published result does not require auditing that result.
 license: Apache-2.0
 ---
 
-# Settle one claim
+# Check one paper claim
 
-When invoked directly by “verify,” “reproduce,” “audit,” “check whether,” or
-equivalent language, start the answer with `MODE: VALIDATE`. When a DISCOVER
-investigation hands over a frozen survivor, preserve `MODE: DISCOVER` and label
-this work as its independent-validation phase. In either case, do not expand
-from the supplied claim into a search for neighboring attacks.
+When asked to check whether a specified claim is correct, start with
+`MODE: VALIDATE`. If a larger investigation assigns this bounded check, preserve
+its declared mode and identify the verification subtask. Do not infer a paper
+audit from a request to understand or use the paper. Read
+[paper use and verification](../investigate/reference/paper-use-and-verification.md)
+when deciding which task was assigned.
 
 You are handed a claim and asked whether it holds. **One claim, deliberately** —
 working out *which* claims in a body of work are load-bearing is `analyze-paper`'s
 job, and merging the two turns a bounded check into an unbounded one.
 
-Two questions, in that order:
+Keep these questions distinct:
 
-> **Where did this come from, and can I get it again?**
-> **What would settle it, and is that cheaper than assuming?**
+> **What exactly does the source claim?**
+> **Does its argument or evidence establish that claim?**
 
-A claim traced to a paper that was opened, a command that was run, or a knowledge
-base entry that was retrieved is **supported**. A claim that arrived because the
-analyst knew it is **unsupported**, however true it happens to be. A claim that
-arrived through a new derivation is a **candidate**: writing down the reasoning
-gives it provenance, but does not independently check it. That distinction does
-most of the work here: an unsupported claim that is right this time is
-indistinguishable, from the inside, from one that is wrong, and a derivation
-reviewed only by its author still has the author's blind spots.
+Finding the statement in a paper establishes its attribution. It does not
+establish the statement's correctness. Likewise, a completed command or a
+retrieved knowledge entry is provenance; inspect what that evidence actually
+supports. For a correctness verdict, check the argument, the relevant
+computation, or a prior independent check that covers the same claim and scope.
+An incomplete proof is unresolved unless a valid contradiction refutes the
+claim. Conditional lemmas remain useful with their open premises visible.
 
-**Retrieval is a pass, not a shortcut.** If `knowledge.md` already answers it, that
-is the workbench working — the four tiers exist so that settled things are looked
-up rather than re-derived. Nothing here penalises using them. What it penalises
-is asserting without them.
+Reuse prior verification when the claim, source revision, assumptions, and
+evidence scope match; identify it as reused. A recorded citation alone cannot
+stand in for a prior correctness check. An explicit request for fresh independent
+verification still calls for fresh work on the assigned claim.
 
 ## Which skill this is
 
-- **`verify-claim`** — one claim, settled. Any kind: a cost, a notion, an
-  attribution, a negative.
+- **`verify-claim`** — whether one assigned paper or argument claim is correct.
 - **`analyze-paper`** — a whole document, and which of its claims are worth
   settling. It hands work to this skill.
 - **`validate-attack`** — the claim is specifically that an attack works.
 - **`derive-cost`** — nothing has costed the target and a number is needed.
-- **`crypto-review`** — whether the *reasoning* is sound, not whether the claim is.
+- **`crypto-review`** — review a supplied analysis for reasoning and reporting defects.
+- **`mathematical-research-development`** — develop a stated mathematical question
+  using published ingredients; invoking this skill does not require this verifier.
 
 ## Plan first, if this is multi-stage
 
@@ -64,8 +65,8 @@ truth value until you say under which metric, against which peg, and at which
 revision of the peg. **Restating is not a formality — it is where most claims
 turn out to be two claims, or none.**
 
-First, is it load-bearing? A claim is, if a decision changes when it is false. In
-this domain that is reliably:
+Within the assigned claim, identify the premises on which its conclusion depends.
+These often include:
 
 - **numbers** — attack costs, security levels, memory, probabilities, degrees
 - **parameter sets** — any `(n, m, q, r)` tuple, any named parameter set
@@ -93,14 +94,14 @@ finding, and it is the cheapest one available.
 
 | tag | meaning |
 |---|---|
-| `[SOURCE]` | a document was opened **this session** — cite file and page, or the retrieval call |
-| `[TOOL]` | a command was run this session — cite the exact invocation |
+| `[SOURCE]` | an exact source statement was inspected — cite revision and locator, identifying reused inspection when applicable |
+| `[TOOL]` | a computation has an identified run and output — cite invocation, inputs, and whether it was rerun here |
 | `[KB]` | retrieved from the knowledge base or ledger — cite the entry id |
 | `[DERIVATION]` | a new argument was worked this session — cite the candidate artifact and state its assumptions; this is candidate provenance, not independent support |
 | `[RECALL]` | asserted from knowledge, with no retrieval and no computation |
 
-`[RECALL]` is not forbidden. It is *flagged*, and for a load-bearing claim it must
-be converted to `[SOURCE]` or `[TOOL]` before the work is acted on.
+These are provenance tags, not correctness verdicts. Resolve unsupported recall
+through the relevant source or evidence before relying on it in the verification.
 
 `[DERIVATION]` is not `[RECALL]`: it exposes a checkable chain of reasoning. But
 it is not `[TOOL]` merely because some algebra was typed into a notebook. A tool
@@ -108,8 +109,9 @@ run supports exactly the finite computation it performed; it does not
 independently establish the general argument that selected or interpreted that
 computation.
 
-The classification comes from the **transcript**, not from the prose. A sentence
-that reads like a citation is not a citation; look for the tool call.
+Ground the classification in actual inspected material, recorded runs, or
+supplied host evidence. A sentence that claims a tool ran is insufficient.
+Previously supplied evidence need not produce a new tool call to remain usable.
 
 ## Step 3 — Pick the route that actually settles it
 
@@ -118,7 +120,7 @@ route to what the claim rests on:
 
 | the claim rests on | settle it by |
 |---|---|
-| a computation someone ran | **reproduce it** — run the command the document says produces it |
+| a computation someone ran | **reproduce or independently reconstruct the relevant calculation** — compare its inputs, model, and output with the published claim |
 | what a document says | **open the document** — `e-print-mcp_eprint_fulltext`, `nist-mcp_csrc_fulltext`, the body not the abstract |
 | a definition being met | **discharge the obligations** — the `analyze-paper` skill's `reference/` set lists them per notion |
 | an attack working | **hand it to `validate-attack`** — which decides whether analysis or code settles it |
@@ -128,20 +130,22 @@ route to what the claim rests on:
 
 When the route *is* reproduction, two checks catch most of what goes wrong:
 
-- **Does any command produce this number at all?** A figure with no generating
-  command is unsupported no matter how plausible.
+- **Can the reported calculation be reconstructed?** Missing code makes a result
+  unreproduced here; it does not prove it false. A mathematical value may be
+  established by an exact derivation. Measured performance needs measurement evidence.
 - **Do the inputs match the claim's inputs?** A number computed for one parameter
   set and reported for another is the single most common real defect here.
 
-Pick the cheapest route that would actually change your mind. A route that cannot
-refute the claim is not settling it, it is confirming it.
+Choose a route capable of addressing the claimed evidence or suspected error.
+Matching one displayed number does not check the proof or all dependent claims.
 
 For a new derivation, make independence concrete. Give the checker the exact
 claim, target definitions, assumptions, and candidate artifact, then ask it to
 find the shortest refutation or check the argument through a separate route.
-`CRYPTO_VERIFIER` may do this in a fresh delegation. It must not repair a missing
-step, strengthen a weak lemma, or optimise the proposed attack: a gap is a failed
-check, not an invitation to co-author a better candidate.
+Use an available independent checking route. Give a verdict on the fixed
+argument; do not silently repair a missing step before judging it. A gap leaves
+the claim unresolved unless it supplies a contradiction. A separately requested
+repair should identify the changed argument and preserve the original verdict.
 
 Record the original reasoning as `derivation` evidence and the separate result
 as `independent-check` evidence. The latter names which route was used and what
@@ -152,8 +156,9 @@ same assumptions.
 
 ## Step 4 — Work the failure taxonomy
 
-These are not hypotheticals. Every one is drawn from work in this repository, and
-each cost real time or shipped a wrong answer.
+These historical examples motivate checks when the corresponding failure mode
+is relevant. They do not require opening unrelated sources or rerunning unrelated
+calculations for every assigned claim.
 
 **1. Uncited recall of reference data.** Parameter tables, published costs, which
 scheme a name refers to. *Observed:* a probe's "fresh" parameters were a
@@ -172,8 +177,9 @@ over a conference version; they differ.
 **3. Stale derived numbers after an input change.** *Observed:* changing a
 parameter set and recomputing some outputs but not others left a key-recovery
 figure 10.2 bits wrong, inside a rubric with a ±0.5 tolerance. **Check:** when an
-input changes, re-run *everything* downstream, not the numbers you remember
-depending on it.
+input changes, identify every affected dependency and recompute those conclusions.
+Retain checks whose inputs and assumptions did not change; if dependencies are
+uncertain, state which additional review is needed to establish their scope.
 
 **4. Unit or model mismatch in a comparison.** *Observed:* "the structure costs
 60 bits" subtracted a field-multiplication count over `F_8` from a bit-operation
@@ -199,16 +205,18 @@ body, an exception without its message, a non-zero exit without stderr — each 
 a diagnosis discarded at the moment it was free. This is worse than failure mode
 5: there the evidence was never gathered; here it was in hand and destroyed.
 
-**7. Verification that shares the asserter's sources.** *Observed:* an
-adversarial review refuted 19 findings of 19; two were correct, one fatally. The
-refuter had no channel the author lacked. **Check:** a verifier must open a
-source the author did not. A second opinion from the same library is not
-verification.
+**7. Verification that repeats the asserter's unchecked premise.** A different
+reader or citation does not automatically supply independent evidence. **Check:**
+identify the error your route could expose. Independently reconstructing an
+argument from the same paper or specification is valid checking. Open another
+source when it addresses a specific uncertainty; source novelty is not a gate.
 
 **8. Silent aggregate failure.** *Observed twice:* one estimator family raising
 discarded eight valid results, and the failure formatted as a tuple rather than
 an error. **Check:** any "cheapest of N" states what was skipped. A minimum over
-a silently reduced set is a lower bound wearing an answer's clothes.
+a reduced set is an upper bound on the minimum over the full set, provided the
+retained costs are valid and comparable. State omitted cases; invalid estimates
+may support no bound at all.
 
 ## Step 5 — Report
 
@@ -217,6 +225,10 @@ One of three verdicts, and the third is a real answer:
 - **supported** — with the route that settled it and the evidence it produced
 - **refuted** — with the same
 - **unresolved** — with **what would settle it and why that was not done**
+
+State the question to which the verdict applies. “The paper states X” can be
+supported while “X is correct” remains unresolved. Name reused evidence, fresh
+checks, unchecked dependencies, and the exact conclusion they support.
 
 Do not round `unresolved` to true or false. Forcing uncertainty into a verdict is
 how the 19-of-19 refutation happened, and an unresolved claim with a named next
@@ -276,7 +288,7 @@ that way (measured, 1193 of 1200).
 
 `looked_in` is a list of **channels**, not a mood. "Searched ePrint" and "searched
 ePrint, the NIST corpus, and the web" are different findings,
-and the second is the one that licenses a negative.
+and each supports only a negative about its stated search scope.
 
 Do not write a derivation-only candidate to durable knowledge. Keep it in the
 live plan and the versioned discovery artifact until the `independent-check`
@@ -288,15 +300,17 @@ extra gate applies when the claimed result is newly derived.
 - **It does not decide which claims matter.** It takes one. Working out what a
   document's load-bearing claims are is `analyze-paper`, and keeping them apart is
   what keeps this bounded.
-- **It does not judge whether the analysis is good.** A well-sourced wrong
-  conclusion still fails review; that is `crypto-review`'s job.
+- **It checks reasoning when correctness depends on it.** A well-sourced claim
+  can still be false. A broader review of the analysis belongs to `crypto-review`.
 - **It does not promote a derivation by repeating it.** New theoretical work
   needs a genuinely separate checking route before it becomes durable knowledge.
-- **It does not require deriving what can be looked up.** Retrieval is the
-  designed path.
-- **It does not report "verified".** Computation falsifies; it does not verify.
-  For a claim settled by running something, the vocabulary is "no counterexample
-  at n ≤ N", with N stated.
+- **It distinguishes retrieval from verification.** Retrieval can settle an
+  attribution or supply compatible prior verification. A paper's assertion
+  alone does not settle an assigned correctness check of its reasoning.
+- **It reports the exact evidence scope.** A checked witness or exhaustive finite
+  computation can verify a scoped predicate. Random sampling and unsuccessful
+  searches do not establish a universal claim. Use
+  [evidence interpretation](../investigate/reference/evidence-interpretation.md).
 - **It does not hide anything.** There is no answer key, nothing is scored
   against a secret, and the same work can be audited repeatedly without being
   spent.

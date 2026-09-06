@@ -1,6 +1,6 @@
 ---
 name: analyze-paper
-description: Work out whether a paper proves what it claims — separate the informal claim from the theorem, name the notion and the model, run the mismatch checklist, carry the reduction's loss into the concrete parameters, and say which claims are worth settling. Use when handed a paper, a preprint, or a security argument and asked whether it holds, what it threatens, or whether a scheme's claimed level follows from it.
+description: Work out whether a paper proves what it claims — separate the informal claim from the theorem, name the notion and the model, run the mismatch checklist, carry the reduction's loss into the concrete parameters, and say which claims are worth settling. Use when asked to audit whether a paper or security argument supports its claims. Reading or applying a published result alone does not assign this audit.
 license: Apache-2.0
 ---
 
@@ -17,6 +17,11 @@ The distance between those two is where this skill works. It is not a hunt for
 errors — most papers are correct and still support a weaker claim than the one
 that gets repeated about them. **The commonest real finding is not a wrong proof;
 it is a right proof of a different statement.**
+
+Read [paper use and verification](../investigate/reference/paper-use-and-verification.md)
+when distinguishing this audit from source interpretation or use of a theorem.
+Keep the audit rigorous within its assigned scope; an inspected source alone
+establishes an attribution, not its mathematical correctness.
 
 ## Which skill this is
 
@@ -59,8 +64,10 @@ nist-mcp_search_csrc            is the scheme already broken? round reports
 firecrawl-mcp_firecrawl_search  the forum post or comment that is not a paper
 ```
 
-A recorded gap is as useful as an entry: it says a door is known to be closed and
-which one. The round reports and a web search are both worth the call because **a
+A recorded gap describes the scope and outcome of an earlier attempt. A search
+miss or unavailable tool is not a mathematical obstruction; reconsider it when
+the source, model, or capability changes. The round reports and a web search
+can be relevant because **a
 large share of competition cryptanalysis was never a paper** — it was a
 `pqc-forum` post or an official comment, and `e-print-mcp_search_eprint` will not
 find it.
@@ -76,8 +83,8 @@ An abstract identifies a result; it rarely states one precisely enough to audit.
 A reduction remembered rather than read is the failure this workbench is built
 against — this project once derived a cost model from an abstract, got the
 reduction one equation wrong, and found out only when a human handed over the
-PDF. **First fetch takes up to about two minutes** (a 60s queue poll plus a
-20–40s browser fetch); every read after that is instant.
+PDF. Discover the available retrieval capability; historical fetch timings are
+not guarantees for the current host.
 
 Write the informal claims down verbatim, from the abstract, the introduction, and
 any conclusion. These are the sentences that will be quoted about this paper.
@@ -197,8 +204,9 @@ absent — that is what licenses the next reader to skip the check.
   run.
 - **It does not decide whether the scheme is secure.** A paper is one input.
   `analyze-scheme` owns the scheme.
-- **It does not report "verified".** Reading a proof does not verify it, and
-  computation falsifies rather than verifies. The vocabulary is "no gap found
-  against the twelve checks", with the checks named.
+- **It reports the scope actually checked.** Source reading establishes what was
+  stated; a proof audit or exact finite check can establish more within its
+  scope. Do not label a whole paper verified after a bounded checklist. Use
+  [evidence interpretation](../investigate/reference/evidence-interpretation.md).
 - **It does not treat a correct proof as a strong result.** Correct and weak is
   the normal case, and saying so is the deliverable.

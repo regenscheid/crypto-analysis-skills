@@ -8,6 +8,8 @@ import json
 import sys
 from pathlib import Path
 
+from trace_evidence import successful_skill_loads
+
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 
@@ -18,7 +20,7 @@ def main() -> int:
     parser.add_argument(
         "--trace",
         type=Path,
-        help="optional runtime trace that should contain a cscience-skill-probe call",
+        help="offline normalized JSON load events (tests/evaluation-contract.md)",
     )
     parser.add_argument(
         "--cases",
@@ -39,9 +41,12 @@ def main() -> int:
     if actual != expected:
         failures.append("load/adherence: response does not match the body-only record")
     if args.trace:
-        trace = args.trace.read_text(encoding="utf-8", errors="replace")
-        if "cscience-skill-probe" not in trace:
-            failures.append("discovery: runtime trace does not name cscience-skill-probe")
+        try:
+            loaded = successful_skill_loads(args.trace)
+            if "cscience-skill-probe" not in loaded:
+                failures.append("load evidence: no successful cscience-skill-probe event")
+        except ValueError as exc:
+            failures.append(f"load evidence: {exc}")
 
     if failures:
         for failure in failures:
@@ -49,9 +54,9 @@ def main() -> int:
         return 1
 
     if args.trace:
-        print("PASS discovery, body loading, and adherence")
+        print("PASS exact-response adherence and recorded load-event evidence; trace authenticity not assessed")
     else:
-        print("PASS body loading and adherence; discovery trace not checked")
+        print("PASS exact-response adherence; skill loading not assessed without trace evidence")
     return 0
 
 

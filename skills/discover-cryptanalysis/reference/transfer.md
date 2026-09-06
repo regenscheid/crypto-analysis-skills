@@ -81,7 +81,9 @@ For `M_l(F_q)` with `l > 1`:
 Accept the transfer only after constructing an actual embedded commutative
 field or subalgebra, proving that every operation used by the source result
 stays inside it, and mapping the target distribution into that image. Otherwise
-mark the candidate `falsified` with “multiplicative structure not preserved.”
+mark the multiplicative-structure obligation `unchecked` unless a concrete
+counterexample proves that it fails. Failure to establish closure is not proof
+that closure is absent.
 
 ### Other recurring mismatches
 
@@ -116,33 +118,29 @@ Use the least expensive decisive test:
   bias, and conditioning; use a null model when computation helps.
 - **Tiny positive case:** plant the required structure and confirm the mechanism
   detects or exploits it.
-- **Negative control:** remove one load-bearing assumption and require failure.
+- **Negative control:** use a comparison with a justified prediction. Removing
+  a sufficient assumption does not necessarily force failure.
 - **Known-answer test:** reproduce a published result before trusting a new
   model or implementation.
 - **Concrete-cost test:** include constants, memory, data, and success
   probability; find the crossover rather than quoting asymptotics.
 
 Preserve stdout, stderr, parameters, versions, seeds, and failure messages for
-computational tests. Treat a clean failure as the candidate's result.
+computational tests. Diagnose what a failure establishes: the mathematical
+claim, its mapping, and the implementation can have different failure modes.
 
-## Rank without laundering failed assumptions
+## Separate established correspondence from an open question
 
-Apply hard gates before ranking:
+An established transferred result needs the required object/operation mapping,
+assumptions, and implication. State a missing correspondence as unresolved;
+state a contradiction as defeating the particular argument that depends on it.
+Neither belongs in an unconditional established conclusion.
 
-1. preserve the source result's object and operation
-2. satisfy its load-bearing assumptions
-3. imply the stated attack objective in the required direction
-
-Falsify any candidate that fails a gate. Among survivors, rank:
-
-1. strength and directness of the predicted consequence
-2. cheapness and conclusiveness of the next falsifier
-3. feasibility at the target parameters
-4. independence from mechanisms already represented in the register
-5. completeness of the prior-application search
-
-Do not combine these into a pseudo-precise numerical score. Keep each reason
-visible so another cryptographer can challenge the ordering.
+These are requirements for a result, not a gate on which mathematical questions
+may appear in a research proposal. A supporting lemma or conditional formulation
+may be the next useful product before a decisive test exists. Use
+[the research workflow](../../investigate/reference/mathematical-research-workflow.md)
+for proposal breadth, research horizons, and meaningful intermediate progress.
 
 ## Record transfer provenance
 

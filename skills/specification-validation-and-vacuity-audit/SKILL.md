@@ -85,4 +85,4 @@ This skill is an optional specialist route. Completion of an ordinary cryptanaly
 - **DILITHIUM-EC23** — [Fixing and Mechanizing the Security Proof of Fiat-Shamir with Aborts and Dilithium](https://eprint.iacr.org/2023/246) (2023) — Manuel Barbosa et al.. `research-paper`.
 - **LEAN-FAQ** — [Lean FAQ](https://lean-lang.org/faq/) (2026) — Lean project. `official-documentation`.
 
-Full source metadata, review date, and reverse skill links are in `references/REFERENCES.md` and the pack-level `REFERENCES.md`.
+Bundled source metadata is in `references/REFERENCES.md`.

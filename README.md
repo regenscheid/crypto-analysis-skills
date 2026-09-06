@@ -11,10 +11,11 @@ do not have to route across this catalog.
 
 ## What is included
 
-The current installation contains 161 skills:
+The current installation contains 162 skills:
 
-- 10 original workbench skills for investigation, scheme and paper analysis,
-  attack validation, costing, review, durable knowledge, and Magma;
+- 11 core skills for investigation, scheme and paper analysis,
+  attack validation, mathematical development, costing, review, knowledge helpers,
+  and Magma;
 - 29 symmetric-cryptanalysis skills;
 - 59 public-key cryptanalysis skills;
 - 63 formal-method and theorem-prover skills.
@@ -27,6 +28,25 @@ The formal-method pack is installed with the rest of the catalog but is routed
 through `formal-methods-router`. Ordinary cryptanalysis does not have to invoke
 a prover merely because the skills are available.
 
+## Current scope
+
+Claude Science already imports the skills, accesses MCP servers, and manages
+project knowledge. This repository does not introduce another knowledge store,
+checkpoint system, or harness change. Physical security is outside the current
+research scope. Catalog updates are deliberate maintainer edits; investigations
+do not automatically submit or publish records.
+
+`mathematical-research-development` supports ordinary mathematical questions and
+useful conditional or partial results. Its development reference addresses
+alternative representations, carrying a proof beyond an outline, and reasons to
+repeat an established check. Shared evidence guidance distinguishes proofs, finite
+verification, empirical observations, and unresolved questions.
+
+Contribution guidance separates routine applications and new evaluations from
+substantive extensions and potentially new methods. Applying a known result to
+another parameter set can matter without supplying a novel mechanism. See
+`tests/mathematical-research-cases.json` for manual behavior-evaluation cases.
+
 ## Control plane
 
 `investigate` is the default entry skill for substantive cryptographic work. It:
@@ -34,16 +54,24 @@ a prover merely because the skills are available.
 1. selects `ASSESS`, `DISCOVER`, `VALIDATE`, or `FORMALIZE` mode;
 2. loads the symmetric, public-key, or formal-method orchestrator;
 3. selects applicable technique skills explicitly;
-4. records source grounding, a skill trace, and a complete attack-family
-   coverage ledger;
+4. records source grounding and a skill trace, with family coverage when a
+   scheme assessment is part of the assignment;
 5. executes the investigation rather than stopping after planning or literature
    review;
 6. applies mode-specific completion gates before concluding.
 
-Requests containing “find issues,” “look hard,” “weakness,” “new attack,” or
-similar language route to `DISCOVER`. That mode requires structurally distinct
-candidates, cheap falsification, explicit unchecked areas, and bounded handoff
-of survivors for costing or independent validation.
+Infer modes from the requested work; keywords alone do not select `DISCOVER`.
+DISCOVER distinguishes a requested research proposal from development of a
+selected mathematical question. There is no fixed five/two agenda limit or
+requirement for a cheap falsifier before mathematical work. Meaningful conditional
+results and supporting lemmas count as progress; complete scheme coverage is a
+separate assessment responsibility.
+
+`verify-claim` checks whether an assigned paper claim is correct. Source
+interpretation and use of a published ingredient do not automatically invoke a
+paper audit. Statistical evidence guidance is directly available for ordinary
+research without formalization. The catalog supplies four editorial reading
+guides through its existing read tools; source-inspection limits remain explicit.
 
 The main control skills are intentionally short. Detailed domain checklists,
 platform behavior, schemas, and references remain on demand.
@@ -56,7 +84,7 @@ selects a skill.
 
 | Path | Role | Install into Claude Science? | Editing policy |
 |---|---|---:|---|
-| `skills/` | The 161 runtime Agent Skills and their bundled resources | Yes | Edit core skills deliberately; refresh imported skills from their source packs |
+| `skills/` | The 162 runtime Agent Skills and their bundled resources | Yes | Edit core skills deliberately; refresh imported skills from their source packs |
 | `config/` | Committed machine-readable manifests and cross-repository contracts | No | Generate with repository tools; do not hand-edit |
 | `reports/` | Committed, regenerated inspection output | No | Generate with `audit_skills.py`; do not treat as authoritative source |
 | `tests/` | Runtime probes and routing acceptance cases | Only install the probe temporarily when testing | Edit when adding a failure case or changing an output contract |
@@ -210,8 +238,8 @@ tool can produce it as disposable build output without changing runtime behavior
 |---|---|---|---|
 | `import_skill_packs.py` | Extracted packs under `.agents/`, or installed skills when checking | Copies self-contained skills into `skills/`; writes, verifies, or explicitly refreshes installed hashes in `config/imported-skills.json` | Performing a fresh import, verifying imported trees, or recording a reviewed local divergence |
 | `audit_skills.py` | `skills/`, routing cases, the Claude Science adapter contract, and the import manifest | Writes `config/skill-registry.json` and `reports/skill-inventory.json`; checks names, descriptions, links, collisions, routing identifiers, and required adapter API/behavior text | After any skill change and before committing |
-| `check_cscience_probe.py` | A captured CScience response and optional runtime trace | Pass/fail result for discovery, body loading, and exact adherence | Testing a particular model alias and effort configuration |
-| `score_routing_response.py` | A routing case, captured investigation response, and optional trace | Pass/fail result for mode, actual skill trace, coverage, and completion behavior | Comparing Claude/GPT behavior or reproducing a routing regression |
+| `check_cscience_probe.py` | A captured CScience response and optional runtime trace | Exact-response check plus optional normalized load-event evidence; see `tests/evaluation-contract.md` | Testing a particular model alias and effort configuration |
+| `score_routing_response.py` | A routing case, captured investigation response, and optional trace | Report-format smoke check plus optional normalized load-event evidence; scientific progress is not assessed | Comparing Claude/GPT behavior or reproducing a routing regression |
 
 Python `__pycache__/` directories are disposable interpreter caches and are
 ignored by version control.
@@ -219,9 +247,10 @@ ignored by version control.
 ### `tests/`
 
 `tests/cscience-skill-probe/` is a deliberately tiny diagnostic Agent Skill. Its
-body contains a marker not present in its description. A correct response shows
-that the model loaded the body; a runtime trace additionally shows that the host
-actually invoked the skill.
+body contains a marker not present in its description. A correct response is
+evidence of body-content adherence. It does not prove how the body was obtained;
+recorded successful load events are a separate check. Plain-text skill mentions
+are never load-event evidence. See `tests/evaluation-contract.md`.
 
 `tests/cscience-skill-probe-cases.json` contains the implicit and explicit probe
 prompts. `tests/routing-cases.json` contains representative cryptanalysis prompts
@@ -268,13 +297,17 @@ the diff, and then accept the intended changes into `skills/` and the manifest.
 ## Attack catalog boundary
 
 The cryptographic attack catalog is not installed as Agent Skills and is not
-copied into this repository. It is reference input for identifier and coverage
-checks and is intended to become an MCP server.
+copied into this repository. It supplies changing reference material through
+the configured read-only MCP
+server. See `skills/investigate/reference/catalog-use.md` for source, scope,
+provenance, and skill-link interpretation.
 
-Both systems use one canonical identifier: the exact `name` in a skill's
-`SKILL.md` frontmatter. Attack records should store those values directly in a
-`skill_ids` array. The catalog derives its reverse skill-to-attack index from the
-records instead of maintaining a second hand-written crosswalk.
+The runtime canonical identifier is the exact `name` in a skill's
+`SKILL.md` frontmatter. New catalog references should use that exact runtime name.
+Existing catalog records use domain-qualified `skill_refs`; most resolve to an unprefixed runtime
+name, while shared workflows require the domain prefix in their runtime name.
+Resolve those through the catalog's explicit compatibility mapping and preserve originals;
+do not treat historical storage syntax as an unknown runtime skill.
 
 `config/skill-registry.json` is the validation boundary. Adding or changing an
 attack does not change the registry. Adding or renaming a skill regenerates the
@@ -283,26 +316,29 @@ is no runtime alias layer.
 
 ### Catalog-side use
 
-Store direct canonical IDs on each attack record:
+For new editorial subject links, use exact canonical IDs while preserving the
+seed's historical records and references. The catalog's curation supplement uses:
 
 ```json
 {
-  "attack_id": "ATT-PQC-...",
-  "skill_ids": [
-    "ntru-and-falcon-analysis",
-    "public-key-attack-complexity-and-success-auditor"
-  ]
+  "attack_id": "ATT-PKE-2011-DOOM",
+  "skill_id": "multi-user-multi-target-and-batch-analysis",
+  "role": "subject_reference",
+  "reason": "The existing record concerns multiple instances."
 }
 ```
 
-Derive the reverse `skill_id → attacks` index from those records. Do not maintain
-a separate hand-written crosswalk, because it can disagree with the records.
+Derive reverse listings from seed references plus the editorial supplement. Do
+not maintain a duplicate complete crosswalk. Subject relevance is not a required
+skill invocation or a new claim about an attack.
 
 Because the skills and attack catalog live in separate repositories, the catalog
 should vendor or otherwise pin a released `skill-registry.json` together with
 the source repository commit or tag. Catalog validation should fail for unknown,
-duplicate, or legacy namespaced IDs. It may report—but should not necessarily
-fail on—skills with no attacks and attacks with no mapped skill.
+duplicate, or unresolved IDs. Explicitly mapped historical namespace forms
+remain compatible and should report their canonical runtime ID. Skills without
+linked examples and records without mapped skills can be reported as coverage
+gaps; neither needs to fail validation.
 
 The catalog can grow continuously against the same pinned registry. A registry
 sync is required only when the set of canonical skill IDs changes. The MCP should

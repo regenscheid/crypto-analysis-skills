@@ -23,13 +23,32 @@ The task asks for an evaluation of a symmetric primitive, mode, construction, pr
 
 When an input is missing, record it as an explicit uncertainty and proceed with the narrowest defensible interpretation. Do not silently choose a favorable model.
 
+## Mathematical research assignment
+
+For a research proposal or a stated mathematical question, use
+[the research workflow](../investigate/reference/mathematical-research-workflow.md).
+The full evaluation procedure below applies when that evaluation is requested;
+a proposal or lemma does not require completing every assessment artifact.
+Use supplied assumptions and prior results at their stated evidence strength.
+A catalog link or published ingredient does not itself assign a paper audit;
+see [paper use and verification](../investigate/reference/paper-use-and-verification.md).
+
+## Apply research judgment after delegation
+
+Before adopting delegated cryptanalytic work, the main agent applies
+[orchestrator review](../investigate/reference/delegated-cryptanalysis-review.md)
+to omissions, premature stopping, connections across findings, and overlooked
+significance. This applies to all delegated cryptanalysis, not only proof work.
+Use the dedicated reviewer for correctness checks; its approval does not establish
+that the research went far enough or that important implications were recognized.
+
 ## Operating procedure
 
 1. **Create or refresh the evaluation charter.** Record target names, exact artifacts and hashes/commits, parameter sets, claims, exclusions, allowed attacker powers, and the threshold for calling a result reproduced or independently verified.
 2. **Freeze the version manifest.** List every specification, paper revision, code repository/commit, compiler/interpreter, solver, and test-vector source. Detect version skew before comparing results.
 3. **Invoke `security-model-and-claim-formalizer`.** Require one claim–adversary row for every materially distinct notion or access model.
 4. **Invoke `primitive-structure-and-assumption-mapper`.** Build the design graph before selecting attacks. Include state geometry, round functions, nonlinear components, linear layers, constants, key/tweak/nonce injection, initialization/finalization, and security assumptions.
-5. **Invoke `generic-baseline-calculator`.** Establish the baseline table before accepting “faster than generic,” “practical,” or “break” language.
+5. **Establish generic baselines.** Use a compatible checked baseline table, or invoke `generic-baseline-calculator` for affected dependencies or an explicitly assigned fresh validation, before accepting “faster than generic,” “practical,” or “break” language.
 6. **Audit proofs and bounds when present.** Invoke `security-proof-and-bound-auditor` for theorem-backed claims, reduction-based bounds, or concrete security tables. Keep proof gaps separate from attacks unless a gap is actually exploitable.
 7. **Build an attack surface map.** Map each design feature and claim to plausible technique skills. Select techniques by structural prerequisites, not by popularity.
 8. **Generate and triage hypotheses.** Invoke `symmetric-attack-hypothesis-generator-and-triage`; require a structural mechanism, prerequisites, expected signal, minimal decisive test, falsifier, and rough resource band for every candidate.
@@ -68,7 +87,7 @@ The final narrative must be generated from those artifacts, not from memory or a
 - Bind every statement to the exact target artifact, version, parameters, round/phase scope, and adversary model.
 - Label a result accurately as a property, trail, differential/linear hull, distinguisher, recovery attack, forgery, collision, proof gap, or implementation failure.
 - Never describe a reduced-round, weak-key, related-key, nonce-misuse, chosen-ciphertext, Q2, or component-only result as a full-scheme break without the corresponding full-scheme model.
-- Recompute data, time, memory, preprocessing, communication, verification, and success probability; do not copy headline exponents without their units and assumptions.
+- For a new or independently verified quantitative conclusion, account for relevant data, time, memory, preprocessing, communication, verification, and success probability. Preserve source units and assumptions; distinguish attributed quantities from independent checks and reuse compatible checked inputs.
 - Preserve contradictory evidence, failed reproductions, corrections, and source-version chronology.
 - Treat solver timeout, bounded search failure, and absence of a known attack as inconclusive—not as evidence of security.
 - Mark every inference that is not directly established by a proof, derivation, experiment, or cited source.
