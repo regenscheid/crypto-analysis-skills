@@ -43,20 +43,13 @@ Skip planning for a single theorem checked against a single notion. Follow
 
 ## Step 0 — Read what is already known
 
+Follow [workbench-knowledge's project setup](../workbench-knowledge/SKILL.md#read-it-first)
+to import its helpers and resolve the stable `project_dir` before reading or
+writing research records.
+
 ```python
-import sys, os
-# knowledge.py ships with the workbench-knowledge skill. Find it whether this
-# repo is the CWD, the skills are published as flat siblings, or CRYPTO_SKILLS
-# names the checkout. Set CRYPTO_SKILLS if none of these resolve.
-for _p in (os.environ.get("CRYPTO_SKILLS", ""),
-           "skills/workbench-knowledge/scripts",
-           "../workbench-knowledge/scripts",
-           os.path.expanduser("~/crypto-analysis-skills/skills/workbench-knowledge/scripts")):
-    _c = os.path.join(_p, "scripts") if _p and _p.endswith("workbench-knowledge") else _p
-    if _c and os.path.isfile(os.path.join(_c, "knowledge.py")):
-        sys.path.insert(0, _c); break
 from knowledge import read_all
-print(read_all())     # knowledge, gaps and lessons — all of it, it is small
+print(read_all(project_dir=project_dir))  # knowledge, gaps, and lessons for this project
 ```
 
 ```
@@ -172,22 +165,15 @@ opening the bibliography.
 
 ## Write back
 
+Use the same `project_dir` resolved at Step 0.
+
 ```python
-import sys, os
-# knowledge.py ships with the workbench-knowledge skill. Find it whether this
-# repo is the CWD, the skills are published as flat siblings, or CRYPTO_SKILLS
-# names the checkout. Set CRYPTO_SKILLS if none of these resolve.
-for _p in (os.environ.get("CRYPTO_SKILLS", ""),
-           "skills/workbench-knowledge/scripts",
-           "../workbench-knowledge/scripts",
-           os.path.expanduser("~/crypto-analysis-skills/skills/workbench-knowledge/scripts")):
-    _c = os.path.join(_p, "scripts") if _p and _p.endswith("workbench-knowledge") else _p
-    if _c and os.path.isfile(os.path.join(_c, "knowledge.py")):
-        sys.path.insert(0, _c); break
 from knowledge import add_entry, add_gap
 add_entry(statement="…", kind="notion",
-          evidence=[{"kind": "paper", "ref": "…", "note": "theorem 3, ROM"}])
-add_gap(question="…", looked_in=["ePrint", "NIST", "firecrawl", "web"], finding="…")
+          evidence=[{"kind": "paper", "ref": "…", "note": "theorem 3, ROM"}],
+          project_dir=project_dir)
+add_gap(question="…", looked_in=["ePrint", "NIST", "firecrawl", "web"],
+        finding="…", project_dir=project_dir)
 ```
 
 These **append** — never rewrite those files, and never reach for `edit_file` to

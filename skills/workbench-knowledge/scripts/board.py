@@ -23,7 +23,7 @@ import uuid
 
 EVENT_TYPES = frozenset({
     "idea", "outcome", "finding", "dismissal", "lemma_proposal",
-    "promote", "close_lane", "sota_row",
+    "critique", "promote", "close_lane", "sota_row",
 })
 IDEA_STATES = frozenset({"open", "resolved", "obstructed", "split"})
 TERMINAL_STATES = IDEA_STATES - {"open"}
@@ -78,6 +78,11 @@ def project_dir_for_id(project_id: str, base: str | os.PathLike[str] | None = No
 def new_idea_id() -> str:
     """Generate a project-wide idea identifier without coordinating writers."""
     return "idea-" + uuid.uuid4().hex
+
+
+def new_lemma_id() -> str:
+    """Generate a project-wide lemma identifier without coordinating writers."""
+    return "lemma-" + uuid.uuid4().hex
 
 
 def _required_text(payload: dict, key: str) -> str:
@@ -195,6 +200,15 @@ def _validate_event(event_type: str, payload: dict) -> None:
         _validate_dismissal(payload)
     elif event_type == "lemma_proposal":
         _validate_lemma(payload)
+    elif event_type == "critique":
+        _safe_id(payload.get("pass_id"), "payload.pass_id")
+        _required_text(payload, "critique_ref")
+        _required_text(payload, "summary")
+        idea_ids = _list(payload, "idea_ids")
+        for idea_id in idea_ids:
+            _safe_id(idea_id, "payload.idea_ids item")
+        if not idea_ids or len(idea_ids) != len(set(idea_ids)):
+            raise BoardError("critique requires distinct nonempty idea_ids")
     elif event_type == "promote":
         kind = payload.get("kind")
         _required_text(payload, "critique_ref")
@@ -382,8 +396,9 @@ def board_snapshot(project_dir: str | os.PathLike[str],
     ideas: dict[str, dict] = {}
     findings: list[dict] = []
     dismissals: list[dict] = []
-    lemma_proposals: dict[str, dict] = {}
-    lemmas: dict[str, dict] = {}
+    lemma_proposals: list[dict] = []
+    lemmas: list[dict] = []
+    critiques: list[dict] = []
     closed_lanes: dict[str, dict] = {}
     sota_rows: dict[str, dict] = {}
 
@@ -393,6 +408,7 @@ def board_snapshot(project_dir: str | os.PathLike[str],
                               "origin_session_id": session, "details": {},
                               "defined": False,
                               "reported_states": [], "notebook_paths": [],
+                              "critique_refs": [],
                               "child_idea_ids": []}
         return ideas[idea_id]
 
@@ -418,13 +434,18 @@ def board_snapshot(project_dir: str | os.PathLike[str],
             for item in payload.get("dismissals", []):
                 dismissals.append({**event_ref, "idea_id": payload["idea_id"], "dismissal": item})
             for item in payload.get("lemma_proposals", []):
-                lemma_proposals[item["lemma_id"]] = {**event_ref, "lemma": item}
+                lemma_proposals.append({**event_ref, "lemma": item})
         elif kind == "finding":
             findings.append({**event_ref, "idea_id": payload["idea_id"], "finding": payload})
         elif kind == "dismissal":
             dismissals.append({**event_ref, "idea_id": payload["idea_id"], "dismissal": payload})
         elif kind == "lemma_proposal":
-            lemma_proposals[payload["lemma_id"]] = {**event_ref, "lemma": payload}
+            lemma_proposals.append({**event_ref, "lemma": payload})
+        elif kind == "critique":
+            critiques.append({**event_ref, **payload})
+            for idea_id in payload["idea_ids"]:
+                idea = idea_record(idea_id, session)
+                idea["critique_refs"].append(payload["critique_ref"])
         elif kind == "promote":
             if payload["kind"] == "idea_state":
                 idea = idea_record(payload["idea_id"], session)
@@ -437,9 +458,9 @@ def board_snapshot(project_dir: str | os.PathLike[str],
                         child["details"].setdefault("parent_idea_id", payload["idea_id"])
             else:
                 lemma = payload["lemma"]
-                lemmas[lemma["lemma_id"]] = {**event_ref, "lemma": lemma,
-                                               "evidence": payload["evidence"],
-                                               "critique_ref": payload["critique_ref"]}
+                lemmas.append({**event_ref, "lemma": lemma,
+                               "evidence": payload["evidence"],
+                               "critique_ref": payload["critique_ref"]})
         elif kind == "close_lane":
             closed_lanes[payload["lane_id"]] = {**event_ref, **payload}
         elif kind == "sota_row":
@@ -449,6 +470,15 @@ def board_snapshot(project_dir: str | os.PathLike[str],
                        if item["dismissal"]["reason_class"] != "demonstrated_obstruction"]
     open_ideas = [idea for idea in ideas.values() if idea["state"] == "open"]
     ready_open_ideas = [idea for idea in open_ideas if idea["defined"]]
+    def conflicting_lemma_ids(records: list[dict]) -> list[str]:
+        by_id: dict[str, set[str]] = {}
+        for record in records:
+            lemma = record["lemma"]
+            by_id.setdefault(lemma["lemma_id"], set()).add(
+                json.dumps(lemma, sort_keys=True, ensure_ascii=False))
+        return sorted(lemma_id for lemma_id, versions in by_id.items()
+                      if len(versions) > 1)
+
     return {"project_dir": str(project), "session_id": session_id,
             "event_count": len(events), "ideas": list(ideas.values()),
             "open_ideas": open_ideas, "ready_open_ideas": ready_open_ideas,
@@ -457,8 +487,11 @@ def board_snapshot(project_dir: str | os.PathLike[str],
                                         and ideas[item["idea_id"]]["state"] == "open"}),
             "findings": findings, "dismissals": dismissals,
             "soft_dismissals": soft_dismissals,
-            "lemma_proposals": list(lemma_proposals.values()),
-            "lemmas": list(lemmas.values()),
+            "lemma_proposals": lemma_proposals,
+            "lemma_proposal_conflicts": conflicting_lemma_ids(lemma_proposals),
+            "lemmas": lemmas,
+            "promoted_lemma_conflicts": conflicting_lemma_ids(lemmas),
+            "critiques": critiques,
             "closed_lanes": list(closed_lanes.values()),
             "sota_rows": list(sota_rows.values())}
 

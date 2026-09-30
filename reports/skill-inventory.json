@@ -2,7 +2,7 @@
   "description_words": 4901,
   "errors": 0,
   "schema_version": 1,
-  "skill_body_lines": 13629,
+  "skill_body_lines": 13631,
   "skill_count": 162,
   "skills": [
     {
@@ -25,7 +25,7 @@
       "description": "Work out whether a paper proves what it claims \u2014 separate the informal claim from the theorem, name the notion and the model, run the mismatch checklist, carry the reduction's loss into the concrete parameters, and say which claims are worth settling. Use when asked to audit whether a paper or security argument supports its claims. Reading or applying a published result alone does not assign this audit.",
       "description_words": 68,
       "domain": "core",
-      "lines": 212,
+      "lines": 198,
       "missing_relative_links": [],
       "name": "analyze-paper"
     },
@@ -217,7 +217,7 @@
       "description": "Produce a concrete cost for a target nothing has costed yet \u2014 search what is already known, find and read a reduction to a problem that IS costed, instantiate it with real parameters, verify at toy scale, and write the result back as an entry or a gap. Use when an attack's structure is understood but its cost cannot be obtained.",
       "description_words": 61,
       "domain": "core",
-      "lines": 244,
+      "lines": 241,
       "missing_relative_links": [],
       "name": "derive-cost"
     },
@@ -249,7 +249,7 @@
       "description": "Develop mathematical cryptanalysis questions, research proposals, and scoped results about specified cryptographic constructions, assumptions, or parameters. Use for human-directed standards research, unexplored mathematical questions, proposed extensions of known results, or continued development of a selected question. Distinguish a requested proposal from a request to carry out the mathematical work.",
       "description_words": 49,
       "domain": "core",
-      "lines": 143,
+      "lines": 157,
       "missing_relative_links": [],
       "name": "discover-cryptanalysis"
     },
@@ -713,7 +713,7 @@
       "description": "Run Magma computations on the remote SSH compute host \u2014 Gr\u00f6bner bases and MQ systems, finite fields and polynomial rings, elliptic curves and isogenies, linear algebra over small fields. Use when a cryptanalytic claim needs an actual computation rather than an estimate, when a cost model needs checking at toy scale before being trusted at real scale, or when the algebra is beyond what the local Sage kernel can do.",
       "description_words": 70,
       "domain": "core",
-      "lines": 318,
+      "lines": 322,
       "missing_relative_links": [],
       "name": "magma"
     },
@@ -1265,7 +1265,7 @@
       "description": "Establish whether a claimed attack actually works \u2014 state its preconditions, decide whether analysis or an implementation settles the question, then do that one, and report what the result does and does not imply at full parameters. Use when a paper, a post, or an earlier session asserts an attack and the question is whether to believe it.",
       "description_words": 58,
       "domain": "core",
-      "lines": 245,
+      "lines": 253,
       "missing_relative_links": [],
       "name": "validate-attack"
     },
@@ -1273,7 +1273,7 @@
       "description": "Check whether one specified claim in a paper, report, or security argument is correct. Audit its reasoning or reproduce the relevant evidence and report supported, refuted, or unresolved. Use for an assigned claim-verification task; merely citing or applying a published result does not require auditing that result.",
       "description_words": 47,
       "domain": "core",
-      "lines": 316,
+      "lines": 309,
       "missing_relative_links": [],
       "name": "verify-claim"
     },

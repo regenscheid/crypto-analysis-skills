@@ -136,7 +136,9 @@ A failed read has `status: "failed"` and no snapshot. Copy the snapshot's
 `open_ideas[*].idea_id`, `requeue_idea_ids`,
 `soft_dismissals[*].event_id`, `soft_dismissals[*].idea_id`,
 `soft_dismissals[*].dismissal.reason_class`, and `lemmas[*].lemma.lemma_id` into
-the normalized fields shown above. Add `dismissal_index` as the zero-based
+the normalized fields shown above. Deduplicate `promoted_lemma_ids` and omit
+IDs listed in the board's `promoted_lemma_conflicts`; a conflicting ID is not
+one settled lemma. Add `dismissal_index` as the zero-based
 position in the source outcome's `dismissals` array; use `0` for a standalone
 `dismissal` event. Resolve each snapshot `event_id` against the project
 ledgers to recover this index. The `(event_id, dismissal_index)` pair is

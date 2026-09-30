@@ -472,7 +472,9 @@ Tell the child the field rules in
 [the research-board procedure](../../workbench-knowledge/reference/research-board.md):
 `domination_justification` is required when `dominated_by` is null;
 `attempted` must state the actual approach for a dismissal; a literature
-lemma requires an exact `locator`. For a split outcome, `child_idea_ids`
+lemma requires an exact `locator`. Give each new lemma proposal a
+project-unique UUID-based ID; do not reuse a local label such as `L1` across
+workers. For a split outcome, `child_idea_ids`
 must be nonempty and distinct. An inventor also returns `child_ideas` with
 matching IDs and proposed `title` and `builds_on` for each child. The root
 appends full child `idea` events before delegating the accepted children.

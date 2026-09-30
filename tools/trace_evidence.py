@@ -13,7 +13,7 @@ from pathlib import Path
 
 BOARD_EVENT_TYPES = (
     "idea", "outcome", "finding", "dismissal", "lemma_proposal",
-    "promote", "close_lane", "sota_row",
+    "critique", "promote", "close_lane", "sota_row",
 )
 SOFT_DISMISSAL_REASONS = frozenset({
     "lacked_idea", "lacked_time", "lacked_tools", "lacked_context",

@@ -76,6 +76,11 @@ representation or intermediate claim. Failure of that approach does not refute
 the question. Continue from supplied partial mathematics without repeating the
 original survey unless assumptions, evidence, or scope changed.
 
+When a new invariant, representation, or shortcut appears to remove work,
+account for the cost of constructing and using it before claiming a net attack
+improvement. A useful mathematical reduction can remain a research result even
+when its first implementation costs more than it saves.
+
 ## Continue a discovery investigation across sessions
 
 For sustained discovery with delegated idea development, use the
@@ -87,14 +92,23 @@ but delegated frames have separate filesystem working directories; pass the
 absolute shared project directory and notebook paths in every frame's task
 and `context_summary`. Do not infer them from a child's working directory.
 
-Triage comes before ideation. Carry every open idea, requeue soft dismissals,
-and exclude only critic-accepted closed lanes. Generate new ideas where the
-record shows a gap, naming the confirmed lemmas they build on. Execute one
+Triage comes before ideation. For each open idea, read its earlier notebook
+and critique artifacts. Requeue soft dismissals and exclude only
+critic-accepted closed lanes. Generate new ideas where the record shows a
+gap, naming the confirmed lemmas they build on. Execute one
 focused frame per open idea; append every structured return unchanged with
 `board_append`. A batch critic classifies outcomes, checks closures,
 identifies restated lemmas, promotes independently checked results, and
-writes a `critique-<pass>.md` artifact. Repeat until the open queue is empty
-or the user stops. There is no fixed number of ideas or effort budget.
+writes a `critique-<pass>.md` artifact. Append a `critique` board event that
+links it to all reviewed ideas, including those still open. Repeat until the
+open queue is empty or the user stops. There is no fixed number of ideas or
+effort budget.
+
+When independent frames disagree about a promising idea or one dismisses it
+while another finds a path forward, preserve both returns. Give the precise
+contested claim and evidence to a focused reconciliation frame before the
+critic accepts a closure. Do not turn disagreement into a majority vote or a
+single blended summary.
 
 Use one or two [open-brief inventor](../investigate/reference/open-brief-inventor.md)
 frames per pass when the current lenses are exhausted. Give them confirmed

@@ -279,7 +279,9 @@ print #E eq (p + 1)^2;           // true
 
 ## 5. Recording what you get
 
-A Magma run is evidence of kind `computation`:
+A Magma run is evidence of kind `computation`. Follow
+[workbench-knowledge's project setup](../workbench-knowledge/SKILL.md#read-it-first)
+to import `add_entry` and resolve the stable `project_dir` before recording it.
 
 ```python
 update_step_status(step="<exact plan step title>", status="completed",
@@ -288,7 +290,9 @@ update_step_status(step="<exact plan step title>", status="completed",
 # and, once it is settled rather than merely observed:
 add_entry("Random dense m=n MQ over GF(2) solves at n=24 in ~57s CPU (8 threads).",
           kind="measurement",
-          evidence=[{"kind": "computation", "note": "<the script and its output>"}])
+          evidence=[{"kind": "computation", "ref": "<versioned script and output>",
+                     "note": "Exact instance, environment, and measurement method."}],
+          project_dir=project_dir)
 ```
 
 **Keep the script with the number.** A timing without the code that produced it

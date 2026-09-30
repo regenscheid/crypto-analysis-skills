@@ -49,20 +49,13 @@ than duplicating host-specific plan mechanics.
 
 ## Step 0 — Read what is already known
 
+Follow [workbench-knowledge's project setup](../workbench-knowledge/SKILL.md#read-it-first)
+to import its helpers and resolve the stable `project_dir` before reading or
+writing research records.
+
 ```python
-import sys, os
-# knowledge.py ships with the workbench-knowledge skill. Find it whether this
-# repo is the CWD, the skills are published as flat siblings, or CRYPTO_SKILLS
-# names the checkout. Set CRYPTO_SKILLS if none of these resolve.
-for _p in (os.environ.get("CRYPTO_SKILLS", ""),
-           "skills/workbench-knowledge/scripts",
-           "../workbench-knowledge/scripts",
-           os.path.expanduser("~/crypto-analysis-skills/skills/workbench-knowledge/scripts")):
-    _c = os.path.join(_p, "scripts") if _p and _p.endswith("workbench-knowledge") else _p
-    if _c and os.path.isfile(os.path.join(_c, "knowledge.py")):
-        sys.path.insert(0, _c); break
 from knowledge import read_all
-print(read_all())
+print(read_all(project_dir=project_dir))
 ```
 
 ```
@@ -174,6 +167,28 @@ object, not by reasoning about it.
    a known-answer case, an independently checked output, or another comparison
    that addresses a specific failure mode.
 
+When the full-size attack cannot run, build the strongest feasible verification
+ladder and label each rung's scope:
+
+1. Check the defining identity or proof step against a separately derived
+   argument. This supports that step, not the whole algorithm.
+2. Test isolated stages on planted or known-answer inputs, including their
+   interfaces. This exposes stage errors but leaves composition open.
+3. Exhaustively test small instances where possible, then run scaled end-to-end
+   trials on fresh instances. State the sampled key distribution, parameters,
+   sample count, and exactly what was recovered or distinguished.
+4. Include wrong-key or absent-structure controls and measure false positives
+   and verification failures, not only successful runs.
+5. If a full-size harness substitutes a secret-dependent value, internal state,
+   or unavailable oracle for an attack stage, name the shortcut and report only
+   the remaining stage demonstrated. It is not full-size key recovery.
+
+Keep the claimed attacker computation restricted to public data and the stated
+oracle access. Secret reads may verify a result in a separate test harness, but
+must not feed a supposedly public attack path. Audit the actual code paths using
+[crypto-review](../crypto-review/SKILL.md#preconditions-before-cost) and keep
+counted full-size cost separate from measured toy-scale runtime.
+
 This is the discipline `scripts/present_milp.py` is built around: it reproduces a
 *published* bound — ≥10 active S-boxes over 5 rounds of PRESENT — before its
 model is trusted for anything new. A MILP model missing one propagation
@@ -205,24 +220,17 @@ counterexample found” under the stated parameters and sampling process.
 
 ## Write back
 
+Use the same `project_dir` resolved at Step 0.
+
 ```python
-import sys, os
-# knowledge.py ships with the workbench-knowledge skill. Find it whether this
-# repo is the CWD, the skills are published as flat siblings, or CRYPTO_SKILLS
-# names the checkout. Set CRYPTO_SKILLS if none of these resolve.
-for _p in (os.environ.get("CRYPTO_SKILLS", ""),
-           "skills/workbench-knowledge/scripts",
-           "../workbench-knowledge/scripts",
-           os.path.expanduser("~/crypto-analysis-skills/skills/workbench-knowledge/scripts")):
-    _c = os.path.join(_p, "scripts") if _p and _p.endswith("workbench-knowledge") else _p
-    if _c and os.path.isfile(os.path.join(_c, "knowledge.py")):
-        sys.path.insert(0, _c); break
 from knowledge import add_entry, add_gap
 add_entry(statement="<attack> requires <precondition>, which <target> does not meet",
           kind="attack",
           evidence=[{"kind": "paper", "ref": "…", "note": "preconditions, §3"},
-                    {"kind": "computation", "ref": "…", "note": "toy-scale run"}])
-add_gap(question="…", looked_in=["ePrint", "NIST", "firecrawl", "web"], finding="…")
+                    {"kind": "computation", "ref": "…", "note": "toy-scale run"}],
+          project_dir=project_dir)
+add_gap(question="…", looked_in=["ePrint", "NIST", "firecrawl", "web"],
+        finding="…", project_dir=project_dir)
 ```
 
 These **append** — never rewrite those files, and never reach for `edit_file` to

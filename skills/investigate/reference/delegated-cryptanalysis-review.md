@@ -83,12 +83,21 @@ tools, or elapsed time cannot close a wider lane. Requeue every soft
 dismissal. Cross-check whether findings from different frames conflict or
 jointly imply a new consequence. Compare empirical and quantitative claims
 with the published SOTA rows without treating agent results as catalog
-records.
+records. For a claimed speedup, include the work and memory added by the
+new transform, representation, or preprocessing; an eliminated guess or
+lower-dimensional subproblem is not by itself a net improvement.
+
+If frames disagree about a potentially useful mechanism, identify the
+smallest precise disputed step and obtain a focused independent check before
+closing it. Retain the original reports, including an early dismissal that a
+later frame contests. Reconciliation may be a new delegated frame or a root
+agent check; direct child-to-child messaging is not required.
 
 For every lemma proposal, check its hypotheses, target applicability,
 known failures, exact literature locator when sourced from a paper, and
 `restates` links. Detect when one proposed lemma follows from another or
-restates a known result. A new derived lemma requires an independent check
+restates a known result. Resolve `lemma_proposal_conflicts` before treating an
+ID as one result. A new derived lemma requires an independent check
 of the fixed candidate before promotion to project `knowledge.md`; a
 fresh explanation by the same author is not independent. Record the
 checker and exact artifact in the promotion evidence. Keep both the original
@@ -101,7 +110,11 @@ that any reused entry states the same result and evidence. The later board
 `promote` event must carry that `knowledge_id`; the event alone does not
 write durable knowledge.
 
-After the critique is saved, the orchestrator appends the critic-approved
+After the critique is saved, the orchestrator appends one `critique` event
+with its artifact reference, pass ID, summary, and every reviewed idea ID,
+including open ideas. On later passes, triage reads those critique references
+with the idea notebooks and passes relevant objections to the next frame.
+The orchestrator then appends the critic-approved
 `promote` and `close_lane` events with the critique reference and the exact
 excluded scope for each closed lane. For an accepted split, it must append
 full child `idea` events with `title` and `builds_on` before assigning those

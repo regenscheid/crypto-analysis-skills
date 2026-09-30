@@ -39,3 +39,9 @@ costs, even that interpretation is unavailable. State omitted cases explicitly.
 Literature absence supports a bounded search statement with channels, queries,
 date, and gaps. It does not establish novelty. A catalog match is a reference lead;
 it does not establish applicability or truth.
+
+For a potentially consequential result intended for external release, preserve
+the versioned argument, implementation, experiments, and cost assumptions for
+domain-expert review. Record which parts received independent human review and
+which remain pending; internal agent agreement is not external validation.
+Follow the project's disclosure process before making a public claim.

@@ -23,7 +23,8 @@ ID, and relevant notebook paths to delegates in their task and
 `context_summary`. A child must not invent another project directory.
 
 ```python
-from board import project_dir_for_id, board_snapshot, board_append, new_idea_id
+from board import (project_dir_for_id, board_snapshot, board_append,
+                   new_idea_id, new_lemma_id)
 from knowledge import read_all, add_entry_once, entry_id_for_claim
 
 project_dir = project_dir_for_id(project_id)
@@ -56,7 +57,8 @@ session's branch of work; triage starts from the project-wide snapshot.
 | `outcome` | The delegated structured return exactly as received; its state is a proposal |
 | `finding` | `idea_id`, `dominated_by` SOTA row ID or null, `domination_justification` when null, and `sota_delta` |
 | `dismissal` | `idea_id`, `reason_class`, and nonempty `attempted` description |
-| `lemma_proposal` | `lemma_id`, `source`, `hypotheses`, `applies_to`, `known_failures`, `restates`, and `locator` for literature |
+| `lemma_proposal` | Project-unique `lemma_id`, `source`, `hypotheses`, `applies_to`, `known_failures`, `restates`, and `locator` for literature |
+| `critique` | `pass_id`, saved `critique_ref`, nonempty `summary`, and distinct `idea_ids` reviewed, including ideas left open |
 | `promote` | Critic decision with `kind`, full evidence, and `critique_ref` |
 | `close_lane` | `lane_id`, `reason_class=demonstrated_obstruction`, `excluded_scope`, and `critique_ref` |
 | `sota_row` | `row_id`, `catalog_record_id`, and `published_ref`; never an agent result |
@@ -77,10 +79,19 @@ A finding compares its claim to the published bar represented by `sota_row`
 events. If no published row dominates it, set `dominated_by` to null and
 justify that conclusion. State the actual `sota_delta`; a rediscovered or
 weaker result remains recorded without being promoted as a new attack.
+For an intermediate mathematical observation that is not yet an attack, say
+so in `sota_delta` and name the missing link to an attack. Do not invent a
+cost or claim dominance merely to fill the field.
 Derived lemma promotion must carry an independent-check evidence item that
 names the exact proposal checked. Literature lemmas need an exact source
 locator and explicit hypotheses. Record a derived lemma's `restates`
 links when it matches known literature.
+Generate new lemma IDs with `new_lemma_id()` or an equivalent UUID. The
+project snapshot retains every proposal, including multiple proposals with
+the same ID, and reports `lemma_proposal_conflicts` and
+`promoted_lemma_conflicts`. Resolve conflicting statements or hypotheses
+before treating an ID as confirmed knowledge; a reused ID does not mean two
+claims agree.
 
 Use these exact nested field names in an `outcome` return:
 
@@ -102,8 +113,9 @@ arrays empty when there is no item. Record a notebook fragment as the exact
 ## Capture child work mechanically
 
 For each delegated frame, include `idea_id`, a unique delegation ID, the
-absolute project directory, the relevant notebook path, the frozen target,
-and the expected return fields in the task. Put a concise version in
+absolute project directory, the relevant notebook path and prior critique
+references, the frozen target, and the expected return fields in the task.
+Put a concise version in
 `context_summary`; the child does not inherit the root's conversation.
 In Claude Science, use the standard `output_schema` in
 [the runtime adapter](../../investigate/reference/claude-science.md#7-delegate-plan-tracks).
@@ -126,8 +138,20 @@ delegation ID and exact payload before retrying. A
 filesystem issue and call `rebuild_notebook(project_dir, session_id, idea_id)`
 without appending it again. A separate critic pass interprets the raw
 returns and emits promotion or lane-closure events. The root writes
-`critique-<pass>.md` as a host artifact and uses its artifact reference in
-those events. Do not let a child declare its own obstruction accepted.
+`critique-<pass>.md` as a host artifact, appends one `critique` event linking
+that artifact to every idea reviewed in the pass, and uses its reference in
+any promotion or lane-closure events. This keeps the critic's objections
+visible for ideas that remain open. Do not let a child declare its own
+obstruction accepted.
+
+```python
+board_append(project_dir, session_id, "critique", {
+    "pass_id": pass_id,
+    "critique_ref": critique_ref,
+    "summary": "What was accepted, contested, or left open in this pass",
+    "idea_ids": reviewed_idea_ids,
+})
+```
 
 For a critic-approved derived lemma, inspect
 `entry_id_for_claim(lemma_id, project_dir=project_dir)` for an existing entry,
@@ -150,9 +174,13 @@ before recording promotion. Do not put an unchecked derivation in
 At the start of every pass:
 
 1. Read the three durable project files and the project-wide
-   `board_snapshot`.
-2. Carry forward every open idea with all its notebook paths. Requeue every
-   soft dismissal; lack of time, tools, context, or an idea is not a proof of
+   `board_snapshot`. Establish relevant published `sota_row` records with
+   exact source, scope, and cost model before judging an improvement; a row
+   must never be an agent result.
+2. Carry forward every open idea with all its notebook paths and critique
+   references. Read relevant prior critiques before dispatch, and include
+   those references in the task and `context_summary`. Requeue every soft
+   dismissal; lack of time, tools, context, or an idea is not a proof of
    obstruction.
 3. Generate new ideas only where that record shows a gap. Supply closed
    lanes as exclusions and name the confirmed lemmas each new idea builds
@@ -161,8 +189,11 @@ At the start of every pass:
    frame per ready open idea. Give it the notebook path in `context_summary`
    and the actual task. Append each return mechanically.
 5. Run a batch critic across the pass. Cross-check proposed closures,
-   detect lemmas implied by other lemmas or already in the literature,
+   detect conflicting lemma IDs, lemmas implied by other lemmas or already in
+   the literature,
    assign terminal idea states, promote checked lemmas, and save the critique.
+   Append a `critique` event linking that artifact to every reviewed idea,
+   even when its state remains open.
 6. Repeat until no open ideas remain or the user stops. Preserve the board
    when stopping; a session ending does not itself resolve an idea.
 

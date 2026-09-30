@@ -14,7 +14,8 @@ import uuid
 BOARD_SCRIPT = Path(__file__).resolve().parents[1] / "skills" / "workbench-knowledge" / "scripts"
 sys.path.insert(0, str(BOARD_SCRIPT))
 from board import (BoardError, board_append, board_snapshot, new_idea_id,
-                   notebook_path, project_dir_for_id, rebuild_notebook)
+                   new_lemma_id, notebook_path, project_dir_for_id,
+                   rebuild_notebook)
 
 
 class BoardTests(unittest.TestCase):
@@ -108,6 +109,29 @@ class BoardTests(unittest.TestCase):
         with self.assertRaises(BoardError):
             board_append(self.project, "session-a", "lemma_proposal", {
                 **lemma, "lemma_id": "L2", "source": "literature"})
+
+    def test_conflicting_lemma_proposals_are_not_hidden(self) -> None:
+        lemma_id = new_lemma_id()
+        base = {"lemma_id": lemma_id, "source": "derived", "hypotheses": [],
+                "applies_to": {"target": "T", "evidence": "construction"},
+                "known_failures": [], "restates": []}
+        board_append(self.project, "session-a", "lemma_proposal", base)
+        board_append(self.project, "session-b", "lemma_proposal",
+                     {**base, "hypotheses": ["extra assumption"]})
+        snapshot = board_snapshot(self.project)
+        self.assertEqual(len(snapshot["lemma_proposals"]), 2)
+        self.assertEqual(snapshot["lemma_proposal_conflicts"], [lemma_id])
+
+    def test_open_idea_keeps_critique_reference_across_sessions(self) -> None:
+        idea_id = new_idea_id()
+        board_append(self.project, "session-a", "idea", self.idea(idea_id))
+        board_append(self.project, "session-a", "critique", {
+            "pass_id": "pass-1", "critique_ref": "artifact:critique-v1",
+            "idea_ids": [idea_id], "summary": "Still open: test the cost of the transform"})
+        snapshot = board_snapshot(self.project)
+        self.assertEqual(len(snapshot["critiques"]), 1)
+        self.assertEqual(snapshot["open_ideas"][0]["critique_refs"],
+                         ["artifact:critique-v1"])
 
     def test_notebook_can_be_rebuilt_from_event_log(self) -> None:
         idea_id = new_idea_id()

@@ -43,25 +43,18 @@ than duplicating host-specific plan mechanics.
 
 ## 1. Search what is already known — including the dead ends
 
+Follow [workbench-knowledge's project setup](../workbench-knowledge/SKILL.md#read-it-first)
+to import its helpers and resolve the stable `project_dir` before reading or
+writing research records.
+
 ```
 nist-mcp_search_csrc             already broken? the round-status reports say
 firecrawl-mcp_firecrawl_search   pqc-forum posts and official comments
 e-print-mcp_search_eprint        the preprint literature
 ```
 ```python
-import sys, os
-# knowledge.py ships with the workbench-knowledge skill. Find it whether this
-# repo is the CWD, the skills are published as flat siblings, or CRYPTO_SKILLS
-# names the checkout. Set CRYPTO_SKILLS if none of these resolve.
-for _p in (os.environ.get("CRYPTO_SKILLS", ""),
-           "skills/workbench-knowledge/scripts",
-           "../workbench-knowledge/scripts",
-           os.path.expanduser("~/crypto-analysis-skills/skills/workbench-knowledge/scripts")):
-    _c = os.path.join(_p, "scripts") if _p and _p.endswith("workbench-knowledge") else _p
-    if _c and os.path.isfile(os.path.join(_c, "knowledge.py")):
-        sys.path.insert(0, _c); break
 from knowledge import read_all
-print(read_all())     # knowledge, gaps and lessons — all of it, it is small
+print(read_all(project_dir=project_dir))  # knowledge, gaps, and lessons for this project
 ```
 
 **Do this first, every time.** A returned gap is as valuable as an entry: it
@@ -175,17 +168,21 @@ From `crypto-review`, the checks that matter most here:
 **It worked** — the reduction holds and the instance prices:
 
 ```python
+from knowledge import add_entry, add_gap
+
 add_entry("<scheme> key recovery reduces to MinRank with "
           "q=…, m=…, n=…, k=…, r=…; cheapest family <X> at 2^<c>",
           kind="reduction",
           evidence=[{"kind": "paper", "ref": "…", "note": "source of the reduction"},
-                    {"kind": "computation", "ref": "…", "note": "toy-scale verification"}])
+                    {"kind": "computation", "ref": "…", "note": "toy-scale verification"}],
+          project_dir=project_dir)
 ```
 
 **It did not** — say so with the same effort:
 
 ```python
-add_gap(question="…", looked_in=["ePrint", "NIST", "firecrawl", "web"], finding="…")
+add_gap(question="…", looked_in=["ePrint", "NIST", "firecrawl", "web"],
+        finding="…", project_dir=project_dir)
 ```
 
 A negative finding must be as cheap to record as a positive one. If it is not,

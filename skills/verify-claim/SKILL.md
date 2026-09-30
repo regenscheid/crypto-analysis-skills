@@ -257,29 +257,22 @@ matters more than a high percentage.
 
 ## Step 6 — Write back
 
-Facts that had to be retrieved once should not be retrieved again from scratch:
+Facts that had to be retrieved once should not be retrieved again from scratch.
+Follow [workbench-knowledge's project setup](../workbench-knowledge/SKILL.md#read-it-first)
+to import its helpers and resolve the stable `project_dir` first.
 
 ```python
-import sys, os
-# knowledge.py ships with the workbench-knowledge skill. Find it whether this
-# repo is the CWD, the skills are published as flat siblings, or CRYPTO_SKILLS
-# names the checkout. Set CRYPTO_SKILLS if none of these resolve.
-for _p in (os.environ.get("CRYPTO_SKILLS", ""),
-           "skills/workbench-knowledge/scripts",
-           "../workbench-knowledge/scripts",
-           os.path.expanduser("~/crypto-analysis-skills/skills/workbench-knowledge/scripts")):
-    _c = os.path.join(_p, "scripts") if _p and _p.endswith("workbench-knowledge") else _p
-    if _c and os.path.isfile(os.path.join(_c, "knowledge.py")):
-        sys.path.insert(0, _c); break
 from knowledge import add_entry, add_gap
-add_entry(statement=…, kind="…",
+add_entry(statement="<checked claim under its stated assumptions>", kind="derived result",
           evidence=[
               {"kind": "derivation", "ref": "<discovery artifact>#C2",
                "note": "Original argument, assumptions, and notation map."},
               {"kind": "independent-check", "ref": "<verifier report>",
                "note": "Fresh proof audit checked C2 without repairing it."},
-          ])
-add_gap(question=…, looked_in=[…], finding=…)
+          ], project_dir=project_dir)
+add_gap(question="<question not settled>", looked_in=["ePrint", "NIST"],
+        finding="<what was checked and why the question remains open>",
+        project_dir=project_dir)
 ```
 
 See `workbench-knowledge`. These **append** — never rewrite those files, and
