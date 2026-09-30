@@ -106,4 +106,4 @@ routine: explain whether their combination resolves a previously open obstacle.
 Apply the same classification in the headline, summary, detailed finding, and
 conclusion. A caveat in an appendix cannot repair a headline claiming a “new
 attack.” This is a reporting discipline, not a requirement for another catalog
-schema, an automatic submission, or a project-knowledge store.
+schema or an automatic submission.

@@ -5,11 +5,14 @@ The cryptanalytic method remains in `SKILL.md`; this adapter explains how to
 make that method execute through Claude Science's internal plan, elicitation,
 delegation, progress, access, and artifact APIs.
 
-The call schemas were checked against Claude Science 0.1.27 and the CScience
-fork's pinned 0.1.27 runtime. Operational constraints also incorporate behavior
-measured in this CScience deployment. Re-check both the live schemas and an
-end-to-end probe whenever the pin changes; a tool described inside the runtime
-is not treated as working until its complete user interaction succeeds.
+The plan and elicitation behaviors were checked against Claude Science 0.1.27
+and the CScience fork's then-pinned runtime. Project provenance, artifact
+sharing, and delegation fields were rechecked against the fork's pinned
+Claude Science 0.1.53 runtime and captured HCTR2/CauchyFold host calls.
+Operational constraints also incorporate behavior measured in this CScience
+deployment. Re-check live behavior after runtime changes; a schema described
+inside the runtime is not treated as fully exercised until its end-to-end
+interaction succeeds.
 
 ## Contents
 
@@ -379,6 +382,112 @@ handles = host.delegate(requests, wait=False)
 `profile`, `output_schema`, and `model`. Omit `profile` to inherit the parent
 profile. Avoid literal model ids; inherit the configured chain unless a tested
 alias is required.
+
+For a sustained DISCOVER pass, resolve the project and root session from the
+host's artifact provenance. This remains available even when the project has
+no saved artifacts:
+
+```python
+from board import project_dir_for_id
+identity = host.artifacts()["provenance"]
+project_id = identity["project_id"]
+session_id = identity["root_frame_id"]
+project_dir = project_dir_for_id(project_id)
+```
+
+The host artifact store is project-wide and versioned. Other sessions in
+the same project can find saved results with `host.artifacts()` and read a
+version with `host.artifact_path(version_id)`. Each agent still has its
+own frame workspace, so neither the parent's working directory nor a glob
+of the current workspace is a project-wide file index. Use the external,
+granted `project_dir` above for the append-only research board. Do not
+write directly into the host's private artifact-store directory.
+
+Give each focused child a unique delegation ID and its assigned `idea_id`.
+Put the frozen target, absolute `project_dir`, session ID, notebook path,
+and return obligations in `task`; `context_summary` is background, not a
+replacement for the task. Use this standard campaign-free board fragment
+for `output_schema`:
+
+```python
+finding_schema = {
+    "type": "object",
+    "properties": {
+        "dominated_by": {},  # published SOTA row ID or null
+        "domination_justification": {"type": "string"},  # required when null
+        "sota_delta": {"type": "string"},
+    },
+    "required": ["dominated_by", "sota_delta"],
+}
+dismissal_schema = {
+    "type": "object",
+    "properties": {
+        "reason_class": {"type": "string", "enum": [
+            "demonstrated_obstruction", "lacked_idea", "lacked_time",
+            "lacked_tools", "lacked_context"]},
+        "attempted": {"type": "string"},
+    },
+    "required": ["reason_class", "attempted"],
+}
+lemma_schema = {
+    "type": "object",
+    "properties": {
+        "lemma_id": {"type": "string"},
+        "source": {"type": "string", "enum": ["derived", "literature"]},
+        "locator": {"type": "string"},  # required for literature
+        "hypotheses": {"type": "array", "items": {"type": "string"}},
+        "applies_to": {"type": "object", "properties": {
+            "target": {"type": "string"}, "evidence": {}},
+            "required": ["target", "evidence"]},
+        "known_failures": {"type": "array", "items": {"type": "string"}},
+        "restates": {"type": "array", "items": {"type": "string"}},
+    },
+    "required": ["lemma_id", "source", "hypotheses", "applies_to",
+                 "known_failures", "restates"],
+}
+board_output_schema = {
+    "type": "object",
+    "properties": {
+        "delegation_id": {"type": "string"},
+        "idea_id": {"type": "string"},
+        "state": {"type": "string",
+                  "enum": ["open", "resolved", "obstructed", "split"]},
+        "findings": {"type": "array", "items": finding_schema},
+        "dismissals": {"type": "array", "items": dismissal_schema},
+        "lemma_proposals": {"type": "array", "items": lemma_schema},
+        "notebook_append": {"type": "string"},
+        "child_idea_ids": {"type": "array", "items": {"type": "string"}},
+        "child_ideas": {"type": "array", "items": {"type": "object",
+            "properties": {"idea_id": {"type": "string"},
+                           "title": {"type": "string"},
+                           "builds_on": {"type": "array", "items": {"type": "string"}}},
+            "required": ["idea_id", "title", "builds_on"]}},
+    },
+    "required": ["delegation_id", "idea_id", "state", "findings",
+                 "dismissals", "lemma_proposals", "notebook_append"],
+}
+```
+
+Tell the child the field rules in
+[the research-board procedure](../../workbench-knowledge/reference/research-board.md):
+`domination_justification` is required when `dominated_by` is null;
+`attempted` must state the actual approach for a dismissal; a literature
+lemma requires an exact `locator`. For a split outcome, `child_idea_ids`
+must be nonempty and distinct. An inventor also returns `child_ideas` with
+matching IDs and proposed `title` and `builds_on` for each child. The root
+appends full child `idea` events before delegating the accepted children.
+Tell it to submit the schema-conforming object with `host.submit_output`;
+that is what produces the parent's `structured_output`. The helper
+validates those fields after collection. If the host reports
+`structured_output_unsatisfied`, preserve the fallback and deviation,
+then repair the return or mark it unrecorded; never fabricate empty fields.
+For a valid return, append `structured_output` unchanged as an `outcome`
+with `provenance={"delegation_id": delegation_id,
+"child_frame_id": result["frame_id"]}`; its delegation ID must equal the
+return's `delegation_id`. The envelope preserves correlation
+without changing the child's fields. Save host `deviations` with the
+critique or trace, and verify that every collected child return received a
+persisted board event.
 
 Use `host.artifact_marker(version_id)` to construct the handoff marker for a
 runtime-computed id. A literal `{{artifact:VERSION_ID}}` written inside a parent

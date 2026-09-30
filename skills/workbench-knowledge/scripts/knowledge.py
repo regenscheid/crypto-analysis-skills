@@ -40,9 +40,11 @@ concurrent writers are the normal case, not a corner case.
 from __future__ import annotations
 
 import os
+import fcntl
 import re
 import sys
 import time
+import uuid
 
 BASE = os.environ.get("CRYPTO_FILES") or os.path.expanduser(
     "~/crypto-workbench-files")
@@ -51,9 +53,8 @@ KNOWLEDGE = os.path.join(BASE, "knowledge.md")
 GAPS = os.path.join(BASE, "gaps.md")
 LESSONS = os.path.join(BASE, "lessons.md")
 
-# One write() at or below the pipe-buffer size is the atomicity guarantee we
-# rely on. Records are short by design; a record approaching this is a record
-# that should have been two.
+# Keep records small enough to review and append in one locked OS write.
+# PIPE_BUF does not govern regular files; the lock serializes our writers.
 MAX_BLOCK = 4096
 
 
@@ -69,36 +70,45 @@ class GrantMissing(RuntimeError):
 
 
 def _append(path: str, block: str) -> str:
-    if len(block.encode("utf-8")) > MAX_BLOCK:
+    data = block.encode("utf-8")
+    if len(data) > MAX_BLOCK:
         raise ValueError(
-            "record is %d bytes, over the %d-byte atomic-append limit. Split "
-            "it into two records rather than raising the limit -- a partial "
-            "interleaved write is unrecoverable."
-            % (len(block.encode("utf-8")), MAX_BLOCK))
+            "record is %d bytes, over the %d-byte record limit. Split "
+            "it into two records."
+            % (len(data), MAX_BLOCK))
     try:
         os.makedirs(os.path.dirname(path), exist_ok=True)
-        with open(path, "a", encoding="utf-8") as fh:
-            fh.write(block)          # single write, O_APPEND: atomic
+        fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_APPEND, 0o600)
+        try:
+            fcntl.flock(fd, fcntl.LOCK_EX)
+            written = os.write(fd, data)
+            if written != len(data):
+                raise OSError(f"short append: {written}/{len(data)} bytes")
+        finally:
+            fcntl.flock(fd, fcntl.LOCK_UN)
+            os.close(fd)
     except OSError as exc:
         raise GrantMissing(
             "cannot append to %s (%s: %s).\n"
             "This is almost certainly the host-path grant: it is per-project, "
             "and this session may not hold read/write on %s. Ask the human to "
             "grant it rather than continuing -- an unrecorded lesson is lost, "
-            "not deferred." % (path, type(exc).__name__, exc, BASE)) from exc
+            "not deferred." % (path, type(exc).__name__, exc,
+                               os.path.dirname(path))) from exc
     return path
 
 
 def _read(path: str) -> str:
     try:
         with open(path, encoding="utf-8") as fh:
+            fcntl.flock(fh.fileno(), fcntl.LOCK_SH)
             return fh.read()
     except FileNotFoundError:
         return ""
 
 
 def _next_id(path: str, prefix: str) -> str:
-    """Next id, e.g. K25-3f2a. Unique BY CONSTRUCTION, with no coordination.
+    """Readable sequence plus a UUID, e.g. K25-<32 hex digits>.
 
     The old version returned a bare `K<max+1>`, and its docstring argued the
     resulting collisions were cosmetic. They were not. Measured 2026-08-05 on
@@ -108,18 +118,10 @@ def _next_id(path: str, prefix: str) -> str:
     merely look untidy, it makes a reference ambiguous and silently points a
     reader at the wrong record.
 
-    The old docstring was right about the fix it rejected: locking would end the
-    atomic append, and the append is the property worth protecting (measured, 8
-    concurrent writers: O_APPEND kept 1200/1200, read-modify-write kept 7).
-
-    So do neither. Make the id unique WITHOUT coordination:
-
-        <prefix><sequence>-<16 bits from os.urandom>
-
-    The sequence is still best-effort max+1, because it is what makes the file
-    readable and roughly chronological. The suffix is drawn from the OS, so two
-    writers computing the same sequence at the same instant still get different
-    ids. One write, still atomic, still no lock.
+    The sequence is best-effort max+1 for readability, not an identity.
+    Concurrent writers can see the same sequence. The UUID suffix supplies
+    122 random bits, so a collision is negligibly likely even across projects.
+    Appending still takes one O_APPEND write; no read-modify-write is involved.
 
     Bare historical ids keep working: the scan below matches `K85` and
     `K85-3f2a` alike, and a cross-reference to `K28` still resolves whenever
@@ -127,7 +129,17 @@ def _next_id(path: str, prefix: str) -> str:
     """
     nums = [int(m) for m in re.findall(r"(?m)^## %s(\d+)\b" % prefix,
                                        _read(path))]
-    return "%s%d-%s" % (prefix, max(nums, default=0) + 1, os.urandom(2).hex())
+    return "%s%d-%s" % (prefix, max(nums, default=0) + 1, uuid.uuid4().hex)
+
+
+def _record_path(filename: str, project_dir: str = None) -> str:
+    """Use an explicit shared project directory, or the legacy global path."""
+    if project_dir is None:
+        return os.path.join(BASE, filename)
+    project_dir = os.fspath(project_dir)
+    if not os.path.isabs(project_dir):
+        raise ValueError("project_dir must be an absolute shared directory")
+    return os.path.join(project_dir, filename)
 
 
 def prune(ids, path: str = None, dry_run: bool = True) -> dict:
@@ -205,31 +217,51 @@ def _stamp() -> str:
     return time.strftime("%Y-%m-%d %H:%M:%S")
 
 
-def read_knowledge() -> str:
-    return _read(KNOWLEDGE)
+def read_knowledge(project_dir: str = None) -> str:
+    return _read(_record_path("knowledge.md", project_dir))
 
 
-def read_gaps() -> str:
-    return _read(GAPS)
+def read_gaps(project_dir: str = None) -> str:
+    return _read(_record_path("gaps.md", project_dir))
 
 
-def read_lessons() -> str:
-    return _read(LESSONS)
+def read_lessons(project_dir: str = None) -> str:
+    return _read(_record_path("lessons.md", project_dir))
 
 
-def read_all() -> str:
+def read_all(project_dir: str = None) -> str:
     """Everything, for the start of a session. Cheap -- these are small."""
     parts = []
-    for label, text in (("KNOWLEDGE", read_knowledge()),
-                        ("GAPS", read_gaps()),
-                        ("LESSONS", read_lessons())):
+    for label, text in (("KNOWLEDGE", read_knowledge(project_dir)),
+                        ("GAPS", read_gaps(project_dir)),
+                        ("LESSONS", read_lessons(project_dir))):
         if text.strip():
             parts.append("===== %s =====\n%s" % (label, text))
     return "\n\n".join(parts) or "(no knowledge recorded yet)"
 
 
+def entry_id_for_claim(claim: str, project_dir: str = None) -> str | None:
+    """Find one durable knowledge entry by its exact claim tag.
+
+    This supports recovery after a board promotion write fails: the caller can
+    reuse the already appended knowledge entry instead of making a duplicate.
+    It is a lookup, not a lock across concurrent sessions.
+    """
+    if not isinstance(claim, str) or not claim.strip() or "\n" in claim:
+        raise ValueError("claim must be one nonempty line")
+    matches = []
+    for block in re.split(r"\n(?=## K\d+\b)", read_knowledge(project_dir)):
+        heading = re.match(r"## (K\d+(?:-[0-9a-f]+)?)\b", block)
+        tag = re.search(r"(?m)^- \*\*claim:\*\* (.+)$", block)
+        if heading and tag and tag.group(1) == claim:
+            matches.append(heading.group(1))
+    if len(matches) > 1:
+        raise ValueError(f"claim {claim!r} has multiple knowledge entries: {matches}")
+    return matches[0] if matches else None
+
+
 def add_entry(statement, kind="entry", evidence=None, tags="",
-              source="", claim=""):
+              source="", claim="", project_dir=None):
     """Append a knowledge entry. Returns its id.
 
     `evidence` is a list of {kind, ref, note}. `kind` is the field that decides
@@ -257,7 +289,8 @@ def add_entry(statement, kind="entry", evidence=None, tags="",
             "an independent-check exists"
         )
 
-    eid = _next_id(KNOWLEDGE, "K")
+    path = _record_path("knowledge.md", project_dir)
+    eid = _next_id(path, "K")
     L = ["## %s — %s" % (eid, kind), "", statement.strip(), ""]
     if evidence:
         L.append("- **evidence:**")
@@ -276,11 +309,38 @@ def add_entry(statement, kind="entry", evidence=None, tags="",
         L.append("- **claim:** %s" % claim)
     L.append("- **added:** %s" % _stamp())
     L.append("")
-    _append(KNOWLEDGE, "\n".join(L) + "\n")
+    _append(path, "\n".join(L) + "\n")
     return eid
 
 
-def add_gap(question, looked_in, finding="", tags="", source=""):
+def add_entry_once(statement, *, claim, kind="entry", evidence=None, tags="",
+                   source="", project_dir=None) -> str:
+    """Add a claim once across cooperating project sessions.
+
+    The separate claim lock covers lookup and append together. Callers must
+    inspect an existing entry before reusing its ID for a different statement
+    or evidence set. Older direct ``add_entry`` callers are not serialized by
+    this claim lock.
+    """
+    if not isinstance(claim, str) or not claim.strip() or "\n" in claim:
+        raise ValueError("claim must be one nonempty line")
+    path = _record_path("knowledge.md", project_dir)
+    lock_path = path + ".claim.lock"
+    os.makedirs(os.path.dirname(lock_path), exist_ok=True)
+    try:
+        with open(lock_path, "a", encoding="utf-8") as lock:
+            fcntl.flock(lock.fileno(), fcntl.LOCK_EX)
+            existing = entry_id_for_claim(claim, project_dir=project_dir)
+            if existing is not None:
+                return existing
+            return add_entry(statement, kind=kind, evidence=evidence, tags=tags,
+                             source=source, claim=claim, project_dir=project_dir)
+    except OSError as exc:
+        raise GrantMissing(f"cannot lock knowledge claim {claim!r} at {lock_path}: {exc}") from exc
+
+
+def add_gap(question, looked_in, finding="", tags="", source="",
+            project_dir=None):
     """Append a gap — something looked for and not found. Returns its id.
 
     `looked_in` is a **channel list**, not a sentence. "searched ePrint" and
@@ -289,7 +349,8 @@ def add_gap(question, looked_in, finding="", tags="", source=""):
     """
     if isinstance(looked_in, (list, tuple)):
         looked_in = ", ".join(str(x) for x in looked_in)
-    gid = _next_id(GAPS, "G")
+    path = _record_path("gaps.md", project_dir)
+    gid = _next_id(path, "G")
     L = ["## %s" % gid, "", question.strip(), "",
          "- **looked in:** %s" % looked_in]
     if finding:
@@ -300,11 +361,11 @@ def add_gap(question, looked_in, finding="", tags="", source=""):
         L.append("- **from:** %s" % source)
     L.append("- **at:** %s" % _stamp())
     L.append("")
-    _append(GAPS, "\n".join(L) + "\n")
+    _append(path, "\n".join(L) + "\n")
     return gid
 
 
-def add_lesson(text, tags=""):
+def add_lesson(text, tags="", project_dir=None):
     """Append a durable cross-session lesson — one line, dated.
 
     For things a future session would otherwise rediscover the hard way: a
@@ -313,15 +374,14 @@ def add_lesson(text, tags=""):
     """
     line = "- %s — %s%s\n" % (_stamp(), text.strip().replace("\n", " "),
                               ("  *(%s)*" % tags) if tags else "")
-    _append(LESSONS, line)
+    _append(_record_path("lessons.md", project_dir), line)
     return line.strip()
 
 
 def _selftest():
-    """Regress atomic append and preservation of derivation provenance."""
+    """Regress append preservation, provenance, and concurrent ID uniqueness."""
     import subprocess
     import tempfile
-    global KNOWLEDGE
     tmp = tempfile.mkdtemp()
     child = os.path.join(tmp, "w.py")
     with open(child, "w") as fh:
@@ -339,46 +399,99 @@ def _selftest():
     print("  concurrent append: kept %d/1200 -> %s"
           % (kept, "PASS" if ok else "FAIL"))
 
-    original_knowledge = KNOWLEDGE
+    knowledge_path = os.path.join(tmp, "knowledge.md")
     try:
-        KNOWLEDGE = os.path.join(tmp, "knowledge.md")
-        try:
-            add_entry(
-                "Unchecked candidate.",
-                kind="derived result",
-                evidence=[
-                    {"kind": "derivation", "ref": "discovery.md#C1",
-                     "note": "Original reasoning only."},
-                ],
-            )
-            gate_ok = False
-        except ValueError:
-            gate_ok = not os.path.exists(KNOWLEDGE)
-
         add_entry(
-            "Candidate C2 establishes a toy consequence.",
+            "Unchecked candidate.",
             kind="derived result",
             evidence=[
-                {"kind": "derivation", "ref": "discovery.md#C2",
-                 "note": "Original reasoning."},
-                {"kind": "independent-check", "ref": "verifier-C2.md",
-                 "note": "Fresh computation checked C2."},
+                {"kind": "derivation", "ref": "discovery.md#C1",
+                 "note": "Original reasoning only."},
             ],
+            project_dir=tmp,
         )
-        recorded = _read(KNOWLEDGE)
-        provenance_ok = (
-            "`derivation` `discovery.md#C2`" in recorded
-            and "`independent-check` `verifier-C2.md`" in recorded
-        )
-    finally:
-        KNOWLEDGE = original_knowledge
+        gate_ok = False
+    except ValueError:
+        gate_ok = not os.path.exists(knowledge_path)
+
+    add_entry(
+        "Candidate C2 establishes a toy consequence.",
+        kind="derived result",
+        evidence=[
+            {"kind": "derivation", "ref": "discovery.md#C2",
+             "note": "Original reasoning."},
+            {"kind": "independent-check", "ref": "verifier-C2.md",
+             "note": "Fresh computation checked C2."},
+        ],
+        claim="lemma-C2",
+        project_dir=tmp,
+    )
+    recorded = _read(knowledge_path)
+    provenance_ok = (
+        "`derivation` `discovery.md#C2`" in recorded
+        and "`independent-check` `verifier-C2.md`" in recorded
+        and entry_id_for_claim("lemma-C2", project_dir=tmp) is not None
+        and entry_id_for_claim("missing", project_dir=tmp) is None
+    )
+    add_entry("Duplicate claim for lookup test.", claim="lemma-C2",
+              project_dir=tmp)
+    try:
+        entry_id_for_claim("lemma-C2", project_dir=tmp)
+        duplicate_claim_detected = False
+    except ValueError:
+        duplicate_claim_detected = True
+
+    once_dir = os.path.join(tmp, "once-test")
+    once_worker = (
+        "import sys\n"
+        "sys.path.insert(0, sys.argv[1])\n"
+        "from knowledge import add_entry_once\n"
+        "print(add_entry_once('One shared lemma.', claim='lemma-shared', "
+        "project_dir=sys.argv[2]))\n"
+    )
+    once_procs = [subprocess.Popen(
+        [sys.executable, "-c", once_worker,
+         os.path.dirname(os.path.abspath(__file__)), once_dir],
+        stdout=subprocess.PIPE, stderr=subprocess.PIPE) for _ in range(8)]
+    once_results = [proc.communicate() for proc in once_procs]
+    once_ids = [out.decode().strip() for out, _ in once_results]
+    once_ok = (all(proc.returncode == 0 for proc in once_procs)
+               and len(set(once_ids)) == 1
+               and len(re.findall(r"(?m)^## K\d+", read_knowledge(once_dir))) == 1)
+
+    id_dir = os.path.join(tmp, "id-test")
+    worker_code = (
+        "import sys\n"
+        "sys.path.insert(0, sys.argv[1])\n"
+        "from knowledge import add_entry\n"
+        "for i in range(25):\n"
+        "    add_entry('worker %s item %d' % (sys.argv[3], i), "
+        "project_dir=sys.argv[2])\n"
+    )
+    module_dir = os.path.dirname(os.path.abspath(__file__))
+    procs = [
+        subprocess.Popen([sys.executable, "-c", worker_code, module_dir,
+                          id_dir, str(w)])
+        for w in range(8)
+    ]
+    workers_ok = all(p.wait() == 0 for p in procs)
+    id_text = _read(os.path.join(id_dir, "knowledge.md"))
+    ids = re.findall(r"(?m)^## (K\d+-[0-9a-f]{32})\b", id_text)
+    ids_ok = workers_ok and len(ids) == 200 and len(set(ids)) == 200
     print("  derivation provenance: %s"
           % ("PASS" if provenance_ok else "FAIL"))
+    print("  duplicate claim lookup: %s"
+          % ("PASS" if duplicate_claim_detected else "FAIL"))
+    print("  concurrent claim once: %s"
+          % ("PASS" if once_ok else "FAIL"))
     print("  derivation-only gate: %s"
           % ("PASS" if gate_ok else "FAIL"))
+    print("  concurrent ids: %d/200 unique -> %s"
+          % (len(set(ids)), "PASS" if ids_ok else "FAIL"))
     print("  base path        : %s (exists=%s, writable=%s)"
           % (BASE, os.path.isdir(BASE), os.access(BASE, os.W_OK)))
-    return 0 if ok and provenance_ok and gate_ok else 1
+    return 0 if (ok and provenance_ok and duplicate_claim_detected and once_ok
+                 and gate_ok and ids_ok) else 1
 
 
 if __name__ == "__main__":

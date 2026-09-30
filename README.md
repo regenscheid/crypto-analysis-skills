@@ -30,11 +30,13 @@ a prover merely because the skills are available.
 
 ## Current scope
 
-Claude Science already imports the skills, accesses MCP servers, and manages
-project knowledge. This repository does not introduce another knowledge store,
-checkpoint system, or harness change. Physical security is outside the current
-research scope. Catalog updates are deliberate maintainer edits; investigations
-do not automatically submit or publish records.
+Claude Science imports the skills, accesses MCP servers, and manages plans and
+project artifacts. `workbench-knowledge` adds a project-specific research
+record in local files: shared settled knowledge and per-session append-only
+idea ledgers. It does not replace the host's plans, checkpoints, or artifact
+versions, and requires no fork-only feature. Physical security is outside the
+current research scope. Catalog updates are deliberate maintainer edits;
+investigations do not automatically submit or publish records.
 
 `mathematical-research-development` supports ordinary mathematical questions and
 useful conditional or partial results. Its development reference addresses
@@ -123,7 +125,7 @@ CScience routes non-Anthropic models through a compatibility layer, so ordinary
 tool-call success does not establish that Agent Skills work. Before a long run:
 
 1. temporarily install `tests/cscience-skill-probe/` as a skill;
-2. run both prompts in `tests/cscience-skill-probe-cases.json` with the exact
+2. run both skill-load prompts in `tests/cscience-skill-probe-cases.json` with the exact
    model alias and effort setting intended for the investigation;
 3. save the raw response and, when possible, the runtime skill-call trace;
 4. check the response with:
@@ -154,8 +156,10 @@ does not prove the runtime loaded it.
 | `magma` | A Claude Science SSH compute provider | Skip Magma-specific computation; other skills remain available |
 | theorem-prover skills | The named prover and pinned dependencies | Produce a formalization plan or blocked obligation, never a claimed proof |
 
-`workbench-knowledge` writes to `CRYPTO_FILES`, defaulting to
-`~/crypto-workbench-files`.
+`workbench-knowledge` uses `CRYPTO_FILES` (default
+`~/crypto-workbench-files`) as a storage parent and places each project
+under `projects/<project-id>/`. The root agent resolves the project ID
+once and passes the absolute directory to delegates.
 
 ## Maintainer manifests, reports, and tools
 
@@ -252,16 +256,21 @@ evidence of body-content adherence. It does not prove how the body was obtained;
 recorded successful load events are a separate check. Plain-text skill mentions
 are never load-event evidence. See `tests/evaluation-contract.md`.
 
-`tests/cscience-skill-probe-cases.json` contains the implicit and explicit probe
-prompts. `tests/routing-cases.json` contains representative cryptanalysis prompts
+`tests/cscience-skill-probe-cases.json` contains the implicit and explicit
+skill-load prompts plus three separate project-board behavior probes: verbatim
+capture, soft-dismissal requeueing, and inventor closed-lane exclusions. The
+load-probe checker applies only to the first two prompts; board behavior
+requires the recorded host calls and persisted board events.
+`tests/routing-cases.json` contains representative cryptanalysis prompts
 and their expected modes and skill traces. Add a case whenever a real failure is
 found so future refactors have an evidence-based regression target.
 
 `tests/claude-science-adapter-contract.json` protects the exact Claude Science
 API calls and measured runtime rules documented by `investigate`. The audit fails
 if a future shortening removes required plan, child-gate, delegation, artifact,
-or lineage instructions, or restores a disproven parent-only rule. Update this
-contract only when a rerun against a named runtime version changes the evidence.
+or lineage instructions, or restores a disproven parent-only rule. Its 0.1.53
+artifact/delegation additions come from the pinned runtime and captured host
+calls; historical plan and elicitation behavior is still labeled 0.1.27.
 
 ## Standard validation
 
@@ -270,11 +279,15 @@ Run the deterministic checks from the repository root:
 ```bash
 python3 tools/import_skill_packs.py --check
 python3 tools/audit_skills.py
+python3 skills/workbench-knowledge/scripts/knowledge.py --selftest
+python3 skills/workbench-knowledge/scripts/board.py --selftest
 ```
 
 The first command verifies that the imported trees still match their recorded
 hashes. The second validates all installed skills and regenerates the registry
-and inventory. Both should succeed with zero errors before a release.
+and inventory. The last two check append preservation, concurrent ID
+uniqueness, board reduction, and the independent-check gate. All should
+succeed before a release.
 
 To reproduce an import from a fresh local `.agents` staging area, run
 `python3 tools/import_skill_packs.py`. The importer refuses to overwrite an

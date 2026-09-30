@@ -40,6 +40,7 @@ Catalog membership and record dates do not establish scientific priority; use
 
 Investigations use read-only catalog operations. Deliberate maintainer edits to
 the repository are a separate process; these skills do not submit observations,
-proposals, or discoveries to the catalog. The harness owns project knowledge and
-resumption. Physical-security investigations are outside this effort's scope;
+proposals, or discoveries to the catalog. The host owns resumption; the
+project-specific research record is maintained by `workbench-knowledge`.
+Physical-security investigations are outside this effort's scope;
 historical catalog records can remain available without expanding that scope.

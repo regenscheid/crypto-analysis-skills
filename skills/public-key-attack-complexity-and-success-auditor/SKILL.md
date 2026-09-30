@@ -37,10 +37,12 @@ without completing this workflow.
 8. For quantum attacks, report query complexity, logical gates, depth, logical qubits, qRAM or coherent-memory assumptions, state preparation, error correction, and physical estimates separately.
 9. Compare against the exact claim and baseline at equal success probability and in compatible units. Produce sensitivity ranges when conventions are disputed.
 10. Label results as asymptotic, estimated, implemented, or experimentally demonstrated and state the largest validated instance.
+11. When code exists, separate counted algorithmic operations from measured runtime and resource use. Name the implementation, instance, hardware, and measurement method; state which portions of the end-to-end attack the measurements cover.
 
 ## Output contract
 
 - An end-to-end cost breakdown with native units and normalized comparisons.
+- Counted and measured costs reported separately when implementation code exists.
 - A success-probability derivation and false-positive/verification analysis.
 - A preprocessing/amortization and parallelism audit.
 - Sensitivity ranges and a list of unsupported cost assumptions.

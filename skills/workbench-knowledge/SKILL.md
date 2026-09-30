@@ -6,15 +6,28 @@ license: Apache-2.0
 
 # Workbench knowledge
 
-Three files, in a folder you can open. The location is **`CRYPTO_FILES`**,
-defaulting to `~/crypto-workbench-files`. Set it to somewhere the running
-session can write, and grant that path if the host sandboxes writes:
+Keep the durable research record in ordinary local files. `CRYPTO_FILES`
+is the storage parent and defaults to `~/crypto-workbench-files`. Resolve a
+stable, unique project ID, then use
+`CRYPTO_FILES/projects/<project-id>/` as the project directory. Set
+`CRYPTO_FILES` to an absolute writable path and grant it if the host
+sandboxes writes. Never put two projects into the same project directory or
+derive its path from a delegated agent's current working directory.
 
-| | |
+| Project file | Purpose |
 |---|---|
 | `knowledge.md` | what has been established, and **how** |
 | `gaps.md` | what was looked for and **not** found |
 | `lessons.md` | gotchas and conventions worth carrying forward |
+
+The project also has an in-flight board: one append-only
+`board/sessions/<session-id>.jsonl` ledger per session and generated
+`board/notebooks/<session-id>/<idea-id>.md` notebooks. A project-wide
+snapshot reduces all session ledgers. The three files above remain shared
+across sessions; separate session ledgers let investigations take different
+paths while retaining one project history. Read
+[the research-board procedure](reference/research-board.md) before a sustained
+DISCOVER investigation.
 
 They used to be an MCP connector. They are files now because this is storage,
 not search: 24 entries and 8 gaps do not need an index, and a connector needs an
@@ -26,23 +39,49 @@ cannot be opened by a person.
 ## Read it first
 
 ```python
-import sys, os
-# knowledge.py ships with the workbench-knowledge skill. Find it whether this
-# repo is the CWD, the skills are published as flat siblings, or CRYPTO_SKILLS
-# names the checkout. Set CRYPTO_SKILLS if none of these resolve.
-for _p in (os.environ.get("CRYPTO_SKILLS", ""),
-           "skills/workbench-knowledge/scripts",
-           "../workbench-knowledge/scripts",
-           os.path.expanduser("~/crypto-analysis-skills/skills/workbench-knowledge/scripts")):
-    _c = os.path.join(_p, "scripts") if _p and _p.endswith("workbench-knowledge") else _p
-    if _c and os.path.isfile(os.path.join(_c, "knowledge.py")):
-        sys.path.insert(0, _c); break
-from knowledge import read_all, add_entry, add_gap, add_lesson
-print(read_all())
+import sys, os, glob
+# CRYPTO_SKILLS may name the checkout, the installed skill, or its scripts
+# folder. Claude Science can also install skills globally or per organization.
+_candidates = [os.environ.get("CRYPTO_SKILLS", ""),
+               "skills/workbench-knowledge/scripts",
+               "../workbench-knowledge/scripts",
+               os.path.expanduser("~/.cscience/skills/workbench-knowledge/scripts"),
+               os.path.expanduser("~/crypto-analysis-skills/skills/workbench-knowledge/scripts")]
+_candidates += glob.glob(os.path.expanduser(
+    "~/.cscience/orgs/*/skills/workbench-knowledge/scripts"))
+_script_dir = None
+for _p in _candidates:
+    if not _p:
+        continue
+    for _c in (_p, os.path.join(_p, "scripts"),
+               os.path.join(_p, "skills/workbench-knowledge/scripts")):
+        if all(os.path.isfile(os.path.join(_c, name))
+               for name in ("knowledge.py", "board.py")):
+            _script_dir = _c
+            break
+    if _script_dir:
+        break
+if _script_dir is None:
+    raise FileNotFoundError("Set CRYPTO_SKILLS to the skills checkout or installed skill")
+sys.path.insert(0, _script_dir)
+from board import project_dir_for_id, board_snapshot
+from knowledge import read_all, add_entry, add_entry_once, entry_id_for_claim, add_gap, add_lesson
+project_dir = project_dir_for_id("<stable-project-id>")
+print(read_all(project_dir=project_dir))
+print(board_snapshot(project_dir))
 ```
 
-All three files at once, and they are small enough that reading everything is
-the right move. **Do this before deriving anything.**
+Replace the placeholder with the host's stable project ID. If the host does
+not expose one, obtain or create a stable ID and keep it in a project artifact
+that later sessions can find; do not mint a new ID on every session. The root
+agent resolves `project_dir` once and supplies its absolute path and session
+ID to every delegate. The helpers do not infer either from the current working
+directory. Existing top-level `knowledge.md`, `gaps.md`, and `lessons.md`
+are legacy files; assign their relevant entries to a project deliberately
+instead of silently mixing them with a new project.
+
+Read all three project files and the project-wide board snapshot before
+deriving anything.
 
 That instruction is load-bearing rather than polite. The measured failure of
 this workbench has never been an inability to compute — it is re-deriving what
@@ -89,9 +128,12 @@ It is only ever: **does it stay true somewhere else?**
 
 ```python
 add_entry(statement, kind="mechanism", evidence=[...], tags="luov descent",
-          source="<investigation or session>", claim="C7")
-add_gap(question, looked_in=["ePrint", "NIST", "firecrawl", "web"], finding="...")
-add_lesson("Magma exits 0 on user errors; require a final done marker.")
+          source="<investigation or session>", claim="C7",
+          project_dir=project_dir)
+add_gap(question, looked_in=["ePrint", "NIST", "firecrawl", "web"],
+        finding="...", project_dir=project_dir)
+add_lesson("Magma exits 0 on user errors; require a final done marker.",
+           project_dir=project_dir)
 ```
 
 **`evidence` decides whether something is knowledge.** Each item is
@@ -117,7 +159,7 @@ check succeeds, retain both evidence items so the durable entry shows where the
 result came from and how it was independently tested:
 
 ```python
-add_entry(
+add_entry_once(
     "Candidate C2 establishes ... under assumptions A1-A4.",
     kind="derived result",
     evidence=[
@@ -126,6 +168,7 @@ add_entry(
         {"kind": "independent-check", "ref": "<verifier report>",
          "note": "Fresh computation checked the stated consequence."},
     ],
+    claim="<lemma-id>", project_dir=project_dir,
 )
 ```
 
@@ -149,8 +192,9 @@ Findings about schemes go to `add_entry`.
 
 ## The one rule about writing
 
-**Append. Never rewrite.** Use the helpers; they do a single `write()` in append
-mode, which POSIX makes atomic against other appenders.
+**Append. Never rewrite the authoritative record.** Use the helpers; each
+knowledge entry and board event is one `write()` in append mode. Board
+notebooks are derived views that can be rebuilt from the session ledger.
 
 Do **not** read-modify-write, and do **not** use `edit_file` — its exact-match
 replacement *is* read-modify-write. Measured here, 8 concurrent writers × 150
@@ -164,22 +208,30 @@ records each:
 That is not a corner case. Delegated subagents inherit the same host grant and
 write to the same files, so simultaneous writers are the normal condition.
 
-Records are capped at 4 KB and the helper refuses larger ones. A record
-approaching the cap is a record that should have been two.
+Knowledge entries are capped at 4 KB; board events are capped at 1 MiB. A
+knowledge entry approaching its cap should be split. Keep a board outcome
+intact so the delegated return is recorded unchanged.
 
 Regression test:
 
 ```
 python3 skills/workbench-knowledge/scripts/knowledge.py --selftest
+python3 skills/workbench-knowledge/scripts/board.py --selftest
 ```
 
 ---
 
 ## If the write fails, say so loudly
 
-The helper raises `GrantMissing` rather than returning quietly. **Do not catch
-it and carry on.** The read/write grant on the folder is *per project*: a
-session in a different project holds none, and its first write fails.
+The knowledge helper raises `GrantMissing` rather than returning quietly. A
+board ledger write raises `BoardWriteError`; inspect the ledger before retrying
+because the attempted event may have been saved. If notebook materialization
+raises `NotebookMaterializationError`, the event **was** saved: call
+`rebuild_notebook(project_dir, session_id, idea_id)` after the filesystem issue
+is resolved, without appending the outcome again. **Do not catch an error and
+carry on as though the record is complete.** The read/write grant on the
+folder is *per project*: a session in a different project holds none, and its
+first write fails.
 
 An unrecorded lesson is lost, not deferred. Surface it to the human and ask for
 the grant — that is a one-time click, and it is cheaper than the next session
@@ -191,9 +243,10 @@ repeating the work.
 
 - **No search index.** These files are small; read them. If they grow to where
   that hurts, that is the moment to reconsider — not before.
-- **No status tracking.** Claims in flight belong in the plan
-  (`generate_plan`, `update_step_status`) and, for discovery candidates, the
-  versioned discovery artifact — not here. This is what *settled*.
+- **No competing job or checkpoint system.** The host owns plans, progress,
+  approvals, and artifact versions. The board records in-flight research ideas,
+  outcomes, and evidence across sessions; only independently checked results
+  enter `knowledge.md`.
 - **No deletion.** Superseding an entry means appending the correction and
   saying what it replaces. The record of having believed something is itself
   worth keeping — this workbench's most expensive errors were confident recall,

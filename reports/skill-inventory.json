@@ -2,7 +2,7 @@
   "description_words": 4901,
   "errors": 0,
   "schema_version": 1,
-  "skill_body_lines": 13534,
+  "skill_body_lines": 13629,
   "skill_count": 162,
   "skills": [
     {
@@ -169,7 +169,7 @@
       "description": "Review a supplied cryptographic analysis for cost-model, precondition, security-notion, parameter-provenance, and citation defects. Use for an assigned analysis review; merely citing or applying a paper does not require a fresh citation or paper audit.",
       "description_words": 34,
       "domain": "core",
-      "lines": 219,
+      "lines": 227,
       "missing_relative_links": [],
       "name": "crypto-review"
     },
@@ -249,7 +249,7 @@
       "description": "Develop mathematical cryptanalysis questions, research proposals, and scoped results about specified cryptographic constructions, assumptions, or parameters. Use for human-directed standards research, unexplored mathematical questions, proposed extensions of known results, or continued development of a selected question. Distinguish a requested proposal from a request to carry out the mathematical work.",
       "description_words": 49,
       "domain": "core",
-      "lines": 115,
+      "lines": 143,
       "missing_relative_links": [],
       "name": "discover-cryptanalysis"
     },
@@ -553,7 +553,7 @@
       "description": "Conduct rigorous end-to-end cryptographic security investigations and visibly route them through the relevant cryptanalysis or formal-method skills. Use whenever asked to analyze a scheme or paper, find issues or weaknesses, search for attacks, reproduce or validate a result, audit a security claim or proof, compare parameters, or resume cryptographic research. Infer the requested task from its intent; individual words such as \u201cnew\u201d do not by themselves select a mode.",
       "description_words": 69,
       "domain": "core",
-      "lines": 244,
+      "lines": 246,
       "missing_relative_links": [],
       "name": "investigate"
     },
@@ -905,7 +905,7 @@
       "description": "Recomputes end-to-end resources and success probability for public-key attacks, exposing omitted preprocessing, oracle acquisition, filtering, false positives, verification, estimator assumptions, and model mismatches.",
       "description_words": 23,
       "domain": "public-key",
-      "lines": 69,
+      "lines": 71,
       "missing_relative_links": [],
       "name": "public-key-attack-complexity-and-success-auditor"
     },
@@ -1177,7 +1177,7 @@
       "description": "Recomputes an attack end to end, normalizes resource units, checks success and false positives, and compares it with the correct generic baseline and security claim. Use when: Before accepting, reporting, transferring, or comparing any cryptanalytic complexity. It is especially important for papers or agent outputs that quote one exponent without a complete derivation.",
       "description_words": 53,
       "domain": "symmetric",
-      "lines": 74,
+      "lines": 76,
       "missing_relative_links": [],
       "name": "symmetric-attack-complexity-and-success-auditor"
     },
@@ -1297,7 +1297,7 @@
       "description": "Read and extend the crypto workbench's durable knowledge \u2014 what has been established and how, what was looked for and not found, and lessons worth carrying between sessions. Use at the start of any substantive work to check what is already known, and whenever an investigation settles something, fails to find something, or teaches a gotcha worth not rediscovering.",
       "description_words": 59,
       "domain": "core",
-      "lines": 200,
+      "lines": 253,
       "missing_relative_links": [],
       "name": "workbench-knowledge"
     }

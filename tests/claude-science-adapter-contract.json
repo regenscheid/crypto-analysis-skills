@@ -1,6 +1,10 @@
 {
   "schema_version": 1,
-  "runtime": "Claude Science/CScience 0.1.27",
+  "runtime": "Claude Science 0.1.27 behavioral probes; CScience-pinned Claude Science 0.1.53 artifact and delegation schemas",
+  "verification": {
+    "project_and_delegation": "Pinned 0.1.53 bundled runtime plus captured HCTR2/CauchyFold host calls",
+    "plan_and_elicitation": "Historical 0.1.27 behavioral probes; not rerun on 0.1.53"
+  },
   "adapter": "skills/investigate/reference/claude-science.md",
   "verified_behaviors": [
     "plan revisions are stored before validation and require reapproval only when adopted",
@@ -9,7 +13,9 @@
     "delegated children are leaves but can update their own plan steps",
     "two direct child ask_user cards can operate concurrently without answer crossover",
     "messages to ask, network, and host parks fail closed without dismissing their cards",
-    "artifact markers cross child workspaces and lineage retains child provenance"
+    "artifact markers cross child workspaces and lineage retains child provenance",
+    "host.artifacts provenance identifies project and root session even with zero artifacts",
+    "delegation structured_output and deviations are observed in captured returns"
   ],
   "required_literals": [
     "generate_plan",
@@ -26,6 +32,14 @@
     "host.stop_child",
     "host.capabilities",
     "host.artifact_marker",
+    "host.artifacts",
+    "host.artifact_path",
+    "host.submit_output",
+    "project_dir_for_id",
+    "output_schema",
+    "context_summary",
+    "structured_output",
+    "deviations",
     "host.lineage.graph",
     "Current Context",
     "Plan Steps",

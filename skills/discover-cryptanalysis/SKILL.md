@@ -76,6 +76,34 @@ representation or intermediate claim. Failure of that approach does not refute
 the question. Continue from supplied partial mathematics without repeating the
 original survey unless assumptions, evidence, or scope changed.
 
+## Continue a discovery investigation across sessions
+
+For sustained discovery with delegated idea development, use the
+[project research board](../workbench-knowledge/reference/research-board.md).
+Resolve one unique project directory beneath `CRYPTO_FILES`, read the shared
+`knowledge.md`, `gaps.md`, and `lessons.md`, and reduce all per-session
+ledgers before ideating. Claude Science sessions can see project artifacts,
+but delegated frames have separate filesystem working directories; pass the
+absolute shared project directory and notebook paths in every frame's task
+and `context_summary`. Do not infer them from a child's working directory.
+
+Triage comes before ideation. Carry every open idea, requeue soft dismissals,
+and exclude only critic-accepted closed lanes. Generate new ideas where the
+record shows a gap, naming the confirmed lemmas they build on. Execute one
+focused frame per open idea; append every structured return unchanged with
+`board_append`. A batch critic classifies outcomes, checks closures,
+identifies restated lemmas, promotes independently checked results, and
+writes a `critique-<pass>.md` artifact. Repeat until the open queue is empty
+or the user stops. There is no fixed number of ideas or effort budget.
+
+Use one or two [open-brief inventor](../investigate/reference/open-brief-inventor.md)
+frames per pass when the current lenses are exhausted. Give them confirmed
+lemmas, published SOTA rows, and closed lanes as exclusions; do not make
+every narrow subagent reread the entire board. The target stays fixed:
+“most-studied target” is not an obstruction, and retargeting requires user
+approval. Dismissals must state whether the obstacle was demonstrated or
+only a lack of idea, time, tools, or context.
+
 ## Check the conclusion that is actually claimed
 
 Use [evidence interpretation](../investigate/reference/evidence-interpretation.md).
@@ -99,9 +127,9 @@ A correctness review alone does not establish the depth of the research.
 
 Return the formulation, known ingredients reused, mathematics produced, scope,
 remaining obligations, and why the next inference matters. Distinguish the end
-of this work episode from resolution of the overall research question. Use the
-host's existing context and artifact facilities; this skill defines no project
-knowledge store or job manager.
+of this work episode from resolution of the overall research question. Use
+`workbench-knowledge` for the project research record and the host's plan and
+artifact facilities for execution and resumption.
 
 Before originality language, read
 [contribution assessment](../investigate/reference/contribution-assessment.md).

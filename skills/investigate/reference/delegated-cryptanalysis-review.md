@@ -66,8 +66,52 @@ consequence can remain a routine application or elementary corollary. Conversely
 a subagent's “routine” label does not establish that the finding is unimportant.
 Recognizing a routine deduction does not require an exhaustive literature survey.
 
+## Batch critic for a project research board
+
+For a sustained DISCOVER pass, review the whole batch of raw delegated
+outcomes before the orchestrator changes idea states. Read the project-wide
+[research board](../../workbench-knowledge/reference/research-board.md),
+the relevant per-idea notebooks, the fixed target and assumptions, all
+returns from the pass, and the published SOTA rows. Do not edit the raw
+`outcome` events. Produce `critique-<pass>.md` with a decision for every
+idea and an explicit reason for any unchanged open state.
+
+Classify each proposed dismissal by its stated reason class. Confirm a
+`demonstrated_obstruction` only if the evidence addresses the exact lane
+and its hypotheses; one failed representation, a famous target, missing
+tools, or elapsed time cannot close a wider lane. Requeue every soft
+dismissal. Cross-check whether findings from different frames conflict or
+jointly imply a new consequence. Compare empirical and quantitative claims
+with the published SOTA rows without treating agent results as catalog
+records.
+
+For every lemma proposal, check its hypotheses, target applicability,
+known failures, exact literature locator when sourced from a paper, and
+`restates` links. Detect when one proposed lemma follows from another or
+restates a known result. A new derived lemma requires an independent check
+of the fixed candidate before promotion to project `knowledge.md`; a
+fresh explanation by the same author is not independent. Record the
+checker and exact artifact in the promotion evidence. Keep both the original
+`derivation` and the `independent-check` evidence items. Before adding the
+lemma to `knowledge.md`, inspect `entry_id_for_claim(lemma_id,
+project_dir=project_dir)`, then call `add_entry_once(...,
+claim=lemma_id, project_dir=project_dir)` and retain its returned ID. The
+helper serializes the lookup and append across cooperating sessions. Check
+that any reused entry states the same result and evidence. The later board
+`promote` event must carry that `knowledge_id`; the event alone does not
+write durable knowledge.
+
+After the critique is saved, the orchestrator appends the critic-approved
+`promote` and `close_lane` events with the critique reference and the exact
+excluded scope for each closed lane. For an accepted split, it must append
+full child `idea` events with `title` and `builds_on` before assigning those
+children to new frames. The split event creates open placeholders, not
+complete research questions. The critic may recommend those events; it does
+not rewrite earlier board lines or silently convert a child-reported state
+into a terminal state.
+
 At a meaningful synthesis boundary, explain the material omissions, connections,
 or implications identified, and how they changed the research conclusion or
 remaining question. If none were justified, say so without manufacturing novelty
-or claiming that no possibilities remain. Use the host's existing artifacts and
-resource controls; no additional reviewer service or knowledge system is needed.
+or claiming that no possibilities remain. Use the host's artifacts and resource
+controls, and the project research board for sustained discovery.

@@ -11,9 +11,11 @@ Do not merely recommend skills or stop after writing a plan.
 
 ## Scope and mathematical work
 
-The host owns project knowledge, persistence, and resumption. Use supplied
-context; do not create another knowledge or checkpoint system. Physical-security
-investigations are outside this effort's scope.
+The host owns plans, artifacts, persistence, and resumption. Use
+`workbench-knowledge` for the project-specific durable research record and,
+for sustained DISCOVER work, its session-ledger board. It is not a competing
+checkpoint or job system. Physical-security investigations are outside this
+effort's scope.
 
 For an explicitly stated mathematical question, use
 `mathematical-research-development` to produce definitions, lemmas, derivations,

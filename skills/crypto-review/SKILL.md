@@ -95,6 +95,14 @@ it regardless. Before accepting a cost:
 - **A sub-2^64 figure on a standardised parameter set is far more likely a
   misapplied model than a break.** Question it rather than repeating it.
 
+For an empirical attack claim with code, list every code path that reads the
+secret key, expanded or round keys, or internal state. Check setup, helper
+functions, instrumentation, and success tests as well as the main attack path.
+Each such read must be absent from the claimed attacker computation or declared
+as a scoped cheat. State what the code demonstrates under that scope; a secret
+read used to verify an experiment does not by itself demonstrate key recovery
+without that read.
+
 Attack families change which one dominates as parameters move. Measured on a UOV
 sweep at q=256, n=round(2.5m), `memory_access=0`: the cheapest family is
 DirectAttack up to m=40, WedgeAttack from m=44, and IntersectionAttack from

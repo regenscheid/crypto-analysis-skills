@@ -37,12 +37,14 @@ without completing this workflow.
 8. **Audit parallelism.** Distinguish total work, wall-clock depth, processors/qubits, communication, shared memory, and serial bottlenecks. Do not present perfect parallelism as free.
 9. **Compare with generic baselines.** Compare the entire resource vector and success, not just time. State whether the attack is academically non-generic, concretely feasible, or dominated by a generic attack.
 10. **Check claim impact.** Identify the exact claim row and scope violated. If the attack uses a stronger model or fewer rounds, state that prominently.
+11. **Separate counted from measured cost when code exists.** Report operation counts from the algorithm separately from measured runtime and resource use. Name the implementation, instance, hardware, and measurement method; explain what the measurements do and do not validate about the full attack cost.
 
 ## Output contract
 
 Return:
 
 - a line-by-line or stage-by-stage resource ledger;
+- counted and measured costs separately when implementation code exists;
 - normalized data/time/memory/preprocessing/communication/verification values;
 - success and false-positive derivation with assumptions;
 - sensitivity analysis for the largest uncertainties;
